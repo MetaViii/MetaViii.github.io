@@ -54,7 +54,7 @@
       <link href="/2024/11/15/Reverse-Record/"/>
       <url>/2024/11/15/Reverse-Record/</url>
       
-        <content type="html"><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p><h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p><p><img src="re2.png" alt="re2"></p><p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p><p><img src="re3.png" alt="re3"></p><p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p><p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p><h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p><p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p><p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p><p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>]]></content>
       
       
       <categories>
