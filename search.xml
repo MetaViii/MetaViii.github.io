@@ -11,36 +11,6 @@
       </tags>
   </entry>
   <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先***<u>相对路径</u>***（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
-<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
-<p>ps：（这是不是图片加载慢的原因？）</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Misc Record</title>
     <url>/2024/11/Misc-Record/</url>
     <content><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h5 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h5><p>顾名思义，签到，复制提交就好</p>
@@ -97,6 +67,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Before-everthing</title>
+    <url>/2024/11/hello-world/</url>
+    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
+<p>尽量使自己学有所得–</p>
+<p>——————————</p>
+<p>作者VX:</p>
+<p>x3289444724</p>
+<p>作者QQ:</p>
+<p>3289444724</p>
+<p>联系电话:</p>
+<p>①13968975069</p>
+<p>②18072320271</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Reverse Record</title>
     <url>/2024/11/Reverse-Record/</url>
     <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
@@ -116,19 +101,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
+<p>而且在config.yml里有个post_asset_folder:要为true</p>
+<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
+<p>然后再typora里设置要选择优先***<u>相对路径</u>***（这个很重要</p>
+<p>保证相对路径的时候再插入图片</p>
+<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
+<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
+<p>然后再</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
+<p><img src="11.png" alt="11"></p>
+<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
+<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
+<p>ps：（这是不是图片加载慢的原因？）</p>
 ]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
   </entry>
   <entry>
     <title>哲学-维特根斯坦</title>
