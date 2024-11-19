@@ -241,6 +241,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Misc Ultra</title>
+    <url>/2024/11/Misc-Ultra/</url>
+    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
+<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
+<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
+<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
+<h1 id="2-路由器配置查看工具"><a href="#2-路由器配置查看工具" class="headerlink" title="2.路由器配置查看工具"></a>2.路由器配置查看工具</h1><h2 id="RouterPassView"><a href="#RouterPassView" class="headerlink" title="RouterPassView"></a>RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
+<p>使用方法：</p>
+<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
+<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Reverse Record</title>
     <url>/2024/11/Reverse-Record/</url>
     <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
@@ -258,6 +280,21 @@
         <tag>CTF</tag>
         <tag>reverse</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Before-everthing</title>
+    <url>/2024/11/hello-world/</url>
+    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
+<p>尽量使自己学有所得–</p>
+<p>——————————</p>
+<p>作者VX:</p>
+<p>x3289444724</p>
+<p>作者QQ:</p>
+<p>3289444724</p>
+<p>联系电话:</p>
+<p>①13968975069</p>
+<p>②18072320271</p>
+]]></content>
   </entry>
   <entry>
     <title>blog 为何上传不了图像的解决</title>
@@ -289,43 +326,6 @@
       <tags>
         <tag>blog</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Misc Ultra</title>
-    <url>/2024/11/Misc-Ultra/</url>
-    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
-<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
-<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
-<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<h1 id="2-路由器配置查看工具"><a href="#2-路由器配置查看工具" class="headerlink" title="2.路由器配置查看工具"></a>2.路由器配置查看工具</h1><h2 id="RouterPassView"><a href="#RouterPassView" class="headerlink" title="RouterPassView"></a>RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
-<p>使用方法：</p>
-<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
-<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
-]]></content>
   </entry>
   <entry>
     <title>哲学-维特根斯坦</title>
