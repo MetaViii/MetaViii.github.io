@@ -1,392 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
-]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Misc Record</title>
-    <url>/2024/11/Misc-Record/</url>
-    <content><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h5 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h5><p>顾名思义，签到，复制提交就好</p>
-<h5 id="2-金三胖"><a href="#2-金三胖" class="headerlink" title="2.金三胖"></a>2.金三胖</h5><p>简单的拆分gif，打开puzzlesolver一把梭</p>
-<h5 id="3-你竟然赶我走"><a href="#3-你竟然赶我走" class="headerlink" title="3.你竟然赶我走"></a>3.你竟然赶我走</h5><p>010一把梭</p>
-<p><img src="1.png" alt="1"></p>
-<h5 id="4-二维码"><a href="#4-二维码" class="headerlink" title="4.二维码"></a>4.二维码</h5><p>用随波逐流分析一下发现有隐藏文件，binwalk提取出一个zip，加密的打开提示我们是4number，arp爆破出密码是7639，打开txt得到flag{vjpw_wnoei}</p>
-<h5 id="5-大白"><a href="#5-大白" class="headerlink" title="5.大白"></a>5.大白</h5><p>随波逐流爆宽高即可</p>
-<img src="2.png" alt="2" style="zoom:50%;">
-
-
-
-<h5 id="6-乌镇峰会种图"><a href="#6-乌镇峰会种图" class="headerlink" title="6.乌镇峰会种图"></a>6.乌镇峰会种图</h5><p>随波逐流一把梭</p>
-<h5 id="7-wireshark"><a href="#7-wireshark" class="headerlink" title="7.wireshark"></a>7.wireshark</h5><p>查找password，追踪tcp流，得到password&#x3D;ffb7567a1d4f4abdffdb54e022f8facd</p>
-<h5 id="8-N种方法解决"><a href="#8-N种方法解决" class="headerlink" title="8.N种方法解决"></a>8.N种方法解决</h5><p>随波逐流梭出一张二维码，微信一扫就拿到flag</p>
-<h5 id="9-基础破解"><a href="#9-基础破解" class="headerlink" title="9.基础破解"></a>9.基础破解</h5><p>Arp暴力破解密码得到密码是2563，txt是base64加密，解密就行</p>
-<h5 id="10-文件中的秘密"><a href="#10-文件中的秘密" class="headerlink" title="10.文件中的秘密"></a>10.文件中的秘密</h5><p>文件属性里有flag</p>
-<h5 id="11．-zip伪加密"><a href="#11．-zip伪加密" class="headerlink" title="11． zip伪加密"></a>11． zip伪加密</h5><p>随波逐流伪加密修复即可</p>
-<h5 id="12-LSB"><a href="#12-LSB" class="headerlink" title="12.LSB"></a>12.LSB</h5><p>Lsb隐写，用stegsolve打开可以发现藏了一张png，保存下来是一张二维码，扫一下就好</p>
-<h5 id="13-被嗅探的流量"><a href="#13-被嗅探的流量" class="headerlink" title="13.被嗅探的流量"></a>13.被嗅探的流量</h5><p>随波逐流一把梭</p>
-<h5 id="14-rar"><a href="#14-rar" class="headerlink" title="14.rar"></a>14.rar</h5><p>Arp爆破得到密码8795，flag{1773c5da790bd3caff38e3decd180eb7}</p>
-<h5 id="15-qr"><a href="#15-qr" class="headerlink" title="15.qr"></a>15.qr</h5><p>CQR扫一下就行</p>
-<h5 id="16-镜子里的世界"><a href="#16-镜子里的世界" class="headerlink" title="16.镜子里的世界"></a>16.镜子里的世界</h5><p>Zsteg一把梭</p>
-<h5 id="17-爱因斯坦"><a href="#17-爱因斯坦" class="headerlink" title="17.爱因斯坦"></a>17.爱因斯坦</h5><p>Binwalk提取zip，要密码，在图片的属性中可以看到密码，得到flag</p>
-<h5 id="18-ningen"><a href="#18-ningen" class="headerlink" title="18.ningen"></a>18.ningen</h5><p>图片先binwalk提取出zip，zip爆破密码得出8368，解密得到flag</p>
-<h5 id="19-小明的保险箱"><a href="#19-小明的保险箱" class="headerlink" title="19.小明的保险箱"></a>19.小明的保险箱</h5><p>图片先binwalk提取出zip，zip爆破密码得出7869，解密得到flag</p>
-<h5 id="20-Easycap"><a href="#20-Easycap" class="headerlink" title="20.Easycap"></a>20.Easycap</h5><p>拖进winshark，追踪TCP流得到flag</p>
-<h5 id="21-隐藏的钥匙"><a href="#21-隐藏的钥匙" class="headerlink" title="21.隐藏的钥匙"></a>21.隐藏的钥匙</h5><p>010打开，查找base，得到加密过的数据。解密一下就是flag</p>
-<h5 id="22-另外一个世界"><a href="#22-另外一个世界" class="headerlink" title="22.另外一个世界"></a>22.另外一个世界</h5><p>010打开后在文件末尾出现了一串神秘的二进制串，cherchef解密后恰好是flag</p>
-<h5 id="23-数据包中的线索"><a href="#23-数据包中的线索" class="headerlink" title="23.数据包中的线索"></a>23.数据包中的线索</h5><p>导出对象为http时，追踪tcp流得到一串神秘的base64加密，复制进随波逐流用base64转图片就能看到flag</p>
-<img src="3.png" alt="3" style="zoom:50%;">
-
-
-
-
-
-<h5 id="24-神秘龙卷风"><a href="#24-神秘龙卷风" class="headerlink" title="24.神秘龙卷风"></a>24.神秘龙卷风</h5><p>得到zip加密爆破得到密码5463，解密出的txt有多个+和.&gt;，猜测为字频统计，以.&gt;为分割，编写脚本得到flag</p>
-<img src="4.png" alt="4" style="zoom:67%;">
-
-
-
-<h5 id="25-FLAG"><a href="#25-FLAG" class="headerlink" title="25.FLAG"></a>25.FLAG</h5><p>得到的图片用stegsolve打开查看lsb，得到一个压缩包，解压后没有后缀</p>
-<p><img src="5.png" alt="5"></p>
-<p>File一下发现是elf，用kali打开即可</p>
-<p><img src="6.png" alt="6"></p>
-<h5 id="26-假如给我三天光明"><a href="#26-假如给我三天光明" class="headerlink" title="26.假如给我三天光明"></a>26.假如给我三天光明</h5><p>拿到png一看就知道是盲文加密，解密后是kmdonowg，即为压缩包密码，解压后得到一段摩斯密码的音频，对应解密后是flag</p>
-<p><strong>27.后门查杀</strong></p>
-<p>打开跟我说有病毒。。给我隔离了。。。</p>
-<p><strong>28.webshell后门</strong></p>
-<p>同上题。。</p>
-<p><strong>29.来首歌吧</strong></p>
-<p>简单的摩斯密码，打开audacity对照频谱图手敲莫斯密码即可</p>
-<img src="2024-11-18 225047.png" alt="2024-11-18 225047" style="zoom: 50%;">
-
-<p>（ ↑ 为一部分频谱图 ）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...../-.../-.-./----./..---/...../-..../....-/----./-.-./-.../-----/.----/---../---../..-./...../..---/./-..../.----/--.../-../--.../-----/----./..---/----./.----/----./.----/-.-./</span><br></pre></td></tr></table></figure>
-
-<p>随波逐流解密即可</p>
-<p><strong>30.面具下的flag</strong></p>
-<p>得到一张知名男女图片，随波逐流一下可以发现有隐藏文件，binwalk提取一下可以发现得到一个压缩包，解压发现要密码</p>
-<p>，可以发现zip是伪加密，修改后解压。</p>
-<p>得到一个vmdk文件，搜了一下发现</p>
-<p>“后缀为 <strong><code>.vmdk</code></strong> 的文件是 VMware 虚拟磁盘文件，通常用于虚拟机环境中存储虚拟机的磁盘数据。”</p>
-<p>以为要用虚拟机的，但是打不开。<del>于是看了一下wp</del></p>
-<p>这里的flag.vmdk用010打开后搜 <em>flag</em> 等关键字样得到这个</p>
-<img src="2024-11-18 205339.png" alt="2024-11-18 205339" style="zoom:80%;">
-
-<p>这个</p>
-<img src="2024-11-18 205445.png" alt="2024-11-18 205445" style="zoom:50%;">
-
-<p>还有这个</p>
-<img src="2024-11-18 205614.png" alt="2024-11-18 205614" style="zoom:50%;">
-
-<p>直接复制好像解密不了。</p>
-<p>打开kali，用kali自带的7z解密可以提取这些文件，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">7z x flag.vmdk -o./</span><br></pre></td></tr></table></figure>
-
-<p> -o后面的.&#x2F;是把压缩的内容放在当前目录下，解压完成就能看见好几个文件夹</p>
-<img src="2024-11-18 210026.png" alt="2024-11-18 210026" style="zoom:80%;">
-
-<p>这是brainfuck加密和Ook! Obfuscation加密</p>
-<p>brainfuck加密随波逐流里有</p>
-<p>Ook! Obfuscation加密网站：<a href="https://www.splitbrain.org/services/ook">Ook! Obfuscation解密网站</a></p>
-<p>分别解密得到flag{N7F5_AD5_i5_funny!}</p>
-<p><strong>31.荷兰宽带数据泄露</strong></p>
-<p>拿到bin文件查了一下发现要用路由器解析的，用RouterPassView</p>
-<p>打开后看了一下wp才知道username是flag</p>
-<img src="2024-11-18 232344.png" alt="2024-11-18 232344" style="zoom:50%;">
-
-
-
-<p><strong>32.九连环</strong></p>
-<p>拿到jpg用010看一下，发现后面有压缩包隐藏的</p>
-<p>先试一下随波逐流的binwalk提取，失败了，没提出来</p>
-<p>于是我们用kali的binwalk</p>
-<p>![2024-11-19 002930](.&#x2F;Misc-Record&#x2F;2024-11-19 002930.png)</p>
-<p>（不知道为什么我的binwalk要加一个–run-as&#x3D;root提升权限。。）</p>
-<p>提取出来的一个图片和一个压缩包，猜测密码在图片的隐写里</p>
-<p>用steghide跑一下，真的在里面，提取</p>
-<img src="2024-11-19 003229.png" alt="2024-11-19 003229" style="zoom:80%;">
-
-<p>查看它，下面的就是密码</p>
-<img src="2024-11-19 003329.png" alt="2024-11-19 003329" style="zoom:80%;">
-
-<p>直接用密码解压压缩包就能看到flag：flag{1RTo8w@&amp;4nK@z*XL}</p>
-<p><strong>33.认真你就输了</strong></p>
-<p>这题我学到了ms-office文件本质是zip</p>
-<p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。把01.xls重命名为01.zip，解压缩后在 xl&#x2F;charts 目录里有 flag.txt </p>
-<p><strong>34.被劫持的神秘礼物</strong></p>
-<p>拿到pcapng文件用wireshark打开，这里可以使用http.request.method&#x3D;&#x3D;POST进行过滤或者一个个点开看，发现</p>
-<p>![2024-11-19 113909](.&#x2F;Misc-Record&#x2F;2024-11-19 113909.png)</p>
-<p>得到账号密码adminaadminb，包上小写md5，flag{1d240aafe21a86afc11f38a45b541a49}</p>
-<p><strong>35.被偷走的文件</strong></p>
-<p>提到偷走文件一般要清楚是找HTTP或者FTP，看到导出对象里有FTP-DATA，保存这个flag.rar</p>
-<img src="2024-11-19 115640.png" alt="2024-11-19 115640" style="zoom:75%;">
-
-<p>保存下来发现要密码解压，爆破可以发现，密码是5790，得到flag</p>
-<p><strong>36.藏藏藏</strong></p>
-<p>得到一个jpg，用随波逐流的formost提取，得到一个zip，打开是个xlsx，一张二维码，用QR扫码得到flag</p>
-<img src="2024-11-19 120348.png" alt="2024-11-19 120348" style="zoom:50%;">
-
-
-
-<p><strong>37.佛系青年</strong></p>
-<p>拿到的zip拖进随波逐流看一下，发现第一个jpg无加密，第二个txt伪加密，修复一下</p>
-<p>jpg上说我FFF佛慈悲，txt内容为</p>
-<img src="2024-11-19 121044.png" alt="2024-11-19 121044" style="zoom:67%;">
-
-<p>发现是与佛论禅编码，随波逐流得到flag</p>
-<p><strong>38.你猜我是个啥</strong></p>
-<p>随波逐流一把梭</p>
-<p><strong>39.刷新过的图片</strong></p>
-<p>关键词“刷新”，很可能是F5-steganography加密，尝试解密</p>
-<img src="2024-11-19 122828.png" alt="2024-11-19 122828" style="zoom:80%;">
-
-<p>我这里不知道为什么还要加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--add-opens java.base/sun.security.provider=ALL-UNNAMED</span><br></pre></td></tr></table></figure>
-
-<p>才能F5解密。。</p>
-<p>得到一个txt文件，打开是乱码，却能看到首两个字母PK，改后缀为zip，解压</p>
-<p>需要密码，发现是伪加密，随波逐流修复一下得到flag：flag{96efd0a2037d06f34199e921079778ee}</p>
-<p><strong>40.秘密文件</strong></p>
-<p>winshark打开，查看了一下http，ftp-data，啥也没有。。</p>
-<p>过滤tcp流，看到提示，追踪tcp，发现隐藏了一个rar文件</p>
-<img src="2024-11-19 124139.png" alt="2024-11-19 124139" style="zoom:80%;">
-
-<p>用随波逐流的binwalk提取文件，得到rar，爆破密码发现是1903，得到flag：flag{d72e5a671aa50fa5f400e5d10eedeaa5}</p>
-<p><strong>41.鸡你太美</strong></p>
-<p>得到的zip一个是gif，另一个是损坏的gif，010打开发现缺少文件头，补上文件头即可拿到gif</p>
-<img src="2024-11-19 143150.gif" alt="2024-11-19 143150" style="zoom:50%;">
-
-<p>这里注意flag不是zhi-yin-you-are-beautiful，不知道为啥是下划线zhi_yin_you_are_beautiful</p>
-<p>得到flag：flag{zhi_yin_you_are_beautiful}</p>
-<p><strong>42.just_a_rar</strong></p>
-<p>得到的zip解压得到四位数.zip，直接爆破得到密码2016</p>
-<p>拿到一张flag.jpg，拖进随波逐流得到flag</p>
-<p><strong>43.snake</strong></p>
-<p>拿到zip得到一个jpg，发现有隐藏文件</p>
-<p>binwalk提取文件得到一个zip，zip里面是cyber和key</p>
-<p>key里面是V2hhdCBpcyBOaWNraSBNaW5haidzIGZhdm9yaXRlIHNvbmcgdGhhdCByZWZlcnMgdG8gc25ha2VzPwo&#x3D;</p>
-<p>base64解密得到</p>
-<p>What is Nicki Minaj’s favorite song that refers to snakes?</p>
-<p>搜了一下是anaconda，所以这是真正的key</p>
-<p>而cyber是serpent加密，解密网址<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<p>解密得到flag</p>
-<img src="2024-11-19 143133.png" alt="2024-11-19 143133" style="zoom:50%;">
-
-<p>flag：flag{who_knew_serpent_cipher_existed}</p>
-<p><strong>44.菜刀666</strong></p>
-<p>放进随波逐流用formost提取出一个zip，但是要密码，而且爆破不出来</p>
-<p>又看pcanp，过滤http.request.method&#x3D;&#x3D;POST</p>
-<img src="2024-11-19 145901.png" alt="2024-11-19 145901" style="zoom:75%;">
-
-<p>发现1068的传了FF D8 FF E0 00 10 4A 46 49 46 00 01 ( JPG的文件头 )</p>
-<p>复制下来进入010新建一个文件，保存图片得到</p>
-<img src="2024-11-19 150455.png" alt="2024-11-19 150455" style="zoom:50%;">
-
-<p>得到密码：Th1s_1s_p4sswd_!!!</p>
-<p>解压得到flag：flag{3OpWdJ-JP6FzK-koCMAK-VkfWBq-75Un2z}</p>
-<p><strong>45.一叶障目</strong></p>
-<p>随波逐流一把梭</p>
-<img src="2024-11-19 151204.png" alt="2024-11-19 151204" style="zoom: 33%;">
-
-
-
-<p><strong>46.神奇的二维码</strong></p>
-<p>得到一张二维码，CQR扫一下发现不是flag</p>
-<img src="2024-11-19 151704.png" alt="2024-11-19 151704" style="zoom:50%;">
-
-<p>拖进随波逐流binwalk提取一下文件得到716A.rar 7104.rar 17012.rar 18394.rar</p>
-<p>1.7104.rar</p>
-<p>解压得到encode.txt</p>
-<p>里面是YXNkZmdoamtsMTIzNDU2Nzg5MA&#x3D;&#x3D;</p>
-<p>base64解密一下是asdfghjkl1234567890</p>
-<p>没用，看下一个。。</p>
-<p>2.716A</p>
-<p>解压得到一张 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片和一个看看flag在不在里面^_^.zip</p>
-<p>用asdfghjkl1234567890解密zip，又得到一个 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片</p>
-<img src="2024-11-19 152700.png" alt="2024-11-19 152700" style="zoom:33%;">
-
-<p>没用，看下一个。。</p>
-<p>3.17012.zip</p>
-<p>解压得到一个flag.doc，里面是很长的字符</p>
-<p>需要多次解码base64，网上找了个脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def decode(f):</span><br><span class="line">	n = 0;</span><br><span class="line">	while True:</span><br><span class="line">		try:</span><br><span class="line">			f = base64.b64decode(f)</span><br><span class="line">			n += 1</span><br><span class="line">		except:</span><br><span class="line">			print(&#x27;[+]Base64共decode了&#123;0&#125;次，最终解码结果如下:&#x27;.format(n))</span><br><span class="line">			print(str(f,&#x27;utf-8&#x27;))</span><br><span class="line">			break</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">	f = open(&#x27;e:/Python 3.13/ccc.txt&#x27;,&#x27;r&#x27;).read()</span><br><span class="line">	decode(f)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>跑一下脚本</p>
-<img src="2024-11-19 160040.png" alt="2024-11-19 160040" style="zoom:50%;">
-
-<p>得到如下：comEON_YOuAreSOSoS0great</p>
-<p>下一个。。。</p>
-<p>4.18394.rar</p>
-<p>用comEON_YOuAreSOSoS0great去解密rar，得到一串音频，拖进aud</p>
-<img src="2024-11-19 160454.png" alt="2024-11-19 160454" style="zoom:75%;">
-
-<p>明显看出来是摩斯密码，手敲代码得</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--/---/.-./..././../.../...-/./.-./-.--/...-/./.-./-.--/./.-/.../-.--</span><br></pre></td></tr></table></figure>
-
-<p>解密最后得到flag：flag{morseisveryveryeasy}     (要注意是小写)</p>
-<p>ps：这道题好烦。。</p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Misc Ultra</title>
+      <link href="/2024/11/Misc-Ultra/"/>
+      <url>/2024/11/Misc-Ultra/</url>
+      
+        <content type="html"><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p><p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p><h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p><h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p><h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p><h1 id="2-路由器配置查看工具"><a href="#2-路由器配置查看工具" class="headerlink" title="2.路由器配置查看工具"></a>2.路由器配置查看工具</h1><h2 id="RouterPassView"><a href="#RouterPassView" class="headerlink" title="RouterPassView"></a>RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p><p>使用方法：</p><p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p><p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>]]></content>
+      
+      
       <categories>
-        <category>CTF</category>
+          
+          <category> CTF </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Misc Ultra</title>
-    <url>/2024/11/Misc-Ultra/</url>
-    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
-<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
-<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
-<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<h1 id="2-路由器配置查看工具"><a href="#2-路由器配置查看工具" class="headerlink" title="2.路由器配置查看工具"></a>2.路由器配置查看工具</h1><h2 id="RouterPassView"><a href="#RouterPassView" class="headerlink" title="RouterPassView"></a>RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
-<p>使用方法：</p>
-<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
-<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>哲学-维特根斯坦</title>
+      <link href="/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/"/>
+      <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p><p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p><p>。</p><h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p><p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p><p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p><p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p><p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p><p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p><img src="2.jpg" alt="2" style="zoom:50%;"><h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p><p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p><h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p><p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p><h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p><p><img src="3.png" alt="3"></p><h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p><p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p><h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p><h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p><p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p><p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p><h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p><p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p><h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p><p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p><p>————————————————————————————————————————</p><h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p><p>•《哲学研究》</p><h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p><p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p><p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p><p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p><p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p><h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p><p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p><p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p><h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p><h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p><p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p><p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p><p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p><h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p><p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p><p>————————————————————————————————————————</p><p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p><p><em>“告诉他们我度过了极好的一生”</em></p>]]></content>
+      
+      
       <categories>
-        <category>CTF</category>
+          
+          <category> philosophy </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> philosophy </tag>
+            
+            <tag> Wittgenstein </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>blog 为何上传不了图像的解决</title>
+      <link href="/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/"/>
+      <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p><p>而且在config.yml里有个post_asset_folder:要为true</p><p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p><p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p><p>保证相对路径的时候再插入图片</p><p>插入图片后查看github对应的文件夹下面有没有相应的图片</p><p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p><p>然后再</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p><p><img src="11.png" alt="11"></p><p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p><p>如果还传不上去的话可以缩放图片试试</p><p>（猜想：说不定可以直接在github上add file，下次试试）</p><p>ps：（这是不是图片加载慢的原因？）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ACMer</title>
+      <link href="/2024/11/ACMer/"/>
+      <url>/2024/11/ACMer/</url>
+      
+        <content type="html"><![CDATA[<p>还没想好写啥</p><p><img src="111.jpg" alt="111"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ACM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Misc Record</title>
+      <link href="/2024/11/Misc-Record/"/>
+      <url>/2024/11/Misc-Record/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h5 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h5><p>顾名思义，签到，复制提交就好</p><h5 id="2-金三胖"><a href="#2-金三胖" class="headerlink" title="2.金三胖"></a>2.金三胖</h5><p>简单的拆分gif，打开puzzlesolver一把梭</p><h5 id="3-你竟然赶我走"><a href="#3-你竟然赶我走" class="headerlink" title="3.你竟然赶我走"></a>3.你竟然赶我走</h5><p>010一把梭</p><p><img src="1.png" alt="1"></p><h5 id="4-二维码"><a href="#4-二维码" class="headerlink" title="4.二维码"></a>4.二维码</h5><p>用随波逐流分析一下发现有隐藏文件，binwalk提取出一个zip，加密的打开提示我们是4number，arp爆破出密码是7639，打开txt得到flag{vjpw_wnoei}</p><h5 id="5-大白"><a href="#5-大白" class="headerlink" title="5.大白"></a>5.大白</h5><p>随波逐流爆宽高即可</p><img src="2.png" alt="2" style="zoom:50%;"><h5 id="6-乌镇峰会种图"><a href="#6-乌镇峰会种图" class="headerlink" title="6.乌镇峰会种图"></a>6.乌镇峰会种图</h5><p>随波逐流一把梭</p><h5 id="7-wireshark"><a href="#7-wireshark" class="headerlink" title="7.wireshark"></a>7.wireshark</h5><p>查找password，追踪tcp流，得到password&#x3D;ffb7567a1d4f4abdffdb54e022f8facd</p><h5 id="8-N种方法解决"><a href="#8-N种方法解决" class="headerlink" title="8.N种方法解决"></a>8.N种方法解决</h5><p>随波逐流梭出一张二维码，微信一扫就拿到flag</p><h5 id="9-基础破解"><a href="#9-基础破解" class="headerlink" title="9.基础破解"></a>9.基础破解</h5><p>Arp暴力破解密码得到密码是2563，txt是base64加密，解密就行</p><h5 id="10-文件中的秘密"><a href="#10-文件中的秘密" class="headerlink" title="10.文件中的秘密"></a>10.文件中的秘密</h5><p>文件属性里有flag</p><h5 id="11．-zip伪加密"><a href="#11．-zip伪加密" class="headerlink" title="11． zip伪加密"></a>11． zip伪加密</h5><p>随波逐流伪加密修复即可</p><h5 id="12-LSB"><a href="#12-LSB" class="headerlink" title="12.LSB"></a>12.LSB</h5><p>Lsb隐写，用stegsolve打开可以发现藏了一张png，保存下来是一张二维码，扫一下就好</p><h5 id="13-被嗅探的流量"><a href="#13-被嗅探的流量" class="headerlink" title="13.被嗅探的流量"></a>13.被嗅探的流量</h5><p>随波逐流一把梭</p><h5 id="14-rar"><a href="#14-rar" class="headerlink" title="14.rar"></a>14.rar</h5><p>Arp爆破得到密码8795，flag{1773c5da790bd3caff38e3decd180eb7}</p><h5 id="15-qr"><a href="#15-qr" class="headerlink" title="15.qr"></a>15.qr</h5><p>CQR扫一下就行</p><h5 id="16-镜子里的世界"><a href="#16-镜子里的世界" class="headerlink" title="16.镜子里的世界"></a>16.镜子里的世界</h5><p>Zsteg一把梭</p><h5 id="17-爱因斯坦"><a href="#17-爱因斯坦" class="headerlink" title="17.爱因斯坦"></a>17.爱因斯坦</h5><p>Binwalk提取zip，要密码，在图片的属性中可以看到密码，得到flag</p><h5 id="18-ningen"><a href="#18-ningen" class="headerlink" title="18.ningen"></a>18.ningen</h5><p>图片先binwalk提取出zip，zip爆破密码得出8368，解密得到flag</p><h5 id="19-小明的保险箱"><a href="#19-小明的保险箱" class="headerlink" title="19.小明的保险箱"></a>19.小明的保险箱</h5><p>图片先binwalk提取出zip，zip爆破密码得出7869，解密得到flag</p><h5 id="20-Easycap"><a href="#20-Easycap" class="headerlink" title="20.Easycap"></a>20.Easycap</h5><p>拖进winshark，追踪TCP流得到flag</p><h5 id="21-隐藏的钥匙"><a href="#21-隐藏的钥匙" class="headerlink" title="21.隐藏的钥匙"></a>21.隐藏的钥匙</h5><p>010打开，查找base，得到加密过的数据。解密一下就是flag</p><h5 id="22-另外一个世界"><a href="#22-另外一个世界" class="headerlink" title="22.另外一个世界"></a>22.另外一个世界</h5><p>010打开后在文件末尾出现了一串神秘的二进制串，cherchef解密后恰好是flag</p><h5 id="23-数据包中的线索"><a href="#23-数据包中的线索" class="headerlink" title="23.数据包中的线索"></a>23.数据包中的线索</h5><p>导出对象为http时，追踪tcp流得到一串神秘的base64加密，复制进随波逐流用base64转图片就能看到flag</p><img src="3.png" alt="3" style="zoom:50%;"><h5 id="24-神秘龙卷风"><a href="#24-神秘龙卷风" class="headerlink" title="24.神秘龙卷风"></a>24.神秘龙卷风</h5><p>得到zip加密爆破得到密码5463，解密出的txt有多个+和.&gt;，猜测为字频统计，以.&gt;为分割，编写脚本得到flag</p><img src="4.png" alt="4" style="zoom:67%;"><h5 id="25-FLAG"><a href="#25-FLAG" class="headerlink" title="25.FLAG"></a>25.FLAG</h5><p>得到的图片用stegsolve打开查看lsb，得到一个压缩包，解压后没有后缀</p><p><img src="5.png" alt="5"></p><p>File一下发现是elf，用kali打开即可</p><p><img src="6.png" alt="6"></p><h5 id="26-假如给我三天光明"><a href="#26-假如给我三天光明" class="headerlink" title="26.假如给我三天光明"></a>26.假如给我三天光明</h5><p>拿到png一看就知道是盲文加密，解密后是kmdonowg，即为压缩包密码，解压后得到一段摩斯密码的音频，对应解密后是flag</p><p><strong>27.后门查杀</strong></p><p>打开跟我说有病毒。。给我隔离了。。。</p><p><strong>28.webshell后门</strong></p><p>同上题。。</p><p><strong>29.来首歌吧</strong></p><p>简单的摩斯密码，打开audacity对照频谱图手敲莫斯密码即可</p><img src="2024-11-18 225047.png" alt="2024-11-18 225047" style="zoom: 50%;"><p>（ ↑ 为一部分频谱图 ）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...../-.../-.-./----./..---/...../-..../....-/----./-.-./-.../-----/.----/---../---../..-./...../..---/./-..../.----/--.../-../--.../-----/----./..---/----./.----/----./.----/-.-./</span><br></pre></td></tr></table></figure><p>随波逐流解密即可</p><p><strong>30.面具下的flag</strong></p><p>得到一张知名男女图片，随波逐流一下可以发现有隐藏文件，binwalk提取一下可以发现得到一个压缩包，解压发现要密码</p><p>，可以发现zip是伪加密，修改后解压。</p><p>得到一个vmdk文件，搜了一下发现</p><p>“后缀为 <strong><code>.vmdk</code></strong> 的文件是 VMware 虚拟磁盘文件，通常用于虚拟机环境中存储虚拟机的磁盘数据。”</p><p>以为要用虚拟机的，但是打不开。<del>于是看了一下wp</del></p><p>这里的flag.vmdk用010打开后搜 <em>flag</em> 等关键字样得到这个</p><img src="2024-11-18 205339.png" alt="2024-11-18 205339" style="zoom:80%;"><p>这个</p><img src="2024-11-18 205445.png" alt="2024-11-18 205445" style="zoom:50%;"><p>还有这个</p><img src="2024-11-18 205614.png" alt="2024-11-18 205614" style="zoom:50%;"><p>直接复制好像解密不了。</p><p>打开kali，用kali自带的7z解密可以提取这些文件，输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x flag.vmdk -o./</span><br></pre></td></tr></table></figure><p> -o后面的.&#x2F;是把压缩的内容放在当前目录下，解压完成就能看见好几个文件夹</p><img src="2024-11-18 210026.png" alt="2024-11-18 210026" style="zoom:80%;"><p>这是brainfuck加密和Ook! Obfuscation加密</p><p>brainfuck加密随波逐流里有</p><p>Ook! Obfuscation加密网站：<a href="https://www.splitbrain.org/services/ook">Ook! Obfuscation解密网站</a></p><p>分别解密得到flag{N7F5_AD5_i5_funny!}</p><p><strong>31.荷兰宽带数据泄露</strong></p><p>拿到bin文件查了一下发现要用路由器解析的，用RouterPassView</p><p>打开后看了一下wp才知道username是flag</p><img src="2024-11-18 232344.png" alt="2024-11-18 232344" style="zoom:50%;"><p><strong>32.九连环</strong></p><p>拿到jpg用010看一下，发现后面有压缩包隐藏的</p><p>先试一下随波逐流的binwalk提取，失败了，没提出来</p><p>于是我们用kali的binwalk</p><p>![2024-11-19 002930](.&#x2F;Misc-Record&#x2F;2024-11-19 002930.png)</p><p>（不知道为什么我的binwalk要加一个–run-as&#x3D;root提升权限。。）</p><p>提取出来的一个图片和一个压缩包，猜测密码在图片的隐写里</p><p>用steghide跑一下，真的在里面，提取</p><img src="2024-11-19 003229.png" alt="2024-11-19 003229" style="zoom:80%;"><p>查看它，下面的就是密码</p><img src="2024-11-19 003329.png" alt="2024-11-19 003329" style="zoom:80%;"><p>直接用密码解压压缩包就能看到flag：flag{1RTo8w@&amp;4nK@z*XL}</p><p><strong>33.认真你就输了</strong></p><p>这题我学到了ms-office文件本质是zip</p><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。把01.xls重命名为01.zip，解压缩后在 xl&#x2F;charts 目录里有 flag.txt </p><p><strong>34.被劫持的神秘礼物</strong></p><p>拿到pcapng文件用wireshark打开，这里可以使用http.request.method&#x3D;&#x3D;POST进行过滤或者一个个点开看，发现</p><p>![2024-11-19 113909](.&#x2F;Misc-Record&#x2F;2024-11-19 113909.png)</p><p>得到账号密码adminaadminb，包上小写md5，flag{1d240aafe21a86afc11f38a45b541a49}</p><p><strong>35.被偷走的文件</strong></p><p>提到偷走文件一般要清楚是找HTTP或者FTP，看到导出对象里有FTP-DATA，保存这个flag.rar</p><img src="2024-11-19 115640.png" alt="2024-11-19 115640" style="zoom:75%;"><p>保存下来发现要密码解压，爆破可以发现，密码是5790，得到flag</p><p><strong>36.藏藏藏</strong></p><p>得到一个jpg，用随波逐流的formost提取，得到一个zip，打开是个xlsx，一张二维码，用QR扫码得到flag</p><img src="2024-11-19 120348.png" alt="2024-11-19 120348" style="zoom:50%;"><p><strong>37.佛系青年</strong></p><p>拿到的zip拖进随波逐流看一下，发现第一个jpg无加密，第二个txt伪加密，修复一下</p><p>jpg上说我FFF佛慈悲，txt内容为</p><img src="2024-11-19 121044.png" alt="2024-11-19 121044" style="zoom:67%;"><p>发现是与佛论禅编码，随波逐流得到flag</p><p><strong>38.你猜我是个啥</strong></p><p>随波逐流一把梭</p><p><strong>39.刷新过的图片</strong></p><p>关键词“刷新”，很可能是F5-steganography加密，尝试解密</p><img src="2024-11-19 122828.png" alt="2024-11-19 122828" style="zoom:80%;"><p>我这里不知道为什么还要加上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--add-opens java.base/sun.security.provider=ALL-UNNAMED</span><br></pre></td></tr></table></figure><p>才能F5解密。。</p><p>得到一个txt文件，打开是乱码，却能看到首两个字母PK，改后缀为zip，解压</p><p>需要密码，发现是伪加密，随波逐流修复一下得到flag：flag{96efd0a2037d06f34199e921079778ee}</p><p><strong>40.秘密文件</strong></p><p>winshark打开，查看了一下http，ftp-data，啥也没有。。</p><p>过滤tcp流，看到提示，追踪tcp，发现隐藏了一个rar文件</p><img src="2024-11-19 124139.png" alt="2024-11-19 124139" style="zoom:80%;"><p>用随波逐流的binwalk提取文件，得到rar，爆破密码发现是1903，得到flag：flag{d72e5a671aa50fa5f400e5d10eedeaa5}</p><p><strong>41.鸡你太美</strong></p><p>得到的zip一个是gif，另一个是损坏的gif，010打开发现缺少文件头，补上文件头即可拿到gif</p><img src="2024-11-19 143150.gif" alt="2024-11-19 143150" style="zoom:50%;"><p>这里注意flag不是zhi-yin-you-are-beautiful，不知道为啥是下划线zhi_yin_you_are_beautiful</p><p>得到flag：flag{zhi_yin_you_are_beautiful}</p><p><strong>42.just_a_rar</strong></p><p>得到的zip解压得到四位数.zip，直接爆破得到密码2016</p><p>拿到一张flag.jpg，拖进随波逐流得到flag</p><p><strong>43.snake</strong></p><p>拿到zip得到一个jpg，发现有隐藏文件</p><p>binwalk提取文件得到一个zip，zip里面是cyber和key</p><p>key里面是V2hhdCBpcyBOaWNraSBNaW5haidzIGZhdm9yaXRlIHNvbmcgdGhhdCByZWZlcnMgdG8gc25ha2VzPwo&#x3D;</p><p>base64解密得到</p><p>What is Nicki Minaj’s favorite song that refers to snakes?</p><p>搜了一下是anaconda，所以这是真正的key</p><p>而cyber是serpent加密，解密网址<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p><p>解密得到flag</p><img src="2024-11-19 143133.png" alt="2024-11-19 143133" style="zoom:50%;"><p>flag：flag{who_knew_serpent_cipher_existed}</p><p><strong>44.菜刀666</strong></p><p>放进随波逐流用formost提取出一个zip，但是要密码，而且爆破不出来</p><p>又看pcanp，过滤http.request.method&#x3D;&#x3D;POST</p><img src="2024-11-19 145901.png" alt="2024-11-19 145901" style="zoom:75%;"><p>发现1068的传了FF D8 FF E0 00 10 4A 46 49 46 00 01 ( JPG的文件头 )</p><p>复制下来进入010新建一个文件，保存图片得到</p><img src="2024-11-19 150455.png" alt="2024-11-19 150455" style="zoom:50%;"><p>得到密码：Th1s_1s_p4sswd_!!!</p><p>解压得到flag：flag{3OpWdJ-JP6FzK-koCMAK-VkfWBq-75Un2z}</p><p><strong>45.一叶障目</strong></p><p>随波逐流一把梭</p><img src="2024-11-19 151204.png" alt="2024-11-19 151204" style="zoom: 33%;"><p><strong>46.神奇的二维码</strong></p><p>得到一张二维码，CQR扫一下发现不是flag</p><img src="2024-11-19 151704.png" alt="2024-11-19 151704" style="zoom:50%;"><p>拖进随波逐流binwalk提取一下文件得到716A.rar 7104.rar 17012.rar 18394.rar</p><p>1.7104.rar</p><p>解压得到encode.txt</p><p>里面是YXNkZmdoamtsMTIzNDU2Nzg5MA&#x3D;&#x3D;</p><p>base64解密一下是asdfghjkl1234567890</p><p>没用，看下一个。。</p><p>2.716A</p><p>解压得到一张 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片和一个看看flag在不在里面^_^.zip</p><p>用asdfghjkl1234567890解密zip，又得到一个 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片</p><img src="2024-11-19 152700.png" alt="2024-11-19 152700" style="zoom:33%;"><p>没用，看下一个。。</p><p>3.17012.zip</p><p>解压得到一个flag.doc，里面是很长的字符</p><p>需要多次解码base64，网上找了个脚本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def decode(f):</span><br><span class="line">n = 0;</span><br><span class="line">while True:</span><br><span class="line">try:</span><br><span class="line">f = base64.b64decode(f)</span><br><span class="line">n += 1</span><br><span class="line">except:</span><br><span class="line">print(&#x27;[+]Base64共decode了&#123;0&#125;次，最终解码结果如下:&#x27;.format(n))</span><br><span class="line">print(str(f,&#x27;utf-8&#x27;))</span><br><span class="line">break</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">f = open(&#x27;e:/Python 3.13/ccc.txt&#x27;,&#x27;r&#x27;).read()</span><br><span class="line">decode(f)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>跑一下脚本</p><img src="2024-11-19 160040.png" alt="2024-11-19 160040" style="zoom:50%;"><p>得到如下：comEON_YOuAreSOSoS0great</p><p>下一个。。。</p><p>4.18394.rar</p><p>用comEON_YOuAreSOSoS0great去解密rar，得到一串音频，拖进aud</p><img src="2024-11-19 160454.png" alt="2024-11-19 160454" style="zoom:75%;"><p>明显看出来是摩斯密码，手敲代码得</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--/---/.-./..././../.../...-/./.-./-.--/...-/./.-./-.--/./.-/.../-.--</span><br></pre></td></tr></table></figure><p>解密最后得到flag：flag{morseisveryveryeasy}     (要注意是小写)</p><p>ps：这道题好烦。。</p>]]></content>
+      
+      
       <categories>
-        <category>CTF</category>
+          
+          <category> CTF </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
-<p>如果还传不上去的话可以缩放图片试试</p>
-<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
-<p>ps：（这是不是图片加载慢的原因？）</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>哲学-维特根斯坦</title>
-    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
-    <content><![CDATA[<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p>
-<p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p>
-<p>。</p>
-<h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p>
-<p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p>
-<p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p>
-<p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p>
-<p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p>
-<p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p>
-<img src="2.jpg" alt="2" style="zoom:50%;">
-
-
-
-<h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p>
-<p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p>
-<h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p>
-<p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p>
-<h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p>
-<p><img src="3.png" alt="3"></p>
-<h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p>
-<p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p>
-<h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p>
-<h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p>
-<p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p>
-<p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p>
-<h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p>
-<p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p>
-<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p>
-<p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p>
-<p>————————————————————————————————————————</p>
-<h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p>
-<p>•《哲学研究》</p>
-<h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p>
-<p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p>
-<p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p>
-<p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p>
-<p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p>
-<h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p>
-<p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p>
-<p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p>
-<h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p>
-<h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p>
-<p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p>
-<p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p>
-<p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p>
-<h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p>
-<p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p>
-<p>————————————————————————————————————————</p>
-<p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p>
-<p><em>“告诉他们我度过了极好的一生”</em></p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Reverse Record</title>
+      <link href="/2024/11/Reverse-Record/"/>
+      <url>/2024/11/Reverse-Record/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p><h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p><p><img src="re2.png" alt="re2"></p><p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p><p><img src="re3.png" alt="re3"></p><p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p><p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>]]></content>
+      
+      
       <categories>
-        <category>philosophy</category>
+          
+          <category> CTF </category>
+          
       </categories>
-      <tags>
-        <tag>philosophy</tag>
-        <tag>Wittgenstein</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> reverse </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Before-everthing</title>
+      <link href="/2024/11/hello-world/"/>
+      <url>/2024/11/hello-world/</url>
+      
+        <content type="html"><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p><p>尽量使自己学有所得–</p><p>——————————</p><p>作者VX:</p><p>x3289444724</p><p>作者QQ:</p><p>3289444724</p><p>联系电话:</p><p>①13968975069</p><p>②18072320271</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
