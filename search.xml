@@ -11,78 +11,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Misc Ultra</title>
-    <url>/2024/11/Misc-Ultra/</url>
-    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
-<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
-<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
-<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<h1 id="2-路由器配置查看工具"><a href="#2-路由器配置查看工具" class="headerlink" title="2.路由器配置查看工具"></a>2.路由器配置查看工具</h1><h2 id="RouterPassView"><a href="#RouterPassView" class="headerlink" title="RouterPassView"></a>RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
-<p>使用方法：</p>
-<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
-<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
-<p>如果还传不上去的话可以缩放图片试试</p>
-<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
-<p>ps：（这是不是图片加载慢的原因？）</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Misc Record</title>
     <url>/2024/11/Misc-Record/</url>
     <content><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h5 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h5><p>顾名思义，签到，复制提交就好</p>
@@ -310,6 +238,78 @@
       <tags>
         <tag>CTF</tag>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Misc Ultra</title>
+    <url>/2024/11/Misc-Ultra/</url>
+    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
+<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
+<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
+<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
+<h1 id="2-路由器配置查看工具"><a href="#2-路由器配置查看工具" class="headerlink" title="2.路由器配置查看工具"></a>2.路由器配置查看工具</h1><h2 id="RouterPassView"><a href="#RouterPassView" class="headerlink" title="RouterPassView"></a>RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
+<p>使用方法：</p>
+<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
+<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
+<p>而且在config.yml里有个post_asset_folder:要为true</p>
+<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
+<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
+<p>保证相对路径的时候再插入图片</p>
+<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
+<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
+<p>然后再</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
+<p><img src="11.png" alt="11"></p>
+<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
+<p>如果还传不上去的话可以缩放图片试试</p>
+<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
+<p>ps：（这是不是图片加载慢的原因？）</p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
