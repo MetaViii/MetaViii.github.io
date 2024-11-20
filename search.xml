@@ -338,7 +338,7 @@
 <img src="2024-11-20 215047.png" alt="2024-11-20 215047" style="zoom:33%;">
 
 <p>得到flag：flag{shanxiajingwu_won_the_game}</p>
-<h3 id="53-ACTF新生赛2020-outguess"><a href="#53-ACTF新生赛2020-outguess" class="headerlink" title="53.[ACTF新生赛2020]outguess"></a>53.[ACTF新生赛2020]outguess</h3><p>拿到一堆东西，txt里让我们guess一下flag在哪，一看就很明显是旁边的mmm.jpg里</p>
+<h3 id="52-ACTF新生赛2020-outguess"><a href="#52-ACTF新生赛2020-outguess" class="headerlink" title="52.[ACTF新生赛2020]outguess"></a>52.[ACTF新生赛2020]outguess</h3><p>拿到一堆东西，txt里让我们guess一下flag在哪，一看就很明显是旁边的mmm.jpg里</p>
 <p>而且是outguess隐写</p>
 <p>这里我们要注意的是直接去无密文outguess会显示</p>
 <blockquote>
@@ -352,15 +352,15 @@
 <img src="2024-11-20 215800.png" alt="2024-11-20 215800" style="zoom:80%;">
 
 <p>得到flag：flag{gue33_Gu3Ss!2020}</p>
-<h3 id="54-WUSTCTF2020-find-me"><a href="#54-WUSTCTF2020-find-me" class="headerlink" title="54.[WUSTCTF2020]find_me"></a>54.[WUSTCTF2020]find_me</h3><p>一定一定要多看属性！</p>
+<h3 id="53-WUSTCTF2020-find-me"><a href="#53-WUSTCTF2020-find-me" class="headerlink" title="53.[WUSTCTF2020]find_me"></a>53.[WUSTCTF2020]find_me</h3><p>一定一定要多看属性！</p>
 <p>属性备注里面有盲文   ⡇⡓⡄⡖⠂⠀⠂⠀⡋⡉⠔⠀⠔⡅⡯⡖⠔⠁⠔⡞⠔⡔⠔⡯⡽⠔⡕⠔⡕⠔⡕⠔⡕⠔⡕⡍&#x3D;</p>
 <p>随波逐流解密得到flag：flag{y$0$u_f$1$n$d$_M$e$e$e$e$e}</p>
-<h3 id="55-穿越时空的思念"><a href="#55-穿越时空的思念" class="headerlink" title="55.穿越时空的思念"></a>55.穿越时空的思念</h3><p>得到音频听一下能在右声道发现明显的莫斯密码，手敲得</p>
+<h3 id="54-穿越时空的思念"><a href="#54-穿越时空的思念" class="headerlink" title="54.穿越时空的思念"></a>54.穿越时空的思念</h3><p>得到音频听一下能在右声道发现明显的莫斯密码，手敲得</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">..-./-----/..---/----./-.../-../-..../..-./...../...../.----/.----/...--/----./././-.././-.../---.././....-/...../.-/.----/--.../...../-.../-----/--.../---../-..../..-./-----/..---/----./-.../-../-..../..-./.....</span><br></pre></td></tr></table></figure>
 
 <p>解密，得F029BD6F551139EEDEB8E45A175B0786F029BD6F5</p>
 <p>取前32位小写得flag：flag{f029bd6f551139eedeb8e45a175b0786}</p>
-<h3 id="56-SWPU2019-我有一只马里奥"><a href="#56-SWPU2019-我有一只马里奥" class="headerlink" title="56.[SWPU2019]我有一只马里奥"></a>56.[SWPU2019]我有一只马里奥</h3><p>得到一个exe，执行后得到1.txt，里面写着ntfs      flag.txt</p>
+<h3 id="55-SWPU2019-我有一只马里奥"><a href="#55-SWPU2019-我有一只马里奥" class="headerlink" title="55.[SWPU2019]我有一只马里奥"></a>55.[SWPU2019]我有一只马里奥</h3><p>得到一个exe，执行后得到1.txt，里面写着ntfs      flag.txt</p>
 <p><del>有点不会了，看了下wp</del></p>
 <p>查到了</p>
 <blockquote>
@@ -392,20 +392,20 @@
 <img src="2024-11-20 232606.png" alt="2024-11-20 232606" style="zoom:80%;">
 
 <p>运行这个notepad 1.txt:flag.txt后就能看到flag：flag{ddg_is_cute}</p>
-<h3 id="57-GUET-CTF2019-KO"><a href="#57-GUET-CTF2019-KO" class="headerlink" title="57.[GUET-CTF2019]KO"></a>57.[GUET-CTF2019]KO</h3><p>打开文本是明显的Ook!加密</p>
+<h3 id="56-GUET-CTF2019-KO"><a href="#56-GUET-CTF2019-KO" class="headerlink" title="56.[GUET-CTF2019]KO"></a>56.[GUET-CTF2019]KO</h3><p>打开文本是明显的Ook!加密</p>
 <p>拖进在线网站直接解密就好（网站见Misc Ultra）</p>
 <p>flag：flag{welcome to CTF}</p>
-<h3 id="58-ACTF新生赛2020-base64隐写"><a href="#58-ACTF新生赛2020-base64隐写" class="headerlink" title="58.[ACTF新生赛2020]base64隐写"></a>58.[ACTF新生赛2020]base64隐写</h3><p>解压zip得到一个txt和hint</p>
+<h3 id="57-ACTF新生赛2020-base64隐写"><a href="#57-ACTF新生赛2020-base64隐写" class="headerlink" title="57.[ACTF新生赛2020]base64隐写"></a>57.[ACTF新生赛2020]base64隐写</h3><p>解压zip得到一个txt和hint</p>
 <p>txt里面是多行base64加密过的，复制进随波逐流</p>
 <p>选择“base64隐写解密”直接得到flag：flag{6aseb4_f33!}</p>
 <p>（？？？</p>
 <p>看了一下wp发现这题base64解密过后是一个python2脚本，需要复制进kali跑脚本出flag</p>
 <p>没啥好说的，随波逐流太好用了。。还能顺手给你把脚本跑了。。</p>
-<h3 id="59-MRCTF2020-ezmisc"><a href="#59-MRCTF2020-ezmisc" class="headerlink" title="59.[MRCTF2020]ezmisc"></a>59.[MRCTF2020]ezmisc</h3><p>随波逐流爆破宽高得</p>
+<h3 id="58-MRCTF2020-ezmisc"><a href="#58-MRCTF2020-ezmisc" class="headerlink" title="58.[MRCTF2020]ezmisc"></a>58.[MRCTF2020]ezmisc</h3><p>随波逐流爆破宽高得</p>
 <img src="2024-11-20 232690.png" alt="2024-11-20 232690" style="zoom:50%;">
 
 <p>flag：flag{1ts_vEryyyyyy_ez!}</p>
-<h3 id="60-GXYCTF2019-gakki"><a href="#60-GXYCTF2019-gakki" class="headerlink" title="60.[GXYCTF2019]gakki"></a>60.[GXYCTF2019]gakki</h3><p>拿到wolaopo.jpg，发现有文件隐写</p>
+<h3 id="59-GXYCTF2019-gakki"><a href="#59-GXYCTF2019-gakki" class="headerlink" title="59.[GXYCTF2019]gakki"></a>59.[GXYCTF2019]gakki</h3><p>拿到wolaopo.jpg，发现有文件隐写</p>
 <p>binwalk提取得到zip，有密码</p>
 <p>arp爆破得密码是8864，拿到一个毫无规律的txt，里面如同乱码</p>
 <p><del>查了一下wp</del></p>
@@ -415,16 +415,16 @@
 <p>flag就是频率前几个的</p>
 <p>flag：flag{gaki_IsMyw1fe}</p>
 <p>（脑洞好大这题）</p>
-<h3 id="61-HBNIS2018-caesar"><a href="#61-HBNIS2018-caesar" class="headerlink" title="61.[HBNIS2018]caesar"></a>61.[HBNIS2018]caesar</h3><p>全文：</p>
+<h3 id="60-HBNIS2018-caesar"><a href="#60-HBNIS2018-caesar" class="headerlink" title="60.[HBNIS2018]caesar"></a>60.[HBNIS2018]caesar</h3><p>全文：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">题目：caesar</span><br><span class="line"></span><br><span class="line">描述：gmbhjtdbftbs</span><br><span class="line"></span><br><span class="line">flag格式：XXX 明文</span><br><span class="line"></span><br><span class="line">提交：直接提交明文 （小写）</span><br></pre></td></tr></table></figure>
 
 <p>直接凯撒解密得flagiscaesar</p>
 <p>flag：flag{flagiscaesar}</p>
-<h3 id="62-SUCTF2018-single-dog"><a href="#62-SUCTF2018-single-dog" class="headerlink" title="62.[SUCTF2018]single dog"></a>62.[SUCTF2018]single dog</h3><p>拿到jpg发现后接了文本，binwalk提取一下是个zip</p>
+<h3 id="61-SUCTF2018-single-dog"><a href="#61-SUCTF2018-single-dog" class="headerlink" title="61.[SUCTF2018]single dog"></a>61.[SUCTF2018]single dog</h3><p>拿到jpg发现后接了文本，binwalk提取一下是个zip</p>
 <p>解压得1.txt里面是一堆颜文字，查了一下是AAencode，除此之外还有jjencode、ppencode、rrencode、uuencode、xxencode</p>
 <p>利用随波逐流解密即可，也可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p>
 <p>解码得flag：flag{happy double eleven}</p>
-<h3 id="63-黑客帝国"><a href="#63-黑客帝国" class="headerlink" title="63.黑客帝国"></a>63.黑客帝国</h3><p>zip解压一下看到很长的txt，开头是52617221，是rar文件头</p>
+<h3 id="62-黑客帝国"><a href="#62-黑客帝国" class="headerlink" title="62.黑客帝国"></a>62.黑客帝国</h3><p>zip解压一下看到很长的txt，开头是52617221，是rar文件头</p>
 <p>010存一下，得到rar，解压要密码，爆破得到3690</p>
 <p>解压得到一个png，但是打不开，010看一下</p>
 <img src="2024-11-21 001233.png" alt="2024-11-21 001233" style="zoom:80%;">
@@ -436,14 +436,14 @@
 <img src="2024-11-21 002034.png" alt="2024-11-21 002034" style="zoom:50%;">
 
 <p>flag：flag{57cd4cfd4e07505b98048ca106132125}</p>
-<h2 id="64-HBNIS2018-低个头"><a href="#64-HBNIS2018-低个头" class="headerlink" title="64.[HBNIS2018]低个头"></a>64.[HBNIS2018]低个头</h2><p>全文：</p>
+<h3 id="63-HBNIS2018-低个头"><a href="#63-HBNIS2018-低个头" class="headerlink" title="63.[HBNIS2018]低个头"></a>63.[HBNIS2018]低个头</h3><p>全文：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">题目：低个头</span><br><span class="line"></span><br><span class="line">描述：EWAZX RTY TGB IJN IO KL 请破解该密文 f</span><br><span class="line"></span><br><span class="line">lag格式：XXX 明文</span><br><span class="line"></span><br><span class="line">提交：直接提交明文（大写）</span><br></pre></td></tr></table></figure>
 
 <p>脑洞题。。。<del>查了一下wp</del></p>
 <p>题目“低个头”的意思竟然是让你低头看键盘</p>
 <p>而那些字母在键盘上组合起来组成CTF。。</p>
 <p>所以flag：flag{CTF}</p>
-<h3 id="65-SWPU2019-伟大的侦探"><a href="#65-SWPU2019-伟大的侦探" class="headerlink" title="65.[SWPU2019]伟大的侦探"></a>65.[SWPU2019]伟大的侦探</h3><p>zip是有密码的，而且爆破不出来</p>
+<h3 id="64-SWPU2019-伟大的侦探"><a href="#64-SWPU2019-伟大的侦探" class="headerlink" title="64.[SWPU2019]伟大的侦探"></a>64.[SWPU2019]伟大的侦探</h3><p>zip是有密码的，而且爆破不出来</p>
 <p>密码txt里面有一串乱码是密码</p>
 <p>这里需要我们用010打开txt，而且在视图上选择EBCDIC（还不清楚为什么。。</p>
 <img src="2024-11-21 003029.png" alt="2024-11-21 003029" style="zoom:80%;">
@@ -465,21 +465,6 @@
         <tag>CTF</tag>
         <tag>misc</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
-]]></content>
   </entry>
   <entry>
     <title>blog 为何上传不了图像的解决</title>
@@ -511,6 +496,21 @@
       <tags>
         <tag>blog</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Before-everthing</title>
+    <url>/2024/11/hello-world/</url>
+    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
+<p>尽量使自己学有所得–</p>
+<p>——————————</p>
+<p>作者VX:</p>
+<p>x3289444724</p>
+<p>作者QQ:</p>
+<p>3289444724</p>
+<p>联系电话:</p>
+<p>①13968975069</p>
+<p>②18072320271</p>
+]]></content>
   </entry>
   <entry>
     <title>哲学-维特根斯坦</title>
