@@ -11,100 +11,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Misc Ultra</title>
-    <url>/2024/11/Misc-Ultra/</url>
-    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
-<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
-<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
-<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<h2 id="1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode"><a href="#1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode" class="headerlink" title="1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)"></a>1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)</h2><p>-aaencode随波逐流里面有</p>
-<p>-其他的可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p>
-<h2 id="1-5看不懂的乱码"><a href="#1-5看不懂的乱码" class="headerlink" title="1.5看不懂的乱码"></a>1.5看不懂的乱码</h2><p>诸如</p>
-<img src="2024-11-21 004240.png" alt="2024-11-21 004240" style="zoom:50%;">
-
-<p>这样实在看不懂的乱码可以试试把txt拖进010，</p>
-<p>在010的视图里面选择EBCDIC，说不定能看到。</p>
-<h1 id="2-各种文件头尾"><a href="#2-各种文件头尾" class="headerlink" title="2.各种文件头尾"></a>2.各种文件头尾</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.zip的文件头：50 4B 03 04 14 00 08 00</span><br><span class="line">.rar的文件头：52 61 72 21</span><br><span class="line">.rar的文件尾：C4 3D 7B 00 40 07 00</span><br><span class="line">.7z的文件头：37 7A BC AF 27 1C</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.jpg的文件头：FF D8 FF E0 00 10 4A 46 49 46 00 01</span><br><span class="line">.png的文件头：89 50 4e 47 0d 0a 1a 0a   文件尾：49 45 4E 44 AE 42 60 82</span><br><span class="line">.gif的文件头：47 49 46 38 39 61（GIF89A）或 47 49 46 38 37 61（GIF87A）</span><br><span class="line">.gif的文件尾：00 3B</span><br><span class="line">.gz的文件头：1F 8B 08 00</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.psd的文件头：38 42 50 53</span><br><span class="line">TIFF (tif)，文件头：49492A00</span><br><span class="line">Windows [Bitmap](https://so.csdn.net/so/search?q=Bitmap&amp;spm=1001.2101.3001.7020) (bmp)，文件头：424D</span><br><span class="line">CAD (dwg)，文件头：41433130</span><br><span class="line">Adobe Photoshop (psd)，文件头：38425053</span><br><span class="line">Rich Text Format (rtf)，文件头：7B5C727466</span><br><span class="line">XML (xml)，文件头：3C3F786D6C</span><br><span class="line">HTML (html)，文件头：68746D6C3E</span><br><span class="line">Email [thorough only] (eml)，文件头：44656C69766572792D646174653A</span><br><span class="line">Outlook Express (dbx)，文件头：CFAD12FEC5FD746F</span><br><span class="line">Outlook (pst)，文件头：2142444E</span><br><span class="line">MS Word/Excel (xls.or.doc)，文件头：D0CF11E0</span><br><span class="line">MS Access (mdb)，文件头：5374616E64617264204A</span><br><span class="line">WordPerfect (wpd)，文件头：FF575043</span><br><span class="line">Postscript (eps.or.ps)，文件头：252150532D41646F6265</span><br><span class="line">Adobe Acrobat (pdf)，文件头：255044462D312E</span><br><span class="line">Quicken (qdf)，文件头：AC9EBD8F</span><br><span class="line">Windows Password (pwl)，文件头：E3828596</span><br><span class="line">Wave (wav)，文件头：57415645</span><br><span class="line">AVI (avi)，文件头：41564920</span><br><span class="line">Real Audio (ram)，文件头：2E7261FD</span><br><span class="line">Real Media (rm)，文件头：2E524D46</span><br><span class="line">MPEG (mpg)，文件头：000001BA</span><br><span class="line">MPEG (mpg)，文件头：000001B3</span><br><span class="line">Quicktime (mov)，文件头：6D6F6F76</span><br><span class="line">Windows Media (asf)，文件头：3026B2758E66CF11</span><br><span class="line">MIDI (mid)，文件头：4D546864</span><br><span class="line">M4a，文件头：00000018667479704D3441</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="3-画图工具"><a href="#3-画图工具" class="headerlink" title="3.画图工具"></a>3.画图工具</h1><h2 id="3-1-gnuplot"><a href="#3-1-gnuplot" class="headerlink" title="3.1 gnuplot"></a>3.1 gnuplot</h2><p>得到诸如（7，7）的文本我们需要转化成 7 7 ，如</p>
-<img src="2024-11-20 212245.png" alt="2024-11-20 212245" style="zoom:25%;">
-
-<p>转化成 ↓ ↓ ↓</p>
-<img src="2024-11-20 213106.png" alt="2024-11-20 213106" style="zoom:25%;">
-
-<p>这里的转化我们可以使用脚本：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后再用</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>gnuplot</p>
-<p>plot ‘zuobiao.txt’  </p>
-</blockquote>
-<p>来进行画图，画好后会自己打开</p>
-<h1 id="4-路由器配置查看工具"><a href="#4-路由器配置查看工具" class="headerlink" title="4.路由器配置查看工具"></a>4.路由器配置查看工具</h1><h2 id="4-1-RouterPassView"><a href="#4-1-RouterPassView" class="headerlink" title="4.1 RouterPassView"></a>4.1 RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
-<p>使用方法：</p>
-<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
-<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
-<h1 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h1><h2 id="5-1-ms-office文件本质是zip"><a href="#5-1-ms-office文件本质是zip" class="headerlink" title="5.1 ms-office文件本质是zip"></a>5.1 ms-office文件本质是zip</h2><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。</p>
-<p>可以直接改后缀名为zip</p>
-<h2 id="5-2-NTFS交换数据流（简称ADS）"><a href="#5-2-NTFS交换数据流（简称ADS）" class="headerlink" title="5.2 NTFS交换数据流（简称ADS）"></a>5.2 NTFS交换数据流（简称ADS）</h2><p>  <strong>NTFS交换数据流（简称ADS）是NTFS磁盘格式的一个特性，在NTFS文件系统下，每个文件都可以存在多个数据流，除了主文件流之外还可以有许多非主文件流寄宿在主文件流中，而我们无法查看到非主文件数据流，因文件夹大小始终显示0</strong></p>
-<p>  <strong>以下是进行文件流计生和查看的方法，以后在windows命令行下查看文件，都用 dir &#x2F;r</strong></p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>寄生一:</p>
-<p>echo 写入内容&gt;&gt;宿主文件:交换数据流文件(寄生文件)</p>
-<p>echo ever&gt;&gt;1.txt:2.txt</p>
-<p>2.txt为echo创建出交换数据流文件，ever在2.txt中</p>
-<p>寄生二:</p>
-<p>type 交换数据流文件(寄生文件)&gt;&gt;宿主文件夹:交换数据流文件(寄生文件)</p>
-<p>type 2.txt&gt;&gt;temp:2.txt</p>
-<p>temp为空文件夹,执行后2.txt寄生在temp文件夹上</p>
-<p>type a.jpg&gt;&gt;temp:a.jpg</p>
-<p>temp为空文件夹,执行后a.jpg寄生在temp文件夹上</p>
-<p>查看:</p>
-<p>notepad 宿主文件:交换数据流文件(寄生文件）</p>
-<p>notepad 1.txt:2.txt</p>
-<p>查看图片文件:</p>
-<p>mspaint 宿主文件:交换数据流文件(寄生文件)</p>
-<p>notepad a.jpg:b.jpg</p>
-</blockquote>
-<p>例题可以看BUUctf的 [SWPU2019]我有一只马里奥</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Misc Record</title>
     <url>/2024/11/Misc-Record/</url>
     <content><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h3 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h3><p>顾名思义，签到，复制提交就好</p>
@@ -152,7 +58,18 @@
 <p><img src="6.png" alt="6"></p>
 <h3 id="26-假如给我三天光明"><a href="#26-假如给我三天光明" class="headerlink" title="26.假如给我三天光明"></a>26.假如给我三天光明</h3><p>拿到png一看就知道是盲文加密，解密后是kmdonowg，即为压缩包密码，解压后得到一段摩斯密码的音频，对应解密后是flag</p>
 <h3 id="27-后门查杀"><a href="#27-后门查杀" class="headerlink" title="27.后门查杀"></a><strong>27.后门查杀</strong></h3><p>打开跟我说有病毒。。给我隔离了。。。</p>
-<h3 id="28-webshell后门"><a href="#28-webshell后门" class="headerlink" title="28.webshell后门"></a><strong>28.webshell后门</strong></h3><p>同上题。。</p>
+<p>选择保留在电脑上，得到一个html文件夹</p>
+<p>这里需要使用D盾来查杀</p>
+<img src="2024-11-21 164839.png" alt="2024-11-21 164839" style="zoom:50%;">
+
+<p>看到</p>
+<img src="2024-11-21 164508.png" alt="2024-11-21 164508" style="zoom:50%;">
+
+<p>得到密码，flag：flag{6ac45fb83b3bc355c024f5034b947dd3}</p>
+<h3 id="28-webshell后门"><a href="#28-webshell后门" class="headerlink" title="28.webshell后门"></a><strong>28.webshell后门</strong></h3><p>与上题类似。D盾扫描</p>
+<img src="2024-11-21 165430.png" alt="2024-11-21 165430" style="zoom:50%;">
+
+<p>在第一个文件中能看到pass，flag：flag{ba8e6c6f35a53933b871480bb9a9545c}</p>
 <h3 id="29-来首歌吧"><a href="#29-来首歌吧" class="headerlink" title="29.来首歌吧"></a><strong>29.来首歌吧</strong></h3><p>简单的摩斯密码，打开audacity对照频谱图手敲莫斯密码即可</p>
 <img src="2024-11-18 225047.png" alt="2024-11-18 225047" style="zoom: 50%;">
 
@@ -457,6 +374,103 @@
 
 <p>对照出来是iloveholmesandwllm</p>
 <p>flag：flag{iloveholmesandwllm}</p>
+<h3 id="65-MRCTF2020-你能看懂音符吗"><a href="#65-MRCTF2020-你能看懂音符吗" class="headerlink" title="65.[MRCTF2020]你能看懂音符吗"></a>65.[MRCTF2020]你能看懂音符吗</h3><p>压缩包解压不了，010打开发现修改了文件头</p>
+<p>改回来，解压，得到一个docx文档，里面没啥内容</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Misc Ultra</title>
+    <url>/2024/11/Misc-Ultra/</url>
+    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
+<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
+<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
+<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
+<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
+<h2 id="1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode"><a href="#1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode" class="headerlink" title="1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)"></a>1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)</h2><p>-aaencode随波逐流里面有</p>
+<p>-其他的可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p>
+<h2 id="1-5看不懂的乱码"><a href="#1-5看不懂的乱码" class="headerlink" title="1.5看不懂的乱码"></a>1.5看不懂的乱码</h2><p>诸如</p>
+<img src="2024-11-21 004240.png" alt="2024-11-21 004240" style="zoom:50%;">
+
+<p>这样实在看不懂的乱码可以试试把txt拖进010，</p>
+<p>在010的视图里面选择EBCDIC，说不定能看到。</p>
+<h1 id="2-各种文件头尾"><a href="#2-各种文件头尾" class="headerlink" title="2.各种文件头尾"></a>2.各种文件头尾</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.zip的文件头：50 4B 03 04 14 00 08 00</span><br><span class="line">.rar的文件头：52 61 72 21</span><br><span class="line">.rar的文件尾：C4 3D 7B 00 40 07 00</span><br><span class="line">.7z的文件头：37 7A BC AF 27 1C</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.jpg的文件头：FF D8 FF E0 00 10 4A 46 49 46 00 01</span><br><span class="line">.png的文件头：89 50 4e 47 0d 0a 1a 0a   文件尾：49 45 4E 44 AE 42 60 82</span><br><span class="line">.gif的文件头：47 49 46 38 39 61（GIF89A）或 47 49 46 38 37 61（GIF87A）</span><br><span class="line">.gif的文件尾：00 3B</span><br><span class="line">.gz的文件头：1F 8B 08 00</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.psd的文件头：38 42 50 53</span><br><span class="line">TIFF (tif)，文件头：49492A00</span><br><span class="line">Windows [Bitmap](https://so.csdn.net/so/search?q=Bitmap&amp;spm=1001.2101.3001.7020) (bmp)，文件头：424D</span><br><span class="line">CAD (dwg)，文件头：41433130</span><br><span class="line">Adobe Photoshop (psd)，文件头：38425053</span><br><span class="line">Rich Text Format (rtf)，文件头：7B5C727466</span><br><span class="line">XML (xml)，文件头：3C3F786D6C</span><br><span class="line">HTML (html)，文件头：68746D6C3E</span><br><span class="line">Email [thorough only] (eml)，文件头：44656C69766572792D646174653A</span><br><span class="line">Outlook Express (dbx)，文件头：CFAD12FEC5FD746F</span><br><span class="line">Outlook (pst)，文件头：2142444E</span><br><span class="line">MS Word/Excel (xls.or.doc)，文件头：D0CF11E0</span><br><span class="line">MS Access (mdb)，文件头：5374616E64617264204A</span><br><span class="line">WordPerfect (wpd)，文件头：FF575043</span><br><span class="line">Postscript (eps.or.ps)，文件头：252150532D41646F6265</span><br><span class="line">Adobe Acrobat (pdf)，文件头：255044462D312E</span><br><span class="line">Quicken (qdf)，文件头：AC9EBD8F</span><br><span class="line">Windows Password (pwl)，文件头：E3828596</span><br><span class="line">Wave (wav)，文件头：57415645</span><br><span class="line">AVI (avi)，文件头：41564920</span><br><span class="line">Real Audio (ram)，文件头：2E7261FD</span><br><span class="line">Real Media (rm)，文件头：2E524D46</span><br><span class="line">MPEG (mpg)，文件头：000001BA</span><br><span class="line">MPEG (mpg)，文件头：000001B3</span><br><span class="line">Quicktime (mov)，文件头：6D6F6F76</span><br><span class="line">Windows Media (asf)，文件头：3026B2758E66CF11</span><br><span class="line">MIDI (mid)，文件头：4D546864</span><br><span class="line">M4a，文件头：00000018667479704D3441</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="3-画图工具"><a href="#3-画图工具" class="headerlink" title="3.画图工具"></a>3.画图工具</h1><h2 id="3-1-gnuplot"><a href="#3-1-gnuplot" class="headerlink" title="3.1 gnuplot"></a>3.1 gnuplot</h2><p>得到诸如（7，7）的文本我们需要转化成 7 7 ，如</p>
+<img src="2024-11-20 212245.png" alt="2024-11-20 212245" style="zoom:25%;">
+
+<p>转化成 ↓ ↓ ↓</p>
+<img src="2024-11-20 213106.png" alt="2024-11-20 213106" style="zoom:25%;">
+
+<p>这里的转化我们可以使用脚本：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后再用</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>gnuplot</p>
+<p>plot ‘zuobiao.txt’  </p>
+</blockquote>
+<p>来进行画图，画好后会自己打开</p>
+<h1 id="4-路由器配置查看工具"><a href="#4-路由器配置查看工具" class="headerlink" title="4.路由器配置查看工具"></a>4.路由器配置查看工具</h1><h2 id="4-1-RouterPassView"><a href="#4-1-RouterPassView" class="headerlink" title="4.1 RouterPassView"></a>4.1 RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
+<p>使用方法：</p>
+<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
+<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
+<h1 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h1><h2 id="5-1-ms-office文件本质是zip"><a href="#5-1-ms-office文件本质是zip" class="headerlink" title="5.1 ms-office文件本质是zip"></a>5.1 ms-office文件本质是zip</h2><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。</p>
+<p>可以直接改后缀名为zip</p>
+<h2 id="5-2-NTFS交换数据流（简称ADS）"><a href="#5-2-NTFS交换数据流（简称ADS）" class="headerlink" title="5.2 NTFS交换数据流（简称ADS）"></a>5.2 NTFS交换数据流（简称ADS）</h2><p>  <strong>NTFS交换数据流（简称ADS）是NTFS磁盘格式的一个特性，在NTFS文件系统下，每个文件都可以存在多个数据流，除了主文件流之外还可以有许多非主文件流寄宿在主文件流中，而我们无法查看到非主文件数据流，因文件夹大小始终显示0</strong></p>
+<p>  <strong>以下是进行文件流计生和查看的方法，以后在windows命令行下查看文件，都用 dir &#x2F;r</strong></p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>寄生一:</p>
+<p>echo 写入内容&gt;&gt;宿主文件:交换数据流文件(寄生文件)</p>
+<p>echo ever&gt;&gt;1.txt:2.txt</p>
+<p>2.txt为echo创建出交换数据流文件，ever在2.txt中</p>
+<p>寄生二:</p>
+<p>type 交换数据流文件(寄生文件)&gt;&gt;宿主文件夹:交换数据流文件(寄生文件)</p>
+<p>type 2.txt&gt;&gt;temp:2.txt</p>
+<p>temp为空文件夹,执行后2.txt寄生在temp文件夹上</p>
+<p>type a.jpg&gt;&gt;temp:a.jpg</p>
+<p>temp为空文件夹,执行后a.jpg寄生在temp文件夹上</p>
+<p>查看:</p>
+<p>notepad 宿主文件:交换数据流文件(寄生文件）</p>
+<p>notepad 1.txt:2.txt</p>
+<p>查看图片文件:</p>
+<p>mspaint 宿主文件:交换数据流文件(寄生文件)</p>
+<p>notepad a.jpg:b.jpg</p>
+</blockquote>
+<p>例题可以看BUUctf的 [SWPU2019]我有一只马里奥</p>
+<h2 id="5-3-html后门查杀"><a href="#5-3-html后门查杀" class="headerlink" title="5.3 html后门查杀"></a>5.3 html后门查杀</h2><p>-D盾 下载：<a href="https://www.d99net.net/"><a href="https://www.d99net.net/">D盾防火墙</a></a></p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -496,21 +510,6 @@
       <tags>
         <tag>blog</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
-]]></content>
   </entry>
   <entry>
     <title>哲学-维特根斯坦</title>
@@ -573,5 +572,20 @@
         <tag>philosophy</tag>
         <tag>Wittgenstein</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Before-everthing</title>
+    <url>/2024/11/hello-world/</url>
+    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
+<p>尽量使自己学有所得–</p>
+<p>——————————</p>
+<p>作者VX:</p>
+<p>x3289444724</p>
+<p>作者QQ:</p>
+<p>3289444724</p>
+<p>联系电话:</p>
+<p>①13968975069</p>
+<p>②18072320271</p>
+]]></content>
   </entry>
 </search>
