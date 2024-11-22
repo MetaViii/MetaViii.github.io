@@ -1,666 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Misc Ultra</title>
-    <url>/2024/11/Misc-Ultra/</url>
-    <content><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
-<p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p>
-<h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p>
-<p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p>
-<h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<h2 id="1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode"><a href="#1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode" class="headerlink" title="1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)"></a>1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)</h2><p>-aaencode随波逐流里面有</p>
-<p>-其他的可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p>
-<h2 id="1-5看不懂的乱码"><a href="#1-5看不懂的乱码" class="headerlink" title="1.5看不懂的乱码"></a>1.5看不懂的乱码</h2><p>诸如</p>
-<img src="2024-11-21 004240.png" alt="2024-11-21 004240" style="zoom:50%;">
-
-<p>这样实在看不懂的乱码可以试试把txt拖进010，</p>
-<p>在010的视图里面选择EBCDIC，说不定能看到。</p>
-<h1 id="2-各种文件头尾"><a href="#2-各种文件头尾" class="headerlink" title="2.各种文件头尾"></a>2.各种文件头尾</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.zip的文件头：50 4B 03 04 14 00 08 00</span><br><span class="line">.rar的文件头：52 61 72 21</span><br><span class="line">.rar的文件尾：C4 3D 7B 00 40 07 00</span><br><span class="line">.7z的文件头：37 7A BC AF 27 1C</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.jpg的文件头：FF D8 FF E0 00 10 4A 46 49 46 00 01</span><br><span class="line">.png的文件头：89 50 4e 47 0d 0a 1a 0a   文件尾：49 45 4E 44 AE 42 60 82</span><br><span class="line">.gif的文件头：47 49 46 38 39 61（GIF89A）或 47 49 46 38 37 61（GIF87A）</span><br><span class="line">.gif的文件尾：00 3B</span><br><span class="line">.gz的文件头：1F 8B 08 00</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.psd的文件头：38 42 50 53</span><br><span class="line">TIFF (tif)，文件头：49492A00</span><br><span class="line">Windows [Bitmap](https://so.csdn.net/so/search?q=Bitmap&amp;spm=1001.2101.3001.7020) (bmp)，文件头：424D</span><br><span class="line">CAD (dwg)，文件头：41433130</span><br><span class="line">Adobe Photoshop (psd)，文件头：38425053</span><br><span class="line">Rich Text Format (rtf)，文件头：7B5C727466</span><br><span class="line">XML (xml)，文件头：3C3F786D6C</span><br><span class="line">HTML (html)，文件头：68746D6C3E</span><br><span class="line">Email [thorough only] (eml)，文件头：44656C69766572792D646174653A</span><br><span class="line">Outlook Express (dbx)，文件头：CFAD12FEC5FD746F</span><br><span class="line">Outlook (pst)，文件头：2142444E</span><br><span class="line">MS Word/Excel (xls.or.doc)，文件头：D0CF11E0</span><br><span class="line">MS Access (mdb)，文件头：5374616E64617264204A</span><br><span class="line">WordPerfect (wpd)，文件头：FF575043</span><br><span class="line">Postscript (eps.or.ps)，文件头：252150532D41646F6265</span><br><span class="line">Adobe Acrobat (pdf)，文件头：255044462D312E</span><br><span class="line">Quicken (qdf)，文件头：AC9EBD8F</span><br><span class="line">Windows Password (pwl)，文件头：E3828596</span><br><span class="line">Wave (wav)，文件头：57415645</span><br><span class="line">AVI (avi)，文件头：41564920</span><br><span class="line">Real Audio (ram)，文件头：2E7261FD</span><br><span class="line">Real Media (rm)，文件头：2E524D46</span><br><span class="line">MPEG (mpg)，文件头：000001BA</span><br><span class="line">MPEG (mpg)，文件头：000001B3</span><br><span class="line">Quicktime (mov)，文件头：6D6F6F76</span><br><span class="line">Windows Media (asf)，文件头：3026B2758E66CF11</span><br><span class="line">MIDI (mid)，文件头：4D546864</span><br><span class="line">M4a，文件头：00000018667479704D3441</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="3-画图工具"><a href="#3-画图工具" class="headerlink" title="3.画图工具"></a>3.画图工具</h1><h2 id="3-1-gnuplot"><a href="#3-1-gnuplot" class="headerlink" title="3.1 gnuplot"></a>3.1 gnuplot</h2><p>得到诸如（7，7）的文本我们需要转化成 7 7 ，如</p>
-<img src="2024-11-20 212245.png" alt="2024-11-20 212245" style="zoom:25%;">
-
-<p>转化成 ↓ ↓ ↓</p>
-<img src="2024-11-20 213106.png" alt="2024-11-20 213106" style="zoom:25%;">
-
-<p>这里的转化我们可以使用脚本：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然后再用</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>gnuplot</p>
-<p>plot ‘zuobiao.txt’  </p>
-</blockquote>
-<p>来进行画图，画好后会自己打开</p>
-<h1 id="4-路由器配置查看工具"><a href="#4-路由器配置查看工具" class="headerlink" title="4.路由器配置查看工具"></a>4.路由器配置查看工具</h1><h2 id="4-1-RouterPassView"><a href="#4-1-RouterPassView" class="headerlink" title="4.1 RouterPassView"></a>4.1 RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p>
-<p>使用方法：</p>
-<p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p>
-<p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p>
-<h1 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h1><h2 id="5-1-ms-office文件本质是zip"><a href="#5-1-ms-office文件本质是zip" class="headerlink" title="5.1 ms-office文件本质是zip"></a>5.1 ms-office文件本质是zip</h2><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。</p>
-<p>可以直接改后缀名为zip</p>
-<h2 id="5-2-NTFS交换数据流（简称ADS）"><a href="#5-2-NTFS交换数据流（简称ADS）" class="headerlink" title="5.2 NTFS交换数据流（简称ADS）"></a>5.2 NTFS交换数据流（简称ADS）</h2><p>  <strong>NTFS交换数据流（简称ADS）是NTFS磁盘格式的一个特性，在NTFS文件系统下，每个文件都可以存在多个数据流，除了主文件流之外还可以有许多非主文件流寄宿在主文件流中，而我们无法查看到非主文件数据流，因文件夹大小始终显示0</strong></p>
-<blockquote>
-<p>[!IMPORTANT]</p>
-<p>注意ntfs的压缩包要用WinRAR解压，否则可能解压不出来ntfs流</p>
-</blockquote>
-<p>  <strong>以下是进行文件流计生和查看的方法，以后在windows命令行下查看文件，都用 dir &#x2F;r</strong></p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>寄生一:</p>
-<p>echo 写入内容&gt;&gt;宿主文件:交换数据流文件(寄生文件)</p>
-<p>echo ever&gt;&gt;1.txt:2.txt</p>
-<p>2.txt为echo创建出交换数据流文件，ever在2.txt中</p>
-<p>寄生二:</p>
-<p>type 交换数据流文件(寄生文件)&gt;&gt;宿主文件夹:交换数据流文件(寄生文件)</p>
-<p>type 2.txt&gt;&gt;temp:2.txt</p>
-<p>temp为空文件夹,执行后2.txt寄生在temp文件夹上</p>
-<p>type a.jpg&gt;&gt;temp:a.jpg</p>
-<p>temp为空文件夹,执行后a.jpg寄生在temp文件夹上</p>
-<p>查看:</p>
-<p>notepad 宿主文件:交换数据流文件(寄生文件）</p>
-<p>notepad 1.txt:2.txt</p>
-<p>查看图片文件:</p>
-<p>mspaint 宿主文件:交换数据流文件(寄生文件)</p>
-<p>notepad a.jpg:b.jpg</p>
-<p>过滤</p>
-<p>dir &#x2F;r | findstr $DATA （过滤DATA字符串）</p>
-</blockquote>
-<p>例题可以看BUUctf的 [SWPU2019]我有一只马里奥</p>
-<p>网站讲解： <a href="https://zhuanlan.zhihu.com/p/654643812">https://zhuanlan.zhihu.com/p/654643812</a></p>
-<p>工具：NtfsStreamsEditor或AlternateStreamView</p>
-<h2 id="5-3-html后门查杀"><a href="#5-3-html后门查杀" class="headerlink" title="5.3 html后门查杀"></a>5.3 html后门查杀</h2><p>-D盾 下载：<a href="https://www.d99net.net/"><a href="https://www.d99net.net/">D盾防火墙</a></a></p>
-<h2 id="5-4-视频逐帧播放"><a href="#5-4-视频逐帧播放" class="headerlink" title="5.4 视频逐帧播放"></a>5.4 视频逐帧播放</h2><p>播放工具：potplayer，下载地址 <a href="https://potplayer.tv/">https://potplayer.tv/</a></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Misc Ultra</title>
+      <link href="/2024/11/Misc-Ultra/"/>
+      <url>/2024/11/Misc-Ultra/</url>
+      
+        <content type="html"><![CDATA[<h1 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p><p><strong>这篇博客会随着我的一点点学习而逐渐被填写，因此不会很快。。</strong></p><h1 id="1-加密"><a href="#1-加密" class="headerlink" title="1.加密"></a>1.加密</h1><h2 id="1-1-brainfuck加密"><a href="#1-1-brainfuck加密" class="headerlink" title="1.1 brainfuck加密"></a>1.1 brainfuck加密</h2><p>-随波逐流里有</p><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p><h2 id="1-2-Ook-Obfuscation加密"><a href="#1-2-Ook-Obfuscation加密" class="headerlink" title="1.2 Ook! Obfuscation加密"></a>1.2 Ook! Obfuscation加密</h2><p>-网站：<a href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a></p><h2 id="1-3-serpent加密（蛇对称加密算法）"><a href="#1-3-serpent加密（蛇对称加密算法）" class="headerlink" title="1.3 serpent加密（蛇对称加密算法）"></a>1.3 serpent加密（蛇对称加密算法）</h2><p>-网站：<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p><h2 id="1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode"><a href="#1-4-颜文字加密（aaencode-jjencode-ppencode-uuencode-xxencode" class="headerlink" title="1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)"></a>1.4 颜文字加密（aaencode&#x2F;jjencode&#x2F;ppencode&#x2F;uuencode&#x2F;xxencode)</h2><p>-aaencode随波逐流里面有</p><p>-其他的可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p><h2 id="1-5看不懂的乱码"><a href="#1-5看不懂的乱码" class="headerlink" title="1.5看不懂的乱码"></a>1.5看不懂的乱码</h2><p>诸如</p><img src="2024-11-21 004240.png" alt="2024-11-21 004240" style="zoom:50%;"><p>这样实在看不懂的乱码可以试试把txt拖进010，</p><p>在010的视图里面选择EBCDIC，说不定能看到。</p><h1 id="2-各种文件头尾"><a href="#2-各种文件头尾" class="headerlink" title="2.各种文件头尾"></a>2.各种文件头尾</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">.zip的文件头：50 4B 03 04 14 00 08 00</span><br><span class="line">.rar的文件头：52 61 72 21</span><br><span class="line">.rar的文件尾：C4 3D 7B 00 40 07 00</span><br><span class="line">.7z的文件头：37 7A BC AF 27 1C</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.jpg的文件头：FF D8 FF E0 00 10 4A 46 49 46 00 01</span><br><span class="line">.png的文件头：89 50 4e 47 0d 0a 1a 0a   文件尾：49 45 4E 44 AE 42 60 82</span><br><span class="line">.gif的文件头：47 49 46 38 39 61（GIF89A）或 47 49 46 38 37 61（GIF87A）</span><br><span class="line">.gif的文件尾：00 3B</span><br><span class="line">.gz的文件头：1F 8B 08 00</span><br><span class="line">.pyc的文件头：03 F3 0D 0A</span><br><span class="line">.psd的文件头：38 42 50 53</span><br><span class="line">TIFF (tif)，文件头：49492A00</span><br><span class="line">Windows [Bitmap](https://so.csdn.net/so/search?q=Bitmap&amp;spm=1001.2101.3001.7020) (bmp)，文件头：424D</span><br><span class="line">CAD (dwg)，文件头：41433130</span><br><span class="line">Adobe Photoshop (psd)，文件头：38425053</span><br><span class="line">Rich Text Format (rtf)，文件头：7B5C727466</span><br><span class="line">XML (xml)，文件头：3C3F786D6C</span><br><span class="line">HTML (html)，文件头：68746D6C3E</span><br><span class="line">Email [thorough only] (eml)，文件头：44656C69766572792D646174653A</span><br><span class="line">Outlook Express (dbx)，文件头：CFAD12FEC5FD746F</span><br><span class="line">Outlook (pst)，文件头：2142444E</span><br><span class="line">MS Word/Excel (xls.or.doc)，文件头：D0CF11E0</span><br><span class="line">MS Access (mdb)，文件头：5374616E64617264204A</span><br><span class="line">WordPerfect (wpd)，文件头：FF575043</span><br><span class="line">Postscript (eps.or.ps)，文件头：252150532D41646F6265</span><br><span class="line">Adobe Acrobat (pdf)，文件头：255044462D312E</span><br><span class="line">Quicken (qdf)，文件头：AC9EBD8F</span><br><span class="line">Windows Password (pwl)，文件头：E3828596</span><br><span class="line">Wave (wav)，文件头：57415645</span><br><span class="line">AVI (avi)，文件头：41564920</span><br><span class="line">Real Audio (ram)，文件头：2E7261FD</span><br><span class="line">Real Media (rm)，文件头：2E524D46</span><br><span class="line">MPEG (mpg)，文件头：000001BA</span><br><span class="line">MPEG (mpg)，文件头：000001B3</span><br><span class="line">Quicktime (mov)，文件头：6D6F6F76</span><br><span class="line">Windows Media (asf)，文件头：3026B2758E66CF11</span><br><span class="line">MIDI (mid)，文件头：4D546864</span><br><span class="line">M4a，文件头：00000018667479704D3441</span><br></pre></td></tr></table></figure><h1 id="3-画图工具"><a href="#3-画图工具" class="headerlink" title="3.画图工具"></a>3.画图工具</h1><h2 id="3-1-gnuplot"><a href="#3-1-gnuplot" class="headerlink" title="3.1 gnuplot"></a>3.1 gnuplot</h2><p>得到诸如（7，7）的文本我们需要转化成 7 7 ，如</p><img src="2024-11-20 212245.png" alt="2024-11-20 212245" style="zoom:25%;"><p>转化成 ↓ ↓ ↓</p><img src="2024-11-20 213106.png" alt="2024-11-20 213106" style="zoom:25%;"><p>这里的转化我们可以使用脚本：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>然后再用</p><blockquote><p>[!NOTE]</p><p>gnuplot</p><p>plot ‘zuobiao.txt’  </p></blockquote><p>来进行画图，画好后会自己打开</p><h1 id="4-路由器配置查看工具"><a href="#4-路由器配置查看工具" class="headerlink" title="4.路由器配置查看工具"></a>4.路由器配置查看工具</h1><h2 id="4-1-RouterPassView"><a href="#4-1-RouterPassView" class="headerlink" title="4.1 RouterPassView"></a>4.1 RouterPassView</h2><p>-下载 <a href="https://routerpassview.en.lo4d.com/windows">https://routerpassview.en.lo4d.com/windows</a></p><p>使用方法：</p><p>用于恢复路由器密码的工具，能够从路由器中提取用户，密码，无线密钥等信息</p><p>RouterPassView,大多数现代路由器允许您备份到一个文件路由器的配置，然后从文件中恢复配置时的需要。路由器的备份文件通常包含了像您的ISP的用户名重要数据&#x2F;密码，路由器的登录密码，无线网络的关键。如果你失去了这些密码1 &#x2F;钥匙，但你仍然有你的路由器配置的备份文件，RouterPassView可以帮助你从你的路由器恢复您丢失密码的文件。</p><h1 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h1><h2 id="5-1-ms-office文件本质是zip"><a href="#5-1-ms-office文件本质是zip" class="headerlink" title="5.1 ms-office文件本质是zip"></a>5.1 ms-office文件本质是zip</h2><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。</p><p>可以直接改后缀名为zip</p><h2 id="5-2-NTFS交换数据流（简称ADS）"><a href="#5-2-NTFS交换数据流（简称ADS）" class="headerlink" title="5.2 NTFS交换数据流（简称ADS）"></a>5.2 NTFS交换数据流（简称ADS）</h2><p>  <strong>NTFS交换数据流（简称ADS）是NTFS磁盘格式的一个特性，在NTFS文件系统下，每个文件都可以存在多个数据流，除了主文件流之外还可以有许多非主文件流寄宿在主文件流中，而我们无法查看到非主文件数据流，因文件夹大小始终显示0</strong></p><blockquote><p>[!IMPORTANT]</p><p>注意ntfs的压缩包要用WinRAR解压，否则可能解压不出来ntfs流</p></blockquote><p>  <strong>以下是进行文件流计生和查看的方法，以后在windows命令行下查看文件，都用 dir &#x2F;r</strong></p><blockquote><p>[!NOTE]</p><p>寄生一:</p><p>echo 写入内容&gt;&gt;宿主文件:交换数据流文件(寄生文件)</p><p>echo ever&gt;&gt;1.txt:2.txt</p><p>2.txt为echo创建出交换数据流文件，ever在2.txt中</p><p>寄生二:</p><p>type 交换数据流文件(寄生文件)&gt;&gt;宿主文件夹:交换数据流文件(寄生文件)</p><p>type 2.txt&gt;&gt;temp:2.txt</p><p>temp为空文件夹,执行后2.txt寄生在temp文件夹上</p><p>type a.jpg&gt;&gt;temp:a.jpg</p><p>temp为空文件夹,执行后a.jpg寄生在temp文件夹上</p><p>查看:</p><p>notepad 宿主文件:交换数据流文件(寄生文件）</p><p>notepad 1.txt:2.txt</p><p>查看图片文件:</p><p>mspaint 宿主文件:交换数据流文件(寄生文件)</p><p>notepad a.jpg:b.jpg</p><p>过滤</p><p>dir &#x2F;r | findstr $DATA （过滤DATA字符串）</p></blockquote><p>例题可以看BUUctf的 [SWPU2019]我有一只马里奥</p><p>网站讲解： <a href="https://zhuanlan.zhihu.com/p/654643812">https://zhuanlan.zhihu.com/p/654643812</a></p><p>工具：NtfsStreamsEditor或AlternateStreamView</p><h2 id="5-3-html后门查杀"><a href="#5-3-html后门查杀" class="headerlink" title="5.3 html后门查杀"></a>5.3 html后门查杀</h2><p>-D盾 下载：<a href="https://www.d99net.net/"><a href="https://www.d99net.net/">D盾防火墙</a></a></p><h2 id="5-4-视频逐帧播放"><a href="#5-4-视频逐帧播放" class="headerlink" title="5.4 视频逐帧播放"></a>5.4 视频逐帧播放</h2><p>播放工具：potplayer，下载地址 <a href="https://potplayer.tv/">https://potplayer.tv/</a></p>]]></content>
+      
+      
       <categories>
-        <category>CTF</category>
+          
+          <category> CTF </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
-]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Misc Record</title>
-    <url>/2024/11/Misc-Record/</url>
-    <content><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h3 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h3><p>顾名思义，签到，复制提交就好</p>
-<h3 id="2-金三胖"><a href="#2-金三胖" class="headerlink" title="2.金三胖"></a>2.金三胖</h3><p>简单的拆分gif，打开puzzlesolver一把梭</p>
-<h3 id="3-你竟然赶我走"><a href="#3-你竟然赶我走" class="headerlink" title="3.你竟然赶我走"></a>3.你竟然赶我走</h3><p>010一把梭</p>
-<p><img src="1.png" alt="1"></p>
-<h3 id="4-二维码"><a href="#4-二维码" class="headerlink" title="4.二维码"></a>4.二维码</h3><p>用随波逐流分析一下发现有隐藏文件，binwalk提取出一个zip，加密的打开提示我们是4number，arp爆破出密码是7639，打开txt得到flag{vjpw_wnoei}</p>
-<h3 id="5-大白"><a href="#5-大白" class="headerlink" title="5.大白"></a>5.大白</h3><p>随波逐流爆宽高即可</p>
-<img src="2.png" alt="2" style="zoom:50%;">
-
-
-
-<h3 id="6-乌镇峰会种图"><a href="#6-乌镇峰会种图" class="headerlink" title="6.乌镇峰会种图"></a>6.乌镇峰会种图</h3><p>随波逐流一把梭</p>
-<h3 id="7-wireshark"><a href="#7-wireshark" class="headerlink" title="7.wireshark"></a>7.wireshark</h3><p>查找password，追踪tcp流，得到password&#x3D;ffb7567a1d4f4abdffdb54e022f8facd</p>
-<h3 id="8-N种方法解决"><a href="#8-N种方法解决" class="headerlink" title="8.N种方法解决"></a>8.N种方法解决</h3><p>随波逐流梭出一张二维码，微信一扫就拿到flag</p>
-<h3 id="9-基础破解"><a href="#9-基础破解" class="headerlink" title="9.基础破解"></a>9.基础破解</h3><p>Arp暴力破解密码得到密码是2563，txt是base64加密，解密就行</p>
-<h3 id="10-文件中的秘密"><a href="#10-文件中的秘密" class="headerlink" title="10.文件中的秘密"></a>10.文件中的秘密</h3><p>文件属性里有flag</p>
-<h3 id="11．-zip伪加密"><a href="#11．-zip伪加密" class="headerlink" title="11． zip伪加密"></a>11． zip伪加密</h3><p>随波逐流伪加密修复即可</p>
-<h3 id="12-LSB"><a href="#12-LSB" class="headerlink" title="12.LSB"></a>12.LSB</h3><p>Lsb隐写，用stegsolve打开可以发现藏了一张png，保存下来是一张二维码，扫一下就好</p>
-<h3 id="13-被嗅探的流量"><a href="#13-被嗅探的流量" class="headerlink" title="13.被嗅探的流量"></a>13.被嗅探的流量</h3><p>随波逐流一把梭</p>
-<h3 id="14-rar"><a href="#14-rar" class="headerlink" title="14.rar"></a>14.rar</h3><p>Arp爆破得到密码8795，flag{1773c5da790bd3caff38e3decd180eb7}</p>
-<h3 id="15-qr"><a href="#15-qr" class="headerlink" title="15.qr"></a>15.qr</h3><p>CQR扫一下就行</p>
-<h3 id="16-镜子里的世界"><a href="#16-镜子里的世界" class="headerlink" title="16.镜子里的世界"></a>16.镜子里的世界</h3><p>Zsteg一把梭</p>
-<h3 id="17-爱因斯坦"><a href="#17-爱因斯坦" class="headerlink" title="17.爱因斯坦"></a>17.爱因斯坦</h3><p>Binwalk提取zip，要密码，在图片的属性中可以看到密码，得到flag</p>
-<h3 id="18-ningen"><a href="#18-ningen" class="headerlink" title="18.ningen"></a>18.ningen</h3><p>图片先binwalk提取出zip，zip爆破密码得出8368，解密得到flag</p>
-<h3 id="19-小明的保险箱"><a href="#19-小明的保险箱" class="headerlink" title="19.小明的保险箱"></a>19.小明的保险箱</h3><p>图片先binwalk提取出zip，zip爆破密码得出7869，解密得到flag</p>
-<h3 id="20-Easycap"><a href="#20-Easycap" class="headerlink" title="20.Easycap"></a>20.Easycap</h3><p>拖进winshark，追踪TCP流得到flag</p>
-<h3 id="21-隐藏的钥匙"><a href="#21-隐藏的钥匙" class="headerlink" title="21.隐藏的钥匙"></a>21.隐藏的钥匙</h3><p>010打开，查找base，得到加密过的数据。解密一下就是flag</p>
-<h3 id="22-另外一个世界"><a href="#22-另外一个世界" class="headerlink" title="22.另外一个世界"></a>22.另外一个世界</h3><p>010打开后在文件末尾出现了一串神秘的二进制串，cherchef解密后恰好是flag</p>
-<h3 id="23-数据包中的线索"><a href="#23-数据包中的线索" class="headerlink" title="23.数据包中的线索"></a>23.数据包中的线索</h3><p>导出对象为http时，追踪tcp流得到一串神秘的base64加密，复制进随波逐流用base64转图片就能看到flag</p>
-<img src="3.png" alt="3" style="zoom:50%;">
-
-
-
-
-
-<h3 id="24-神秘龙卷风"><a href="#24-神秘龙卷风" class="headerlink" title="24.神秘龙卷风"></a>24.神秘龙卷风</h3><p>得到zip加密爆破得到密码5463，解密出的txt有多个+和.&gt;，猜测为字频统计，以.&gt;为分割，编写脚本得到flag</p>
-<img src="4.png" alt="4" style="zoom:67%;">
-
-
-
-<h3 id="25-FLAG"><a href="#25-FLAG" class="headerlink" title="25.FLAG"></a>25.FLAG</h3><p>得到的图片用stegsolve打开查看lsb，得到一个压缩包，解压后没有后缀</p>
-<p><img src="5.png" alt="5"></p>
-<p>File一下发现是elf，用kali打开即可</p>
-<p><img src="6.png" alt="6"></p>
-<h3 id="26-假如给我三天光明"><a href="#26-假如给我三天光明" class="headerlink" title="26.假如给我三天光明"></a>26.假如给我三天光明</h3><p>拿到png一看就知道是盲文加密，解密后是kmdonowg，即为压缩包密码，解压后得到一段摩斯密码的音频，对应解密后是flag</p>
-<h3 id="27-后门查杀"><a href="#27-后门查杀" class="headerlink" title="27.后门查杀"></a><strong>27.后门查杀</strong></h3><p>打开跟我说有病毒。。给我隔离了。。。</p>
-<p>选择保留在电脑上，得到一个html文件夹</p>
-<p>这里需要使用D盾来查杀</p>
-<img src="2024-11-21 164839.png" alt="2024-11-21 164839" style="zoom:50%;">
-
-<p>看到</p>
-<img src="2024-11-21 164508.png" alt="2024-11-21 164508" style="zoom:50%;">
-
-<p>得到密码，flag：flag{6ac45fb83b3bc355c024f5034b947dd3}</p>
-<h3 id="28-webshell后门"><a href="#28-webshell后门" class="headerlink" title="28.webshell后门"></a><strong>28.webshell后门</strong></h3><p>与上题类似。D盾扫描</p>
-<img src="2024-11-21 165430.png" alt="2024-11-21 165430" style="zoom:50%;">
-
-<p>在第一个文件中能看到pass，flag：flag{ba8e6c6f35a53933b871480bb9a9545c}</p>
-<h3 id="29-来首歌吧"><a href="#29-来首歌吧" class="headerlink" title="29.来首歌吧"></a><strong>29.来首歌吧</strong></h3><p>简单的摩斯密码，打开audacity对照频谱图手敲莫斯密码即可</p>
-<img src="2024-11-18 225047.png" alt="2024-11-18 225047" style="zoom: 50%;">
-
-<p>（ ↑ 为一部分频谱图 ）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...../-.../-.-./----./..---/...../-..../....-/----./-.-./-.../-----/.----/---../---../..-./...../..---/./-..../.----/--.../-../--.../-----/----./..---/----./.----/----./.----/-.-./</span><br></pre></td></tr></table></figure>
-
-<p>随波逐流解密即可</p>
-<h3 id="30-面具下的flag"><a href="#30-面具下的flag" class="headerlink" title="30.面具下的flag"></a><strong>30.面具下的flag</strong></h3><p>得到一张知名男女图片，随波逐流一下可以发现有隐藏文件，binwalk提取一下可以发现得到一个压缩包，解压发现要密码</p>
-<p>，可以发现zip是伪加密，修改后解压。</p>
-<p>得到一个vmdk文件，搜了一下发现</p>
-<p>“后缀为 <strong><code>.vmdk</code></strong> 的文件是 VMware 虚拟磁盘文件，通常用于虚拟机环境中存储虚拟机的磁盘数据。”</p>
-<p>以为要用虚拟机的，但是打不开。<del>于是看了一下wp</del></p>
-<p>这里的flag.vmdk用010打开后搜 <em>flag</em> 等关键字样得到这个</p>
-<img src="2024-11-18 205339.png" alt="2024-11-18 205339" style="zoom:80%;">
-
-<p>这个</p>
-<img src="2024-11-18 205445.png" alt="2024-11-18 205445" style="zoom:50%;">
-
-<p>还有这个</p>
-<img src="2024-11-18 205614.png" alt="2024-11-18 205614" style="zoom:50%;">
-
-<p>直接复制好像解密不了。</p>
-<p>打开kali，用kali自带的7z解密可以提取这些文件，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">7z x flag.vmdk -o./</span><br></pre></td></tr></table></figure>
-
-<p> -o后面的.&#x2F;是把压缩的内容放在当前目录下，解压完成就能看见好几个文件夹</p>
-<img src="2024-11-18 210026.png" alt="2024-11-18 210026" style="zoom:80%;">
-
-<p>这是brainfuck加密和Ook! Obfuscation加密</p>
-<p>brainfuck加密随波逐流里有</p>
-<p>Ook! Obfuscation加密网站：<a href="https://www.splitbrain.org/services/ook">Ook! Obfuscation解密网站</a></p>
-<p>分别解密得到flag{N7F5_AD5_i5_funny!}</p>
-<h3 id="31-荷兰宽带数据泄露"><a href="#31-荷兰宽带数据泄露" class="headerlink" title="31.荷兰宽带数据泄露"></a><strong>31.荷兰宽带数据泄露</strong></h3><p>拿到bin文件查了一下发现要用路由器解析的，用RouterPassView</p>
-<p>打开后看了一下wp才知道username是flag</p>
-<img src="2024-11-18 232344.png" alt="2024-11-18 232344" style="zoom:50%;">
-
-
-
-<h3 id="32-九连环"><a href="#32-九连环" class="headerlink" title="32.九连环"></a><strong>32.九连环</strong></h3><p>拿到jpg用010看一下，发现后面有压缩包隐藏的</p>
-<p>先试一下随波逐流的binwalk提取，失败了，没提出来</p>
-<p>于是我们用kali的binwalk</p>
-<p>![2024-11-19 002930](.&#x2F;Misc-Record&#x2F;2024-11-19 002930.png)</p>
-<p>（不知道为什么我的binwalk要加一个–run-as&#x3D;root提升权限。。）</p>
-<p>提取出来的一个图片和一个压缩包，猜测密码在图片的隐写里</p>
-<p>用steghide跑一下，真的在里面，提取</p>
-<img src="2024-11-19 003229.png" alt="2024-11-19 003229" style="zoom:80%;">
-
-<p>查看它，下面的就是密码</p>
-<img src="2024-11-19 003329.png" alt="2024-11-19 003329" style="zoom:80%;">
-
-<p>直接用密码解压压缩包就能看到flag：flag{1RTo8w@&amp;4nK@z*XL}</p>
-<h3 id="33-认真你就输了"><a href="#33-认真你就输了" class="headerlink" title="33.认真你就输了"></a><strong>33.认真你就输了</strong></h3><p>这题我学到了ms-office文件本质是zip</p>
-<p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。把01.xls重命名为01.zip，解压缩后在 xl&#x2F;charts 目录里有 flag.txt </p>
-<h3 id="34-被劫持的神秘礼物"><a href="#34-被劫持的神秘礼物" class="headerlink" title="34.被劫持的神秘礼物"></a><strong>34.被劫持的神秘礼物</strong></h3><p>拿到pcapng文件用wireshark打开，这里可以使用http.request.method&#x3D;&#x3D;POST进行过滤或者一个个点开看，发现</p>
-<p>![2024-11-19 113909](.&#x2F;Misc-Record&#x2F;2024-11-19 113909.png)</p>
-<p>得到账号密码adminaadminb，包上小写md5，flag{1d240aafe21a86afc11f38a45b541a49}</p>
-<h3 id="35-被偷走的文件"><a href="#35-被偷走的文件" class="headerlink" title="35.被偷走的文件"></a><strong>35.被偷走的文件</strong></h3><p>提到偷走文件一般要清楚是找HTTP或者FTP，看到导出对象里有FTP-DATA，保存这个flag.rar</p>
-<img src="2024-11-19 115640.png" alt="2024-11-19 115640" style="zoom:75%;">
-
-<p>保存下来发现要密码解压，爆破可以发现，密码是5790，得到flag</p>
-<h3 id="36-藏藏藏"><a href="#36-藏藏藏" class="headerlink" title="36.藏藏藏"></a><strong>36.藏藏藏</strong></h3><p>得到一个jpg，用随波逐流的formost提取，得到一个zip，打开是个xlsx，一张二维码，用QR扫码得到flag</p>
-<img src="2024-11-19 120348.png" alt="2024-11-19 120348" style="zoom:50%;">
-
-
-
-<h3 id="37-佛系青年"><a href="#37-佛系青年" class="headerlink" title="37.佛系青年"></a><strong>37.佛系青年</strong></h3><p>拿到的zip拖进随波逐流看一下，发现第一个jpg无加密，第二个txt伪加密，修复一下</p>
-<p>jpg上说我FFF佛慈悲，txt内容为</p>
-<img src="2024-11-19 121044.png" alt="2024-11-19 121044" style="zoom:67%;">
-
-<p>发现是与佛论禅编码，随波逐流得到flag</p>
-<h3 id="38-你猜我是个啥"><a href="#38-你猜我是个啥" class="headerlink" title="38.你猜我是个啥"></a><strong>38.你猜我是个啥</strong></h3><p>随波逐流一把梭</p>
-<h3 id="39-刷新过的图片"><a href="#39-刷新过的图片" class="headerlink" title="39.刷新过的图片"></a><strong>39.刷新过的图片</strong></h3><p>关键词“刷新”，很可能是F5-steganography加密，尝试解密</p>
-<img src="2024-11-19 122828.png" alt="2024-11-19 122828" style="zoom:80%;">
-
-<p>我这里不知道为什么还要加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--add-opens java.base/sun.security.provider=ALL-UNNAMED</span><br></pre></td></tr></table></figure>
-
-<p>才能F5解密。。</p>
-<p>得到一个txt文件，打开是乱码，却能看到首两个字母PK，改后缀为zip，解压</p>
-<p>需要密码，发现是伪加密，随波逐流修复一下得到flag：flag{96efd0a2037d06f34199e921079778ee}</p>
-<h3 id="40-秘密文件"><a href="#40-秘密文件" class="headerlink" title="40.秘密文件"></a><strong>40.秘密文件</strong></h3><p>winshark打开，查看了一下http，ftp-data，啥也没有。。</p>
-<p>过滤tcp流，看到提示，追踪tcp，发现隐藏了一个rar文件</p>
-<img src="2024-11-19 124139.png" alt="2024-11-19 124139" style="zoom:80%;">
-
-<p>用随波逐流的binwalk提取文件，得到rar，爆破密码发现是1903，得到flag：flag{d72e5a671aa50fa5f400e5d10eedeaa5}</p>
-<h3 id="41-鸡你太美"><a href="#41-鸡你太美" class="headerlink" title="41.鸡你太美"></a><strong>41.鸡你太美</strong></h3><p>得到的zip一个是gif，另一个是损坏的gif，010打开发现缺少文件头，补上文件头即可拿到gif</p>
-<img src="2024-11-19 143150.gif" alt="2024-11-19 143150" style="zoom:50%;">
-
-<p>这里注意flag不是zhi-yin-you-are-beautiful，不知道为啥是下划线zhi_yin_you_are_beautiful</p>
-<p>得到flag：flag{zhi_yin_you_are_beautiful}</p>
-<h3 id="42-just-a-rar"><a href="#42-just-a-rar" class="headerlink" title="42.just_a_rar"></a><strong>42.just_a_rar</strong></h3><p>得到的zip解压得到四位数.zip，直接爆破得到密码2016</p>
-<p>拿到一张flag.jpg，拖进随波逐流得到flag</p>
-<h3 id="43-snake"><a href="#43-snake" class="headerlink" title="43.snake"></a><strong>43.snake</strong></h3><p>拿到zip得到一个jpg，发现有隐藏文件</p>
-<p>binwalk提取文件得到一个zip，zip里面是cyber和key</p>
-<p>key里面是V2hhdCBpcyBOaWNraSBNaW5haidzIGZhdm9yaXRlIHNvbmcgdGhhdCByZWZlcnMgdG8gc25ha2VzPwo&#x3D;</p>
-<p>base64解密得到</p>
-<p>What is Nicki Minaj’s favorite song that refers to snakes?</p>
-<p>搜了一下是anaconda，所以这是真正的key</p>
-<p>而cyber是serpent加密，解密网址<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p>
-<p>解密得到flag</p>
-<img src="2024-11-19 143133.png" alt="2024-11-19 143133" style="zoom:50%;">
-
-<p>flag：flag{who_knew_serpent_cipher_existed}</p>
-<h3 id="44-菜刀666"><a href="#44-菜刀666" class="headerlink" title="44.菜刀666"></a><strong>44.菜刀666</strong></h3><p>放进随波逐流用formost提取出一个zip，但是要密码，而且爆破不出来</p>
-<p>又看pcanp，过滤http.request.method&#x3D;&#x3D;POST</p>
-<img src="2024-11-19 145901.png" alt="2024-11-19 145901" style="zoom:75%;">
-
-<p>发现1068的传了FF D8 FF E0 00 10 4A 46 49 46 00 01 ( JPG的文件头 )</p>
-<p>复制下来进入010新建一个文件，保存图片得到</p>
-<img src="2024-11-19 150455.png" alt="2024-11-19 150455" style="zoom:50%;">
-
-<p>得到密码：Th1s_1s_p4sswd_!!!</p>
-<p>解压得到flag：flag{3OpWdJ-JP6FzK-koCMAK-VkfWBq-75Un2z}</p>
-<h3 id="45-一叶障目"><a href="#45-一叶障目" class="headerlink" title="45.一叶障目"></a><strong>45.一叶障目</strong></h3><p>随波逐流一把梭</p>
-<img src="2024-11-19 151204.png" alt="2024-11-19 151204" style="zoom: 33%;">
-
-
-
-<h3 id="46-神奇的二维码"><a href="#46-神奇的二维码" class="headerlink" title="46.神奇的二维码"></a><strong>46.神奇的二维码</strong></h3><p>得到一张二维码，CQR扫一下发现不是flag</p>
-<img src="2024-11-19 151704.png" alt="2024-11-19 151704" style="zoom:50%;">
-
-<p>拖进随波逐流binwalk提取一下文件得到716A.rar 7104.rar 17012.rar 18394.rar</p>
-<p>1.7104.rar</p>
-<p>解压得到encode.txt</p>
-<p>里面是YXNkZmdoamtsMTIzNDU2Nzg5MA&#x3D;&#x3D;</p>
-<p>base64解密一下是asdfghjkl1234567890</p>
-<p>没用，看下一个。。</p>
-<p>2.716A</p>
-<p>解压得到一张 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片和一个看看flag在不在里面^_^.zip</p>
-<p>用asdfghjkl1234567890解密zip，又得到一个 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片</p>
-<img src="2024-11-19 152700.png" alt="2024-11-19 152700" style="zoom:33%;">
-
-<p>没用，看下一个。。</p>
-<p>3.17012.zip</p>
-<p>解压得到一个flag.doc，里面是很长的字符</p>
-<p>需要多次解码base64，网上找了个脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def decode(f):</span><br><span class="line">	n = 0;</span><br><span class="line">	while True:</span><br><span class="line">		try:</span><br><span class="line">			f = base64.b64decode(f)</span><br><span class="line">			n += 1</span><br><span class="line">		except:</span><br><span class="line">			print(&#x27;[+]Base64共decode了&#123;0&#125;次，最终解码结果如下:&#x27;.format(n))</span><br><span class="line">			print(str(f,&#x27;utf-8&#x27;))</span><br><span class="line">			break</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">	f = open(&#x27;e:/Python 3.13/ccc.txt&#x27;,&#x27;r&#x27;).read()</span><br><span class="line">	decode(f)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>跑一下脚本</p>
-<img src="2024-11-19 160040.png" alt="2024-11-19 160040" style="zoom:50%;">
-
-<p>得到如下：comEON_YOuAreSOSoS0great</p>
-<p>下一个。。。</p>
-<p>4.18394.rar</p>
-<p>用comEON_YOuAreSOSoS0great去解密rar，得到一串音频，拖进aud</p>
-<img src="2024-11-19 160454.png" alt="2024-11-19 160454" style="zoom:75%;">
-
-<p>明显看出来是摩斯密码，手敲代码得</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--/---/.-./..././../.../...-/./.-./-.--/...-/./.-./-.--/./.-/.../-.--</span><br></pre></td></tr></table></figure>
-
-<p>解密最后得到flag：flag{morseisveryveryeasy}     (要注意是小写)</p>
-<p>ps：这道题好烦。。</p>
-<h3 id="47-纳尼"><a href="#47-纳尼" class="headerlink" title="47.纳尼"></a>47.纳尼</h3><p>拿到文件打不开一看就是缺少文件头，010里面补上47 49 46 38得到gif</p>
-<img src="2024-11-19 160490.gif" alt="2024-11-19 160490" style="zoom: 50%;">
-
-<p>用随波逐流分解帧间隔，得到Q1RGe3dhbmdfYmFvX3FpYW5nX2lzX3NhZH0&#x3D;</p>
-<p>base64解码得CTF{wang_bao_qiang_is_sad}，则flag：flag{wang_bao_qiang_is_sad}</p>
-<h3 id="48-excel破解"><a href="#48-excel破解" class="headerlink" title="48.excel破解"></a>48.excel破解</h3><p>随波逐流一把梭</p>
-<h3 id="49-来题中等的吧"><a href="#49-来题中等的吧" class="headerlink" title="49.来题中等的吧"></a>49.来题中等的吧</h3><p>义眼顶针，鉴定为morse</p>
-<img src="2024-11-19 200000.png" alt="2024-11-19 200000" style="zoom:80%;">
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.-/.-../.--./..../.-/.-../.-/-...</span><br></pre></td></tr></table></figure>
-
-<p>解密得ALPHALAB</p>
-<p>则flag{alphalab}</p>
-<h3 id="50-梅花香自苦寒来"><a href="#50-梅花香自苦寒来" class="headerlink" title="50.梅花香自苦寒来"></a>50.梅花香自苦寒来</h3><p>拿到png先用随波逐流跑一下，得到一串坐标，猜测是画图</p>
-<img src="2024-11-20 212245.png" alt="2024-11-20 212245" style="zoom:50%;">
-
-<p>网上找了一下，找到了gnuplot来画图，不过我们先要把括号和逗号去掉，脚本如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>去掉括号和逗号后用gnuplot画图</p>
-<img src="2024-11-20 212012.png" alt="2024-11-20 212012" style="zoom:80%;">
-
-<p>画完图后得到一个二维码，CQR扫一下得到flag：flag{40fc0a979f759c8892f4dc045e28b820}</p>
-<h3 id="51-谁赢了比赛？"><a href="#51-谁赢了比赛？" class="headerlink" title="51.谁赢了比赛？"></a>51.谁赢了比赛？</h3><p>拿到png用binwalk提取文件得到一个zip，有密码</p>
-<p>arp爆破得到密码是1020</p>
-<p>解压是一张gif，逐帧分解得到很多张棋谱和一张奇怪的图片</p>
-<img src="2024-11-20 212250.png" alt="2024-11-20 212250" style="zoom:33%;">
-
-<p>图片stegsolve一下在Red plane0得到一张二维码</p>
-<p>CQR扫一下</p>
-<img src="2024-11-20 215047.png" alt="2024-11-20 215047" style="zoom:33%;">
-
-<p>得到flag：flag{shanxiajingwu_won_the_game}</p>
-<h3 id="52-ACTF新生赛2020-outguess"><a href="#52-ACTF新生赛2020-outguess" class="headerlink" title="52.[ACTF新生赛2020]outguess"></a>52.[ACTF新生赛2020]outguess</h3><p>拿到一堆东西，txt里让我们guess一下flag在哪，一看就很明显是旁边的mmm.jpg里</p>
-<p>而且是outguess隐写</p>
-<p>这里我们要注意的是直接去无密文outguess会显示</p>
-<blockquote>
-<p>[!WARNING]</p>
-<p>Extracted datalen is too long</p>
-</blockquote>
-<p>说明是有密文的</p>
-<p>发现吗，mmm.jpg的属性里面有：公正民主公正文明公正和谐</p>
-<p>社会主义核心价值观解码:  abc</p>
-<p>abc作为密文outguess.</p>
-<img src="2024-11-20 215800.png" alt="2024-11-20 215800" style="zoom:80%;">
-
-<p>得到flag：flag{gue33_Gu3Ss!2020}</p>
-<h3 id="53-WUSTCTF2020-find-me"><a href="#53-WUSTCTF2020-find-me" class="headerlink" title="53.[WUSTCTF2020]find_me"></a>53.[WUSTCTF2020]find_me</h3><p>一定一定要多看属性！</p>
-<p>属性备注里面有盲文   ⡇⡓⡄⡖⠂⠀⠂⠀⡋⡉⠔⠀⠔⡅⡯⡖⠔⠁⠔⡞⠔⡔⠔⡯⡽⠔⡕⠔⡕⠔⡕⠔⡕⠔⡕⡍&#x3D;</p>
-<p>随波逐流解密得到flag：flag{y$0$u_f$1$n$d$_M$e$e$e$e$e}</p>
-<h3 id="54-穿越时空的思念"><a href="#54-穿越时空的思念" class="headerlink" title="54.穿越时空的思念"></a>54.穿越时空的思念</h3><p>得到音频听一下能在右声道发现明显的莫斯密码，手敲得</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">..-./-----/..---/----./-.../-../-..../..-./...../...../.----/.----/...--/----./././-.././-.../---.././....-/...../.-/.----/--.../...../-.../-----/--.../---../-..../..-./-----/..---/----./-.../-../-..../..-./.....</span><br></pre></td></tr></table></figure>
-
-<p>解密，得F029BD6F551139EEDEB8E45A175B0786F029BD6F5</p>
-<p>取前32位小写得flag：flag{f029bd6f551139eedeb8e45a175b0786}</p>
-<h3 id="55-SWPU2019-我有一只马里奥"><a href="#55-SWPU2019-我有一只马里奥" class="headerlink" title="55.[SWPU2019]我有一只马里奥"></a>55.[SWPU2019]我有一只马里奥</h3><p>得到一个exe，执行后得到1.txt，里面写着ntfs      flag.txt</p>
-<p><del>有点不会了，看了下wp</del></p>
-<p>查到了</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>NTFS交换数据流（简称ADS）是NTFS磁盘格式的一个特性，在NTFS文件系统下，每个文件都可以存在多个数据流，除了主文件流之外还可以有许多非主文件流寄宿在主文件流中，而我们无法查看到非主文件数据流，因文件夹大小始终显示0</p>
-</blockquote>
-<p><strong>以下是进行文件流计生和查看的方法，以后在windows命令行下查看文件，都用 dir &#x2F;r</strong></p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>寄生一:</p>
-<p>echo 写入内容&gt;&gt;宿主文件:交换数据流文件(寄生文件)</p>
-<p>echo ever&gt;&gt;1.txt:2.txt</p>
-<p>2.txt为echo创建出交换数据流文件，ever在2.txt中</p>
-<p>寄生二:</p>
-<p>type 交换数据流文件(寄生文件)&gt;&gt;宿主文件夹:交换数据流文件(寄生文件)</p>
-<p>type 2.txt&gt;&gt;temp:2.txt</p>
-<p>temp为空文件夹,执行后2.txt寄生在temp文件夹上</p>
-<p>type a.jpg&gt;&gt;temp:a.jpg</p>
-<p>temp为空文件夹,执行后a.jpg寄生在temp文件夹上</p>
-<p>查看:</p>
-<p>notepad 宿主文件:交换数据流文件(寄生文件）</p>
-<p>notepad 1.txt:2.txt</p>
-<p>查看图片文件:</p>
-<p>mspaint 宿主文件:交换数据流文件(寄生文件)</p>
-<p>notepad a.jpg:b.jpg</p>
-<p>过滤</p>
-<p>dir &#x2F;r | findstr $DATA （过滤DATA字符串）</p>
-</blockquote>
-<p>这道题应该是利用ntfs把flag.txt隐藏了</p>
-<p>需要我们先建立一个文件夹来存放1.txt，再cmd，然后直接查看flag.txt</p>
-<img src="2024-11-20 232606.png" alt="2024-11-20 232606" style="zoom:80%;">
-
-<p>运行这个notepad 1.txt:flag.txt后就能看到flag：flag{ddg_is_cute}</p>
-<h3 id="56-GUET-CTF2019-KO"><a href="#56-GUET-CTF2019-KO" class="headerlink" title="56.[GUET-CTF2019]KO"></a>56.[GUET-CTF2019]KO</h3><p>打开文本是明显的Ook!加密</p>
-<p>拖进在线网站直接解密就好（网站见Misc Ultra）</p>
-<p>flag：flag{welcome to CTF}</p>
-<h3 id="57-ACTF新生赛2020-base64隐写"><a href="#57-ACTF新生赛2020-base64隐写" class="headerlink" title="57.[ACTF新生赛2020]base64隐写"></a>57.[ACTF新生赛2020]base64隐写</h3><p>解压zip得到一个txt和hint</p>
-<p>txt里面是多行base64加密过的，复制进随波逐流</p>
-<p>选择“base64隐写解密”直接得到flag：flag{6aseb4_f33!}</p>
-<p>（？？？</p>
-<p>看了一下wp发现这题base64解密过后是一个python2脚本，需要复制进kali跑脚本出flag</p>
-<p>没啥好说的，随波逐流太好用了。。还能顺手给你把脚本跑了。。</p>
-<h3 id="58-MRCTF2020-ezmisc"><a href="#58-MRCTF2020-ezmisc" class="headerlink" title="58.[MRCTF2020]ezmisc"></a>58.[MRCTF2020]ezmisc</h3><p>随波逐流爆破宽高得</p>
-<img src="2024-11-20 232690.png" alt="2024-11-20 232690" style="zoom:50%;">
-
-<p>flag：flag{1ts_vEryyyyyy_ez!}</p>
-<h3 id="59-GXYCTF2019-gakki"><a href="#59-GXYCTF2019-gakki" class="headerlink" title="59.[GXYCTF2019]gakki"></a>59.[GXYCTF2019]gakki</h3><p>拿到wolaopo.jpg，发现有文件隐写</p>
-<p>binwalk提取得到zip，有密码</p>
-<p>arp爆破得密码是8864，拿到一个毫无规律的txt，里面如同乱码</p>
-<p><del>查了一下wp</del></p>
-<p>最后发现是要我们统计字符，利用puzzlesolver</p>
-<img src="2024-11-20 234945.png" alt="2024-11-20 234945" style="zoom:50%;">
-
-<p>flag就是频率前几个的</p>
-<p>flag：flag{gaki_IsMyw1fe}</p>
-<p>（脑洞好大这题）</p>
-<h3 id="60-HBNIS2018-caesar"><a href="#60-HBNIS2018-caesar" class="headerlink" title="60.[HBNIS2018]caesar"></a>60.[HBNIS2018]caesar</h3><p>全文：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">题目：caesar</span><br><span class="line"></span><br><span class="line">描述：gmbhjtdbftbs</span><br><span class="line"></span><br><span class="line">flag格式：XXX 明文</span><br><span class="line"></span><br><span class="line">提交：直接提交明文 （小写）</span><br></pre></td></tr></table></figure>
-
-<p>直接凯撒解密得flagiscaesar</p>
-<p>flag：flag{flagiscaesar}</p>
-<h3 id="61-SUCTF2018-single-dog"><a href="#61-SUCTF2018-single-dog" class="headerlink" title="61.[SUCTF2018]single dog"></a>61.[SUCTF2018]single dog</h3><p>拿到jpg发现后接了文本，binwalk提取一下是个zip</p>
-<p>解压得1.txt里面是一堆颜文字，查了一下是AAencode，除此之外还有jjencode、ppencode、rrencode、uuencode、xxencode</p>
-<p>利用随波逐流解密即可，也可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p>
-<p>解码得flag：flag{happy double eleven}</p>
-<h3 id="62-黑客帝国"><a href="#62-黑客帝国" class="headerlink" title="62.黑客帝国"></a>62.黑客帝国</h3><p>zip解压一下看到很长的txt，开头是52617221，是rar文件头</p>
-<p>010存一下，得到rar，解压要密码，爆破得到3690</p>
-<p>解压得到一个png，但是打不开，010看一下</p>
-<img src="2024-11-21 001233.png" alt="2024-11-21 001233" style="zoom:80%;">
-
-<p>看出来后面JFIF是jpg的，且看到010最后面是FF D9</p>
-<p>应该是修改了文件头，改回jpg即可</p>
-<p>(PNG（png)文件头：89 50 4E 47　文件尾：AE 42 60 82）<br>(JPEG (jpg)文件头：FF D8 FF　　文件尾：FF D9　)</p>
-<p>拿到图片</p>
-<img src="2024-11-21 002034.png" alt="2024-11-21 002034" style="zoom:50%;">
-
-<p>flag：flag{57cd4cfd4e07505b98048ca106132125}</p>
-<h3 id="63-HBNIS2018-低个头"><a href="#63-HBNIS2018-低个头" class="headerlink" title="63.[HBNIS2018]低个头"></a>63.[HBNIS2018]低个头</h3><p>全文：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">题目：低个头</span><br><span class="line"></span><br><span class="line">描述：EWAZX RTY TGB IJN IO KL 请破解该密文 f</span><br><span class="line"></span><br><span class="line">lag格式：XXX 明文</span><br><span class="line"></span><br><span class="line">提交：直接提交明文（大写）</span><br></pre></td></tr></table></figure>
-
-<p>脑洞题。。。<del>查了一下wp</del></p>
-<p>题目“低个头”的意思竟然是让你低头看键盘</p>
-<p>而那些字母在键盘上组合起来组成CTF。。</p>
-<p>所以flag：flag{CTF}</p>
-<h3 id="64-SWPU2019-伟大的侦探"><a href="#64-SWPU2019-伟大的侦探" class="headerlink" title="64.[SWPU2019]伟大的侦探"></a>64.[SWPU2019]伟大的侦探</h3><p>zip是有密码的，而且爆破不出来</p>
-<p>密码txt里面有一串乱码是密码</p>
-<p>这里需要我们用010打开txt，而且在视图上选择EBCDIC（还不清楚为什么。。</p>
-<img src="2024-11-21 003029.png" alt="2024-11-21 003029" style="zoom:80%;">
-
-<p>就能得到密码：wllm_is_the_best_team!</p>
-<p>然后就得到了很多小人的图片</p>
-<img src="2024-11-21 003448.png" alt="2024-11-21 003448" style="zoom:67%;">
-
-<p>这个对照表在 随波逐流&#x2F;其他工具&#x2F;更多图形密码（在线） 里面能找到</p>
-<img src="2024-11-21 003944.png" alt="2024-11-21 003944" style="zoom:80%;">
-
-<p>对照出来是iloveholmesandwllm</p>
-<p>flag：flag{iloveholmesandwllm}</p>
-<h3 id="65-MRCTF2020-你能看懂音符吗"><a href="#65-MRCTF2020-你能看懂音符吗" class="headerlink" title="65.[MRCTF2020]你能看懂音符吗"></a>65.[MRCTF2020]你能看懂音符吗</h3><p>压缩包解压不了，010打开发现修改了文件头</p>
-<p>改回来，解压，得到一个docx文档，里面没啥内容</p>
-<p>将文档后缀改成zip，打开document.xml，看到</p>
-<img src="2024-11-21 211756.png" alt="2024-11-21 211756" style="zoom:75%;">
-
-<p>是一串音乐加密的数据</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">♭♯♪‖¶♬♭♭♪♭‖‖♭♭♬‖♫♪‖♩♬‖♬♬♭♭♫‖♩♫‖♬♪♭♭♭‖¶∮‖‖‖‖♩♬‖♬♪‖♩♫♭♭♭♭♭§‖♩♩♭♭♫♭♭♭‖♬♭‖¶§♭♭♯‖♫∮‖♬¶‖¶∮‖♬♫‖♫♬‖♫♫§=</span><br></pre></td></tr></table></figure>
-
-<p>随波逐流解密得MRCTF{thEse_n0tes_ArE_am@zing~}</p>
-<p>flag：flag{thEse_n0tes_ArE_am@zing~}</p>
-<h3 id="66-我吃三明治"><a href="#66-我吃三明治" class="headerlink" title="66.我吃三明治"></a>66.我吃三明治</h3><p>得到一张三明治图片，formost一下还是一张三明治，010打开看到</p>
-<img src="2024-11-21 212453.png" alt="2024-11-21 212453" style="zoom:75%;">
-
-<p>藏了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MZWGCZ33GZTDCNZZG5SDIMBYGBRDEOLCGY2GIYJVHA4TONZYGA2DMM3FGMYH2</span><br></pre></td></tr></table></figure>
-
-<p>在两张图片之间（就像三明治一样。。</p>
-<p>base32解码得flag：flag{6f1797d4080b29b64da5897780463e30}</p>
-<h3 id="67-SWPU2019-你有没有好好看网课"><a href="#67-SWPU2019-你有没有好好看网课" class="headerlink" title="67.[SWPU2019]你有没有好好看网课"></a>67.[SWPU2019]你有没有好好看网课</h3><p>得到两个zip，第二个zip爆破密码是183792</p>
-<p>打开得到docx和影流之主</p>
-<p><del>脑洞题，查了一下wp</del></p>
-<p>docx的内容是：</p>
-<img src="2024-11-21 213717.png" alt="2024-11-21 213717" style="zoom:50%;">
-
-<p>提示我们在视频的5.20秒和7.11秒有问题</p>
-<p>使用potplayer逐帧查看，分别看到</p>
-<img src="2024-11-21 215024.png" alt="2024-11-21 215024" style="zoom:80%;">
-
-<p>和</p>
-<img src="2024-11-21 215023.png" alt="2024-11-21 215023" style="zoom:80%;">
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">..... ../... ./... ./... ../</span><br><span class="line">dXBfdXBfdXA=</span><br></pre></td></tr></table></figure>
-
-<p>第一个是敲击码，第二个是base64</p>
-<p>解码分别得wllm和up_up_up，拼接得到wllmup_up_up</p>
-<p>这是第一个zip的解压密码</p>
-<p>解压出来得到一张jpg，随波逐流得到flag：flag{A2e_Y0u_Ok?}</p>
-<h3 id="68-ACTF新生赛2020-NTFS数据流"><a href="#68-ACTF新生赛2020-NTFS数据流" class="headerlink" title="68.[ACTF新生赛2020]NTFS数据流"></a>68.[ACTF新生赛2020]NTFS数据流</h3><p>这里需要注意的是解压软件的选择，不能用bandizip，否则会没有ntfs</p>
-<p>建议选择winrar</p>
-<p>winrar解压完zip后，直接 dir &#x2F;r ，过滤 $DATA字符串</p>
-<p>看到有隐藏后直接notepad</p>
-<img src="2024-11-21 235726.png" alt="2024-11-21 235726" style="zoom:80%;">
-
-<p>得到flag：flag{AAAds_nntfs_ffunn?}</p>
-<h3 id="69-sqltest"><a href="#69-sqltest" class="headerlink" title="69.sqltest"></a>69.sqltest</h3><p>拿到文件进winshark分析一下发现是sql注入攻击</p>
-<p>而且是sql盲注，它是用ascii码的大小比较来判断库名、表名、字段名和字段值的内容的</p>
-<p>打开文件如下</p>
-<img src="2024-11-22 003052.png" alt="2024-11-22 003052" style="zoom:50%;">
-
-<p>这里看出来是sql了，可以先过滤一下http流量</p>
-<p>再选择 &#x2F;文件&#x2F;导出分组解析结果&#x2F;AS CSV</p>
-<p>这样就可以把流量导出成表格。看得更清楚</p>
-<img src="2024-11-22 003611.png" alt="2024-11-22 003611" style="zoom:75%;">
-
-<p>一般来说，前面的内容是hacker来判断数据库名、表名、字段名的，我们直接拉到最下面</p>
-<p>![2024-11-22 003853](.&#x2F;Misc-Record&#x2F;2024-11-22 003853.png)</p>
-<p>可以发现红框框起来的数字不同的是不同的对flag的尝试</p>
-<p>hacker使用二分法爆破出flag内容，在对一个字符进行bool判断时，被重复判断的ASCII值就是正确的字符。</p>
-<p>如上图是55和125</p>
-<p>这里我们需要找到ascii开始判断flag的部分来提取，或者可以从下往上提取</p>
-<p>最后提取如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">102, 108, 97, 103, 123, 52, 55, 101, 100, 98, 56, 51, 48, 48, 101, 100, 53, 102, 57, 98, 50, 56, 102, 99, 53, 52, 98, 48, 100, 48, 57, 101, 99, 100, 101, 102, 55, 125</span><br></pre></td></tr></table></figure>
-
-<p>ascii码解密得到flag：flag{47edb8300ed5f9b28fc54b0d09ecdef7}</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>哲学-维特根斯坦</title>
+      <link href="/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/"/>
+      <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p><p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p><p>。</p><h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p><p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p><p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p><p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p><p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p><p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p><img src="2.jpg" alt="2" style="zoom:50%;"><h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p><p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p><h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p><p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p><h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p><p><img src="3.png" alt="3"></p><h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p><p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p><h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p><h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p><p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p><p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p><h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p><p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p><h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p><p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p><p>————————————————————————————————————————</p><h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p><p>•《哲学研究》</p><h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p><p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p><p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p><p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p><p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p><h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p><p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p><p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p><h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p><h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p><p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p><p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p><p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p><h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p><p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p><p>————————————————————————————————————————</p><p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p><p><em>“告诉他们我度过了极好的一生”</em></p>]]></content>
+      
+      
       <categories>
-        <category>CTF</category>
+          
+          <category> philosophy </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> philosophy </tag>
+            
+            <tag> Wittgenstein </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>blog 为何上传不了图像的解决</title>
+      <link href="/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/"/>
+      <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p><p>而且在config.yml里有个post_asset_folder:要为true</p><p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p><p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p><p>保证相对路径的时候再插入图片</p><p>插入图片后查看github对应的文件夹下面有没有相应的图片</p><p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p><p>然后再</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p><p><img src="11.png" alt="11"></p><p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p><p>如果还传不上去的话可以缩放图片试试</p><p>（猜想：说不定可以直接在github上add file，下次试试）</p><p>ps：（这是不是图片加载慢的原因？）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ACMer</title>
+      <link href="/2024/11/ACMer/"/>
+      <url>/2024/11/ACMer/</url>
+      
+        <content type="html"><![CDATA[<p>还没想好写啥</p><p><img src="111.jpg" alt="111"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ACM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Misc Record</title>
+      <link href="/2024/11/Misc-Record/"/>
+      <url>/2024/11/Misc-Record/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h3 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h3><p>顾名思义，签到，复制提交就好</p><h3 id="2-金三胖"><a href="#2-金三胖" class="headerlink" title="2.金三胖"></a>2.金三胖</h3><p>简单的拆分gif，打开puzzlesolver一把梭</p><h3 id="3-你竟然赶我走"><a href="#3-你竟然赶我走" class="headerlink" title="3.你竟然赶我走"></a>3.你竟然赶我走</h3><p>010一把梭</p><p><img src="1.png" alt="1"></p><h3 id="4-二维码"><a href="#4-二维码" class="headerlink" title="4.二维码"></a>4.二维码</h3><p>用随波逐流分析一下发现有隐藏文件，binwalk提取出一个zip，加密的打开提示我们是4number，arp爆破出密码是7639，打开txt得到flag{vjpw_wnoei}</p><h3 id="5-大白"><a href="#5-大白" class="headerlink" title="5.大白"></a>5.大白</h3><p>随波逐流爆宽高即可</p><img src="2.png" alt="2" style="zoom:50%;"><h3 id="6-乌镇峰会种图"><a href="#6-乌镇峰会种图" class="headerlink" title="6.乌镇峰会种图"></a>6.乌镇峰会种图</h3><p>随波逐流一把梭</p><h3 id="7-wireshark"><a href="#7-wireshark" class="headerlink" title="7.wireshark"></a>7.wireshark</h3><p>查找password，追踪tcp流，得到password&#x3D;ffb7567a1d4f4abdffdb54e022f8facd</p><h3 id="8-N种方法解决"><a href="#8-N种方法解决" class="headerlink" title="8.N种方法解决"></a>8.N种方法解决</h3><p>随波逐流梭出一张二维码，微信一扫就拿到flag</p><h3 id="9-基础破解"><a href="#9-基础破解" class="headerlink" title="9.基础破解"></a>9.基础破解</h3><p>Arp暴力破解密码得到密码是2563，txt是base64加密，解密就行</p><h3 id="10-文件中的秘密"><a href="#10-文件中的秘密" class="headerlink" title="10.文件中的秘密"></a>10.文件中的秘密</h3><p>文件属性里有flag</p><h3 id="11．-zip伪加密"><a href="#11．-zip伪加密" class="headerlink" title="11． zip伪加密"></a>11． zip伪加密</h3><p>随波逐流伪加密修复即可</p><h3 id="12-LSB"><a href="#12-LSB" class="headerlink" title="12.LSB"></a>12.LSB</h3><p>Lsb隐写，用stegsolve打开可以发现藏了一张png，保存下来是一张二维码，扫一下就好</p><h3 id="13-被嗅探的流量"><a href="#13-被嗅探的流量" class="headerlink" title="13.被嗅探的流量"></a>13.被嗅探的流量</h3><p>随波逐流一把梭</p><h3 id="14-rar"><a href="#14-rar" class="headerlink" title="14.rar"></a>14.rar</h3><p>Arp爆破得到密码8795，flag{1773c5da790bd3caff38e3decd180eb7}</p><h3 id="15-qr"><a href="#15-qr" class="headerlink" title="15.qr"></a>15.qr</h3><p>CQR扫一下就行</p><h3 id="16-镜子里的世界"><a href="#16-镜子里的世界" class="headerlink" title="16.镜子里的世界"></a>16.镜子里的世界</h3><p>Zsteg一把梭</p><h3 id="17-爱因斯坦"><a href="#17-爱因斯坦" class="headerlink" title="17.爱因斯坦"></a>17.爱因斯坦</h3><p>Binwalk提取zip，要密码，在图片的属性中可以看到密码，得到flag</p><h3 id="18-ningen"><a href="#18-ningen" class="headerlink" title="18.ningen"></a>18.ningen</h3><p>图片先binwalk提取出zip，zip爆破密码得出8368，解密得到flag</p><h3 id="19-小明的保险箱"><a href="#19-小明的保险箱" class="headerlink" title="19.小明的保险箱"></a>19.小明的保险箱</h3><p>图片先binwalk提取出zip，zip爆破密码得出7869，解密得到flag</p><h3 id="20-Easycap"><a href="#20-Easycap" class="headerlink" title="20.Easycap"></a>20.Easycap</h3><p>拖进winshark，追踪TCP流得到flag</p><h3 id="21-隐藏的钥匙"><a href="#21-隐藏的钥匙" class="headerlink" title="21.隐藏的钥匙"></a>21.隐藏的钥匙</h3><p>010打开，查找base，得到加密过的数据。解密一下就是flag</p><h3 id="22-另外一个世界"><a href="#22-另外一个世界" class="headerlink" title="22.另外一个世界"></a>22.另外一个世界</h3><p>010打开后在文件末尾出现了一串神秘的二进制串，cherchef解密后恰好是flag</p><h3 id="23-数据包中的线索"><a href="#23-数据包中的线索" class="headerlink" title="23.数据包中的线索"></a>23.数据包中的线索</h3><p>导出对象为http时，追踪tcp流得到一串神秘的base64加密，复制进随波逐流用base64转图片就能看到flag</p><img src="3.png" alt="3" style="zoom:50%;"><h3 id="24-神秘龙卷风"><a href="#24-神秘龙卷风" class="headerlink" title="24.神秘龙卷风"></a>24.神秘龙卷风</h3><p>得到zip加密爆破得到密码5463，解密出的txt有多个+和.&gt;，猜测为字频统计，以.&gt;为分割，编写脚本得到flag</p><img src="4.png" alt="4" style="zoom:67%;"><h3 id="25-FLAG"><a href="#25-FLAG" class="headerlink" title="25.FLAG"></a>25.FLAG</h3><p>得到的图片用stegsolve打开查看lsb，得到一个压缩包，解压后没有后缀</p><p><img src="5.png" alt="5"></p><p>File一下发现是elf，用kali打开即可</p><p><img src="6.png" alt="6"></p><h3 id="26-假如给我三天光明"><a href="#26-假如给我三天光明" class="headerlink" title="26.假如给我三天光明"></a>26.假如给我三天光明</h3><p>拿到png一看就知道是盲文加密，解密后是kmdonowg，即为压缩包密码，解压后得到一段摩斯密码的音频，对应解密后是flag</p><h3 id="27-后门查杀"><a href="#27-后门查杀" class="headerlink" title="27.后门查杀"></a><strong>27.后门查杀</strong></h3><p>打开跟我说有病毒。。给我隔离了。。。</p><p>选择保留在电脑上，得到一个html文件夹</p><p>这里需要使用D盾来查杀</p><img src="2024-11-21 164839.png" alt="2024-11-21 164839" style="zoom:50%;"><p>看到</p><img src="2024-11-21 164508.png" alt="2024-11-21 164508" style="zoom:50%;"><p>得到密码，flag：flag{6ac45fb83b3bc355c024f5034b947dd3}</p><h3 id="28-webshell后门"><a href="#28-webshell后门" class="headerlink" title="28.webshell后门"></a><strong>28.webshell后门</strong></h3><p>与上题类似。D盾扫描</p><img src="2024-11-21 165430.png" alt="2024-11-21 165430" style="zoom:50%;"><p>在第一个文件中能看到pass，flag：flag{ba8e6c6f35a53933b871480bb9a9545c}</p><h3 id="29-来首歌吧"><a href="#29-来首歌吧" class="headerlink" title="29.来首歌吧"></a><strong>29.来首歌吧</strong></h3><p>简单的摩斯密码，打开audacity对照频谱图手敲莫斯密码即可</p><img src="2024-11-18 225047.png" alt="2024-11-18 225047" style="zoom: 50%;"><p>（ ↑ 为一部分频谱图 ）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...../-.../-.-./----./..---/...../-..../....-/----./-.-./-.../-----/.----/---../---../..-./...../..---/./-..../.----/--.../-../--.../-----/----./..---/----./.----/----./.----/-.-./</span><br></pre></td></tr></table></figure><p>随波逐流解密即可</p><h3 id="30-面具下的flag"><a href="#30-面具下的flag" class="headerlink" title="30.面具下的flag"></a><strong>30.面具下的flag</strong></h3><p>得到一张知名男女图片，随波逐流一下可以发现有隐藏文件，binwalk提取一下可以发现得到一个压缩包，解压发现要密码</p><p>，可以发现zip是伪加密，修改后解压。</p><p>得到一个vmdk文件，搜了一下发现</p><p>“后缀为 <strong><code>.vmdk</code></strong> 的文件是 VMware 虚拟磁盘文件，通常用于虚拟机环境中存储虚拟机的磁盘数据。”</p><p>以为要用虚拟机的，但是打不开。<del>于是看了一下wp</del></p><p>这里的flag.vmdk用010打开后搜 <em>flag</em> 等关键字样得到这个</p><img src="2024-11-18 205339.png" alt="2024-11-18 205339" style="zoom:80%;"><p>这个</p><img src="2024-11-18 205445.png" alt="2024-11-18 205445" style="zoom:50%;"><p>还有这个</p><img src="2024-11-18 205614.png" alt="2024-11-18 205614" style="zoom:50%;"><p>直接复制好像解密不了。</p><p>打开kali，用kali自带的7z解密可以提取这些文件，输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7z x flag.vmdk -o./</span><br></pre></td></tr></table></figure><p> -o后面的.&#x2F;是把压缩的内容放在当前目录下，解压完成就能看见好几个文件夹</p><img src="2024-11-18 210026.png" alt="2024-11-18 210026" style="zoom:80%;"><p>这是brainfuck加密和Ook! Obfuscation加密</p><p>brainfuck加密随波逐流里有</p><p>Ook! Obfuscation加密网站：<a href="https://www.splitbrain.org/services/ook">Ook! Obfuscation解密网站</a></p><p>分别解密得到flag{N7F5_AD5_i5_funny!}</p><h3 id="31-荷兰宽带数据泄露"><a href="#31-荷兰宽带数据泄露" class="headerlink" title="31.荷兰宽带数据泄露"></a><strong>31.荷兰宽带数据泄露</strong></h3><p>拿到bin文件查了一下发现要用路由器解析的，用RouterPassView</p><p>打开后看了一下wp才知道username是flag</p><img src="2024-11-18 232344.png" alt="2024-11-18 232344" style="zoom:50%;"><h3 id="32-九连环"><a href="#32-九连环" class="headerlink" title="32.九连环"></a><strong>32.九连环</strong></h3><p>拿到jpg用010看一下，发现后面有压缩包隐藏的</p><p>先试一下随波逐流的binwalk提取，失败了，没提出来</p><p>于是我们用kali的binwalk</p><p>![2024-11-19 002930](.&#x2F;Misc-Record&#x2F;2024-11-19 002930.png)</p><p>（不知道为什么我的binwalk要加一个–run-as&#x3D;root提升权限。。）</p><p>提取出来的一个图片和一个压缩包，猜测密码在图片的隐写里</p><p>用steghide跑一下，真的在里面，提取</p><img src="2024-11-19 003229.png" alt="2024-11-19 003229" style="zoom:80%;"><p>查看它，下面的就是密码</p><img src="2024-11-19 003329.png" alt="2024-11-19 003329" style="zoom:80%;"><p>直接用密码解压压缩包就能看到flag：flag{1RTo8w@&amp;4nK@z*XL}</p><h3 id="33-认真你就输了"><a href="#33-认真你就输了" class="headerlink" title="33.认真你就输了"></a><strong>33.认真你就输了</strong></h3><p>这题我学到了ms-office文件本质是zip</p><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。把01.xls重命名为01.zip，解压缩后在 xl&#x2F;charts 目录里有 flag.txt </p><h3 id="34-被劫持的神秘礼物"><a href="#34-被劫持的神秘礼物" class="headerlink" title="34.被劫持的神秘礼物"></a><strong>34.被劫持的神秘礼物</strong></h3><p>拿到pcapng文件用wireshark打开，这里可以使用http.request.method&#x3D;&#x3D;POST进行过滤或者一个个点开看，发现</p><p>![2024-11-19 113909](.&#x2F;Misc-Record&#x2F;2024-11-19 113909.png)</p><p>得到账号密码adminaadminb，包上小写md5，flag{1d240aafe21a86afc11f38a45b541a49}</p><h3 id="35-被偷走的文件"><a href="#35-被偷走的文件" class="headerlink" title="35.被偷走的文件"></a><strong>35.被偷走的文件</strong></h3><p>提到偷走文件一般要清楚是找HTTP或者FTP，看到导出对象里有FTP-DATA，保存这个flag.rar</p><img src="2024-11-19 115640.png" alt="2024-11-19 115640" style="zoom:75%;"><p>保存下来发现要密码解压，爆破可以发现，密码是5790，得到flag</p><h3 id="36-藏藏藏"><a href="#36-藏藏藏" class="headerlink" title="36.藏藏藏"></a><strong>36.藏藏藏</strong></h3><p>得到一个jpg，用随波逐流的formost提取，得到一个zip，打开是个xlsx，一张二维码，用QR扫码得到flag</p><img src="2024-11-19 120348.png" alt="2024-11-19 120348" style="zoom:50%;"><h3 id="37-佛系青年"><a href="#37-佛系青年" class="headerlink" title="37.佛系青年"></a><strong>37.佛系青年</strong></h3><p>拿到的zip拖进随波逐流看一下，发现第一个jpg无加密，第二个txt伪加密，修复一下</p><p>jpg上说我FFF佛慈悲，txt内容为</p><img src="2024-11-19 121044.png" alt="2024-11-19 121044" style="zoom:67%;"><p>发现是与佛论禅编码，随波逐流得到flag</p><h3 id="38-你猜我是个啥"><a href="#38-你猜我是个啥" class="headerlink" title="38.你猜我是个啥"></a><strong>38.你猜我是个啥</strong></h3><p>随波逐流一把梭</p><h3 id="39-刷新过的图片"><a href="#39-刷新过的图片" class="headerlink" title="39.刷新过的图片"></a><strong>39.刷新过的图片</strong></h3><p>关键词“刷新”，很可能是F5-steganography加密，尝试解密</p><img src="2024-11-19 122828.png" alt="2024-11-19 122828" style="zoom:80%;"><p>我这里不知道为什么还要加上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--add-opens java.base/sun.security.provider=ALL-UNNAMED</span><br></pre></td></tr></table></figure><p>才能F5解密。。</p><p>得到一个txt文件，打开是乱码，却能看到首两个字母PK，改后缀为zip，解压</p><p>需要密码，发现是伪加密，随波逐流修复一下得到flag：flag{96efd0a2037d06f34199e921079778ee}</p><h3 id="40-秘密文件"><a href="#40-秘密文件" class="headerlink" title="40.秘密文件"></a><strong>40.秘密文件</strong></h3><p>winshark打开，查看了一下http，ftp-data，啥也没有。。</p><p>过滤tcp流，看到提示，追踪tcp，发现隐藏了一个rar文件</p><img src="2024-11-19 124139.png" alt="2024-11-19 124139" style="zoom:80%;"><p>用随波逐流的binwalk提取文件，得到rar，爆破密码发现是1903，得到flag：flag{d72e5a671aa50fa5f400e5d10eedeaa5}</p><h3 id="41-鸡你太美"><a href="#41-鸡你太美" class="headerlink" title="41.鸡你太美"></a><strong>41.鸡你太美</strong></h3><p>得到的zip一个是gif，另一个是损坏的gif，010打开发现缺少文件头，补上文件头即可拿到gif</p><img src="2024-11-19 143150.gif" alt="2024-11-19 143150" style="zoom:50%;"><p>这里注意flag不是zhi-yin-you-are-beautiful，不知道为啥是下划线zhi_yin_you_are_beautiful</p><p>得到flag：flag{zhi_yin_you_are_beautiful}</p><h3 id="42-just-a-rar"><a href="#42-just-a-rar" class="headerlink" title="42.just_a_rar"></a><strong>42.just_a_rar</strong></h3><p>得到的zip解压得到四位数.zip，直接爆破得到密码2016</p><p>拿到一张flag.jpg，拖进随波逐流得到flag</p><h3 id="43-snake"><a href="#43-snake" class="headerlink" title="43.snake"></a><strong>43.snake</strong></h3><p>拿到zip得到一个jpg，发现有隐藏文件</p><p>binwalk提取文件得到一个zip，zip里面是cyber和key</p><p>key里面是V2hhdCBpcyBOaWNraSBNaW5haidzIGZhdm9yaXRlIHNvbmcgdGhhdCByZWZlcnMgdG8gc25ha2VzPwo&#x3D;</p><p>base64解密得到</p><p>What is Nicki Minaj’s favorite song that refers to snakes?</p><p>搜了一下是anaconda，所以这是真正的key</p><p>而cyber是serpent加密，解密网址<a href="http://serpent.online-domain-tools.com/">http://serpent.online-domain-tools.com</a></p><p>解密得到flag</p><img src="2024-11-19 143133.png" alt="2024-11-19 143133" style="zoom:50%;"><p>flag：flag{who_knew_serpent_cipher_existed}</p><h3 id="44-菜刀666"><a href="#44-菜刀666" class="headerlink" title="44.菜刀666"></a><strong>44.菜刀666</strong></h3><p>放进随波逐流用formost提取出一个zip，但是要密码，而且爆破不出来</p><p>又看pcanp，过滤http.request.method&#x3D;&#x3D;POST</p><img src="2024-11-19 145901.png" alt="2024-11-19 145901" style="zoom:75%;"><p>发现1068的传了FF D8 FF E0 00 10 4A 46 49 46 00 01 ( JPG的文件头 )</p><p>复制下来进入010新建一个文件，保存图片得到</p><img src="2024-11-19 150455.png" alt="2024-11-19 150455" style="zoom:50%;"><p>得到密码：Th1s_1s_p4sswd_!!!</p><p>解压得到flag：flag{3OpWdJ-JP6FzK-koCMAK-VkfWBq-75Un2z}</p><h3 id="45-一叶障目"><a href="#45-一叶障目" class="headerlink" title="45.一叶障目"></a><strong>45.一叶障目</strong></h3><p>随波逐流一把梭</p><img src="2024-11-19 151204.png" alt="2024-11-19 151204" style="zoom: 33%;"><h3 id="46-神奇的二维码"><a href="#46-神奇的二维码" class="headerlink" title="46.神奇的二维码"></a><strong>46.神奇的二维码</strong></h3><p>得到一张二维码，CQR扫一下发现不是flag</p><img src="2024-11-19 151704.png" alt="2024-11-19 151704" style="zoom:50%;"><p>拖进随波逐流binwalk提取一下文件得到716A.rar 7104.rar 17012.rar 18394.rar</p><p>1.7104.rar</p><p>解压得到encode.txt</p><p>里面是YXNkZmdoamtsMTIzNDU2Nzg5MA&#x3D;&#x3D;</p><p>base64解密一下是asdfghjkl1234567890</p><p>没用，看下一个。。</p><p>2.716A</p><p>解压得到一张 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片和一个看看flag在不在里面^_^.zip</p><p>用asdfghjkl1234567890解密zip，又得到一个 “已经可以了大佬你现在这个情况证明你已经无敌了” 的图片</p><img src="2024-11-19 152700.png" alt="2024-11-19 152700" style="zoom:33%;"><p>没用，看下一个。。</p><p>3.17012.zip</p><p>解压得到一个flag.doc，里面是很长的字符</p><p>需要多次解码base64，网上找了个脚本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line"></span><br><span class="line">def decode(f):</span><br><span class="line">n = 0;</span><br><span class="line">while True:</span><br><span class="line">try:</span><br><span class="line">f = base64.b64decode(f)</span><br><span class="line">n += 1</span><br><span class="line">except:</span><br><span class="line">print(&#x27;[+]Base64共decode了&#123;0&#125;次，最终解码结果如下:&#x27;.format(n))</span><br><span class="line">print(str(f,&#x27;utf-8&#x27;))</span><br><span class="line">break</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">f = open(&#x27;e:/Python 3.13/ccc.txt&#x27;,&#x27;r&#x27;).read()</span><br><span class="line">decode(f)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>跑一下脚本</p><img src="2024-11-19 160040.png" alt="2024-11-19 160040" style="zoom:50%;"><p>得到如下：comEON_YOuAreSOSoS0great</p><p>下一个。。。</p><p>4.18394.rar</p><p>用comEON_YOuAreSOSoS0great去解密rar，得到一串音频，拖进aud</p><img src="2024-11-19 160454.png" alt="2024-11-19 160454" style="zoom:75%;"><p>明显看出来是摩斯密码，手敲代码得</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--/---/.-./..././../.../...-/./.-./-.--/...-/./.-./-.--/./.-/.../-.--</span><br></pre></td></tr></table></figure><p>解密最后得到flag：flag{morseisveryveryeasy}     (要注意是小写)</p><p>ps：这道题好烦。。</p><h3 id="47-纳尼"><a href="#47-纳尼" class="headerlink" title="47.纳尼"></a>47.纳尼</h3><p>拿到文件打不开一看就是缺少文件头，010里面补上47 49 46 38得到gif</p><img src="2024-11-19 160490.gif" alt="2024-11-19 160490" style="zoom: 50%;"><p>用随波逐流分解帧间隔，得到Q1RGe3dhbmdfYmFvX3FpYW5nX2lzX3NhZH0&#x3D;</p><p>base64解码得CTF{wang_bao_qiang_is_sad}，则flag：flag{wang_bao_qiang_is_sad}</p><h3 id="48-excel破解"><a href="#48-excel破解" class="headerlink" title="48.excel破解"></a>48.excel破解</h3><p>随波逐流一把梭</p><h3 id="49-来题中等的吧"><a href="#49-来题中等的吧" class="headerlink" title="49.来题中等的吧"></a>49.来题中等的吧</h3><p>义眼顶针，鉴定为morse</p><img src="2024-11-19 200000.png" alt="2024-11-19 200000" style="zoom:80%;"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.-/.-../.--./..../.-/.-../.-/-...</span><br></pre></td></tr></table></figure><p>解密得ALPHALAB</p><p>则flag{alphalab}</p><h3 id="50-梅花香自苦寒来"><a href="#50-梅花香自苦寒来" class="headerlink" title="50.梅花香自苦寒来"></a>50.梅花香自苦寒来</h3><p>拿到png先用随波逐流跑一下，得到一串坐标，猜测是画图</p><img src="2024-11-20 212245.png" alt="2024-11-20 212245" style="zoom:50%;"><p>网上找了一下，找到了gnuplot来画图，不过我们先要把括号和逗号去掉，脚本如下</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>去掉括号和逗号后用gnuplot画图</p><img src="2024-11-20 212012.png" alt="2024-11-20 212012" style="zoom:80%;"><p>画完图后得到一个二维码，CQR扫一下得到flag：flag{40fc0a979f759c8892f4dc045e28b820}</p><h3 id="51-谁赢了比赛？"><a href="#51-谁赢了比赛？" class="headerlink" title="51.谁赢了比赛？"></a>51.谁赢了比赛？</h3><p>拿到png用binwalk提取文件得到一个zip，有密码</p><p>arp爆破得到密码是1020</p><p>解压是一张gif，逐帧分解得到很多张棋谱和一张奇怪的图片</p><img src="2024-11-20 212250.png" alt="2024-11-20 212250" style="zoom:33%;"><p>图片stegsolve一下在Red plane0得到一张二维码</p><p>CQR扫一下</p><img src="2024-11-20 215047.png" alt="2024-11-20 215047" style="zoom:33%;"><p>得到flag：flag{shanxiajingwu_won_the_game}</p><h3 id="52-ACTF新生赛2020-outguess"><a href="#52-ACTF新生赛2020-outguess" class="headerlink" title="52.[ACTF新生赛2020]outguess"></a>52.[ACTF新生赛2020]outguess</h3><p>拿到一堆东西，txt里让我们guess一下flag在哪，一看就很明显是旁边的mmm.jpg里</p><p>而且是outguess隐写</p><p>这里我们要注意的是直接去无密文outguess会显示</p><blockquote><p>[!WARNING]</p><p>Extracted datalen is too long</p></blockquote><p>说明是有密文的</p><p>发现吗，mmm.jpg的属性里面有：公正民主公正文明公正和谐</p><p>社会主义核心价值观解码:  abc</p><p>abc作为密文outguess.</p><img src="2024-11-20 215800.png" alt="2024-11-20 215800" style="zoom:80%;"><p>得到flag：flag{gue33_Gu3Ss!2020}</p><h3 id="53-WUSTCTF2020-find-me"><a href="#53-WUSTCTF2020-find-me" class="headerlink" title="53.[WUSTCTF2020]find_me"></a>53.[WUSTCTF2020]find_me</h3><p>一定一定要多看属性！</p><p>属性备注里面有盲文   ⡇⡓⡄⡖⠂⠀⠂⠀⡋⡉⠔⠀⠔⡅⡯⡖⠔⠁⠔⡞⠔⡔⠔⡯⡽⠔⡕⠔⡕⠔⡕⠔⡕⠔⡕⡍&#x3D;</p><p>随波逐流解密得到flag：flag{y$0$u_f$1$n$d$_M$e$e$e$e$e}</p><h3 id="54-穿越时空的思念"><a href="#54-穿越时空的思念" class="headerlink" title="54.穿越时空的思念"></a>54.穿越时空的思念</h3><p>得到音频听一下能在右声道发现明显的莫斯密码，手敲得</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..-./-----/..---/----./-.../-../-..../..-./...../...../.----/.----/...--/----./././-.././-.../---.././....-/...../.-/.----/--.../...../-.../-----/--.../---../-..../..-./-----/..---/----./-.../-../-..../..-./.....</span><br></pre></td></tr></table></figure><p>解密，得F029BD6F551139EEDEB8E45A175B0786F029BD6F5</p><p>取前32位小写得flag：flag{f029bd6f551139eedeb8e45a175b0786}</p><h3 id="55-SWPU2019-我有一只马里奥"><a href="#55-SWPU2019-我有一只马里奥" class="headerlink" title="55.[SWPU2019]我有一只马里奥"></a>55.[SWPU2019]我有一只马里奥</h3><p>得到一个exe，执行后得到1.txt，里面写着ntfs      flag.txt</p><p><del>有点不会了，看了下wp</del></p><p>查到了</p><blockquote><p>[!NOTE]</p><p>NTFS交换数据流（简称ADS）是NTFS磁盘格式的一个特性，在NTFS文件系统下，每个文件都可以存在多个数据流，除了主文件流之外还可以有许多非主文件流寄宿在主文件流中，而我们无法查看到非主文件数据流，因文件夹大小始终显示0</p></blockquote><p><strong>以下是进行文件流计生和查看的方法，以后在windows命令行下查看文件，都用 dir &#x2F;r</strong></p><blockquote><p>[!NOTE]</p><p>寄生一:</p><p>echo 写入内容&gt;&gt;宿主文件:交换数据流文件(寄生文件)</p><p>echo ever&gt;&gt;1.txt:2.txt</p><p>2.txt为echo创建出交换数据流文件，ever在2.txt中</p><p>寄生二:</p><p>type 交换数据流文件(寄生文件)&gt;&gt;宿主文件夹:交换数据流文件(寄生文件)</p><p>type 2.txt&gt;&gt;temp:2.txt</p><p>temp为空文件夹,执行后2.txt寄生在temp文件夹上</p><p>type a.jpg&gt;&gt;temp:a.jpg</p><p>temp为空文件夹,执行后a.jpg寄生在temp文件夹上</p><p>查看:</p><p>notepad 宿主文件:交换数据流文件(寄生文件）</p><p>notepad 1.txt:2.txt</p><p>查看图片文件:</p><p>mspaint 宿主文件:交换数据流文件(寄生文件)</p><p>notepad a.jpg:b.jpg</p><p>过滤</p><p>dir &#x2F;r | findstr $DATA （过滤DATA字符串）</p></blockquote><p>这道题应该是利用ntfs把flag.txt隐藏了</p><p>需要我们先建立一个文件夹来存放1.txt，再cmd，然后直接查看flag.txt</p><img src="2024-11-20 232606.png" alt="2024-11-20 232606" style="zoom:80%;"><p>运行这个notepad 1.txt:flag.txt后就能看到flag：flag{ddg_is_cute}</p><h3 id="56-GUET-CTF2019-KO"><a href="#56-GUET-CTF2019-KO" class="headerlink" title="56.[GUET-CTF2019]KO"></a>56.[GUET-CTF2019]KO</h3><p>打开文本是明显的Ook!加密</p><p>拖进在线网站直接解密就好（网站见Misc Ultra）</p><p>flag：flag{welcome to CTF}</p><h3 id="57-ACTF新生赛2020-base64隐写"><a href="#57-ACTF新生赛2020-base64隐写" class="headerlink" title="57.[ACTF新生赛2020]base64隐写"></a>57.[ACTF新生赛2020]base64隐写</h3><p>解压zip得到一个txt和hint</p><p>txt里面是多行base64加密过的，复制进随波逐流</p><p>选择“base64隐写解密”直接得到flag：flag{6aseb4_f33!}</p><p>（？？？</p><p>看了一下wp发现这题base64解密过后是一个python2脚本，需要复制进kali跑脚本出flag</p><p>没啥好说的，随波逐流太好用了。。还能顺手给你把脚本跑了。。</p><h3 id="58-MRCTF2020-ezmisc"><a href="#58-MRCTF2020-ezmisc" class="headerlink" title="58.[MRCTF2020]ezmisc"></a>58.[MRCTF2020]ezmisc</h3><p>随波逐流爆破宽高得</p><img src="2024-11-20 232690.png" alt="2024-11-20 232690" style="zoom:50%;"><p>flag：flag{1ts_vEryyyyyy_ez!}</p><h3 id="59-GXYCTF2019-gakki"><a href="#59-GXYCTF2019-gakki" class="headerlink" title="59.[GXYCTF2019]gakki"></a>59.[GXYCTF2019]gakki</h3><p>拿到wolaopo.jpg，发现有文件隐写</p><p>binwalk提取得到zip，有密码</p><p>arp爆破得密码是8864，拿到一个毫无规律的txt，里面如同乱码</p><p><del>查了一下wp</del></p><p>最后发现是要我们统计字符，利用puzzlesolver</p><img src="2024-11-20 234945.png" alt="2024-11-20 234945" style="zoom:50%;"><p>flag就是频率前几个的</p><p>flag：flag{gaki_IsMyw1fe}</p><p>（脑洞好大这题）</p><h3 id="60-HBNIS2018-caesar"><a href="#60-HBNIS2018-caesar" class="headerlink" title="60.[HBNIS2018]caesar"></a>60.[HBNIS2018]caesar</h3><p>全文：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">题目：caesar</span><br><span class="line"></span><br><span class="line">描述：gmbhjtdbftbs</span><br><span class="line"></span><br><span class="line">flag格式：XXX 明文</span><br><span class="line"></span><br><span class="line">提交：直接提交明文 （小写）</span><br></pre></td></tr></table></figure><p>直接凯撒解密得flagiscaesar</p><p>flag：flag{flagiscaesar}</p><h3 id="61-SUCTF2018-single-dog"><a href="#61-SUCTF2018-single-dog" class="headerlink" title="61.[SUCTF2018]single dog"></a>61.[SUCTF2018]single dog</h3><p>拿到jpg发现后接了文本，binwalk提取一下是个zip</p><p>解压得1.txt里面是一堆颜文字，查了一下是AAencode，除此之外还有jjencode、ppencode、rrencode、uuencode、xxencode</p><p>利用随波逐流解密即可，也可以用在线网站<a href="http://www.hiencode.com/">http://www.hiencode.com/</a></p><p>解码得flag：flag{happy double eleven}</p><h3 id="62-黑客帝国"><a href="#62-黑客帝国" class="headerlink" title="62.黑客帝国"></a>62.黑客帝国</h3><p>zip解压一下看到很长的txt，开头是52617221，是rar文件头</p><p>010存一下，得到rar，解压要密码，爆破得到3690</p><p>解压得到一个png，但是打不开，010看一下</p><img src="2024-11-21 001233.png" alt="2024-11-21 001233" style="zoom:80%;"><p>看出来后面JFIF是jpg的，且看到010最后面是FF D9</p><p>应该是修改了文件头，改回jpg即可</p><p>(PNG（png)文件头：89 50 4E 47　文件尾：AE 42 60 82）<br>(JPEG (jpg)文件头：FF D8 FF　　文件尾：FF D9　)</p><p>拿到图片</p><img src="2024-11-21 002034.png" alt="2024-11-21 002034" style="zoom:50%;"><p>flag：flag{57cd4cfd4e07505b98048ca106132125}</p><h3 id="63-HBNIS2018-低个头"><a href="#63-HBNIS2018-低个头" class="headerlink" title="63.[HBNIS2018]低个头"></a>63.[HBNIS2018]低个头</h3><p>全文：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">题目：低个头</span><br><span class="line"></span><br><span class="line">描述：EWAZX RTY TGB IJN IO KL 请破解该密文 f</span><br><span class="line"></span><br><span class="line">lag格式：XXX 明文</span><br><span class="line"></span><br><span class="line">提交：直接提交明文（大写）</span><br></pre></td></tr></table></figure><p>脑洞题。。。<del>查了一下wp</del></p><p>题目“低个头”的意思竟然是让你低头看键盘</p><p>而那些字母在键盘上组合起来组成CTF。。</p><p>所以flag：flag{CTF}</p><h3 id="64-SWPU2019-伟大的侦探"><a href="#64-SWPU2019-伟大的侦探" class="headerlink" title="64.[SWPU2019]伟大的侦探"></a>64.[SWPU2019]伟大的侦探</h3><p>zip是有密码的，而且爆破不出来</p><p>密码txt里面有一串乱码是密码</p><p>这里需要我们用010打开txt，而且在视图上选择EBCDIC（还不清楚为什么。。</p><img src="2024-11-21 003029.png" alt="2024-11-21 003029" style="zoom:80%;"><p>就能得到密码：wllm_is_the_best_team!</p><p>然后就得到了很多小人的图片</p><img src="2024-11-21 003448.png" alt="2024-11-21 003448" style="zoom:67%;"><p>这个对照表在 随波逐流&#x2F;其他工具&#x2F;更多图形密码（在线） 里面能找到</p><img src="2024-11-21 003944.png" alt="2024-11-21 003944" style="zoom:80%;"><p>对照出来是iloveholmesandwllm</p><p>flag：flag{iloveholmesandwllm}</p><h3 id="65-MRCTF2020-你能看懂音符吗"><a href="#65-MRCTF2020-你能看懂音符吗" class="headerlink" title="65.[MRCTF2020]你能看懂音符吗"></a>65.[MRCTF2020]你能看懂音符吗</h3><p>压缩包解压不了，010打开发现修改了文件头</p><p>改回来，解压，得到一个docx文档，里面没啥内容</p><p>将文档后缀改成zip，打开document.xml，看到</p><img src="2024-11-21 211756.png" alt="2024-11-21 211756" style="zoom:75%;"><p>是一串音乐加密的数据</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">♭♯♪‖¶♬♭♭♪♭‖‖♭♭♬‖♫♪‖♩♬‖♬♬♭♭♫‖♩♫‖♬♪♭♭♭‖¶∮‖‖‖‖♩♬‖♬♪‖♩♫♭♭♭♭♭§‖♩♩♭♭♫♭♭♭‖♬♭‖¶§♭♭♯‖♫∮‖♬¶‖¶∮‖♬♫‖♫♬‖♫♫§=</span><br></pre></td></tr></table></figure><p>随波逐流解密得MRCTF{thEse_n0tes_ArE_am@zing~}</p><p>flag：flag{thEse_n0tes_ArE_am@zing~}</p><h3 id="66-我吃三明治"><a href="#66-我吃三明治" class="headerlink" title="66.我吃三明治"></a>66.我吃三明治</h3><p>得到一张三明治图片，formost一下还是一张三明治，010打开看到</p><img src="2024-11-21 212453.png" alt="2024-11-21 212453" style="zoom:75%;"><p>藏了</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MZWGCZ33GZTDCNZZG5SDIMBYGBRDEOLCGY2GIYJVHA4TONZYGA2DMM3FGMYH2</span><br></pre></td></tr></table></figure><p>在两张图片之间（就像三明治一样。。</p><p>base32解码得flag：flag{6f1797d4080b29b64da5897780463e30}</p><h3 id="67-SWPU2019-你有没有好好看网课"><a href="#67-SWPU2019-你有没有好好看网课" class="headerlink" title="67.[SWPU2019]你有没有好好看网课"></a>67.[SWPU2019]你有没有好好看网课</h3><p>得到两个zip，第二个zip爆破密码是183792</p><p>打开得到docx和影流之主</p><p><del>脑洞题，查了一下wp</del></p><p>docx的内容是：</p><img src="2024-11-21 213717.png" alt="2024-11-21 213717" style="zoom:50%;"><p>提示我们在视频的5.20秒和7.11秒有问题</p><p>使用potplayer逐帧查看，分别看到</p><img src="2024-11-21 215024.png" alt="2024-11-21 215024" style="zoom:80%;"><p>和</p><img src="2024-11-21 215023.png" alt="2024-11-21 215023" style="zoom:80%;"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">..... ../... ./... ./... ../</span><br><span class="line">dXBfdXBfdXA=</span><br></pre></td></tr></table></figure><p>第一个是敲击码，第二个是base64</p><p>解码分别得wllm和up_up_up，拼接得到wllmup_up_up</p><p>这是第一个zip的解压密码</p><p>解压出来得到一张jpg，随波逐流得到flag：flag{A2e_Y0u_Ok?}</p><h3 id="68-ACTF新生赛2020-NTFS数据流"><a href="#68-ACTF新生赛2020-NTFS数据流" class="headerlink" title="68.[ACTF新生赛2020]NTFS数据流"></a>68.[ACTF新生赛2020]NTFS数据流</h3><p>这里需要注意的是解压软件的选择，不能用bandizip，否则会没有ntfs</p><p>建议选择winrar</p><p>winrar解压完zip后，直接 dir &#x2F;r ，过滤 $DATA字符串</p><p>看到有隐藏后直接notepad</p><img src="2024-11-21 235726.png" alt="2024-11-21 235726" style="zoom:80%;"><p>得到flag：flag{AAAds_nntfs_ffunn?}</p><h3 id="69-sqltest"><a href="#69-sqltest" class="headerlink" title="69.sqltest"></a>69.sqltest</h3><p>拿到文件进winshark分析一下发现是sql注入攻击</p><p>而且是sql盲注，它是用ascii码的大小比较来判断库名、表名、字段名和字段值的内容的</p><p>打开文件如下</p><img src="2024-11-22 003052.png" alt="2024-11-22 003052" style="zoom:50%;"><p>这里看出来是sql了，可以先过滤一下http流量</p><p>再选择 &#x2F;文件&#x2F;导出分组解析结果&#x2F;AS CSV</p><p>这样就可以把流量导出成表格。看得更清楚</p><img src="2024-11-22 003611.png" alt="2024-11-22 003611" style="zoom:75%;"><p>一般来说，前面的内容是hacker来判断数据库名、表名、字段名的，我们直接拉到最下面</p><p>![2024-11-22 003853](.&#x2F;Misc-Record&#x2F;2024-11-22 003853.png)</p><p>可以发现红框框起来的数字不同的是不同的对flag的尝试</p><p>hacker使用二分法爆破出flag内容，在对一个字符进行bool判断时，被重复判断的ASCII值就是正确的字符。</p><p>如上图是55和125</p><p>这里我们需要找到ascii开始判断flag的部分来提取，或者可以从下往上提取</p><p>最后提取如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">102, 108, 97, 103, 123, 52, 55, 101, 100, 98, 56, 51, 48, 48, 101, 100, 53, 102, 57, 98, 50, 56, 102, 99, 53, 52, 98, 48, 100, 48, 57, 101, 99, 100, 101, 102, 55, 125</span><br></pre></td></tr></table></figure><p>ascii码解密得到flag：flag{47edb8300ed5f9b28fc54b0d09ecdef7}</p><h3 id="70-john-in-the-middle"><a href="#70-john-in-the-middle" class="headerlink" title="70.john-in-the-middle"></a>70.john-in-the-middle</h3><p>拿到pcanp文件可以先拖到随波逐流，binwalk一下没有提取出什么东西</p><p>formost一下发现提取出了几张图片，逐个对图片进行分析。</p><p>发现有个三角形状的图片在stegsolve可以看到flag</p><img src="2024-11-22 100005.png" alt="2024-11-22 100005" style="zoom:50%;"><p>flag：flag{J0hn_th3_Sn1ff3r}</p><h3 id="71-UTCTF2020-docx"><a href="#71-UTCTF2020-docx" class="headerlink" title="71.[UTCTF2020]docx"></a>71.[UTCTF2020]docx</h3><p>word本质是zip，改后缀名，在word&#x2F;media目录里找到image23.png</p><p>里面有flag</p><img src="2024-11-22 100523.png" alt="2024-11-22 100523" style="zoom:50%;"><p>flag：flag{unz1p_3v3ryth1ng}</p><h3 id="72-ACTF新生赛2020-swp"><a href="#72-ACTF新生赛2020-swp" class="headerlink" title="72.[ACTF新生赛2020]swp"></a>72.[ACTF新生赛2020]swp</h3><p>拿到zip先解压，拿到pcapng可以先尝试formost提取一下</p><p>提取出一堆图片，gif和一个zip</p><p>zip解压过后得到一个flag.swp</p><p>可以用010打开，发现</p><img src="2024-11-22 101400.png" alt="2024-11-22 101400" style="zoom:80%;"><p>得到ctf{c5558bcf-26da-4f8b-b181-b61f3850b9e5}</p><p>flag：flag{c5558bcf-26da-4f8b-b181-b61f3850b9e5}</p><h3 id="73-GXYCTF2019-SXMgdGhpcyBiYXNlPw"><a href="#73-GXYCTF2019-SXMgdGhpcyBiYXNlPw" class="headerlink" title="73.[GXYCTF2019]SXMgdGhpcyBiYXNlPw&#x3D;&#x3D;"></a>73.[GXYCTF2019]SXMgdGhpcyBiYXNlPw&#x3D;&#x3D;</h3><p>题目解码为Is this base?</p><p>解压zip得到一个txt，里面是多行base64，解密</p><p>解密后得到一首法语诗词，，</p><p>可以在随波逐流里选择 base64隐写解密，得到GXY{fazhazhenhaoting}</p><p>flag：flag{fazhazhenhaoting}</p><h3 id="74-间谍启示录"><a href="#74-间谍启示录" class="headerlink" title="74.间谍启示录"></a>74.间谍启示录</h3><p>得到iso映像文件，foremost提取一下</p><p>发现得到了个exe和一个压缩包</p><p>exe运行得到文件已被销毁.exe</p><p>压缩包解压得到文件已被销毁.exe和文件已被销毁.ico和flag.exe</p><p>运行flag.exe，就能看到机密文件.txt（记得要在显示里面把隐藏内容勾选上）</p><img src="2024-11-22 105006.png" alt="2024-11-22 105006" style="zoom:75%;"><p>flag：flag{379:7b758:g7dfe7f19:9464f:4g9231}</p><h3 id="75-喵喵喵"><a href="#75-喵喵喵" class="headerlink" title="75.喵喵喵"></a>75.喵喵喵</h3><p>得到一张小猫图片，在stegsolve里面发现在RGB三色的0通道有异常，猜测是lsb隐写</p><p>顺序是BGR时得到</p><img src="2024-11-22 105723.png" alt="2024-11-22 105723" style="zoom:50%;"><p>是一张png，保存下来，却发现打不开</p><p>010查看发现文件头有问题，我们修改一下</p><p>查看后发现是半张二维码</p><img src="2024-11-22 110400.png" alt="2024-11-22 110400" style="zoom:80%;"><p>二维码拖进随波逐流爆破宽高得到整张二维码</p><p>扫了之后发现给了一个网盘地址</p><img src="2024-11-22 110637.png" alt="2024-11-22 110637" style="zoom:50%;"><p>网盘<a href="https://pan.baidu.com/s/1pLT2J4f">https://pan.baidu.com/s/1pLT2J4f</a></p><p>得到一个txt文件，写着：flag不在这里哦  你猜猜flag在哪里呢？  找找看吧</p><p>猜测为ntfs，扫描，提取</p><img src="2024-11-22 112003.png" alt="2024-11-22 112003" style="zoom:75%;"><p>得到一个pyc</p><blockquote><p>[!NOTE]</p><p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p><p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p></blockquote><p>使用uncompyle6进行反编译。或者使用在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p><img src="2024-11-22 113421.png" alt="2024-11-22 113421" style="zoom:75%;"><p>得到如下代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># uncompyle6 version 3.9.2</span></span><br><span class="line"><span class="comment"># Python bytecode version base 2.7 (62211)</span></span><br><span class="line"><span class="comment"># Decompiled from: Python 3.12.7 (main, Nov  8 2024, 17:55:36) [GCC 14.2.0]</span></span><br><span class="line"><span class="comment"># Embedded file name: flag.py</span></span><br><span class="line"><span class="comment"># Compiled at: 2017-12-05 23:42:15</span></span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encode</span>():</span><br><span class="line">    flag = <span class="string">&#x27;*************&#x27;</span></span><br><span class="line">    ciphertext = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(flag)):</span><br><span class="line">        s = <span class="built_in">chr</span>(i ^ <span class="built_in">ord</span>(flag[i]))</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            s = <span class="built_in">ord</span>(s) + <span class="number">10</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            s = <span class="built_in">ord</span>(s) - <span class="number">10</span></span><br><span class="line">        ciphertext.append(<span class="built_in">str</span>(s))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ciphertext[::-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ciphertext = [</span><br><span class="line"> <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">8</span>, <span class="number">17</span>, <span class="number">18</span>, </span><br><span class="line"> <span class="number">19</span>, <span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">15</span>]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>CTF</category>
+          
+          <category> CTF </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
-<p>如果还传不上去的话可以缩放图片试试</p>
-<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
-<p>ps：（这是不是图片加载慢的原因？）</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>哲学-维特根斯坦</title>
-    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
-    <content><![CDATA[<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p>
-<p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p>
-<p>。</p>
-<h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p>
-<p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p>
-<p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p>
-<p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p>
-<p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p>
-<p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p>
-<img src="2.jpg" alt="2" style="zoom:50%;">
-
-
-
-<h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p>
-<p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p>
-<h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p>
-<p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p>
-<h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p>
-<p><img src="3.png" alt="3"></p>
-<h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p>
-<p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p>
-<h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p>
-<h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p>
-<p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p>
-<p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p>
-<h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p>
-<p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p>
-<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p>
-<p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p>
-<p>————————————————————————————————————————</p>
-<h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p>
-<p>•《哲学研究》</p>
-<h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p>
-<p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p>
-<p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p>
-<p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p>
-<p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p>
-<h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p>
-<p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p>
-<p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p>
-<h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p>
-<h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p>
-<p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p>
-<p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p>
-<p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p>
-<h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p>
-<p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p>
-<p>————————————————————————————————————————</p>
-<p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p>
-<p><em>“告诉他们我度过了极好的一生”</em></p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Reverse Record</title>
+      <link href="/2024/11/Reverse-Record/"/>
+      <url>/2024/11/Reverse-Record/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p><h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p><p><img src="re2.png" alt="re2"></p><p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p><p><img src="re3.png" alt="re3"></p><p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p><p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>]]></content>
+      
+      
       <categories>
-        <category>philosophy</category>
+          
+          <category> CTF </category>
+          
       </categories>
-      <tags>
-        <tag>philosophy</tag>
-        <tag>Wittgenstein</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> reverse </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Before-everthing</title>
+      <link href="/2024/11/hello-world/"/>
+      <url>/2024/11/hello-world/</url>
+      
+        <content type="html"><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p><p>尽量使自己学有所得–</p><p>——————————</p><p>作者VX:</p><p>x3289444724</p><p>作者QQ:</p><p>3289444724</p><p>联系电话:</p><p>①13968975069</p><p>②18072320271</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
