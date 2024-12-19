@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
-]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024浙江省省赛复现</title>
     <url>/2024/12/2024%E6%B5%99%E6%B1%9F%E7%9C%81%E7%9C%81%E8%B5%9B%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[<h1 id="1-2024浙江省赛复现"><a href="#1-2024浙江省赛复现" class="headerlink" title="1.2024浙江省赛复现"></a>1.2024浙江省赛复现</h1><h2 id="1-real-signin"><a href="#1-real-signin" class="headerlink" title="1.real signin"></a>1.real signin</h2><p>得到一张out.png，用zsteg跑一下发现：</p>
@@ -195,6 +185,16 @@
       </tags>
   </entry>
   <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[<p>还没想好写啥</p>
+<p><img src="111.jpg" alt="111"></p>
+]]></content>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Misc Ultra</title>
     <url>/2024/11/Misc-Ultra/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><u>写在前面</u></h1><p><strong>MISC的学习是极广的，很多都要学习，而记在博客上是最方便有效的方法了，可以随时翻阅</strong></p>
@@ -255,7 +255,7 @@
 <p>运行</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python basecrack.py</span><br></pre></td></tr></table></figure>
 
-<img src="myblog\source\_posts\Misc-Ultra\2024-11-28 111731.png" alt="2024-11-28 111731" style="zoom:80%;">
+<img src="myblog\source\_posts\Misc-Ultra\2024-11-28 111731.png" alt="2024-11-28 111731" style="zoom: 67%;">
 
 <p>就可以开始解密了。</p>
 <p>如果想让他一直解密的话用</p>
@@ -617,9 +617,15 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">7z x flag.vmdk -o./</span><br></pre></td></tr></table></figure>
 
 <p>解压后就能看到好几个文件夹</p>
+<h2 id="vhd文件"><a href="#vhd文件" class="headerlink" title="vhd文件"></a><u>vhd文件</u></h2><p>这是磁盘文件，可以直接双击打开，会发现多了两个磁盘，在磁盘里可以找东西</p>
+<p>怎么虚拟化？</p>
+<p>使用Hyper-V搭建虚拟机（怎么下Hyper-V？<a href="https://blog.csdn.net/wxzjn1027/article/details/140280294?ops_request_misc=%257B%2522request%255Fid%2522%253A%25226933d4915cc7ff339966cfabedb4e6fa%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=6933d4915cc7ff339966cfabedb4e6fa&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-140280294-null-null.142%5Ev100%5Epc_search_result_base8&utm_term=Hyper-V&spm=1018.2226.3001.4187">可以看这个</a></p>
+<p>注意挂载vhd的时候要选择第一代来挂载，不然会报错</p>
+<p>进入后可以win+r看上一条命令找线索。</p>
+<p>理论上也可以更改vhd格式来使用vmware挂载。</p>
 <h2 id="iso映像文件"><a href="#iso映像文件" class="headerlink" title="iso映像文件"></a><u>iso映像文件</u></h2><p>一般是u盘文件，可以直接改后缀为zip然后解压，或者formost提取出里面的内容</p>
 <h1 id="pyjail-py沙盒逃逸"><a href="#pyjail-py沙盒逃逸" class="headerlink" title="pyjail &#x2F; py沙盒逃逸"></a><u>pyjail &#x2F; py沙盒逃逸</u></h1><h2 id="思路：-7"><a href="#思路：-7" class="headerlink" title="思路："></a><u>思路：</u></h2><p>要看他给没给源代码，没有怎么猜测，给了怎么绕过黑名单&#x2F;长度限制等等</p>
-<h1 id="ms-office题"><a href="#ms-office题" class="headerlink" title="ms-office题"></a><u>ms-office题</u></h1><h2 id="思路：-8"><a href="#思路：-8" class="headerlink" title="思路："></a><u>思路：</u></h2><p>可以改后缀为zip看看</p>
+<h1 id="ms-office题"><a href="#ms-office题" class="headerlink" title="ms-office题"></a><u>ms-office题</u></h1><h2 id="思路：-8"><a href="#思路：-8" class="headerlink" title="思路："></a><u>思路：</u></h2><p>可以改后缀为zip看看，文本里可能会把文字改成白色的来隐藏可以ctrla+改色看看</p>
 <h2 id="ms-office文件本质是zip"><a href="#ms-office文件本质是zip" class="headerlink" title="ms-office文件本质是zip"></a><u>ms-office文件本质是zip</u></h2><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。</p>
 <p>可以直接改后缀名为zip</p>
 <h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a><u>宏</u></h2><p>如果后缀是docm的话可能有宏，在宏里看看</p>
@@ -627,6 +633,8 @@
 <p>2.使用olevba</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">olevba decode.docm</span><br></pre></td></tr></table></figure>
 
+<h2 id="doc里隐藏文字"><a href="#doc里隐藏文字" class="headerlink" title="doc里隐藏文字"></a><u>doc里隐藏文字</u></h2><p>勾选<code>文件/选项/显示/隐藏文字</code></p>
+<p>然后看看有无隐藏的东西</p>
 <h1 id="视频题"><a href="#视频题" class="headerlink" title="视频题"></a><u>视频题</u></h1><h2 id="思路：-9"><a href="#思路：-9" class="headerlink" title="思路："></a><u>思路：</u></h2><p>我遇到的一般是在视频的某一帧里藏二维码之类的内容，需要好点的眼力</p>
 <h2 id="帧慢放"><a href="#帧慢放" class="headerlink" title="帧慢放"></a><u>帧慢放</u></h2><p>使用potplayer即可</p>
 <h1 id="其他-工具"><a href="#其他-工具" class="headerlink" title="其他 &amp;&amp; 工具"></a><u>其他 &amp;&amp; 工具</u></h1><h2 id="反编译——这应该是reverse领域才对。。"><a href="#反编译——这应该是reverse领域才对。。" class="headerlink" title="反编译——这应该是reverse领域才对。。"></a><u>反编译——这应该是reverse领域才对。。</u></h2><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
@@ -698,56 +706,6 @@
       <tags>
         <tag>CTF</tag>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
-<p>如果还传不上去的话可以缩放图片试试</p>
-<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
-<p>ps：（这是不是图片加载慢的原因？）</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
       </tags>
   </entry>
   <entry>
@@ -1501,6 +1459,56 @@
       <tags>
         <tag>CTF</tag>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
+<p>而且在config.yml里有个post_asset_folder:要为true</p>
+<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
+<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
+<p>保证相对路径的时候再插入图片</p>
+<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
+<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
+<p>然后再</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
+<p><img src="11.png" alt="11"></p>
+<p>类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？</p>
+<p>如果还传不上去的话可以缩放图片试试</p>
+<p>（猜想：说不定可以直接在github上add file，下次试试）</p>
+<p>ps：（这是不是图片加载慢的原因？）</p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
       </tags>
   </entry>
   <entry>
