@@ -791,7 +791,13 @@
 
 <p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
 <p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
-<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1>]]></content>
+<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
+<p>vhd双击打开发现要密码，先看raw，用FTK挂载</p>
+<p>..</p>
+<p>发现有问题，加载不出来</p>
+<p>原来是复现的文件有问题，原本题目是chal.E01文件，能加载出来，但是复现给的文件是chal.raw，加载不出来。。</p>
+<p>遂卒。</p>
+<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1>]]></content>
       <categories>
         <category>CTF</category>
       </categories>
