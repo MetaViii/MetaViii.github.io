@@ -220,6 +220,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Misc Record</title>
     <url>/2024/11/Misc-Record/</url>
     <content><![CDATA[<h1 id="Misc刷题"><a href="#Misc刷题" class="headerlink" title="Misc刷题"></a>Misc刷题</h1><h2 id="1-BUU刷题"><a href="#1-BUU刷题" class="headerlink" title="1.BUU刷题"></a>1.BUU刷题</h2><h3 id="1-签到"><a href="#1-签到" class="headerlink" title="1.签到"></a>1.签到</h3><p>顾名思义，签到，复制提交就好</p>
@@ -1081,25 +1100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="一-NewStar-re复现"><a href="#一-NewStar-re复现" class="headerlink" title="一.NewStar-re复现"></a><strong>一.NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>blog 为何上传不了图像的解决</title>
     <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
@@ -1128,6 +1128,194 @@
 ]]></content>
       <tags>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Before-everthing</title>
+    <url>/2024/11/hello-world/</url>
+    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
+<p>尽量使自己学有所得–</p>
+<p>——————————</p>
+<p>作者VX:</p>
+<p>x3289444724</p>
+<p>作者QQ:</p>
+<p>3289444724</p>
+<p>联系电话:</p>
+<p>①13968975069</p>
+<p>②18072320271</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>newstar2024小明同学们复现</title>
+    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
+<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
+<p>先看操作版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
+
+<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
+
+<p>看到操作版本是 Win7SP1x86_23418</p>
+<p>然后直接lsadump就好</p>
+<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
+
+<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
+<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
+<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
+<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
+<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
+
+<blockquote>
+<p>[!NOTE]</p>
+<p>真相.txt</p>
+<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]</p>
+<p>要开始了呦.txt</p>
+<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
+</blockquote>
+<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
+<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
+
+<p>没啥思路了binwalk一下（感觉挺正常的</p>
+<p>发现一个txt内容是：</p>
+<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
+<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
+<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
+
+<p>使用VM挂载一下，注意要用管理员运行。</p>
+<p>这里要选择UEFI</p>
+<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
+
+
+
+
+
+
+
+<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
+<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
+<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
+<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
+
+<p>进行恢复，得到</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wsl启动出错</title>
+    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
+    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>然后重启电脑，看wsl还能运行吗</p>
+<p>我是运行了这个就好了，界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+
+<p>运行后检查版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
+<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者重装 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
+<p>按 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
+
+<p> 键，输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
+
+<p>，检查以下服务是否已启动：</p>
+<p><strong>Hyper-V Host Compute Service</strong></p>
+<p><strong>Virtual Machine Management</strong></p>
+<p>如果未启动，右键启动这些服务。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>哲学-维特根斯坦</title>
+    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
+    <content><![CDATA[<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p>
+<p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p>
+<p>。</p>
+<h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p>
+<p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p>
+<p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p>
+<p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p>
+<p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p>
+<p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p>
+<img src="2.jpg" alt="2" style="zoom:50%;">
+
+
+
+<h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p>
+<p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p>
+<h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p>
+<p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p>
+<h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p>
+<p><img src="3.png" alt="3"></p>
+<h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p>
+<p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p>
+<h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p>
+<h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p>
+<p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p>
+<p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p>
+<h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p>
+<p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p>
+<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p>
+<p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p>
+<p>————————————————————————————————————————</p>
+<h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p>
+<p>•《哲学研究》</p>
+<h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p>
+<p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p>
+<p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p>
+<p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p>
+<p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p>
+<h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p>
+<p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p>
+<p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p>
+<h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p>
+<h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p>
+<p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p>
+<p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p>
+<p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p>
+<h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p>
+<p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p>
+<p>————————————————————————————————————————</p>
+<p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p>
+<p><em>“告诉他们我度过了极好的一生”</em></p>
+]]></content>
+      <categories>
+        <category>philosophy</category>
+      </categories>
+      <tags>
+        <tag>philosophy</tag>
+        <tag>Wittgenstein</tag>
       </tags>
   </entry>
   <entry>
@@ -1665,194 +1853,6 @@
       <tags>
         <tag>misc</tag>
         <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/hello-world/</url>
-    <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><p><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></p>
-<p>尽量使自己学有所得–</p>
-<p>——————————</p>
-<p>作者VX:</p>
-<p>x3289444724</p>
-<p>作者QQ:</p>
-<p>3289444724</p>
-<p>联系电话:</p>
-<p>①13968975069</p>
-<p>②18072320271</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>wsl启动出错</title>
-    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
-    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-
-<p>然后重启电脑，看wsl还能运行吗</p>
-<p>我是运行了这个就好了，界面：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
-
-<p>运行后检查版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
-<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或者重装 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
-<p>按 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
-
-<p> 键，输入 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
-
-<p>，检查以下服务是否已启动：</p>
-<p><strong>Hyper-V Host Compute Service</strong></p>
-<p><strong>Virtual Machine Management</strong></p>
-<p>如果未启动，右键启动这些服务。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>newstar2024小明同学们复现</title>
-    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
-<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
-<p>先看操作版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
-
-<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
-
-<p>看到操作版本是 Win7SP1x86_23418</p>
-<p>然后直接lsadump就好</p>
-<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
-
-<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
-<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
-<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
-<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
-<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
-
-<blockquote>
-<p>[!NOTE]</p>
-<p>真相.txt</p>
-<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
-</blockquote>
-<blockquote>
-<p>[!NOTE]</p>
-<p>要开始了呦.txt</p>
-<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
-</blockquote>
-<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
-<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
-
-<p>没啥思路了binwalk一下（感觉挺正常的</p>
-<p>发现一个txt内容是：</p>
-<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
-<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
-<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
-
-<p>使用VM挂载一下，注意要用管理员运行。</p>
-<p>这里要选择UEFI</p>
-<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
-
-
-
-
-
-
-
-<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
-<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
-<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
-<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
-
-<p>进行恢复，得到</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-        <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>哲学-维特根斯坦</title>
-    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
-    <content><![CDATA[<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p>
-<p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p>
-<p>。</p>
-<h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p>
-<p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p>
-<p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p>
-<p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p>
-<p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p>
-<p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p>
-<img src="2.jpg" alt="2" style="zoom:50%;">
-
-
-
-<h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p>
-<p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p>
-<h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p>
-<p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p>
-<h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p>
-<p><img src="3.png" alt="3"></p>
-<h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p>
-<p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p>
-<h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p>
-<h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p>
-<p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p>
-<p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p>
-<h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p>
-<p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p>
-<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p>
-<p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p>
-<p>————————————————————————————————————————</p>
-<h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p>
-<p>•《哲学研究》</p>
-<h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p>
-<p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p>
-<p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p>
-<p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p>
-<p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p>
-<h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p>
-<p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p>
-<p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p>
-<h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p>
-<h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p>
-<p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p>
-<p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p>
-<p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p>
-<h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p>
-<p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p>
-<p>————————————————————————————————————————</p>
-<p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p>
-<p><em>“告诉他们我度过了极好的一生”</em></p>
-]]></content>
-      <categories>
-        <category>philosophy</category>
-      </categories>
-      <tags>
-        <tag>philosophy</tag>
-        <tag>Wittgenstein</tag>
       </tags>
   </entry>
 </search>
