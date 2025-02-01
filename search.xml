@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Network Traffic Analysis</title>
+      <link href="/2025/02/Network-Traffic-Analysis/"/>
+      <url>/2025/02/Network-Traffic-Analysis/</url>
+      
+        <content type="html"><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析</p><h1 id="CS流量——CobaltStrike流量"><a href="#CS流量——CobaltStrike流量" class="headerlink" title="CS流量——CobaltStrike流量"></a>CS流量——CobaltStrike流量</h1><blockquote><p>“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”</p><p>一些细节知识可以看这个 <a href="https://cloud.google.com/blog/topics/threat-intelligence/defining-cobalt-strike-components/">Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> Network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux提权浅析</title>
       <link href="/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/"/>
       <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
@@ -43,9 +70,9 @@
       
         <tags>
             
-            <tag> misc </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> misc </tag>
             
             <tag> WP </tag>
             
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> misc </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> misc </tag>
             
             <tag> WP </tag>
             
@@ -130,9 +157,9 @@
       
         <tags>
             
-            <tag> misc </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> misc </tag>
             
             <tag> WP </tag>
             
@@ -161,9 +188,9 @@
       
         <tags>
             
-            <tag> misc </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> misc </tag>
             
             <tag> WP </tag>
             
@@ -209,9 +236,9 @@
       
         <tags>
             
-            <tag> misc </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> misc </tag>
             
         </tags>
       
@@ -301,9 +328,9 @@
       
         <tags>
             
-            <tag> misc </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> misc </tag>
             
         </tags>
       
