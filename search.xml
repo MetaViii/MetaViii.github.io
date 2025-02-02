@@ -110,6 +110,16 @@
       </tags>
   </entry>
   <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[<p>还没想好写啥</p>
+<p><img src="111.jpg" alt="111"></p>
+]]></content>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024浙江省省赛复现</title>
     <url>/2024/12/2024%E6%B5%99%E6%B1%9F%E7%9C%81%E7%9C%81%E8%B5%9B%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[<h1 id="1-2024浙江省赛复现"><a href="#1-2024浙江省赛复现" class="headerlink" title="1.2024浙江省赛复现"></a>1.2024浙江省赛复现</h1><h2 id="1-real-signin"><a href="#1-real-signin" class="headerlink" title="1.real signin"></a>1.real signin</h2><p>得到一张out.png，用zsteg跑一下发现：</p>
@@ -309,16 +319,6 @@
 <p><strong>①13968975069</strong></p>
 <p><strong>②18072320271</strong></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
-]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
   </entry>
   <entry>
     <title>Linux提权浅析</title>
@@ -560,30 +560,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
-<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
-<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
+    <title>Network Traffic Analysis</title>
+    <url>/2025/02/Network-Traffic-Analysis/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析</p>
+<h1 id="CS流量——CobaltStrike流量"><a href="#CS流量——CobaltStrike流量" class="headerlink" title="CS流量——CobaltStrike流量"></a>CS流量——CobaltStrike流量</h1><blockquote>
+<p>“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”</p>
+<p>一些细节知识可以看这个 <a href="https://cloud.google.com/blog/topics/threat-intelligence/defining-cobalt-strike-components/">Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog</a></p>
 </blockquote>
-<p>-使用 uncompyle6</p>
-<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
-<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
-<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
-<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
 ]]></content>
       <categories>
         <category>CTF</category>
       </categories>
       <tags>
         <tag>CTF</tag>
-        <tag>reverse</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -628,6 +618,33 @@
       </categories>
       <tags>
         <tag>awd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
+<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
+<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
+</blockquote>
+<p>-使用 uncompyle6</p>
+<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
+<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
+<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
       </tags>
   </entry>
   <entry>
@@ -927,7 +944,7 @@
 <p>压缩源文件目录区：9-10位表示是否是伪加密</p>
 <p>一般这俩地方都是09 00的，大概率就是伪加密了</p>
 <p>具体可看zip文件结构</p>
-<p>详细可以见我这篇博客 <a href="https://metaviii.github.io/2025/02/%E5%85%B3%E4%BA%8E%E4%BC%AA%E5%8A%A0%E5%AF%86%E7%9A%84%E4%B8%80%E5%88%87/">关于伪加密的一切 | MetaVi</a></p>
+<p>详细可以见我这篇博客 <a href="https://metaviii.github.io/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/">关于ZIP伪加密 | MetaVi</a></p>
 <h3 id="010"><a href="#010" class="headerlink" title="010"></a>010</h3><p>用010把09 00改了就行</p>
 <h3 id="随波逐流-1"><a href="#随波逐流-1" class="headerlink" title="随波逐流"></a>随波逐流</h3><p>随波逐流提供伪加密修复</p>
 <h3 id="ZipCenOp"><a href="#ZipCenOp" class="headerlink" title="ZipCenOp"></a>ZipCenOp</h3><p>说是能改伪加密，但实测感觉不好用</p>
@@ -1219,6 +1236,106 @@
 ]]></content>
       <tags>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>newstar2024小明同学们复现</title>
+    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
+<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
+<p>先看操作版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
+
+<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
+
+<p>看到操作版本是 Win7SP1x86_23418</p>
+<p>然后直接lsadump就好</p>
+<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
+
+<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
+<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
+<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
+<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
+<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
+
+<blockquote>
+<p>[!NOTE]</p>
+<p>真相.txt</p>
+<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]</p>
+<p>要开始了呦.txt</p>
+<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
+</blockquote>
+<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
+<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
+
+<p>没啥思路了binwalk一下（感觉挺正常的</p>
+<p>发现一个txt内容是：</p>
+<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
+<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
+<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
+
+<p>使用VM挂载一下，注意要用管理员运行。</p>
+<p>这里要选择UEFI</p>
+<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
+
+<p>挂载出问题了。。。</p>
+<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
+<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
+<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
+<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
+
+<p>进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422</p>
+<p>输入恢复密钥之后得到了一个flag.7z，解压需要密码。</p>
+<p>7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。</p>
+<p>查看操作版本</p>
+<img src="屏幕截图 2025-01-28 161649.png" alt="屏幕截图 2025-01-28 161649" style="zoom:80%;">
+
+<p>查看有什么进程</p>
+<img src="屏幕截图 2025-01-28 161823.png" alt="屏幕截图 2025-01-28 161823" style="zoom:80%;">
+
+<p>看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：</p>
+<img src="屏幕截图 2025-01-28 162129.png" alt="屏幕截图 2025-01-28 162129" style="zoom:80%;">
+
+<p>然后改后缀为data，拉入GIMP.</p>
+<p>图像类型选择RGB透明，拉X,Y,Z，最后得到：</p>
+<img src="屏幕截图 2025-01-28 162730.png" alt="屏幕截图 2025-01-28 162730" style="zoom:80%;">
+
+<p>压缩包密码：<code>rxnifbeiyomezpplugho</code></p>
+<p>解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于ZIP伪加密</title>
+    <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<p>ZIP伪加密看似简单，实则也是大有学问在里面</p>
+<p>这里细节讲解一下伪加密和相关工具的使用</p>
+<p>首先我们需要了解一下zip文件结构</p>
+<h1 id="zip文件结构"><a href="#zip文件结构" class="headerlink" title="zip文件结构"></a>zip文件结构</h1><p>zip文件结构大致分为三个部分</p>
+<p>一个<code>record区</code>，一个<code>dirEntry区</code>，一个<code>endLocator区</code></p>
+<p>三个部分相互依存，这里是010下的zip文件对照表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+ ZIPFILERECORD record # 压缩源文件数据区</span><br><span class="line">    - char frSignature[4] # 压缩源文件标志</span><br><span class="line">    - ushort frVersion # 压缩源文件版本</span><br><span class="line">    - ushort frFlags # 压缩源文件标志 （有无加密，这个更改这里进行伪加密，改为01 00打开就会提示有密码了）</span><br><span class="line">    - enum COMPTYPE frCompression</span><br><span class="line">    - DOSTIME frFileTime # 压缩源文件时间</span><br><span class="line">    - DOSDATE frFileDate # 压缩源文件日期</span><br><span class="line">    - uint frCrc # 压缩源文件CRC32校验值</span><br><span class="line">    - uint frCompressedSize # 压缩源文件压缩后大小</span><br><span class="line">    - uint frUncompressedSize # 压缩源文件压缩前大小</span><br><span class="line">    - ushort frFileNameLength # 压缩源文件名长度</span><br><span class="line">    - ushort frExtraFieldLength # 压缩源文件扩展域长度</span><br><span class="line">    - char frFileName[frFileNameLength] # 压缩源文件名</span><br><span class="line">    - uchar frData[frCompressedSize] # 压缩源文件数据</span><br><span class="line">+ ZIPDIRENTRY dirEntry # 压缩源文件目录区</span><br><span class="line">    - char deSignature[4] # 目录标志</span><br><span class="line">    - ushort deVersionMadeBy # 创建该条目的版本</span><br><span class="line">    - ushort deVersionNeeded # 解压该条目所需的版本</span><br><span class="line">    - ushort deFlags # 标志位 (判断是不是伪加密的位置，如果是真加密则两个都是0900，伪加密这个则是0000或0100)</span><br><span class="line">    - enum COMPTYPE deCompression # 压缩方法</span><br><span class="line">    - DOSTIME deFileTime # 最后修改时间</span><br><span class="line">    - DOSDATE deFileDate # 最后修改日期</span><br><span class="line">    - uint deCrc # CRC32校验值</span><br><span class="line">    - uint deCompressedSize # 压缩后的大小</span><br><span class="line">    - uint deUncompressedSize # 压缩前的大小</span><br><span class="line">    - ushort deFileNameLength # 文件名长度</span><br><span class="line">    - ushort deExtraFieldLength # 扩展域长度</span><br><span class="line">    - ushort deFileCommentLength # 文件评论长度</span><br><span class="line">    - ushort deDiskNumberStart # 起始磁盘编号</span><br><span class="line">    - ushort deInternalAttributes # 内部属性</span><br><span class="line">    - uint deExternalAttributes # 外部属性</span><br><span class="line">    - uint deRelativeOffset # 该条目在 ZIP 文件中的偏移位置</span><br><span class="line">    - char deFileName[deFileNameLength] # 文件名</span><br><span class="line">    - char deExtraField[deExtraFieldLength] # 扩展域</span><br><span class="line">    - char deFileComment[deFileCommentLength] # 文件评论</span><br><span class="line">+ ZIPENDLOCATOR endLocator # 压缩源文件目录结束标志</span><br><span class="line">    - char elSignature[4] # 结束标志</span><br><span class="line">    - ushort elDiskNumber # 当前磁盘编号</span><br><span class="line">    - ushort elStartDiskNumber # 目录开始的磁盘编号</span><br><span class="line">    - ushort elEntriesOnDisk # 当前磁盘上的条目数量</span><br><span class="line">    - ushort elEntriesTotal # 总条目数量</span><br><span class="line">    - uint elSizeOfDirectory # 目录的总大小</span><br><span class="line">    - uint elOffsetOfDirectory # 目录开始的偏移位置</span><br><span class="line">    - ushort elCommentLength # 注释长度</span><br><span class="line">    - char elComment[elCommentLength] # 注释</span><br></pre></td></tr></table></figure>
+
+<p>可以发现最重要的就是两个标志位了，他们是判断伪加密的标准</p>
+<p>其实其余部分也很重要，因为如果不对应的话直接解压会发现报错——CRC校验错误</p>
+<p>首先讲一下</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -2184,101 +2301,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Network Traffic Analysis</title>
-    <url>/2025/02/Network-Traffic-Analysis/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析</p>
-<h1 id="CS流量——CobaltStrike流量"><a href="#CS流量——CobaltStrike流量" class="headerlink" title="CS流量——CobaltStrike流量"></a>CS流量——CobaltStrike流量</h1><blockquote>
-<p>“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”</p>
-<p>一些细节知识可以看这个 <a href="https://cloud.google.com/blog/topics/threat-intelligence/defining-cobalt-strike-components/">Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>newstar2024小明同学们复现</title>
-    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
-<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
-<p>先看操作版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
-
-<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
-
-<p>看到操作版本是 Win7SP1x86_23418</p>
-<p>然后直接lsadump就好</p>
-<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
-
-<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
-<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
-<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
-<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
-<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
-
-<blockquote>
-<p>[!NOTE]</p>
-<p>真相.txt</p>
-<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
-</blockquote>
-<blockquote>
-<p>[!NOTE]</p>
-<p>要开始了呦.txt</p>
-<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
-</blockquote>
-<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
-<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
-
-<p>没啥思路了binwalk一下（感觉挺正常的</p>
-<p>发现一个txt内容是：</p>
-<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
-<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
-<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
-
-<p>使用VM挂载一下，注意要用管理员运行。</p>
-<p>这里要选择UEFI</p>
-<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
-
-<p>挂载出问题了。。。</p>
-<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
-<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
-<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
-<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
-
-<p>进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422</p>
-<p>输入恢复密钥之后得到了一个flag.7z，解压需要密码。</p>
-<p>7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。</p>
-<p>查看操作版本</p>
-<img src="屏幕截图 2025-01-28 161649.png" alt="屏幕截图 2025-01-28 161649" style="zoom:80%;">
-
-<p>查看有什么进程</p>
-<img src="屏幕截图 2025-01-28 161823.png" alt="屏幕截图 2025-01-28 161823" style="zoom:80%;">
-
-<p>看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：</p>
-<img src="屏幕截图 2025-01-28 162129.png" alt="屏幕截图 2025-01-28 162129" style="zoom:80%;">
-
-<p>然后改后缀为data，拉入GIMP.</p>
-<p>图像类型选择RGB透明，拉X,Y,Z，最后得到：</p>
-<img src="屏幕截图 2025-01-28 162730.png" alt="屏幕截图 2025-01-28 162730" style="zoom:80%;">
-
-<p>压缩包密码：<code>rxnifbeiyomezpplugho</code></p>
-<p>解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-        <tag>CTF</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>wsl启动出错</title>
     <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
     <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
@@ -2326,28 +2348,6 @@
 ]]></content>
       <tags>
         <tag>wsl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于ZIP伪加密</title>
-    <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<p>ZIP伪加密看似简单，实则也是大有学问在里面</p>
-<p>这里细节讲解一下伪加密和相关工具的使用</p>
-<p>首先我们需要了解一下zip文件结构</p>
-<h1 id="zip文件结构"><a href="#zip文件结构" class="headerlink" title="zip文件结构"></a>zip文件结构</h1><p>zip文件结构大致分为三个部分</p>
-<p>一个<code>record区</code>，一个<code>dirEntry区</code>，一个<code>endLocator区</code></p>
-<p>三个部分相互依存，这里是010下的zip文件对照表</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+ ZIPFILERECORD record # 压缩源文件数据区</span><br><span class="line">    - char frSignature[4] # 压缩源文件标志</span><br><span class="line">    - ushort frVersion # 压缩源文件版本</span><br><span class="line">    - ushort frFlags # 压缩源文件标志 （有无加密，这个更改这里进行伪加密，改为01 00打开就会提示有密码了）</span><br><span class="line">    - enum COMPTYPE frCompression</span><br><span class="line">    - DOSTIME frFileTime # 压缩源文件时间</span><br><span class="line">    - DOSDATE frFileDate # 压缩源文件日期</span><br><span class="line">    - uint frCrc # 压缩源文件CRC32校验值</span><br><span class="line">    - uint frCompressedSize # 压缩源文件压缩后大小</span><br><span class="line">    - uint frUncompressedSize # 压缩源文件压缩前大小</span><br><span class="line">    - ushort frFileNameLength # 压缩源文件名长度</span><br><span class="line">    - ushort frExtraFieldLength # 压缩源文件扩展域长度</span><br><span class="line">    - char frFileName[frFileNameLength] # 压缩源文件名</span><br><span class="line">    - uchar frData[frCompressedSize] # 压缩源文件数据</span><br><span class="line">+ ZIPDIRENTRY dirEntry # 压缩源文件目录区</span><br><span class="line">    - char deSignature[4] # 目录标志</span><br><span class="line">    - ushort deVersionMadeBy # 创建该条目的版本</span><br><span class="line">    - ushort deVersionNeeded # 解压该条目所需的版本</span><br><span class="line">    - ushort deFlags # 标志位 (判断是不是伪加密的位置，如果是真加密则两个都是0900，伪加密这个则是0000或0100)</span><br><span class="line">    - enum COMPTYPE deCompression # 压缩方法</span><br><span class="line">    - DOSTIME deFileTime # 最后修改时间</span><br><span class="line">    - DOSDATE deFileDate # 最后修改日期</span><br><span class="line">    - uint deCrc # CRC32校验值</span><br><span class="line">    - uint deCompressedSize # 压缩后的大小</span><br><span class="line">    - uint deUncompressedSize # 压缩前的大小</span><br><span class="line">    - ushort deFileNameLength # 文件名长度</span><br><span class="line">    - ushort deExtraFieldLength # 扩展域长度</span><br><span class="line">    - ushort deFileCommentLength # 文件评论长度</span><br><span class="line">    - ushort deDiskNumberStart # 起始磁盘编号</span><br><span class="line">    - ushort deInternalAttributes # 内部属性</span><br><span class="line">    - uint deExternalAttributes # 外部属性</span><br><span class="line">    - uint deRelativeOffset # 该条目在 ZIP 文件中的偏移位置</span><br><span class="line">    - char deFileName[deFileNameLength] # 文件名</span><br><span class="line">    - char deExtraField[deExtraFieldLength] # 扩展域</span><br><span class="line">    - char deFileComment[deFileCommentLength] # 文件评论</span><br><span class="line">+ ZIPENDLOCATOR endLocator # 压缩源文件目录结束标志</span><br><span class="line">    - char elSignature[4] # 结束标志</span><br><span class="line">    - ushort elDiskNumber # 当前磁盘编号</span><br><span class="line">    - ushort elStartDiskNumber # 目录开始的磁盘编号</span><br><span class="line">    - ushort elEntriesOnDisk # 当前磁盘上的条目数量</span><br><span class="line">    - ushort elEntriesTotal # 总条目数量</span><br><span class="line">    - uint elSizeOfDirectory # 目录的总大小</span><br><span class="line">    - uint elOffsetOfDirectory # 目录开始的偏移位置</span><br><span class="line">    - ushort elCommentLength # 注释长度</span><br><span class="line">    - char elComment[elCommentLength] # 注释</span><br></pre></td></tr></table></figure>
-
-<p>可以发现最重要的就是两个标志位了，他们是判断伪加密的标准</p>
-<p>其实其余部分也很重要，因为如果不对应的话直接解压会发现报错——CRC校验错误</p>
-<p>首先讲一下</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
