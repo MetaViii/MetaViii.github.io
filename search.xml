@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>18届软件创新攻防赛部分wp</title>
-    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
-    <content><![CDATA[<h1 id="1-钓鱼邮件"><a href="#1-钓鱼邮件" class="headerlink" title="1.钓鱼邮件"></a>1.钓鱼邮件</h1><p>拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：</p>
-<img src="屏幕截图 2025-01-05 183618.png" alt="屏幕截图 2025-01-05 183618" style="zoom:75%;">
-
-<p>发现有一个<code>生日礼物.zip</code>，点击下载</p>
-<p>下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111</p>
-<img src="屏幕截图 2025-01-05 183758.png" alt="屏幕截图 2025-01-05 183758" style="zoom: 50%;">
-
-<p>然后发现一个exe，双击运行。</p>
-<p>然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe</p>
-<p>因为会实时变化，记得要截图看会好看一点。</p>
-<img src="屏幕截图 2025-01-05 184101.png" alt="屏幕截图 2025-01-05 184101" style="zoom:75%;">
-
-<p>放大就能看到这个远程地址 222.218.218.218:55555</p>
-<img src="屏幕截图 2025-01-05 184221.png" alt="屏幕截图 2025-01-05 184221" style="zoom:75%;">
-
-<p>包上md5得到flag：df3101212c55ea8c417ad799cfc6b509</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-        <tag>CTF</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024冬季春秋杯部分wp</title>
     <url>/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/</url>
     <content><![CDATA[<p>全部解析可以在春秋伽玛的公众号上看到</p>
@@ -104,20 +74,39 @@
         <category>WP</category>
       </categories>
       <tags>
-        <tag>misc</tag>
         <tag>CTF</tag>
+        <tag>misc</tag>
         <tag>WP</tag>
       </tags>
   </entry>
   <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[<p>还没想好写啥</p>
-<p><img src="111.jpg" alt="111"></p>
-<p><a href="https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0">https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0</a></p>
+    <title>18届软件创新攻防赛部分wp</title>
+    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
+    <content><![CDATA[<h1 id="1-钓鱼邮件"><a href="#1-钓鱼邮件" class="headerlink" title="1.钓鱼邮件"></a>1.钓鱼邮件</h1><p>拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：</p>
+<img src="屏幕截图 2025-01-05 183618.png" alt="屏幕截图 2025-01-05 183618" style="zoom:75%;">
+
+<p>发现有一个<code>生日礼物.zip</code>，点击下载</p>
+<p>下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111</p>
+<img src="屏幕截图 2025-01-05 183758.png" alt="屏幕截图 2025-01-05 183758" style="zoom: 50%;">
+
+<p>然后发现一个exe，双击运行。</p>
+<p>然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe</p>
+<p>因为会实时变化，记得要截图看会好看一点。</p>
+<img src="屏幕截图 2025-01-05 184101.png" alt="屏幕截图 2025-01-05 184101" style="zoom:75%;">
+
+<p>放大就能看到这个远程地址 222.218.218.218:55555</p>
+<img src="屏幕截图 2025-01-05 184221.png" alt="屏幕截图 2025-01-05 184221" style="zoom:75%;">
+
+<p>包上md5得到flag：df3101212c55ea8c417ad799cfc6b509</p>
 ]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
       <tags>
-        <tag>ACM</tag>
+        <tag>CTF</tag>
+        <tag>misc</tag>
+        <tag>WP</tag>
       </tags>
   </entry>
   <entry>
@@ -301,8 +290,8 @@
         <category>WP</category>
       </categories>
       <tags>
-        <tag>misc</tag>
         <tag>CTF</tag>
+        <tag>misc</tag>
         <tag>WP</tag>
       </tags>
   </entry>
@@ -312,6 +301,17 @@
     <content><![CDATA[<h1 id="这里是MetaVi的Blog"><a href="#这里是MetaVi的Blog" class="headerlink" title="这里是MetaVi的Blog"></a>这里是MetaVi的Blog</h1><h2 id="主要更新一些学习上的问题，简单的笔记和写题的记录…"><a href="#主要更新一些学习上的问题，简单的笔记和写题的记录…" class="headerlink" title="主要更新一些学习上的问题，简单的笔记和写题的记录…"></a><strong>主要更新一些学习上的问题，简单的笔记和写题的记录…</strong></h2><p>尽量使自己学有所得–</p>
 <p>——————————</p>
 <h2 id="作者VX"><a href="#作者VX" class="headerlink" title="作者VX:"></a><strong>作者VX:</strong></h2><h3 id="x3289444724"><a href="#x3289444724" class="headerlink" title="x3289444724"></a><strong>x3289444724</strong></h3><h2 id="作者QQ"><a href="#作者QQ" class="headerlink" title="作者QQ:"></a><strong>作者QQ:</strong></h2><h3 id="3289444724"><a href="#3289444724" class="headerlink" title="3289444724"></a><strong>3289444724</strong></h3><h2 id="联系电话"><a href="#联系电话" class="headerlink" title="联系电话:"></a><strong>联系电话:</strong></h2><h3 id="①13968975069"><a href="#①13968975069" class="headerlink" title="①13968975069"></a><strong>①13968975069</strong></h3><h3 id="②18072320271"><a href="#②18072320271" class="headerlink" title="②18072320271"></a><strong>②18072320271</strong></h3>]]></content>
+  </entry>
+  <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[<p>还没想好写啥</p>
+<p><img src="111.jpg" alt="111"></p>
+<p><a href="https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0">https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0</a></p>
+]]></content>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
   </entry>
   <entry>
     <title>Linux提权浅析</title>
@@ -550,325 +550,6 @@
       <tags>
         <tag>CTF</tag>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse Record</title>
-    <url>/2024/11/Reverse-Record/</url>
-    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
-<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
-<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
-</blockquote>
-<p>-使用 uncompyle6</p>
-<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
-<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
-<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
-<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
-<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
-<p><img src="re2.png" alt="re2"></p>
-<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
-<p><img src="re3.png" alt="re3"></p>
-<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
-<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Network Traffic Analysis</title>
-    <url>/2025/02/Network-Traffic-Analysis/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析</p>
-<h1 id="CS流量——CobaltStrike流量"><a href="#CS流量——CobaltStrike流量" class="headerlink" title="CS流量——CobaltStrike流量"></a>CS流量——CobaltStrike流量</h1><blockquote>
-<p>“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”</p>
-<p>一些细节知识可以看这个 <a href="https://cloud.google.com/blog/topics/threat-intelligence/defining-cobalt-strike-components/">Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog</a></p>
-<p>更多CS流量相关看 <a href="https://wbglil.gitbook.io/cobalt-strike">前言 | Cobalt Strike</a></p>
-</blockquote>
-<p><code>Cobalt Strike</code> 服务端和客户端是通过 <code>SSL</code> 加密通讯的 (默认证书对 <code>cobaltstrike.store</code> )。</p>
-<p><code>Beacon</code> 的元数据传输过程中虽然使用的是 <code>RSA</code> 算法，但是 <code>Beacon</code> 任务的传输使用的却是 <code>AES</code> 算法加密的，而 <code>AES</code> 密钥则是 <code>Beacon</code> 随机生成的然后通过 <code>RSA</code> 交换 <code>AES</code>密钥。加解密算法为 <code>AES</code> ，密钥位长 <code>128</code> ，<code>CBC</code> 模式，填充标准 <code>PKCS7</code> ，其通信具体流程如下。</p>
-<img src="image-20230930201229567.webp" alt="image-20230930201229567" style="zoom:80%;">
-
-<h2 id="流量传递"><a href="#流量传递" class="headerlink" title="流量传递"></a>流量传递</h2><p><code>Cobalt Strike</code> 分为 <code>客户端</code> 与 <code>服务端</code> ，服务端是一个，客户端可以有多个，可被团队进行分布式协作操作。</p>
-<p><code>Cobalt Strike</code> 的 <code>Beacon</code> 支持异步通信和交互式通信。<code>Beacon</code> 可以选择通过 <code>DNS</code> 还是 <code>HTTP</code> 协议出口网络，你甚至可以在使用<code>Beacon</code> 通讯过程中切换 <code>HTTP</code> 和 <code>DNS</code>。其支持多主机连接，部署好 <code>Beacon</code> 后提交一个要连回的域名或主机的列表，<code>Beacon</code> 将通过这些主机轮询。</p>
-<p><code>http-beacon</code> 通信中，默认使用 <code>GET</code> 方法向 <code>/dpixel</code> 、<code>/__utm.gif</code> 、<code>/pixel.gif</code> 等地址发起请求，同时 <code>Cobalt Strike</code> 的<code>Beacon</code> 会将元数据（例如AES密钥）使用 <code>RSA</code> 公钥加密后发送给 <code>C2</code> 服务器。</p>
-<p>这些<strong>元数据</strong>通常被编码为 <code>Base64</code> 字符串并作为 <code>Cookie</code> 发送。如下图：<br><img src="屏幕截图 2025-02-05 232713.png" alt="屏幕截图 2025-02-05 232713" style="zoom:80%;"></p>
-<h2 id="流量特征"><a href="#流量特征" class="headerlink" title="流量特征"></a>流量特征</h2><p>cs流量的http通讯一般会有以下的特征</p>
-<p>比如搜索http类型数据后查看到有出现<code>post</code>请求<code>/sumbit.php？id=xxx</code>的特征，该特征可以判断 cobalt strike。</p>
-<p>这是因为cs在下发特征时会请求这个<code>/sumbit.php？id=xxx</code>，同时 <code>POST</code> 传递了一串 <code>0000</code> 开头的16进制数据，这是 cs 流量的发送任务数据（可以根据这个辨别cs），任务数据里的内容十分重要，如下：</p>
-<img src="屏幕截图 2025-02-06 004446.png" alt="屏幕截图 2025-02-06 004446" style="zoom:80%;">
-
-
-
-<p><strong>心跳包特征：</strong></p>
-<p>间隔一定时间，均有通信，且流级上的上下行数据长度固定；</p>
-<p>使用Wireshark等网络抓包工具，可以捕获到后门的HTTP数据包“GET &#x2F;4Ekx HTTP&#x2F;1.1”，其中的 “4Ekx”就是心跳包，通过查看心跳包获取一般cs心跳包会有4个数字或者字母组成。</p>
-<p><strong>https特征：</strong></p>
-<p><code>https-beacon</code> 通信中，默认使用空证书建立加密通道，流量中可以看见这一过程。</p>
-<p>在数据包的client hello中，数据包有JA3（<code>JA3</code> 是由 <code>John Althouse</code>、<code>Jeff Atkinson</code> 和 <code>Josh Atkins</code> 创建的开源项目。 <code>JA3</code> &#x2F; <code>JA3S</code> 可以为客户端和服务器之间的通信创建 <code>SSL</code> 指纹。）</p>
-<p>和操作系统有关，每个操作系统都有固定的值。这里列出几个已知的 <code>ja3</code> &#x2F; <code>ja3s</code> 指纹信息，这个值在不同操作系统上是不一样的</p>
-<p><strong>JA3</strong></p>
-<ul>
-<li>72a589da586844d7f0818ce684948eea</li>
-<li>a0e9f5d64349fb13191bc781f81f42e1</li>
-</ul>
-<p><strong>JA3s</strong></p>
-<ul>
-<li>b742b407517bac9536a77a7b0fee28e9</li>
-<li>ae4edc6faf64d08308082ad26be60767</li>
-</ul>
-<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><p>那拿到的cs流量我们怎么解密呢？</p>
-<p>大致是需要三样东西： <code>.cobaltstrike.beacon_keys</code> 文件、<code>cookie</code>元数据、<code>submit.php</code>的data</p>
-<p><strong>第一种方法：</strong></p>
-<p>这种一步到位</p>
-<p>有了这三样东西我们便可以直接执行脚本，项目地址 <a href="https://github.com/5ime/CS_Decrypt">5ime&#x2F;CS_Decrypt: CobaltStrike流量解密脚本</a></p>
-<p>安装库：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install hexdump javaobj-py3</span><br></pre></td></tr></table></figure>
-
-<p>脚本如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> javaobj.v2 <span class="keyword">as</span> javaobj</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_v1_5</span><br><span class="line"></span><br><span class="line">file_path = <span class="string">&quot;.cobaltstrike.beacon_keys&quot;</span></span><br><span class="line"><span class="comment">#.cobaltstrike.beacon_keys文件路径</span></span><br><span class="line">encode_data = <span class="string">&quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;</span></span><br><span class="line"><span class="comment">#元数据内容</span></span><br><span class="line">encrypt_data = <span class="string">&quot;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&quot;</span></span><br><span class="line"><span class="comment">#任务数据内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">format_key</span>(<span class="params">key_data</span>):</span><br><span class="line">    key_data = <span class="built_in">bytes</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x &amp; <span class="number">0xFF</span>, key_data))</span><br><span class="line">    formatted_key = <span class="string">f&quot;-----BEGIN PRIVATE KEY-----\n&quot;</span></span><br><span class="line">    formatted_key += base64.encodebytes(key_data).decode()</span><br><span class="line">    formatted_key += <span class="string">f&quot;-----END PRIVATE KEY-----&quot;</span></span><br><span class="line">    <span class="keyword">return</span> formatted_key</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, iv_bytes, signature, shared_key, hmac_key</span>):</span><br><span class="line">    <span class="keyword">if</span> hmac.new(hmac_key, encrypted_data, digestmod=<span class="string">&quot;sha256&quot;</span>).digest()[:<span class="number">16</span>] != signature:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;message authentication failed&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)</span><br><span class="line">    <span class="keyword">return</span> cipher.decrypt(encrypted_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> fd:</span><br><span class="line">    pobj = javaobj.load(fd)</span><br><span class="line"></span><br><span class="line">PRIVATE_KEY = format_key(pobj.array.value.privateKey.encoded.data)</span><br><span class="line">private_key = RSA.import_key(PRIVATE_KEY.encode())</span><br><span class="line">cipher = PKCS1_v1_5.new(private_key)</span><br><span class="line">ciphertext = cipher.decrypt(base64.b64decode(encode_data), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ciphertext[<span class="number">0</span>:<span class="number">4</span>] == <span class="string">b&#x27;\x00\x00\xBE\xEF&#x27;</span>:</span><br><span class="line">    raw_aes_keys = ciphertext[<span class="number">8</span>:<span class="number">24</span>]</span><br><span class="line">    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()</span><br><span class="line">    aes_key = raw_aes_hash256[<span class="number">0</span>:<span class="number">16</span>]</span><br><span class="line">    hmac_key = raw_aes_hash256[<span class="number">16</span>:]</span><br><span class="line"></span><br><span class="line">SHARED_KEY = binascii.unhexlify(aes_key.<span class="built_in">hex</span>())</span><br><span class="line">HMAC_KEY = binascii.unhexlify(hmac_key.<span class="built_in">hex</span>())</span><br><span class="line"></span><br><span class="line">encrypt_data = base64.b64encode(<span class="built_in">bytes</span>.fromhex(encrypt_data)).decode()</span><br><span class="line">encrypt_data = base64.b64decode(encrypt_data)</span><br><span class="line">encrypt_data_length = <span class="built_in">int</span>.from_bytes(encrypt_data[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)</span><br><span class="line">encrypt_data_l = encrypt_data[<span class="number">4</span>:]</span><br><span class="line">data1 = encrypt_data_l[:encrypt_data_length-<span class="number">16</span>]</span><br><span class="line">signature = encrypt_data_l[encrypt_data_length-<span class="number">16</span>:encrypt_data_length]</span><br><span class="line">iv_bytes = <span class="string">b&quot;abcdefghijklmnop&quot;</span></span><br><span class="line"></span><br><span class="line">dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;AES key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(aes_key.<span class="built_in">hex</span>()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;HMAC key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(hmac_key.<span class="built_in">hex</span>()))</span><br><span class="line"><span class="built_in">print</span>(dec[<span class="number">12</span>:<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)])</span><br><span class="line"><span class="built_in">print</span>(hexdump.hexdump(dec))</span><br></pre></td></tr></table></figure>
-
-<p>需要修改的就只有三个：file_path、encode_data、encrypt_data</p>
-<p>同时因为心跳包（<code>submit.php</code>的data）不止一个，需要我们修改脚本里的<code>encrypt_data</code>多次尝试。</p>
-<p>。</p>
-<p>。</p>
-<p>。</p>
-<p><strong>第二种方法：</strong></p>
-<p>这种是一步步来的，分了大概四步</p>
-<p>因为是CTF比赛所以会有<code>.cobaltstrike.beacon_keys</code> 文件，同时该文件本质上为 <code>KeyPair</code> 的 Java 对象，Python 的 <code>javaobj-py3</code> 库可以直接读取里面存储的数据。</p>
-<p>首先，我们需要先获取 <code>.cobaltstrike.beacon_keys</code> 文件中的私钥。这个私钥是 <code>RSA</code> 私钥，用于解密元数据。</p>
-<p>脚本：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> javaobj.v2 <span class="keyword">as</span> javaobj</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;.cobaltstrike.beacon_keys&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> fd:</span><br><span class="line">    pobj = javaobj.load(fd)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">format_key</span>(<span class="params">key_data, key_type</span>):</span><br><span class="line">    key_data = <span class="built_in">bytes</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x &amp; <span class="number">0xFF</span>, key_data))</span><br><span class="line">    formatted_key = <span class="string">f&quot;-----BEGIN <span class="subst">&#123;key_type&#125;</span> KEY-----\n&quot;</span></span><br><span class="line">    formatted_key += base64.encodebytes(key_data).decode()</span><br><span class="line">    formatted_key += <span class="string">f&quot;-----END <span class="subst">&#123;key_type&#125;</span> KEY-----&quot;</span></span><br><span class="line">    <span class="keyword">return</span> formatted_key</span><br><span class="line"></span><br><span class="line">privateKey = format_key(pobj.array.value.privateKey.encoded.data, <span class="string">&quot;PRIVATE&quot;</span>)</span><br><span class="line">publicKey = format_key(pobj.array.value.publicKey.encoded.data, <span class="string">&quot;PUBLIC&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(privateKey)</span><br><span class="line"><span class="built_in">print</span>(publicKey)</span><br></pre></td></tr></table></figure>
-
-<p>然后我们在通过私钥解密元数据、获取 <code>AES KEY</code>，其中 <code>encode_data</code> 为元数据，也就是之前看到的 <code>cookie</code> 的值。</p>
-<p>那什么是AESkey呢？</p>
-<p>因为<code>Cobalt Strike</code> 的 <code>Beacon</code> 通信主要依赖于 <code>AES key</code> 和 <code>HMAC key</code> 。这两个密钥都是由 <code>Beacon</code> 在每次执行时随机生成的 16字节数据。</p>
-<p><code>AES key</code>：这个密钥用于加密和解密 <code>Beacon</code> 与 <code>C2</code> 服务器之间的通信内容。具体来说，它用于 <code>AES</code> 算法，该算法用于加密和解密Beacon任务的传输。</p>
-<p><code>HMAC key</code> ：这个密钥用于验证数据的完整性和真实性。<code>HMAC</code> （Hash-based Message Authentication Code）是一种基于密钥的哈希算法，用于在不安全的通信环境中验证消息的完整性和真实性。</p>
-<p>这两个密钥都是由同一组16字节数据生成的。具体来说，这组16字节数据的 <code>SHA256</code> 哈希的前半部分作为 <code>HMAC</code> 密钥，后半部分作为 <code>AES</code> 密钥。</p>
-<p>脚本：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_v1_5</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line">PRIVATE_KEY = <span class="string">&quot;&quot;&quot;-----BEGIN PRIVATE KEY-----</span></span><br><span class="line"><span class="string">&#123;MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAIzAss/1Vcd49UN5XT+pVELCnX1r</span></span><br><span class="line"><span class="string">To4LhSzcP7sPOrIOQg0onSpKO1tzOVX+2DqtZsSFoFrAmrEV+gZCbFfhYR9vs5DGLUg9aa0i5Gqh</span></span><br><span class="line"><span class="string">Pz/s4v5wcmgUgfnvjh4oK7yPQ5BMcqESCjEim9MXs70by1U7ZN+wOYZEorInV9gPkCJdAgMBAAEC</span></span><br><span class="line"><span class="string">gYAJbRpMjQyamEIsq6MQEWIAOpJbhOU05BaeI33tJB71L7lCslacL258OGI9nRyUCWrZfG15xm5V</span></span><br><span class="line"><span class="string">r7gX1Tj2RbTAUZmGigY1X2rCyz00DFjj5iIQVWsl8eSI1EmjFmQ+rYnCezQcrt4V3c7BZtW9RjFW</span></span><br><span class="line"><span class="string">vHh09PF808Yl4/+++vrMoQJBAKhCa/adRGEFqiVcSZG2FdlUG4bPMfwRkYMERZG5D6fjVHOVNEyL</span></span><br><span class="line"><span class="string">3MK+EtafnYIDD1IS+97K0cbg922RKXNdv+kCQQDWJk0kNe8ePBpwJU4slig1Y+4VWuwTRz6r+MNp</span></span><br><span class="line"><span class="string">v+WrVMzo/LHzAKYn87pyAdxLaZyKAFKs86WpJ2n93ZslC9pVAkA0KMMHJCF6YiMoib9UqDmFsYkG</span></span><br><span class="line"><span class="string">9VvtZBTTpJNcZR3xUYtweSRJRmIdDIcSeVB+aSxqqO/jVMRK/po1IPbUiI9hAkEAi93wPFpNlv3C</span></span><br><span class="line"><span class="string">dsSmzlA0asqd0azUy7KYqFGNsB/5rXFxdCq3PvOJkkaJ27SDYW3VI/0aAoQQCu8HNxvqHMQlEQJB</span></span><br><span class="line"><span class="string">AIFIkfpeSfksLu8NgiFvZsTV8EWF9PfF2VLyqeSGtmySujqb0HbxGnM9SDc0k48wOvIn5YGJPyY2</span></span><br><span class="line"><span class="string">ddsyNI6XbCU=&#125;</span></span><br><span class="line"><span class="string">-----END PRIVATE KEY-----&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment">#rsa私钥</span></span><br><span class="line"></span><br><span class="line">encode_data = <span class="string">&quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;</span></span><br><span class="line"><span class="comment">#元数据</span></span><br><span class="line"></span><br><span class="line">private_key = RSA.import_key(PRIVATE_KEY.encode())</span><br><span class="line"></span><br><span class="line">cipher = PKCS1_v1_5.new(private_key)</span><br><span class="line">ciphertext = cipher.decrypt(base64.b64decode(encode_data), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ciphertext[<span class="number">0</span>:<span class="number">4</span>] == <span class="string">b&#x27;\x00\x00\xBE\xEF&#x27;</span>:</span><br><span class="line">    raw_aes_keys = ciphertext[<span class="number">8</span>:<span class="number">24</span>]</span><br><span class="line">    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()</span><br><span class="line">    aes_key = raw_aes_hash256[<span class="number">0</span>:<span class="number">16</span>]</span><br><span class="line">    hmac_key = raw_aes_hash256[<span class="number">16</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;AES key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(aes_key.<span class="built_in">hex</span>()))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;HMAC key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(hmac_key.<span class="built_in">hex</span>()))</span><br><span class="line"></span><br><span class="line">    hexdump.hexdump(ciphertext)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>到此我们就得到了 <code>AES key</code> 和 <code>HMAC key</code></p>
-<p>接着要去解密 <code>submit.php</code> 所传递的 Data ，首先我们要先对该串16进制数据进行处理，转字符串后进行 <code>Base64</code> 编码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">encode_data = <span class="string">&#x27;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&#x27;</span></span><br><span class="line"><span class="comment">#任务数据</span></span><br><span class="line"></span><br><span class="line">bytes_data = <span class="built_in">bytes</span>.fromhex(encode_data)</span><br><span class="line">encrypt_data = base64.b64encode(bytes_data)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(encrypt_data.decode())</span><br></pre></td></tr></table></figure>
-
-<p>最终分别填入 <code>SHARED_KEY</code>，<code>HMAC_KEY</code>，<code>encrypt_data</code> 即可</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">SHARED_KEY = binascii.unhexlify(<span class="string">&quot;ef08974c0b06bd5127e04ceffe12597b&quot;</span>)</span><br><span class="line"><span class="comment">#AES key</span></span><br><span class="line">HMAC_KEY = binascii.unhexlify(<span class="string">&quot;bd87fa356596a38ac3e3bb0b6c3496e9&quot;</span>)</span><br><span class="line"><span class="comment">#HMAC key</span></span><br><span class="line">encrypt_data = <span class="string">&quot;AAAAwJPf9rLwWLpCMeOQAnZWZEHyu0x25chICHSk2Z3wgwVKXqHdSupVI8dRr30SPujp8iU6XM3PVEJ9FHxVaxVlfuJgfpKzVzLyY0G8CibFi/K88jg61kBkHDZBWThyIzYMwW/z3BSrHwDm7k+1P14Vt2e9N5RR0Ne29K6unbDD8w8+8We32z5qwkFkPtJRPnP56RSOvnr6oSLqdelFyKuKgWF55DGAJXvYvnUoJ90N4mgm1WEe4JOR7lVFiX2uHTqWmA==&quot;</span></span><br><span class="line"><span class="comment">#任务数据（解密过的）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, iv_bytes, signature, shared_key, hmac_key</span>):</span><br><span class="line">    <span class="keyword">if</span> hmac.new(hmac_key, encrypted_data, digestmod=<span class="string">&quot;sha256&quot;</span>).digest()[:<span class="number">16</span>] != signature:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;message authentication failed&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)</span><br><span class="line">    <span class="keyword">return</span> cipher.decrypt(encrypted_data)</span><br><span class="line"></span><br><span class="line">encrypt_data = base64.b64decode(encrypt_data)</span><br><span class="line">encrypt_data_length = <span class="built_in">int</span>.from_bytes(encrypt_data[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)</span><br><span class="line">encrypt_data_l = encrypt_data[<span class="number">4</span>:]</span><br><span class="line"></span><br><span class="line">data1 = encrypt_data_l[:encrypt_data_length-<span class="number">16</span>]</span><br><span class="line">signature = encrypt_data_l[encrypt_data_length-<span class="number">16</span>:encrypt_data_length]</span><br><span class="line">iv_bytes = <span class="string">b&quot;abcdefghijklmnop&quot;</span></span><br><span class="line"></span><br><span class="line">dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;counter: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务返回长度: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务输出类型: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[<span class="number">8</span>:<span class="number">12</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(dec[<span class="number">12</span>:<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)])</span><br><span class="line"><span class="built_in">print</span>(hexdump.hexdump(dec))</span><br></pre></td></tr></table></figure>
-
-<p>就OK了</p>
-<p><strong>例题</strong>： 2023 SICTF 一起上号不         <strong>解析</strong>： <a href="https://metaviii.github.io/2024/11/Misc-Record/#%E6%9D%82%E9%A2%98">Misc Record | MetaVi</a> （在#杂题那）</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TGCTF2025misc全解</title>
-    <url>/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/</url>
-    <content><![CDATA[<p>这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。</p>
-<p>其他方向的解可以看我们A1natas的公众号。</p>
-<p>关注A1natas喵，关注A1natas谢谢喵！</p>
-<h1 id="简单签到，关注：”杭师大网安“谢谢喵🐱"><a href="#简单签到，关注：”杭师大网安“谢谢喵🐱" class="headerlink" title="简单签到，关注：”杭师大网安“谢谢喵🐱"></a>简单签到，关注：”杭师大网安“谢谢喵🐱</h1><p>关注公众号得flag。</p>
-<h1 id="ez-zip"><a href="#ez-zip" class="headerlink" title="ez_zip"></a>ez_zip</h1><p>爆破得到密码是20250412。</p>
-<p>解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sha512一下，deflate明文攻击。</p>
-<p>不知道为什么我的bk检测不出来这个文件，于是我用了arc </p>
-<img src="屏幕截图 2025-04-12 101622.png" alt="屏幕截图 2025-04-12 101622" style="zoom:50%;">
-
-<p>然后又得到一个压缩包，是损坏的，要根据数据存储区修复了一下压缩包</p>
-<p>可以用Bandizip无密码快速压缩一个例子，然后对照着把压缩包修复一下就行</p>
-<p>dirEntry的flag.txt应该是少东西了，需要我们手动补上</p>
-<img src="屏幕截图 2025-04-13 173227.png" alt="屏幕截图 2025-04-13 173227" style="zoom:80%;">
-
-<img src="屏幕截图 2025-04-13 173330.png" alt="屏幕截图 2025-04-13 173330" style="zoom:80%;">
-
-<p>修复完成后打开即可得到flag：TGCTF{Warrior_You_have_defeated_the_giant_dragon!}</p>
-<img src="屏幕截图 2025-04-13 173359.png" alt="屏幕截图 2025-04-13 173359" style="zoom:80%;">
-
-
-
-<h1 id="TeamGipsy-ctfer"><a href="#TeamGipsy-ctfer" class="headerlink" title="TeamGipsy&amp;ctfer"></a><strong>TeamGipsy&amp;ctfer</strong></h1><p> 预期解应该是查找文件，可以用diskgenius：<img src="../../CTF/2025-tgctf/attachments/1ac79dc0-4137-458a-b1e4-f9c287333d41.png">桌面上有个mimi.txt，发现出题人用Docker起了一个MySQL，直接去&#x2F;var&#x2F;lib&#x2F;docker目录下翻</p>
-<p>发现在<code>/var/lib/docker/overlay2/6ac971c2de3baa602bb4335d6899bbf1963140364ce248decc9557b2f49139f9/diff/root/.mysql_history</code>中就有flag：HZNUCTF{0H!_YOu_are_really_the_TeamGipsy_ctfer}</p>
-<p> <img src="../../CTF/2025-tgctf/attachments/4e32d7ce-031a-4e80-90a6-5d2b10178ba7.png"></p>
-<p>第二种也可以用取证大师，一样查找文件。</p>
-<p>非预期应该是用string命令直接搜出来flag</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">strings Ubuntu-s00*.vmdk | grep HZNUCTF</span><br></pre></td></tr></table></figure>
-
-<p>（这个要跑一会的）</p>
-<img src="屏幕截图 2025-04-14 130112.png" alt="屏幕截图 2025-04-14 130112" style="zoom:80%;">
-
-
-
-<h1 id="你能发现图中的秘密吗？"><a href="#你能发现图中的秘密吗？" class="headerlink" title="你能发现图中的秘密吗？"></a><strong>你能发现图中的秘密吗？</strong></h1><p>这道题挺好的，就是老是有问题</p>
-<p>先zsteg跑一下</p>
-<img src="屏幕截图 2025-04-13 173932.png" alt="屏幕截图 2025-04-13 173932" style="zoom:80%;">
-
-<p>得到解压密码后解压得到一个pdf，一个图片</p>
-<p>第一张pdf的左上角有第二部分的flag：</p>
-<p>flag2&#x3D;_attentive_and_conscientious}</p>
-<p>这个改之前的，改之后的是用PS的隐藏图层隐藏的</p>
-<img src="屏幕截图 2025-04-13 120632.png" alt="屏幕截图 2025-04-13 120632" style="zoom:80%;">
-
-<p>用010打开final_challenge2.png，发现有一块IDAT块不太正常</p>
-<p><img src="https://somokel.oss-cn-hangzhou.aliyuncs.com/img/6d5cd91f-edde-4018-9169-05b284a1d7f0.png" alt="6d5cd91f-edde-4018-9169-05b284a1d7f0"></p>
-<p>提取出来，补上PNG文件头尾，然后爆破宽高即可得到另一段flag </p>
-<p><img src="https://somokel.oss-cn-hangzhou.aliyuncs.com/img/256ea54c-f030-4f11-8014-7c32fd29e67c.png" alt="256ea54c-f030-4f11-8014-7c32fd29e67c"></p>
-<p>Tips：这里要注意把IDAT的前四个字节也一起复制过来，并且保持不变</p>
-<p>因为四字节代表的是数据长度，这里如果出错，图片的数据长度就错了，因此再爆破宽高也没用了</p>
-<p>两段flag合起来就是最后的flag：flag{you_are_so_attentive_and_conscientious}</p>
-<p> <img src="../../CTF/2025-tgctf/attachments/948d611c-6920-4fb4-8b49-17f806516925.png"></p>
-<h1 id="next-is-the-end"><a href="#next-is-the-end" class="headerlink" title="next is the end"></a><strong>next is the end</strong></h1><p>直接脚本就行</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#!<span class="regexp">/usr/</span>bin/env python3</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">def <span class="title function_">traverse</span>(path):</span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">    递归遍历目录：</span></span><br><span class="line"><span class="string">      1. 如果当前目录中存在名为 &#x27;next_or_end&#x27; 的子目录，则进入该目录；</span></span><br><span class="line"><span class="string">      2. 否则：</span></span><br><span class="line"><span class="string">         - 如果目录中只有一个项目且该项目为文件，则返回该文件路径；</span></span><br><span class="line"><span class="string">         - 如果只有一个项目但是目录，则继续进入；</span></span><br><span class="line"><span class="string">         - 如果目录中有多个项目，则报错无法确定正确路径。</span></span><br><span class="line"><span class="string">    &quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">while</span> <span class="title class_">True</span>:</span><br><span class="line">        # 若当前路径不是目录，则到达最终目标（通常是文件）</span><br><span class="line">        <span class="keyword">if</span> not os.<span class="property">path</span>.<span class="title function_">isdir</span>(path):</span><br><span class="line">            <span class="keyword">return</span> path</span><br><span class="line"></span><br><span class="line">        items = os.<span class="title function_">listdir</span>(path)</span><br><span class="line">        # 如果当前目录中有 <span class="string">&#x27;next_or_end&#x27;</span> 文件夹，则进入该目录</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;next_or_end&quot;</span> <span class="keyword">in</span> <span class="attr">items</span>:</span><br><span class="line">            path = os.<span class="property">path</span>.<span class="title function_">join</span>(path, <span class="string">&quot;next_or_end&quot;</span>)</span><br><span class="line">        <span class="attr">else</span>:</span><br><span class="line">            # 当前目录没有 <span class="string">&#x27;next_or_end&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="title function_">len</span>(items) == <span class="number">1</span>:</span><br><span class="line">                next_path = os.<span class="property">path</span>.<span class="title function_">join</span>(path, items[<span class="number">0</span>])</span><br><span class="line">                <span class="keyword">if</span> os.<span class="property">path</span>.<span class="title function_">isdir</span>(next_path):</span><br><span class="line">                    # 如果唯一的项目还是目录，则继续进入</span><br><span class="line">                    path = next_path</span><br><span class="line">                elif os.<span class="property">path</span>.<span class="title function_">isfile</span>(next_path):</span><br><span class="line">                    # 如果唯一的项目是文件，则返回</span><br><span class="line">                    <span class="keyword">return</span> next_path</span><br><span class="line">                <span class="attr">else</span>:</span><br><span class="line">                    <span class="title function_">print</span>(f<span class="string">&quot;遇到未知类型：&#123;next_path&#125;&quot;</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="title class_">None</span></span><br><span class="line">            <span class="attr">else</span>:</span><br><span class="line">                <span class="title function_">print</span>(f<span class="string">&quot;无法确定路径：目录 &#x27;&#123;path&#125;&#x27; 中存在多个项目：&#123;items&#125;&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="title class_">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    # 从命令行获取起始目录，若未传参数则默认为当前目录</span><br><span class="line">    start_path = sys.<span class="property">argv</span>[<span class="number">1</span>] <span class="keyword">if</span> <span class="title function_">len</span>(sys.<span class="property">argv</span>) &gt; <span class="number">1</span> <span class="keyword">else</span> <span class="string">&quot;.&quot;</span></span><br><span class="line">    result = <span class="title function_">traverse</span>(start_path)</span><br><span class="line">    <span class="keyword">if</span> <span class="attr">result</span>:</span><br><span class="line">        <span class="title function_">print</span>(f<span class="string">&quot;最终目标路径：&#123;result&#125;&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> os.<span class="property">path</span>.<span class="title function_">isfile</span>(result):</span><br><span class="line">            # 如果目标为文件，读取并打印文件内容</span><br><span class="line">            <span class="attr">try</span>:</span><br><span class="line">                <span class="keyword">with</span> <span class="title function_">open</span>(result, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> <span class="attr">f</span>:</span><br><span class="line">                    content = f.<span class="title function_">read</span>()</span><br><span class="line">                <span class="title function_">print</span>(<span class="string">&quot;文件内容如下：&quot;</span>)</span><br><span class="line">                <span class="title function_">print</span>(content)</span><br><span class="line">            except <span class="title class_">Exception</span> <span class="keyword">as</span> <span class="attr">e</span>:</span><br><span class="line">                <span class="title function_">print</span>(f<span class="string">&quot;读取文件时出错：&#123;e&#125;&quot;</span>)</span><br><span class="line">        <span class="attr">else</span>:</span><br><span class="line">            <span class="title function_">print</span>(<span class="string">&quot;最终目标不是一个普通文件。&quot;</span>)</span><br><span class="line">    <span class="attr">else</span>:</span><br><span class="line">        <span class="title function_">print</span>(<span class="string">&quot;未能找到最终目标。&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>看到flag</p>
-<p><img src="../../CTF/2025-tgctf/attachments/a0c5ea4e-7705-4e4a-8d64-5351c9c7ef5e.png" title=" =1697x701"></p>
-<h1 id="where-it-is-osint"><a href="#where-it-is-osint" class="headerlink" title="where it is(osint)"></a>where it is(osint)</h1><p>谷歌识图</p>
-<p> <img src="../../CTF/2025-tgctf/attachments/b7821666-222f-4a79-b959-dc9bd48ce7a0.png" title=" =1780x1183"></p>
-<p>点进去发现</p>
-<p> <img src="../../CTF/2025-tgctf/attachments/d05fc578-659e-44f4-8a8e-b6cd840a6508.png" title=" =1693x1019"></p>
-<p>站点就是这个：港墘站</p>
-<h1 id="你的运气是好是坏？"><a href="#你的运气是好是坏？" class="headerlink" title="你的运气是好是坏？"></a><strong>你的运气是好是坏？</strong></h1><p>笑死我了flag直接一试就试出来了：114514</p>
-<h1 id="这是啥o-o"><a href="#这是啥o-o" class="headerlink" title="这是啥o_o"></a><strong>这是啥o_o</strong></h1><p>下载得到一个无后缀的文件，文件头发现是gif，改成gif后拖进ps里看，发现最后几帧有散开的汉信码碎片。修复如下：</p>
-<p> <img src="../../CTF/2025-tgctf/attachments/39f90506-aef0-4283-a135-6317525f3e77.png" title=" =749x713"></p>
-<p>扫码得到：time is your fortune ,efficiency is your life</p>
-<p>猜测是帧间隔隐写，用puzzlesolver提出帧间隔放入python转ASCII码，得到flag</p>
-<blockquote>
-<p>a&#x3D; [‘840’, ‘710’, ‘670’, ‘840’, ‘700’, ‘1230’, ‘890’, ‘1110’, ‘1170’, ‘950’, ‘990’, ‘970’, ‘1170’, ‘1030’, ‘1040’, ‘1160’, ‘950’, ‘1170’, ‘1120’, ‘950’, ‘1190’, ‘1050’, ‘1160’, ‘1040’, ‘950’, ‘1160’, ‘1050’, ‘1090’, ‘1010’, ‘330’, ‘1250’]</p>
-<p>s &#x3D; ‘’</p>
-<p>for i in a:</p>
-<p> s+&#x3D;chr(int(i)&#x2F;&#x2F;10)</p>
-<p>print(s)</p>
-</blockquote>
-<p>TGCTF{You_caught_up_with_time!}</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VNCTF2025misc复现</title>
-    <url>/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[<p>这个比赛的misc真是难，除了一道签到之外几乎全是区块链和ai，唯一一道的取证还是安卓取证，而且还模拟的真实取证过程。。</p>
-<p>全部的wp可以在vnctf2025的群里有，或者官方公众号。</p>
-<p>打的我道心破碎了要。。。</p>
-<h1 id="VN-Lang"><a href="#VN-Lang" class="headerlink" title="VN_Lang"></a>VN_Lang</h1><p>简单的misc签到题</p>
-<p>打开exe发现是flag但是是vn自创文字</p>
-<p>使用IDA打开exe，直接爆搜VNCTF就能发现flag了</p>
-<img src="屏幕截图 2025-02-10 174246.png" alt="屏幕截图 2025-02-10 174246" style="zoom:80%;">
-
-<p>flag：VNCTF{wXD4cznGnWqVVPRTF1Mzlf7zrPTfBRkKIq2Kgyq4Gohs2}</p>
-<p>这个题好像每个人flag不一样</p>
-<h1 id="Echo-Flowers"><a href="#Echo-Flowers" class="headerlink" title="Echo Flowers"></a>Echo Flowers</h1><p>这个真是毁我道心了，看了一天。。</p>
-<p>拿到echo flowers文件看到里面有一个echo_flowers.ovf文件，可以使用vmware挂载</p>
-<p>虽然这道题挂载不甚有大用就是了</p>
-<p>挂载后看到桌面上只有一个imToken：</p>
-<img src="屏幕截图 2025-02-10 175016.png" alt="屏幕截图 2025-02-10 175016" style="zoom:80%;">
-
-<p>所有应用也只有一点点，在便签，imtoken，设置里面都没有发现什么东西，这就是这道题的神奇之处了</p>
-<p>题目要求恢复密码，我们可以通过找到12个助记词来恢复密码，但是系统中又没有什么提示该怎么办呢？</p>
-<img src="屏幕截图 2025-02-10 175335.png" alt="屏幕截图 2025-02-10 175335" style="zoom:80%;">
-
-<p>在输入法打单词的时候发现有上次遗留的输入。</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>手动执行 一遍导入助记词流程可以发现，手机安装的某数字钱包App在导入助记词时没有将助 记词输入框设为密码属性，使得输入法可以开启单词联想，而手机安装的某输入法 （包括厂商预装版本）的单词联想是默认开启的。（题目描述中也对此给出了提示： 114 英语不好）  多次导入助记词会发现输入助记词首字母即可联想助记词单词。 </p>
-</blockquote>
-<p>所以我们可以大致确定助记词的范围，再根据所有2048个助记词确定是那些助记词</p>
-<p>所有2048个助记词： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
-<p>大致确定的助记词：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ramp twenty only space define fashion high carpet muscle laundry couch ranch</span><br></pre></td></tr></table></figure>
-
-<p>接下来要做的就是恢复这12个助记词的顺序了，已知暴力破解这12个助记词顺序是不现实的（因为要好几天），所以我们需要在文件中寻找那个储存了顺序的“词典”文件。</p>
-<p>大概有两种方法：<br><strong>方法一：7z解压vmdk文件</strong></p>
-<p>直接7z解压，能直接把所有vmdk的文件解压出来</p>
-<p>（之前怎么能忘了！）</p>
-<p><strong>方法二：DiskGenius挂载</strong></p>
-<p>网上下一个DiskGenius，可以直接挂载vmdk</p>
-<p>主要DiskGenius可以恢复磁盘上删除的文件这是它的厉害之处</p>
-<p>恢复后如图：<br><img src="屏幕截图 2025-02-10 182557.png" alt="屏幕截图 2025-02-10 182557" style="zoom:80%;"></p>
-<p>。</p>
-<p>。</p>
-<p>总之就是把vmdk里所有文件全部都解压出来，然后在里面找可疑的文件。</p>
-<p>最后找到了<code>android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict</code> 这个文件夹下，具体来说就是<code>sgim_gd_usr.bin</code>这个文件</p>
-<p>然后这里有一个比较偏的知识点，就是</p>
-<blockquote>
-<p>[!NOTE]</p>
-<p>搜狗输入法用户词库文件不是utf-8编码而是utf-16</p>
-</blockquote>
-<p>所以一般的记事本和010是很难看出来什么东西的</p>
-<p>这里有两种方法来看到内容</p>
-<p><strong>方法一：使用string命令</strong></p>
-<p>kali自带string命令</p>
-<p><strong>strings命令：用于从二进制文件中提取可打印字符串。它可以提取和显示文件中的所有可打印字符串，常用于分析二进制文件、调试和逆向工程</strong></p>
-<p>先cd</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict</span><br></pre></td></tr></table></figure>
-
-<p>然后string</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">strings --encoding=b * </span><br></pre></td></tr></table></figure>
-
-<p>然后就能看到所有助记词了</p>
-<img src="屏幕截图 2025-02-10 184849.png" alt="屏幕截图 2025-02-10 184849" style="zoom:80%;">
-
-
-
-<p><strong>方法二：notepad++使用utf16查看文件</strong></p>
-<p>找到<code>android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict/sgim_gd_usr.bin</code>这个文件，用notepad++，utf16查看也能看到所有助记词，需要眼力（当然也可以使用别的能看utf16的工具）</p>
-<img src="屏幕截图 2025-02-10 185223.png" alt="屏幕截图 2025-02-10 185223" style="zoom:80%;">
-
-<p>。</p>
-<p>最后恢复顺序</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ranch only space define laundry carpet muscle ramp high twenty couch fashion</span><br></pre></td></tr></table></figure>
-
-<p>所有助记词和顺序都得到了，直接用手机imToken设置一个密码然后利用高级设置查看私钥，导出私钥</p>
-<img src="Screenshot_2025-02-10-20-17-28-92_aef62f4795c0443.jpg" alt="Screenshot_2025-02-10-20-17-28-92_aef62f4795c0443" style="zoom:25%;">
-
-<p>或者使用在线网站（我用不明白）网站： <a href="https://iancoleman.io/bip39/">BIP39 - Mnemonic Code</a></p>
-<p>注意默认路径 m&#x2F;44’&#x2F;60’&#x2F;0’&#x2F;0&#x2F;0(是imToken默认路径)，所以有些网站是不行的。</p>
-<p>flag：VNCTF{6433c196bb66b0d8ce3aa072d794822fd87edfbc3a30e2f2335a3fb437eb3cda} </p>
-<h1 id="ezSignal"><a href="#ezSignal" class="headerlink" title="ezSignal"></a>ezSignal</h1><p>拿到一个压缩包，解压时报错了，可以看到实则有两个文件但只解压出一个文件</p>
-<p>我们使用7z解压出两个文件，原来另一个文件名是空白的所以解压不出来，但是7z可以</p>
-<p>一张图片和一个无后缀名的文件，问了一下ai才知道是grc文件。</p>
-<p>改名<code>1.grc</code>，使用<code>gnuradio</code>打开，直接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gnuradio-companion 1.grc</span><br></pre></td></tr></table></figure>
-
-<p>看到：</p>
-<img src="屏幕截图 2025-02-11 120158.png" alt="屏幕截图 2025-02-11 120158" style="zoom:80%;">
-
-<p>那张png图片里面藏了一些东西，使用binwalk解压出flag1.txt和flag2.txt</p>
-<p>此时我们需要逆向这个grc文件，因为我们看到这个文件是把wav文件解析成两个txt文件，我们需要逆向得到这个wav文件。</p>
-<p>利用旁边的core制作逆向exp，（制作的时候要注意打如48k的时候要打48000而不能是48k，不然会报错）如下：<br><img src="屏幕截图 2025-02-11 170522.png" alt="屏幕截图 2025-02-11 170522" style="zoom:80%;"></p>
-<p>此时就生成了1111.wav，一听就知道是sstv文件</p>
-<p>利用虚拟声卡+<code>RX-SSTV</code>（不知道为什么我虚拟声卡有问题没跑出来，最后扬声器跑出来的）</p>
-<p>注意不能用github上那个sstv，否则会报错如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ValueError: SSTV mode is unsupported (VIS: 125)</span><br></pre></td></tr></table></figure>
-
-<p>最终跑出来的二维码：</p>
-<img src="屏幕截图 2025-02-11 181948.png" alt="屏幕截图 2025-02-11 181948" style="zoom:80%;">
-
-<p>使用手机上BinaryEye扫一下就行</p>
-<img src="Screenshot_2025-02-11-18-31-24-22_a0aa29124cd502a.jpg" alt="Screenshot_2025-02-11-18-31-24-22_a0aa29124cd502a" style="zoom: 33%;">
-
-<p>flag：VNCTF{W0w_Y0u_Ar3_G0od_4t_R4di0_S1gn4L}</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>WP</tag>
       </tags>
   </entry>
   <entry>
@@ -1833,187 +1514,99 @@
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>misc</tag>
         <tag>CTF</tag>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
-<p>而且在config.yml里有个post_asset_folder:要为true</p>
-<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
-<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
-<p>保证相对路径的时候再插入图片</p>
-<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
-<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
-<p>然后再</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
-<p><img src="11.png" alt="11"></p>
-<p>类似于这样，要在github目录下能看到，<del>而且似乎图片的命名要简单（？</del></p>
-<p>如果还传不上去的话可以缩放图片试试</p>
-<p><del>（猜想：说不定可以直接在github上add file，下次试试）</del></p>
-<p><del>ps：（这是不是图片加载慢的原因？）</del></p>
-<h1 id="顺便记录一下我博客的其他问题的解决"><a href="#顺便记录一下我博客的其他问题的解决" class="headerlink" title="顺便记录一下我博客的其他问题的解决"></a>顺便记录一下我博客的其他问题的解决</h1><h2 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h2><p>我靠我之前友链一直不能输中文，否则就会报错+显示不了</p>
-<p>现在才发现是vs的问题，，用记事本编辑就能正常上传+打开了。服了</p>
-<h2 id="评论区"><a href="#评论区" class="headerlink" title="评论区"></a>评论区</h2><p>我用的是Valine，要去LeanCloud注册账号才行，网上教程很多</p>
-<p>但是好像有泄露的风险？</p>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>我是去algolia注册账号才能搜索的</p>
-<p>结果发现只能所搜文章的标题，不能搜索文章里的内容（我要你有啥用？</p>
-<p><strong>待解决</strong></p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>awd初体验</title>
-    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><u>前言</u></h1><p>哎，，再次感到misc果然还是要会点web或者re才行</p>
-<p>这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。</p>
-<h1 id="以bugku的awd为例"><a href="#以bugku的awd为例" class="headerlink" title="以bugku的awd为例"></a><u>以bugku的awd为例</u></h1><p>报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等</p>
-<p>ip白名单——队长加的队员ip</p>
-<p>账号密码——一会连ssh有用（以<code>：</code>分隔）</p>
-<p>token——提交flag时用</p>
-<p>虚拟ip——连ssh，注意端口是2222</p>
-<h2 id="使用Tabby连接"><a href="#使用Tabby连接" class="headerlink" title="使用Tabby连接"></a>使用Tabby连接</h2><p>项目地址： <a href="https://tabby.sh/">https://tabby.sh/</a> 注意要下windows的（tabby基础讲解： <a href="https://blog.csdn.net/weixin_45417821/article/details/122579794?ops_request_misc=%257B%2522request%255Fid%2522%253A%25223a71448c947f5696c8f39480ad809de2%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=3a71448c947f5696c8f39480ad809de2&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122579794-null-null.142%5Ev100%5Epc_search_result_base8&utm_term=tabby&spm=1018.2226.3001.4187">这里</a>）</p>
-<p>打开后点开<code>设置/配置与连接</code></p>
-<img src="屏幕截图 2024-12-20 231606.png" alt="屏幕截图 2024-12-20 231606" style="zoom:75%;">
-
-<p>点击<code>新建/新配置</code>，选择<code>ssh连接</code></p>
-<p>看到一个空白页面，填写：</p>
-<p>名称—主机—端口—用户名—密码</p>
-<p>如下：</p>
-<img src="屏幕截图 2024-12-20 231918.png" alt="屏幕截图 2024-12-20 231918" style="zoom:75%;">
-
-<p>然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了</p>
-<img src="屏幕截图 2024-12-20 232210.png" alt="屏幕截图 2024-12-20 232210" style="zoom:75%;">
-
-<p>等一会就连接成功了</p>
-<h3 id="SFTP传输工具"><a href="#SFTP传输工具" class="headerlink" title="SFTP传输工具"></a>SFTP传输工具</h3><p>tabby是自带sftp工具的，连接成功后在右上角就能看到</p>
-<p>点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行</p>
-<p>如果想上传文件可以直接拖拽文件，也能点右上角的<code>upload</code></p>
-<h3 id="html相关下载——tar命令"><a href="#html相关下载——tar命令" class="headerlink" title="html相关下载——tar命令"></a>html相关下载——tar命令</h3><p>连接成功之后可以打包下载html里的东西了，在<code>var/www/html</code>里。</p>
-<p>但是html是无法直接下的，那怎么办呢？使用<code>tar</code>命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -czvf myfolder.tar.gz /var/www/html/*</span><br><span class="line"># 这个命令会打包html里的所有东西</span><br><span class="line">tar -czvf web.tar.gz ./*</span><br><span class="line"># 打包当前目录下所有东西到当前文件夹下</span><br></pre></td></tr></table></figure>
-
-<p>打包完成的东西在<code>home</code>的一个文件夹里（这里是忘了具体在哪了。。）</p>
-<p>然后就能看到一个<code>myfolder.tar.gz</code>或者<code>web.tar.gz</code>，直接点击保存下来就好</p>
-<h3 id="查找漏洞-修改-上传"><a href="#查找漏洞-修改-上传" class="headerlink" title="查找漏洞+修改+上传"></a>查找漏洞+修改+上传</h3><p>保存下来的html文件夹可以用<code>D盾</code>来扫描漏洞，然后找到对应漏洞，修改。</p>
-<p>这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上</p>
-<p>改完漏洞就能加固我们的防御了。</p>
-<h3 id="沙箱跑木马"><a href="#沙箱跑木马" class="headerlink" title="沙箱跑木马"></a>沙箱跑木马</h3><p>我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下</p>
-<p>安恒云沙箱： <a href="https://sandbox.dbappsecurity.com.cn/">安恒云沙箱-下一代沙箱的领航者</a></p>
-<p>如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来</p>
-<h3 id="apache日志分析"><a href="#apache日志分析" class="headerlink" title="apache日志分析"></a>apache日志分析</h3><blockquote>
-<p><strong>常见日志文件位置</strong></p>
+    <title>Network Traffic Analysis</title>
+    <url>/2025/02/Network-Traffic-Analysis/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析</p>
+<h1 id="CS流量——CobaltStrike流量"><a href="#CS流量——CobaltStrike流量" class="headerlink" title="CS流量——CobaltStrike流量"></a>CS流量——CobaltStrike流量</h1><blockquote>
+<p>“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”</p>
+<p>一些细节知识可以看这个 <a href="https://cloud.google.com/blog/topics/threat-intelligence/defining-cobalt-strike-components/">Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog</a></p>
+<p>更多CS流量相关看 <a href="https://wbglil.gitbook.io/cobalt-strike">前言 | Cobalt Strike</a></p>
 </blockquote>
-<blockquote>
-<ol>
-<li>Apache日志<ul>
-<li><strong>访问日志</strong> ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log.1（CentOS&#x2F;RHEL）。</li>
-<li><strong>错误日志</strong> ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log.1（CentOS&#x2F;RHEL）。</li>
+<p><code>Cobalt Strike</code> 服务端和客户端是通过 <code>SSL</code> 加密通讯的 (默认证书对 <code>cobaltstrike.store</code> )。</p>
+<p><code>Beacon</code> 的元数据传输过程中虽然使用的是 <code>RSA</code> 算法，但是 <code>Beacon</code> 任务的传输使用的却是 <code>AES</code> 算法加密的，而 <code>AES</code> 密钥则是 <code>Beacon</code> 随机生成的然后通过 <code>RSA</code> 交换 <code>AES</code>密钥。加解密算法为 <code>AES</code> ，密钥位长 <code>128</code> ，<code>CBC</code> 模式，填充标准 <code>PKCS7</code> ，其通信具体流程如下。</p>
+<img src="image-20230930201229567.webp" alt="image-20230930201229567" style="zoom:80%;">
+
+<h2 id="流量传递"><a href="#流量传递" class="headerlink" title="流量传递"></a>流量传递</h2><p><code>Cobalt Strike</code> 分为 <code>客户端</code> 与 <code>服务端</code> ，服务端是一个，客户端可以有多个，可被团队进行分布式协作操作。</p>
+<p><code>Cobalt Strike</code> 的 <code>Beacon</code> 支持异步通信和交互式通信。<code>Beacon</code> 可以选择通过 <code>DNS</code> 还是 <code>HTTP</code> 协议出口网络，你甚至可以在使用<code>Beacon</code> 通讯过程中切换 <code>HTTP</code> 和 <code>DNS</code>。其支持多主机连接，部署好 <code>Beacon</code> 后提交一个要连回的域名或主机的列表，<code>Beacon</code> 将通过这些主机轮询。</p>
+<p><code>http-beacon</code> 通信中，默认使用 <code>GET</code> 方法向 <code>/dpixel</code> 、<code>/__utm.gif</code> 、<code>/pixel.gif</code> 等地址发起请求，同时 <code>Cobalt Strike</code> 的<code>Beacon</code> 会将元数据（例如AES密钥）使用 <code>RSA</code> 公钥加密后发送给 <code>C2</code> 服务器。</p>
+<p>这些<strong>元数据</strong>通常被编码为 <code>Base64</code> 字符串并作为 <code>Cookie</code> 发送。如下图：<br><img src="屏幕截图 2025-02-05 232713.png" alt="屏幕截图 2025-02-05 232713" style="zoom:80%;"></p>
+<h2 id="流量特征"><a href="#流量特征" class="headerlink" title="流量特征"></a>流量特征</h2><p>cs流量的http通讯一般会有以下的特征</p>
+<p>比如搜索http类型数据后查看到有出现<code>post</code>请求<code>/sumbit.php？id=xxx</code>的特征，该特征可以判断 cobalt strike。</p>
+<p>这是因为cs在下发特征时会请求这个<code>/sumbit.php？id=xxx</code>，同时 <code>POST</code> 传递了一串 <code>0000</code> 开头的16进制数据，这是 cs 流量的发送任务数据（可以根据这个辨别cs），任务数据里的内容十分重要，如下：</p>
+<img src="屏幕截图 2025-02-06 004446.png" alt="屏幕截图 2025-02-06 004446" style="zoom:80%;">
+
+
+
+<p><strong>心跳包特征：</strong></p>
+<p>间隔一定时间，均有通信，且流级上的上下行数据长度固定；</p>
+<p>使用Wireshark等网络抓包工具，可以捕获到后门的HTTP数据包“GET &#x2F;4Ekx HTTP&#x2F;1.1”，其中的 “4Ekx”就是心跳包，通过查看心跳包获取一般cs心跳包会有4个数字或者字母组成。</p>
+<p><strong>https特征：</strong></p>
+<p><code>https-beacon</code> 通信中，默认使用空证书建立加密通道，流量中可以看见这一过程。</p>
+<p>在数据包的client hello中，数据包有JA3（<code>JA3</code> 是由 <code>John Althouse</code>、<code>Jeff Atkinson</code> 和 <code>Josh Atkins</code> 创建的开源项目。 <code>JA3</code> &#x2F; <code>JA3S</code> 可以为客户端和服务器之间的通信创建 <code>SSL</code> 指纹。）</p>
+<p>和操作系统有关，每个操作系统都有固定的值。这里列出几个已知的 <code>ja3</code> &#x2F; <code>ja3s</code> 指纹信息，这个值在不同操作系统上是不一样的</p>
+<p><strong>JA3</strong></p>
+<ul>
+<li>72a589da586844d7f0818ce684948eea</li>
+<li>a0e9f5d64349fb13191bc781f81f42e1</li>
 </ul>
-</li>
-<li>SSH日志<ul>
-<li><strong>身份验证日志</strong> ：通常位于&#x2F;var&#x2F;log&#x2F;auth.log（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;secure（CentOS&#x2F;RHEL）。</li>
+<p><strong>JA3s</strong></p>
+<ul>
+<li>b742b407517bac9536a77a7b0fee28e9</li>
+<li>ae4edc6faf64d08308082ad26be60767</li>
 </ul>
-</li>
-<li>系统日志<ul>
-<li><strong>系统日志</strong> ：通常位于&#x2F;var&#x2F;log&#x2F;syslog（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;messages（CentOS&#x2F;RHEL）。</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<p>我们可以进入<code>/var/log/apache2</code>日志目录。</p>
-<p>可以dump下来分析，也可以直接在上面筛选</p>
-<p>需要一定的linux知识</p>
-<blockquote>
-<ol>
-<li>cut: 这是一个命令，用于从每一行文本中剪切出指定部分。<ul>
-<li>-d-: 指定分隔符为 -</li>
-<li>-f 1: 指定要剪切的字段为第一个字段。</li>
-<li>access.log.1: 这是要处理的日志文件的文件名或路径。</li>
-</ul>
-</li>
-<li>uniq -c: 这个命令会从输入中删除重复的行，并且计算每行重复出现的次数。<ul>
-<li>-c: 会在输出中显示每行重复出现的次数。</li>
-</ul>
-</li>
-<li>sort : 这个命令会对输入进行排序。<ul>
-<li>-r: 表示反向排序，即降序排列。</li>
-<li>-n: 表示按照数值大小排序。</li>
-</ul>
-</li>
-<li>head -20: 最后，这个命令会从排序后的结果中提取前 20 行。</li>
-<li>| : 管道命令符，表示前一项的输出结果作为后一项的输入</li>
-</ol>
-</blockquote>
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><p>那拿到的cs流量我们怎么解密呢？</p>
+<p>大致是需要三样东西： <code>.cobaltstrike.beacon_keys</code> 文件、<code>cookie</code>元数据、<code>submit.php</code>的data</p>
+<p><strong>第一种方法：</strong></p>
+<p>这种一步到位</p>
+<p>有了这三样东西我们便可以直接执行脚本，项目地址 <a href="https://github.com/5ime/CS_Decrypt">5ime&#x2F;CS_Decrypt: CobaltStrike流量解密脚本</a></p>
+<p>安装库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install hexdump javaobj-py3</span><br></pre></td></tr></table></figure>
+
+<p>脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> javaobj.v2 <span class="keyword">as</span> javaobj</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_v1_5</span><br><span class="line"></span><br><span class="line">file_path = <span class="string">&quot;.cobaltstrike.beacon_keys&quot;</span></span><br><span class="line"><span class="comment">#.cobaltstrike.beacon_keys文件路径</span></span><br><span class="line">encode_data = <span class="string">&quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;</span></span><br><span class="line"><span class="comment">#元数据内容</span></span><br><span class="line">encrypt_data = <span class="string">&quot;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&quot;</span></span><br><span class="line"><span class="comment">#任务数据内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">format_key</span>(<span class="params">key_data</span>):</span><br><span class="line">    key_data = <span class="built_in">bytes</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x &amp; <span class="number">0xFF</span>, key_data))</span><br><span class="line">    formatted_key = <span class="string">f&quot;-----BEGIN PRIVATE KEY-----\n&quot;</span></span><br><span class="line">    formatted_key += base64.encodebytes(key_data).decode()</span><br><span class="line">    formatted_key += <span class="string">f&quot;-----END PRIVATE KEY-----&quot;</span></span><br><span class="line">    <span class="keyword">return</span> formatted_key</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, iv_bytes, signature, shared_key, hmac_key</span>):</span><br><span class="line">    <span class="keyword">if</span> hmac.new(hmac_key, encrypted_data, digestmod=<span class="string">&quot;sha256&quot;</span>).digest()[:<span class="number">16</span>] != signature:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;message authentication failed&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)</span><br><span class="line">    <span class="keyword">return</span> cipher.decrypt(encrypted_data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> fd:</span><br><span class="line">    pobj = javaobj.load(fd)</span><br><span class="line"></span><br><span class="line">PRIVATE_KEY = format_key(pobj.array.value.privateKey.encoded.data)</span><br><span class="line">private_key = RSA.import_key(PRIVATE_KEY.encode())</span><br><span class="line">cipher = PKCS1_v1_5.new(private_key)</span><br><span class="line">ciphertext = cipher.decrypt(base64.b64decode(encode_data), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ciphertext[<span class="number">0</span>:<span class="number">4</span>] == <span class="string">b&#x27;\x00\x00\xBE\xEF&#x27;</span>:</span><br><span class="line">    raw_aes_keys = ciphertext[<span class="number">8</span>:<span class="number">24</span>]</span><br><span class="line">    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()</span><br><span class="line">    aes_key = raw_aes_hash256[<span class="number">0</span>:<span class="number">16</span>]</span><br><span class="line">    hmac_key = raw_aes_hash256[<span class="number">16</span>:]</span><br><span class="line"></span><br><span class="line">SHARED_KEY = binascii.unhexlify(aes_key.<span class="built_in">hex</span>())</span><br><span class="line">HMAC_KEY = binascii.unhexlify(hmac_key.<span class="built_in">hex</span>())</span><br><span class="line"></span><br><span class="line">encrypt_data = base64.b64encode(<span class="built_in">bytes</span>.fromhex(encrypt_data)).decode()</span><br><span class="line">encrypt_data = base64.b64decode(encrypt_data)</span><br><span class="line">encrypt_data_length = <span class="built_in">int</span>.from_bytes(encrypt_data[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)</span><br><span class="line">encrypt_data_l = encrypt_data[<span class="number">4</span>:]</span><br><span class="line">data1 = encrypt_data_l[:encrypt_data_length-<span class="number">16</span>]</span><br><span class="line">signature = encrypt_data_l[encrypt_data_length-<span class="number">16</span>:encrypt_data_length]</span><br><span class="line">iv_bytes = <span class="string">b&quot;abcdefghijklmnop&quot;</span></span><br><span class="line"></span><br><span class="line">dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;AES key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(aes_key.<span class="built_in">hex</span>()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;HMAC key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(hmac_key.<span class="built_in">hex</span>()))</span><br><span class="line"><span class="built_in">print</span>(dec[<span class="number">12</span>:<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)])</span><br><span class="line"><span class="built_in">print</span>(hexdump.hexdump(dec))</span><br></pre></td></tr></table></figure>
+
+<p>需要修改的就只有三个：file_path、encode_data、encrypt_data</p>
+<p>同时因为心跳包（<code>submit.php</code>的data）不止一个，需要我们修改脚本里的<code>encrypt_data</code>多次尝试。</p>
+<p>。</p>
+<p>。</p>
+<p>。</p>
+<p><strong>第二种方法：</strong></p>
+<p>这种是一步步来的，分了大概四步</p>
+<p>因为是CTF比赛所以会有<code>.cobaltstrike.beacon_keys</code> 文件，同时该文件本质上为 <code>KeyPair</code> 的 Java 对象，Python 的 <code>javaobj-py3</code> 库可以直接读取里面存储的数据。</p>
+<p>首先，我们需要先获取 <code>.cobaltstrike.beacon_keys</code> 文件中的私钥。这个私钥是 <code>RSA</code> 私钥，用于解密元数据。</p>
+<p>脚本：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> javaobj.v2 <span class="keyword">as</span> javaobj</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;.cobaltstrike.beacon_keys&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> fd:</span><br><span class="line">    pobj = javaobj.load(fd)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">format_key</span>(<span class="params">key_data, key_type</span>):</span><br><span class="line">    key_data = <span class="built_in">bytes</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x &amp; <span class="number">0xFF</span>, key_data))</span><br><span class="line">    formatted_key = <span class="string">f&quot;-----BEGIN <span class="subst">&#123;key_type&#125;</span> KEY-----\n&quot;</span></span><br><span class="line">    formatted_key += base64.encodebytes(key_data).decode()</span><br><span class="line">    formatted_key += <span class="string">f&quot;-----END <span class="subst">&#123;key_type&#125;</span> KEY-----&quot;</span></span><br><span class="line">    <span class="keyword">return</span> formatted_key</span><br><span class="line"></span><br><span class="line">privateKey = format_key(pobj.array.value.privateKey.encoded.data, <span class="string">&quot;PRIVATE&quot;</span>)</span><br><span class="line">publicKey = format_key(pobj.array.value.publicKey.encoded.data, <span class="string">&quot;PUBLIC&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(privateKey)</span><br><span class="line"><span class="built_in">print</span>(publicKey)</span><br></pre></td></tr></table></figure>
+
+<p>然后我们在通过私钥解密元数据、获取 <code>AES KEY</code>，其中 <code>encode_data</code> 为元数据，也就是之前看到的 <code>cookie</code> 的值。</p>
+<p>那什么是AESkey呢？</p>
+<p>因为<code>Cobalt Strike</code> 的 <code>Beacon</code> 通信主要依赖于 <code>AES key</code> 和 <code>HMAC key</code> 。这两个密钥都是由 <code>Beacon</code> 在每次执行时随机生成的 16字节数据。</p>
+<p><code>AES key</code>：这个密钥用于加密和解密 <code>Beacon</code> 与 <code>C2</code> 服务器之间的通信内容。具体来说，它用于 <code>AES</code> 算法，该算法用于加密和解密Beacon任务的传输。</p>
+<p><code>HMAC key</code> ：这个密钥用于验证数据的完整性和真实性。<code>HMAC</code> （Hash-based Message Authentication Code）是一种基于密钥的哈希算法，用于在不安全的通信环境中验证消息的完整性和真实性。</p>
+<p>这两个密钥都是由同一组16字节数据生成的。具体来说，这组16字节数据的 <code>SHA256</code> 哈希的前半部分作为 <code>HMAC</code> 密钥，后半部分作为 <code>AES</code> 密钥。</p>
+<p>脚本：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> Crypto.PublicKey <span class="keyword">import</span> RSA</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> PKCS1_v1_5</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line">PRIVATE_KEY = <span class="string">&quot;&quot;&quot;-----BEGIN PRIVATE KEY-----</span></span><br><span class="line"><span class="string">&#123;MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAIzAss/1Vcd49UN5XT+pVELCnX1r</span></span><br><span class="line"><span class="string">To4LhSzcP7sPOrIOQg0onSpKO1tzOVX+2DqtZsSFoFrAmrEV+gZCbFfhYR9vs5DGLUg9aa0i5Gqh</span></span><br><span class="line"><span class="string">Pz/s4v5wcmgUgfnvjh4oK7yPQ5BMcqESCjEim9MXs70by1U7ZN+wOYZEorInV9gPkCJdAgMBAAEC</span></span><br><span class="line"><span class="string">gYAJbRpMjQyamEIsq6MQEWIAOpJbhOU05BaeI33tJB71L7lCslacL258OGI9nRyUCWrZfG15xm5V</span></span><br><span class="line"><span class="string">r7gX1Tj2RbTAUZmGigY1X2rCyz00DFjj5iIQVWsl8eSI1EmjFmQ+rYnCezQcrt4V3c7BZtW9RjFW</span></span><br><span class="line"><span class="string">vHh09PF808Yl4/+++vrMoQJBAKhCa/adRGEFqiVcSZG2FdlUG4bPMfwRkYMERZG5D6fjVHOVNEyL</span></span><br><span class="line"><span class="string">3MK+EtafnYIDD1IS+97K0cbg922RKXNdv+kCQQDWJk0kNe8ePBpwJU4slig1Y+4VWuwTRz6r+MNp</span></span><br><span class="line"><span class="string">v+WrVMzo/LHzAKYn87pyAdxLaZyKAFKs86WpJ2n93ZslC9pVAkA0KMMHJCF6YiMoib9UqDmFsYkG</span></span><br><span class="line"><span class="string">9VvtZBTTpJNcZR3xUYtweSRJRmIdDIcSeVB+aSxqqO/jVMRK/po1IPbUiI9hAkEAi93wPFpNlv3C</span></span><br><span class="line"><span class="string">dsSmzlA0asqd0azUy7KYqFGNsB/5rXFxdCq3PvOJkkaJ27SDYW3VI/0aAoQQCu8HNxvqHMQlEQJB</span></span><br><span class="line"><span class="string">AIFIkfpeSfksLu8NgiFvZsTV8EWF9PfF2VLyqeSGtmySujqb0HbxGnM9SDc0k48wOvIn5YGJPyY2</span></span><br><span class="line"><span class="string">ddsyNI6XbCU=&#125;</span></span><br><span class="line"><span class="string">-----END PRIVATE KEY-----&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment">#rsa私钥</span></span><br><span class="line"></span><br><span class="line">encode_data = <span class="string">&quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;</span></span><br><span class="line"><span class="comment">#元数据</span></span><br><span class="line"></span><br><span class="line">private_key = RSA.import_key(PRIVATE_KEY.encode())</span><br><span class="line"></span><br><span class="line">cipher = PKCS1_v1_5.new(private_key)</span><br><span class="line">ciphertext = cipher.decrypt(base64.b64decode(encode_data), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ciphertext[<span class="number">0</span>:<span class="number">4</span>] == <span class="string">b&#x27;\x00\x00\xBE\xEF&#x27;</span>:</span><br><span class="line">    raw_aes_keys = ciphertext[<span class="number">8</span>:<span class="number">24</span>]</span><br><span class="line">    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()</span><br><span class="line">    aes_key = raw_aes_hash256[<span class="number">0</span>:<span class="number">16</span>]</span><br><span class="line">    hmac_key = raw_aes_hash256[<span class="number">16</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;AES key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(aes_key.<span class="built_in">hex</span>()))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;HMAC key: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(hmac_key.<span class="built_in">hex</span>()))</span><br><span class="line"></span><br><span class="line">    hexdump.hexdump(ciphertext)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>到此我们就得到了 <code>AES key</code> 和 <code>HMAC key</code></p>
+<p>接着要去解密 <code>submit.php</code> 所传递的 Data ，首先我们要先对该串16进制数据进行处理，转字符串后进行 <code>Base64</code> 编码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">encode_data = <span class="string">&#x27;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&#x27;</span></span><br><span class="line"><span class="comment">#任务数据</span></span><br><span class="line"></span><br><span class="line">bytes_data = <span class="built_in">bytes</span>.fromhex(encode_data)</span><br><span class="line">encrypt_data = base64.b64encode(bytes_data)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(encrypt_data.decode())</span><br></pre></td></tr></table></figure>
+
+<p>最终分别填入 <code>SHARED_KEY</code>，<code>HMAC_KEY</code>，<code>encrypt_data</code> 即可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> hexdump</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">SHARED_KEY = binascii.unhexlify(<span class="string">&quot;ef08974c0b06bd5127e04ceffe12597b&quot;</span>)</span><br><span class="line"><span class="comment">#AES key</span></span><br><span class="line">HMAC_KEY = binascii.unhexlify(<span class="string">&quot;bd87fa356596a38ac3e3bb0b6c3496e9&quot;</span>)</span><br><span class="line"><span class="comment">#HMAC key</span></span><br><span class="line">encrypt_data = <span class="string">&quot;AAAAwJPf9rLwWLpCMeOQAnZWZEHyu0x25chICHSk2Z3wgwVKXqHdSupVI8dRr30SPujp8iU6XM3PVEJ9FHxVaxVlfuJgfpKzVzLyY0G8CibFi/K88jg61kBkHDZBWThyIzYMwW/z3BSrHwDm7k+1P14Vt2e9N5RR0Ne29K6unbDD8w8+8We32z5qwkFkPtJRPnP56RSOvnr6oSLqdelFyKuKgWF55DGAJXvYvnUoJ90N4mgm1WEe4JOR7lVFiX2uHTqWmA==&quot;</span></span><br><span class="line"><span class="comment">#任务数据（解密过的）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">encrypted_data, iv_bytes, signature, shared_key, hmac_key</span>):</span><br><span class="line">    <span class="keyword">if</span> hmac.new(hmac_key, encrypted_data, digestmod=<span class="string">&quot;sha256&quot;</span>).digest()[:<span class="number">16</span>] != signature:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;message authentication failed&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)</span><br><span class="line">    <span class="keyword">return</span> cipher.decrypt(encrypted_data)</span><br><span class="line"></span><br><span class="line">encrypt_data = base64.b64decode(encrypt_data)</span><br><span class="line">encrypt_data_length = <span class="built_in">int</span>.from_bytes(encrypt_data[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)</span><br><span class="line">encrypt_data_l = encrypt_data[<span class="number">4</span>:]</span><br><span class="line"></span><br><span class="line">data1 = encrypt_data_l[:encrypt_data_length-<span class="number">16</span>]</span><br><span class="line">signature = encrypt_data_l[encrypt_data_length-<span class="number">16</span>:encrypt_data_length]</span><br><span class="line">iv_bytes = <span class="string">b&quot;abcdefghijklmnop&quot;</span></span><br><span class="line"></span><br><span class="line">dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;counter: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[:<span class="number">4</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务返回长度: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务输出类型: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>.from_bytes(dec[<span class="number">8</span>:<span class="number">12</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)))</span><br><span class="line"><span class="built_in">print</span>(dec[<span class="number">12</span>:<span class="built_in">int</span>.from_bytes(dec[<span class="number">4</span>:<span class="number">8</span>], byteorder=<span class="string">&#x27;big&#x27;</span>, signed=<span class="literal">False</span>)])</span><br><span class="line"><span class="built_in">print</span>(hexdump.hexdump(dec))</span><br></pre></td></tr></table></figure>
+
+<p>就OK了</p>
+<p><strong>例题</strong>： 2023 SICTF 一起上号不         <strong>解析</strong>： <a href="https://metaviii.github.io/2024/11/Misc-Record/#%E6%9D%82%E9%A2%98">Misc Record | MetaVi</a> （在#杂题那）</p>
 ]]></content>
       <categories>
-        <category>AWD</category>
+        <category>CTF</category>
       </categories>
       <tags>
-        <tag>awd</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wsl启动出错</title>
-    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
-    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-
-<p>然后重启电脑，看wsl还能运行吗</p>
-<p>我是运行了这个就好了，界面：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
-
-<p>运行后检查版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
-<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或者重装 WSL：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
-<p>按 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
-
-<p> 键，输入 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
-
-<p>，检查以下服务是否已启动：</p>
-<p><strong>Hyper-V Host Compute Service</strong></p>
-<p><strong>Virtual Machine Management</strong></p>
-<p>如果未启动，右键启动这些服务。</p>
-]]></content>
-      <tags>
-        <tag>wsl</tag>
+        <tag>CTF</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -3190,7 +2783,7 @@
 <p>追踪tcp流之后发现</p>
 <p>![屏幕截图 2025-03-03 115626](.&#x2F;Misc-Record&#x2F;屏幕截图 2025-03-03 115626.png)</p>
 <p>这个就是发送者的邮箱了<code>xsser@live.cn</code></p>
-<p>flag{<a href="mailto:&#120;&#115;&#x73;&#x65;&#114;&#x40;&#108;&#105;&#118;&#x65;&#46;&#99;&#110;">&#120;&#115;&#x73;&#x65;&#114;&#x40;&#108;&#105;&#118;&#x65;&#46;&#99;&#110;</a>}</p>
+<p>flag{<a href="mailto:&#120;&#x73;&#x73;&#101;&#114;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#110;">&#120;&#x73;&#x73;&#101;&#114;&#x40;&#x6c;&#105;&#118;&#x65;&#x2e;&#99;&#110;</a>}</p>
 <h3 id="131-蜘蛛侠呀"><a href="#131-蜘蛛侠呀" class="headerlink" title="131.蜘蛛侠呀"></a>131.蜘蛛侠呀</h3><p>一段流量。</p>
 <p>发现icmp后面每段都带有一段的data数据，猜测是将一个文件分散在了这里。</p>
 <p>可以使用tshark导出这些数据，然后去重，再用脚本</p>
@@ -4216,8 +3809,365 @@
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>misc</tag>
         <tag>CTF</tag>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse Record</title>
+    <url>/2024/11/Reverse-Record/</url>
+    <content><![CDATA[<h1 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h1><h3 id="pyc反编译"><a href="#pyc反编译" class="headerlink" title="pyc反编译"></a>pyc反编译</h3><blockquote>
+<p><code>.pyc</code> 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行</p>
+<p>想查看 <code>.pyc</code> 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 <code>.py</code> 文件。</p>
+</blockquote>
+<p>-使用 uncompyle6</p>
+<p>-在线网站 <a href="https://tool.lu/pyc/">https://tool.lu/pyc/</a></p>
+<h3 id="exe反编译"><a href="#exe反编译" class="headerlink" title="exe反编译"></a>exe反编译</h3><p>使用IDA</p>
+<h3 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h3><p>使用jadx-gui-1.4.4-no-jre-win.exe</p>
+<h1 id="NewStar-re复现"><a href="#NewStar-re复现" class="headerlink" title="NewStar-re复现"></a><strong>NewStar-re复现</strong></h1><p><strong>学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi</strong></p>
+<h2 id="1-ez-debug"><a href="#1-ez-debug" class="headerlink" title="1.ez_debug"></a><em>1.ez_debug</em></h2><p>当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。</p>
+<p><img src="re2.png" alt="re2"></p>
+<p>这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较<br>注意上面的you函数，步入后看到几个变量，下断点，调试</p>
+<p><img src="re3.png" alt="re3"></p>
+<p>能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag</p>
+<p>总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TGCTF2025misc全解</title>
+    <url>/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/</url>
+    <content><![CDATA[<p>这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。</p>
+<p>其他方向的解可以看我们A1natas的公众号。</p>
+<p>关注A1natas喵，关注A1natas谢谢喵！</p>
+<h1 id="简单签到，关注：”杭师大网安“谢谢喵🐱"><a href="#简单签到，关注：”杭师大网安“谢谢喵🐱" class="headerlink" title="简单签到，关注：”杭师大网安“谢谢喵🐱"></a>简单签到，关注：”杭师大网安“谢谢喵🐱</h1><p>关注公众号得flag。</p>
+<h1 id="ez-zip"><a href="#ez-zip" class="headerlink" title="ez_zip"></a>ez_zip</h1><p>爆破得到密码是20250412。</p>
+<p>解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sha512一下，deflate明文攻击。</p>
+<p>不知道为什么我的bk检测不出来这个文件，于是我用了arc </p>
+<img src="屏幕截图 2025-04-12 101622.png" alt="屏幕截图 2025-04-12 101622" style="zoom:50%;">
+
+<p>然后又得到一个压缩包，是损坏的，要根据数据存储区修复了一下压缩包</p>
+<p>可以用Bandizip无密码快速压缩一个例子，然后对照着把压缩包修复一下就行</p>
+<p>dirEntry的flag.txt应该是少东西了，需要我们手动补上</p>
+<img src="屏幕截图 2025-04-13 173227.png" alt="屏幕截图 2025-04-13 173227" style="zoom:80%;">
+
+<img src="屏幕截图 2025-04-13 173330.png" alt="屏幕截图 2025-04-13 173330" style="zoom:80%;">
+
+<p>修复完成后打开即可得到flag：TGCTF{Warrior_You_have_defeated_the_giant_dragon!}</p>
+<img src="屏幕截图 2025-04-13 173359.png" alt="屏幕截图 2025-04-13 173359" style="zoom:80%;">
+
+
+
+<h1 id="TeamGipsy-ctfer"><a href="#TeamGipsy-ctfer" class="headerlink" title="TeamGipsy&amp;ctfer"></a><strong>TeamGipsy&amp;ctfer</strong></h1><p> 预期解应该是查找文件，可以用diskgenius：<img src="../../CTF/2025-tgctf/attachments/1ac79dc0-4137-458a-b1e4-f9c287333d41.png">桌面上有个mimi.txt，发现出题人用Docker起了一个MySQL，直接去&#x2F;var&#x2F;lib&#x2F;docker目录下翻</p>
+<p>发现在<code>/var/lib/docker/overlay2/6ac971c2de3baa602bb4335d6899bbf1963140364ce248decc9557b2f49139f9/diff/root/.mysql_history</code>中就有flag：HZNUCTF{0H!_YOu_are_really_the_TeamGipsy_ctfer}</p>
+<p> <img src="../../CTF/2025-tgctf/attachments/4e32d7ce-031a-4e80-90a6-5d2b10178ba7.png"></p>
+<p>第二种也可以用取证大师，一样查找文件。</p>
+<p>非预期应该是用string命令直接搜出来flag</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">strings Ubuntu-s00*.vmdk | grep HZNUCTF</span><br></pre></td></tr></table></figure>
+
+<p>（这个要跑一会的）</p>
+<img src="屏幕截图 2025-04-14 130112.png" alt="屏幕截图 2025-04-14 130112" style="zoom:80%;">
+
+
+
+<h1 id="你能发现图中的秘密吗？"><a href="#你能发现图中的秘密吗？" class="headerlink" title="你能发现图中的秘密吗？"></a><strong>你能发现图中的秘密吗？</strong></h1><p>这道题挺好的，就是老是有问题</p>
+<p>先zsteg跑一下</p>
+<img src="屏幕截图 2025-04-13 173932.png" alt="屏幕截图 2025-04-13 173932" style="zoom:80%;">
+
+<p>得到解压密码后解压得到一个pdf，一个图片</p>
+<p>第一张pdf的左上角有第二部分的flag：</p>
+<p>flag2&#x3D;_attentive_and_conscientious}</p>
+<p>这个改之前的，改之后的是用PS的隐藏图层隐藏的</p>
+<img src="屏幕截图 2025-04-13 120632.png" alt="屏幕截图 2025-04-13 120632" style="zoom:80%;">
+
+<p>用010打开final_challenge2.png，发现有一块IDAT块不太正常</p>
+<p><img src="https://somokel.oss-cn-hangzhou.aliyuncs.com/img/6d5cd91f-edde-4018-9169-05b284a1d7f0.png" alt="6d5cd91f-edde-4018-9169-05b284a1d7f0"></p>
+<p>提取出来，补上PNG文件头尾，然后爆破宽高即可得到另一段flag </p>
+<p><img src="https://somokel.oss-cn-hangzhou.aliyuncs.com/img/256ea54c-f030-4f11-8014-7c32fd29e67c.png" alt="256ea54c-f030-4f11-8014-7c32fd29e67c"></p>
+<p>Tips：这里要注意把IDAT的前四个字节也一起复制过来，并且保持不变</p>
+<p>因为四字节代表的是数据长度，这里如果出错，图片的数据长度就错了，因此再爆破宽高也没用了</p>
+<p>两段flag合起来就是最后的flag：flag{you_are_so_attentive_and_conscientious}</p>
+<p> <img src="../../CTF/2025-tgctf/attachments/948d611c-6920-4fb4-8b49-17f806516925.png"></p>
+<h1 id="next-is-the-end"><a href="#next-is-the-end" class="headerlink" title="next is the end"></a><strong>next is the end</strong></h1><p>直接脚本就行</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#!<span class="regexp">/usr/</span>bin/env python3</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">def <span class="title function_">traverse</span>(path):</span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">    递归遍历目录：</span></span><br><span class="line"><span class="string">      1. 如果当前目录中存在名为 &#x27;next_or_end&#x27; 的子目录，则进入该目录；</span></span><br><span class="line"><span class="string">      2. 否则：</span></span><br><span class="line"><span class="string">         - 如果目录中只有一个项目且该项目为文件，则返回该文件路径；</span></span><br><span class="line"><span class="string">         - 如果只有一个项目但是目录，则继续进入；</span></span><br><span class="line"><span class="string">         - 如果目录中有多个项目，则报错无法确定正确路径。</span></span><br><span class="line"><span class="string">    &quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">while</span> <span class="title class_">True</span>:</span><br><span class="line">        # 若当前路径不是目录，则到达最终目标（通常是文件）</span><br><span class="line">        <span class="keyword">if</span> not os.<span class="property">path</span>.<span class="title function_">isdir</span>(path):</span><br><span class="line">            <span class="keyword">return</span> path</span><br><span class="line"></span><br><span class="line">        items = os.<span class="title function_">listdir</span>(path)</span><br><span class="line">        # 如果当前目录中有 <span class="string">&#x27;next_or_end&#x27;</span> 文件夹，则进入该目录</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;next_or_end&quot;</span> <span class="keyword">in</span> <span class="attr">items</span>:</span><br><span class="line">            path = os.<span class="property">path</span>.<span class="title function_">join</span>(path, <span class="string">&quot;next_or_end&quot;</span>)</span><br><span class="line">        <span class="attr">else</span>:</span><br><span class="line">            # 当前目录没有 <span class="string">&#x27;next_or_end&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="title function_">len</span>(items) == <span class="number">1</span>:</span><br><span class="line">                next_path = os.<span class="property">path</span>.<span class="title function_">join</span>(path, items[<span class="number">0</span>])</span><br><span class="line">                <span class="keyword">if</span> os.<span class="property">path</span>.<span class="title function_">isdir</span>(next_path):</span><br><span class="line">                    # 如果唯一的项目还是目录，则继续进入</span><br><span class="line">                    path = next_path</span><br><span class="line">                elif os.<span class="property">path</span>.<span class="title function_">isfile</span>(next_path):</span><br><span class="line">                    # 如果唯一的项目是文件，则返回</span><br><span class="line">                    <span class="keyword">return</span> next_path</span><br><span class="line">                <span class="attr">else</span>:</span><br><span class="line">                    <span class="title function_">print</span>(f<span class="string">&quot;遇到未知类型：&#123;next_path&#125;&quot;</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="title class_">None</span></span><br><span class="line">            <span class="attr">else</span>:</span><br><span class="line">                <span class="title function_">print</span>(f<span class="string">&quot;无法确定路径：目录 &#x27;&#123;path&#125;&#x27; 中存在多个项目：&#123;items&#125;&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="title class_">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    # 从命令行获取起始目录，若未传参数则默认为当前目录</span><br><span class="line">    start_path = sys.<span class="property">argv</span>[<span class="number">1</span>] <span class="keyword">if</span> <span class="title function_">len</span>(sys.<span class="property">argv</span>) &gt; <span class="number">1</span> <span class="keyword">else</span> <span class="string">&quot;.&quot;</span></span><br><span class="line">    result = <span class="title function_">traverse</span>(start_path)</span><br><span class="line">    <span class="keyword">if</span> <span class="attr">result</span>:</span><br><span class="line">        <span class="title function_">print</span>(f<span class="string">&quot;最终目标路径：&#123;result&#125;&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> os.<span class="property">path</span>.<span class="title function_">isfile</span>(result):</span><br><span class="line">            # 如果目标为文件，读取并打印文件内容</span><br><span class="line">            <span class="attr">try</span>:</span><br><span class="line">                <span class="keyword">with</span> <span class="title function_">open</span>(result, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> <span class="attr">f</span>:</span><br><span class="line">                    content = f.<span class="title function_">read</span>()</span><br><span class="line">                <span class="title function_">print</span>(<span class="string">&quot;文件内容如下：&quot;</span>)</span><br><span class="line">                <span class="title function_">print</span>(content)</span><br><span class="line">            except <span class="title class_">Exception</span> <span class="keyword">as</span> <span class="attr">e</span>:</span><br><span class="line">                <span class="title function_">print</span>(f<span class="string">&quot;读取文件时出错：&#123;e&#125;&quot;</span>)</span><br><span class="line">        <span class="attr">else</span>:</span><br><span class="line">            <span class="title function_">print</span>(<span class="string">&quot;最终目标不是一个普通文件。&quot;</span>)</span><br><span class="line">    <span class="attr">else</span>:</span><br><span class="line">        <span class="title function_">print</span>(<span class="string">&quot;未能找到最终目标。&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>看到flag</p>
+<p><img src="../../CTF/2025-tgctf/attachments/a0c5ea4e-7705-4e4a-8d64-5351c9c7ef5e.png" title=" =1697x701"></p>
+<h1 id="where-it-is-osint"><a href="#where-it-is-osint" class="headerlink" title="where it is(osint)"></a>where it is(osint)</h1><p>谷歌识图</p>
+<p> <img src="../../CTF/2025-tgctf/attachments/b7821666-222f-4a79-b959-dc9bd48ce7a0.png" title=" =1780x1183"></p>
+<p>点进去发现</p>
+<p> <img src="../../CTF/2025-tgctf/attachments/d05fc578-659e-44f4-8a8e-b6cd840a6508.png" title=" =1693x1019"></p>
+<p>站点就是这个：港墘站</p>
+<h1 id="你的运气是好是坏？"><a href="#你的运气是好是坏？" class="headerlink" title="你的运气是好是坏？"></a><strong>你的运气是好是坏？</strong></h1><p>笑死我了flag直接一试就试出来了：114514</p>
+<h1 id="这是啥o-o"><a href="#这是啥o-o" class="headerlink" title="这是啥o_o"></a><strong>这是啥o_o</strong></h1><p>下载得到一个无后缀的文件，文件头发现是gif，改成gif后拖进ps里看，发现最后几帧有散开的汉信码碎片。修复如下：</p>
+<p> <img src="../../CTF/2025-tgctf/attachments/39f90506-aef0-4283-a135-6317525f3e77.png" title=" =749x713"></p>
+<p>扫码得到：time is your fortune ,efficiency is your life</p>
+<p>猜测是帧间隔隐写，用puzzlesolver提出帧间隔放入python转ASCII码，得到flag</p>
+<blockquote>
+<p>a&#x3D; [‘840’, ‘710’, ‘670’, ‘840’, ‘700’, ‘1230’, ‘890’, ‘1110’, ‘1170’, ‘950’, ‘990’, ‘970’, ‘1170’, ‘1030’, ‘1040’, ‘1160’, ‘950’, ‘1170’, ‘1120’, ‘950’, ‘1190’, ‘1050’, ‘1160’, ‘1040’, ‘950’, ‘1160’, ‘1050’, ‘1090’, ‘1010’, ‘330’, ‘1250’]</p>
+<p>s &#x3D; ‘’</p>
+<p>for i in a:</p>
+<p> s+&#x3D;chr(int(i)&#x2F;&#x2F;10)</p>
+<p>print(s)</p>
+</blockquote>
+<p>TGCTF{You_caught_up_with_time!}</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VNCTF2025misc复现</title>
+    <url>/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<p>这个比赛的misc真是难，除了一道签到之外几乎全是区块链和ai，唯一一道的取证还是安卓取证，而且还模拟的真实取证过程。。</p>
+<p>全部的wp可以在vnctf2025的群里有，或者官方公众号。</p>
+<p>打的我道心破碎了要。。。</p>
+<h1 id="VN-Lang"><a href="#VN-Lang" class="headerlink" title="VN_Lang"></a>VN_Lang</h1><p>简单的misc签到题</p>
+<p>打开exe发现是flag但是是vn自创文字</p>
+<p>使用IDA打开exe，直接爆搜VNCTF就能发现flag了</p>
+<img src="屏幕截图 2025-02-10 174246.png" alt="屏幕截图 2025-02-10 174246" style="zoom:80%;">
+
+<p>flag：VNCTF{wXD4cznGnWqVVPRTF1Mzlf7zrPTfBRkKIq2Kgyq4Gohs2}</p>
+<p>这个题好像每个人flag不一样</p>
+<h1 id="Echo-Flowers"><a href="#Echo-Flowers" class="headerlink" title="Echo Flowers"></a>Echo Flowers</h1><p>这个真是毁我道心了，看了一天。。</p>
+<p>拿到echo flowers文件看到里面有一个echo_flowers.ovf文件，可以使用vmware挂载</p>
+<p>虽然这道题挂载不甚有大用就是了</p>
+<p>挂载后看到桌面上只有一个imToken：</p>
+<img src="屏幕截图 2025-02-10 175016.png" alt="屏幕截图 2025-02-10 175016" style="zoom:80%;">
+
+<p>所有应用也只有一点点，在便签，imtoken，设置里面都没有发现什么东西，这就是这道题的神奇之处了</p>
+<p>题目要求恢复密码，我们可以通过找到12个助记词来恢复密码，但是系统中又没有什么提示该怎么办呢？</p>
+<img src="屏幕截图 2025-02-10 175335.png" alt="屏幕截图 2025-02-10 175335" style="zoom:80%;">
+
+<p>在输入法打单词的时候发现有上次遗留的输入。</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>手动执行 一遍导入助记词流程可以发现，手机安装的某数字钱包App在导入助记词时没有将助 记词输入框设为密码属性，使得输入法可以开启单词联想，而手机安装的某输入法 （包括厂商预装版本）的单词联想是默认开启的。（题目描述中也对此给出了提示： 114 英语不好）  多次导入助记词会发现输入助记词首字母即可联想助记词单词。 </p>
+</blockquote>
+<p>所以我们可以大致确定助记词的范围，再根据所有2048个助记词确定是那些助记词</p>
+<p>所有2048个助记词： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
+<p>大致确定的助记词：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ramp twenty only space define fashion high carpet muscle laundry couch ranch</span><br></pre></td></tr></table></figure>
+
+<p>接下来要做的就是恢复这12个助记词的顺序了，已知暴力破解这12个助记词顺序是不现实的（因为要好几天），所以我们需要在文件中寻找那个储存了顺序的“词典”文件。</p>
+<p>大概有两种方法：<br><strong>方法一：7z解压vmdk文件</strong></p>
+<p>直接7z解压，能直接把所有vmdk的文件解压出来</p>
+<p>（之前怎么能忘了！）</p>
+<p><strong>方法二：DiskGenius挂载</strong></p>
+<p>网上下一个DiskGenius，可以直接挂载vmdk</p>
+<p>主要DiskGenius可以恢复磁盘上删除的文件这是它的厉害之处</p>
+<p>恢复后如图：<br><img src="屏幕截图 2025-02-10 182557.png" alt="屏幕截图 2025-02-10 182557" style="zoom:80%;"></p>
+<p>。</p>
+<p>。</p>
+<p>总之就是把vmdk里所有文件全部都解压出来，然后在里面找可疑的文件。</p>
+<p>最后找到了<code>android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict</code> 这个文件夹下，具体来说就是<code>sgim_gd_usr.bin</code>这个文件</p>
+<p>然后这里有一个比较偏的知识点，就是</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>搜狗输入法用户词库文件不是utf-8编码而是utf-16</p>
+</blockquote>
+<p>所以一般的记事本和010是很难看出来什么东西的</p>
+<p>这里有两种方法来看到内容</p>
+<p><strong>方法一：使用string命令</strong></p>
+<p>kali自带string命令</p>
+<p><strong>strings命令：用于从二进制文件中提取可打印字符串。它可以提取和显示文件中的所有可打印字符串，常用于分析二进制文件、调试和逆向工程</strong></p>
+<p>先cd</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict</span><br></pre></td></tr></table></figure>
+
+<p>然后string</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">strings --encoding=b * </span><br></pre></td></tr></table></figure>
+
+<p>然后就能看到所有助记词了</p>
+<img src="屏幕截图 2025-02-10 184849.png" alt="屏幕截图 2025-02-10 184849" style="zoom:80%;">
+
+
+
+<p><strong>方法二：notepad++使用utf16查看文件</strong></p>
+<p>找到<code>android-7.1-r5/data/data/com.sohu.inputmethod.sogouoem/files/dict/sgim_gd_usr.bin</code>这个文件，用notepad++，utf16查看也能看到所有助记词，需要眼力（当然也可以使用别的能看utf16的工具）</p>
+<img src="屏幕截图 2025-02-10 185223.png" alt="屏幕截图 2025-02-10 185223" style="zoom:80%;">
+
+<p>。</p>
+<p>最后恢复顺序</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ranch only space define laundry carpet muscle ramp high twenty couch fashion</span><br></pre></td></tr></table></figure>
+
+<p>所有助记词和顺序都得到了，直接用手机imToken设置一个密码然后利用高级设置查看私钥，导出私钥</p>
+<img src="Screenshot_2025-02-10-20-17-28-92_aef62f4795c0443.jpg" alt="Screenshot_2025-02-10-20-17-28-92_aef62f4795c0443" style="zoom:25%;">
+
+<p>或者使用在线网站（我用不明白）网站： <a href="https://iancoleman.io/bip39/">BIP39 - Mnemonic Code</a></p>
+<p>注意默认路径 m&#x2F;44’&#x2F;60’&#x2F;0’&#x2F;0&#x2F;0(是imToken默认路径)，所以有些网站是不行的。</p>
+<p>flag：VNCTF{6433c196bb66b0d8ce3aa072d794822fd87edfbc3a30e2f2335a3fb437eb3cda} </p>
+<h1 id="ezSignal"><a href="#ezSignal" class="headerlink" title="ezSignal"></a>ezSignal</h1><p>拿到一个压缩包，解压时报错了，可以看到实则有两个文件但只解压出一个文件</p>
+<p>我们使用7z解压出两个文件，原来另一个文件名是空白的所以解压不出来，但是7z可以</p>
+<p>一张图片和一个无后缀名的文件，问了一下ai才知道是grc文件。</p>
+<p>改名<code>1.grc</code>，使用<code>gnuradio</code>打开，直接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gnuradio-companion 1.grc</span><br></pre></td></tr></table></figure>
+
+<p>看到：</p>
+<img src="屏幕截图 2025-02-11 120158.png" alt="屏幕截图 2025-02-11 120158" style="zoom:80%;">
+
+<p>那张png图片里面藏了一些东西，使用binwalk解压出flag1.txt和flag2.txt</p>
+<p>此时我们需要逆向这个grc文件，因为我们看到这个文件是把wav文件解析成两个txt文件，我们需要逆向得到这个wav文件。</p>
+<p>利用旁边的core制作逆向exp，（制作的时候要注意打如48k的时候要打48000而不能是48k，不然会报错）如下：<br><img src="屏幕截图 2025-02-11 170522.png" alt="屏幕截图 2025-02-11 170522" style="zoom:80%;"></p>
+<p>此时就生成了1111.wav，一听就知道是sstv文件</p>
+<p>利用虚拟声卡+<code>RX-SSTV</code>（不知道为什么我虚拟声卡有问题没跑出来，最后扬声器跑出来的）</p>
+<p>注意不能用github上那个sstv，否则会报错如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ValueError: SSTV mode is unsupported (VIS: 125)</span><br></pre></td></tr></table></figure>
+
+<p>最终跑出来的二维码：</p>
+<img src="屏幕截图 2025-02-11 181948.png" alt="屏幕截图 2025-02-11 181948" style="zoom:80%;">
+
+<p>使用手机上BinaryEye扫一下就行</p>
+<img src="Screenshot_2025-02-11-18-31-24-22_a0aa29124cd502a.jpg" alt="Screenshot_2025-02-11-18-31-24-22_a0aa29124cd502a" style="zoom: 33%;">
+
+<p>flag：VNCTF{W0w_Y0u_Ar3_G0od_4t_R4di0_S1gn4L}</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>awd初体验</title>
+    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><u>前言</u></h1><p>哎，，再次感到misc果然还是要会点web或者re才行</p>
+<p>这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。</p>
+<h1 id="以bugku的awd为例"><a href="#以bugku的awd为例" class="headerlink" title="以bugku的awd为例"></a><u>以bugku的awd为例</u></h1><p>报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等</p>
+<p>ip白名单——队长加的队员ip</p>
+<p>账号密码——一会连ssh有用（以<code>：</code>分隔）</p>
+<p>token——提交flag时用</p>
+<p>虚拟ip——连ssh，注意端口是2222</p>
+<h2 id="使用Tabby连接"><a href="#使用Tabby连接" class="headerlink" title="使用Tabby连接"></a>使用Tabby连接</h2><p>项目地址： <a href="https://tabby.sh/">https://tabby.sh/</a> 注意要下windows的（tabby基础讲解： <a href="https://blog.csdn.net/weixin_45417821/article/details/122579794?ops_request_misc=%257B%2522request%255Fid%2522%253A%25223a71448c947f5696c8f39480ad809de2%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=3a71448c947f5696c8f39480ad809de2&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122579794-null-null.142%5Ev100%5Epc_search_result_base8&utm_term=tabby&spm=1018.2226.3001.4187">这里</a>）</p>
+<p>打开后点开<code>设置/配置与连接</code></p>
+<img src="屏幕截图 2024-12-20 231606.png" alt="屏幕截图 2024-12-20 231606" style="zoom:75%;">
+
+<p>点击<code>新建/新配置</code>，选择<code>ssh连接</code></p>
+<p>看到一个空白页面，填写：</p>
+<p>名称—主机—端口—用户名—密码</p>
+<p>如下：</p>
+<img src="屏幕截图 2024-12-20 231918.png" alt="屏幕截图 2024-12-20 231918" style="zoom:75%;">
+
+<p>然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了</p>
+<img src="屏幕截图 2024-12-20 232210.png" alt="屏幕截图 2024-12-20 232210" style="zoom:75%;">
+
+<p>等一会就连接成功了</p>
+<h3 id="SFTP传输工具"><a href="#SFTP传输工具" class="headerlink" title="SFTP传输工具"></a>SFTP传输工具</h3><p>tabby是自带sftp工具的，连接成功后在右上角就能看到</p>
+<p>点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行</p>
+<p>如果想上传文件可以直接拖拽文件，也能点右上角的<code>upload</code></p>
+<h3 id="html相关下载——tar命令"><a href="#html相关下载——tar命令" class="headerlink" title="html相关下载——tar命令"></a>html相关下载——tar命令</h3><p>连接成功之后可以打包下载html里的东西了，在<code>var/www/html</code>里。</p>
+<p>但是html是无法直接下的，那怎么办呢？使用<code>tar</code>命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -czvf myfolder.tar.gz /var/www/html/*</span><br><span class="line"># 这个命令会打包html里的所有东西</span><br><span class="line">tar -czvf web.tar.gz ./*</span><br><span class="line"># 打包当前目录下所有东西到当前文件夹下</span><br></pre></td></tr></table></figure>
+
+<p>打包完成的东西在<code>home</code>的一个文件夹里（这里是忘了具体在哪了。。）</p>
+<p>然后就能看到一个<code>myfolder.tar.gz</code>或者<code>web.tar.gz</code>，直接点击保存下来就好</p>
+<h3 id="查找漏洞-修改-上传"><a href="#查找漏洞-修改-上传" class="headerlink" title="查找漏洞+修改+上传"></a>查找漏洞+修改+上传</h3><p>保存下来的html文件夹可以用<code>D盾</code>来扫描漏洞，然后找到对应漏洞，修改。</p>
+<p>这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上</p>
+<p>改完漏洞就能加固我们的防御了。</p>
+<h3 id="沙箱跑木马"><a href="#沙箱跑木马" class="headerlink" title="沙箱跑木马"></a>沙箱跑木马</h3><p>我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下</p>
+<p>安恒云沙箱： <a href="https://sandbox.dbappsecurity.com.cn/">安恒云沙箱-下一代沙箱的领航者</a></p>
+<p>如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来</p>
+<h3 id="apache日志分析"><a href="#apache日志分析" class="headerlink" title="apache日志分析"></a>apache日志分析</h3><blockquote>
+<p><strong>常见日志文件位置</strong></p>
+</blockquote>
+<blockquote>
+<ol>
+<li>Apache日志<ul>
+<li><strong>访问日志</strong> ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log.1（CentOS&#x2F;RHEL）。</li>
+<li><strong>错误日志</strong> ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log.1（CentOS&#x2F;RHEL）。</li>
+</ul>
+</li>
+<li>SSH日志<ul>
+<li><strong>身份验证日志</strong> ：通常位于&#x2F;var&#x2F;log&#x2F;auth.log（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;secure（CentOS&#x2F;RHEL）。</li>
+</ul>
+</li>
+<li>系统日志<ul>
+<li><strong>系统日志</strong> ：通常位于&#x2F;var&#x2F;log&#x2F;syslog（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;messages（CentOS&#x2F;RHEL）。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p>我们可以进入<code>/var/log/apache2</code>日志目录。</p>
+<p>可以dump下来分析，也可以直接在上面筛选</p>
+<p>需要一定的linux知识</p>
+<blockquote>
+<ol>
+<li>cut: 这是一个命令，用于从每一行文本中剪切出指定部分。<ul>
+<li>-d-: 指定分隔符为 -</li>
+<li>-f 1: 指定要剪切的字段为第一个字段。</li>
+<li>access.log.1: 这是要处理的日志文件的文件名或路径。</li>
+</ul>
+</li>
+<li>uniq -c: 这个命令会从输入中删除重复的行，并且计算每行重复出现的次数。<ul>
+<li>-c: 会在输出中显示每行重复出现的次数。</li>
+</ul>
+</li>
+<li>sort : 这个命令会对输入进行排序。<ul>
+<li>-r: 表示反向排序，即降序排列。</li>
+<li>-n: 表示按照数值大小排序。</li>
+</ul>
+</li>
+<li>head -20: 最后，这个命令会从排序后的结果中提取前 20 行。</li>
+<li>| : 管道命令符，表示前一项的输出结果作为后一项的输入</li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>AWD</category>
+      </categories>
+      <tags>
+        <tag>awd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="前两天我一直困在为何博客上传不了图像"><a href="#前两天我一直困在为何博客上传不了图像" class="headerlink" title="前两天我一直困在为何博客上传不了图像"></a>前两天我一直困在为何博客上传不了图像</h1><h2 id="而现在我似乎找到了解决方法"><a href="#而现在我似乎找到了解决方法" class="headerlink" title="而现在我似乎找到了解决方法"></a>而现在我似乎找到了解决方法</h2><p>首先你要先下了hexo-asset-image</p>
+<p>而且在config.yml里有个post_asset_folder:要为true</p>
+<p>要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面</p>
+<p>然后再typora里设置要选择优先<strong>相对路径</strong>（这个很重要</p>
+<p>保证相对路径的时候再插入图片</p>
+<p>插入图片后查看github对应的文件夹下面有没有相应的图片</p>
+<p><em><strong>因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来</strong></em></p>
+<p>然后再</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>三连试试，每试完一遍可以直接去github上看看，<strong>如果没有这个图片的话试试这个</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了</p>
+<p><img src="11.png" alt="11"></p>
+<p>类似于这样，要在github目录下能看到，<del>而且似乎图片的命名要简单（？</del></p>
+<p>如果还传不上去的话可以缩放图片试试</p>
+<p><del>（猜想：说不定可以直接在github上add file，下次试试）</del></p>
+<p><del>ps：（这是不是图片加载慢的原因？）</del></p>
+<h1 id="顺便记录一下我博客的其他问题的解决"><a href="#顺便记录一下我博客的其他问题的解决" class="headerlink" title="顺便记录一下我博客的其他问题的解决"></a>顺便记录一下我博客的其他问题的解决</h1><h2 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h2><p>我靠我之前友链一直不能输中文，否则就会报错+显示不了</p>
+<p>现在才发现是vs的问题，，用记事本编辑就能正常上传+打开了。服了</p>
+<h2 id="评论区"><a href="#评论区" class="headerlink" title="评论区"></a>评论区</h2><p>我用的是Valine，要去LeanCloud注册账号才行，网上教程很多</p>
+<p>但是好像有泄露的风险？</p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>我是去algolia注册账号才能搜索的</p>
+<p>结果发现只能所搜文章的标题，不能搜索文章里的内容（我要你有啥用？</p>
+<p><strong>待解决</strong></p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -4293,9 +4243,48 @@
         <category>WP</category>
       </categories>
       <tags>
-        <tag>misc</tag>
         <tag>CTF</tag>
+        <tag>misc</tag>
         <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>区块链Blockchain学习</title>
+    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>怎么现在的misc区块链内容越来越多了，不得不学了</p>
+<h1 id="什么是区块链？"><a href="#什么是区块链？" class="headerlink" title="什么是区块链？"></a>什么是区块链？</h1><p><strong>区块链</strong>（英语：blockchain或block chain）是借由<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E5%AD%B8">密码学</a>与<a href="https://zh.wikipedia.org/wiki/%E5%85%B1%E8%AD%98%E6%A9%9F%E5%88%B6">共识机制</a>等技术建立与存储庞大交易资料链的<a href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E7%AD%89%E7%B6%B2%E8%B7%AF">点对点</a>网络系统。</p>
+<p><strong>从字面上看：</strong>区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。</p>
+<p><strong>从计算机上看：</strong>区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。</p>
+<p>区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。</p>
+<p><strong>有没一两句话能说明白区块链的？</strong></p>
+<p>有的。</p>
+<p>麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。</p>
+<h1 id="基本名词-工具使用"><a href="#基本名词-工具使用" class="headerlink" title="基本名词&amp;&amp;工具使用"></a>基本名词&amp;&amp;工具使用</h1><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><p>顾名思义就是存储钱的钱包</p>
+<p>这里推荐使用MetaMask，chrome浏览器上的一个插件。</p>
+<img src="屏幕截图 2025-02-09 182036.png" alt="屏幕截图 2025-02-09 182036" style="zoom:80%;">
+
+<p>应该也可以使用 imtoken ，手机上的钱包</p>
+<p>注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些<strong>助记词</strong>，用来在忘记密码（私钥）的时候找回密码或钱包。</p>
+<p><strong>切换网络</strong></p>
+<p>在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络</p>
+<img src="屏幕截图 2025-02-09 182359.png" alt="屏幕截图 2025-02-09 182359" style="zoom: 50%;">
+
+<p>这个主要看比赛的网路。</p>
+<h3 id="如何获取以太币？"><a href="#如何获取以太币？" class="headerlink" title="如何获取以太币？"></a>如何获取以太币？</h3><p>主要有一些水龙头可以每日拿一点，网上可以搜到</p>
+<p>1.<a href="https://zan.top/faucet">ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens</a></p>
+<p>2.<a href="https://www.alchemy.com/faucets/ethereum-sepolia">Ethereum Sepolia Faucet</a></p>
+<h3 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h3><p>助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。</p>
+<p>但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个</p>
+<p>这里是所有2048个助记词（英文）： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
+<p>如果从题目中拿到的一些助记词可以从这里缩小范围。</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>Blockchain</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Blockchain</tag>
       </tags>
   </entry>
   <entry>
@@ -4355,42 +4344,53 @@
       </tags>
   </entry>
   <entry>
-    <title>区块链Blockchain学习</title>
-    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>怎么现在的misc区块链内容越来越多了，不得不学了</p>
-<h1 id="什么是区块链？"><a href="#什么是区块链？" class="headerlink" title="什么是区块链？"></a>什么是区块链？</h1><p><strong>区块链</strong>（英语：blockchain或block chain）是借由<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E5%AD%B8">密码学</a>与<a href="https://zh.wikipedia.org/wiki/%E5%85%B1%E8%AD%98%E6%A9%9F%E5%88%B6">共识机制</a>等技术建立与存储庞大交易资料链的<a href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E7%AD%89%E7%B6%B2%E8%B7%AF">点对点</a>网络系统。</p>
-<p><strong>从字面上看：</strong>区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。</p>
-<p><strong>从计算机上看：</strong>区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。</p>
-<p>区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。</p>
-<p><strong>有没一两句话能说明白区块链的？</strong></p>
-<p>有的。</p>
-<p>麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。</p>
-<h1 id="基本名词-工具使用"><a href="#基本名词-工具使用" class="headerlink" title="基本名词&amp;&amp;工具使用"></a>基本名词&amp;&amp;工具使用</h1><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><p>顾名思义就是存储钱的钱包</p>
-<p>这里推荐使用MetaMask，chrome浏览器上的一个插件。</p>
-<img src="屏幕截图 2025-02-09 182036.png" alt="屏幕截图 2025-02-09 182036" style="zoom:80%;">
+    <title>wsl启动出错</title>
+    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
+    <content><![CDATA[<h1 id="wsl启动出错"><a href="#wsl启动出错" class="headerlink" title="wsl启动出错"></a>wsl启动出错</h1><p><strong>启动出错如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">由于未安装所需的特性，无法启动操作。</span><br><span class="line">错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLE</span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
 
-<p>应该也可以使用 imtoken ，手机上的钱包</p>
-<p>注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些<strong>助记词</strong>，用来在忘记密码（私钥）的时候找回密码或钱包。</p>
-<p><strong>切换网络</strong></p>
-<p>在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络</p>
-<img src="屏幕截图 2025-02-09 182359.png" alt="屏幕截图 2025-02-09 182359" style="zoom: 50%;">
 
-<p>这个主要看比赛的网路。</p>
-<h3 id="如何获取以太币？"><a href="#如何获取以太币？" class="headerlink" title="如何获取以太币？"></a>如何获取以太币？</h3><p>主要有一些水龙头可以每日拿一点，网上可以搜到</p>
-<p>1.<a href="https://zan.top/faucet">ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens</a></p>
-<p>2.<a href="https://www.alchemy.com/faucets/ethereum-sepolia">Ethereum Sepolia Faucet</a></p>
-<h3 id="助记词"><a href="#助记词" class="headerlink" title="助记词"></a>助记词</h3><p>助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。</p>
-<p>但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个</p>
-<p>这里是所有2048个助记词（英文）： <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips</a></p>
-<p>如果从题目中拿到的一些助记词可以从这里缩小范围。</p>
+
+<h2 id="1-启用了-WSL-所需的功能"><a href="#1-启用了-WSL-所需的功能" class="headerlink" title="1.启用了 WSL 所需的功能"></a>1.启用了 WSL 所需的功能</h2><p>可以以管理员身份在powershell输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+
+<p>然后重启电脑，看wsl还能运行吗</p>
+<p>我是运行了这个就好了，界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br><span class="line"></span><br><span class="line">C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line"></span><br><span class="line">部署映像服务和管理工具</span><br><span class="line">版本: 10.0.26100.1150</span><br><span class="line"></span><br><span class="line">映像版本: 10.0.26100.2454</span><br><span class="line"></span><br><span class="line">启用一个或多个功能</span><br><span class="line">[==========================100.0%==========================]</span><br><span class="line">操作成功完成。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-更新-WSL-核心"><a href="#2-更新-WSL-核心" class="headerlink" title="2.更新 WSL 核心"></a>2.更新 WSL 核心</h2><p>WSL 需要最新版本的核心来支持虚拟机实例。更新核心：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+
+<p>运行后检查版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --version</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-检查虚拟化支持"><a href="#3-检查虚拟化支持" class="headerlink" title="3.检查虚拟化支持"></a>3.<strong>检查虚拟化支持</strong></h2><p>确保启用了虚拟化支持</p>
+<h2 id="4-重置或重装-WSL"><a href="#4-重置或重装-WSL" class="headerlink" title="4.重置或重装 WSL"></a>4.<strong>重置或重装 WSL</strong></h2><p>实在不行重置 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;你的发行版名称&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者重装 WSL：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-检查-Windows-服务"><a href="#5-检查-Windows-服务" class="headerlink" title="5.检查 Windows 服务"></a>5.检查 Windows 服务</h2><p>错误代码中提到 <strong>HCS_E_SERVICE_NOT_AVAILABLE</strong> 可能表明相关服务未运行：</p>
+<p>按 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Win + R</span><br></pre></td></tr></table></figure>
+
+<p> 键，输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
+
+<p>，检查以下服务是否已启动：</p>
+<p><strong>Hyper-V Host Compute Service</strong></p>
+<p><strong>Virtual Machine Management</strong></p>
+<p>如果未启动，右键启动这些服务。</p>
 ]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>Blockchain</category>
-      </categories>
       <tags>
-        <tag>CTF</tag>
-        <tag>Blockchain</tag>
+        <tag>wsl</tag>
       </tags>
   </entry>
   <entry>
