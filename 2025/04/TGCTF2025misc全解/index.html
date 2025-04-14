@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>TGCTF2025misc全解 | MetaVi</title><meta name="author" content="MetaVi"><meta name="copyright" content="MetaVi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。 其他方向的解可以看我们A1natas的公众号。 关注A1natas喵，关注A1natas谢谢喵！ 简单签到，关注：”杭师大网安“谢谢喵🐱关注公众号得flag。 ez_zip爆破得到密码是20250412。 解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TGCTF2025misc全解">
+<meta property="og:url" content="http://metaviii.github.io/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/index.html">
+<meta property="og:site_name" content="MetaVi">
+<meta property="og:description" content="这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。 其他方向的解可以看我们A1natas的公众号。 关注A1natas喵，关注A1natas谢谢喵！ 简单签到，关注：”杭师大网安“谢谢喵🐱关注公众号得flag。 ez_zip爆破得到密码是20250412。 解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sh">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://metaviii.github.io/img/2.png">
+<meta property="article:published_time" content="2025-04-13T13:36:17.000Z">
+<meta property="article:modified_time" content="2025-04-14T05:01:53.214Z">
+<meta property="article:author" content="MetaVi">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="WP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://metaviii.github.io/img/2.png"><link rel="shortcut icon" href="/img/111.ico"><link rel="canonical" href="http://metaviii.github.io/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"PEH5B8KFDH","apiKey":"972997156746f8bf36da74e981ad936d","indexName":"metavi_blog","hitsPerPage":6,"languages":{"input_placeholder":"搜索文章","hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，耗时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'TGCTF2025misc全解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-game"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/7.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MetaVi</span></a><a class="nav-page-title" href="/"><span class="site-name">TGCTF2025misc全解</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-game"></i><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">TGCTF2025misc全解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-13T13:36:17.000Z" title="发表于 2025-04-13 21:36:17">2025-04-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-14T05:01:53.214Z" title="更新于 2025-04-14 13:01:53">2025-04-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/WP/">WP</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。</p>
+<p>其他方向的解可以看我们A1natas的公众号。</p>
+<p>关注A1natas喵，关注A1natas谢谢喵！</p>
+<h1 id="简单签到，关注：”杭师大网安“谢谢喵🐱"><a href="#简单签到，关注：”杭师大网安“谢谢喵🐱" class="headerlink" title="简单签到，关注：”杭师大网安“谢谢喵🐱"></a>简单签到，关注：”杭师大网安“谢谢喵🐱</h1><p>关注公众号得flag。</p>
+<h1 id="ez-zip"><a href="#ez-zip" class="headerlink" title="ez_zip"></a>ez_zip</h1><p>爆破得到密码是20250412。</p>
+<p>解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sha512一下，deflate明文攻击。</p>
+<p>不知道为什么我的bk检测不出来这个文件，于是我用了arc </p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-12 101622.png" alt="屏幕截图 2025-04-12 101622" style="zoom:50%;">
+
+<p>然后又得到一个压缩包，是损坏的，要根据数据存储区修复了一下压缩包</p>
+<p>可以用Bandizip无密码快速压缩一个例子，然后对照着把压缩包修复一下就行</p>
+<p>dirEntry的flag.txt应该是少东西了，需要我们手动补上</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-13 173227.png" alt="屏幕截图 2025-04-13 173227" style="zoom:80%;">
+
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-13 173330.png" alt="屏幕截图 2025-04-13 173330" style="zoom:80%;">
+
+<p>修复完成后打开即可得到flag：TGCTF{Warrior_You_have_defeated_the_giant_dragon!}</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-13 173359.png" alt="屏幕截图 2025-04-13 173359" style="zoom:80%;">
+
+
+
+<h1 id="TeamGipsy-ctfer"><a href="#TeamGipsy-ctfer" class="headerlink" title="TeamGipsy&amp;ctfer"></a><strong>TeamGipsy&amp;ctfer</strong></h1><p> 预期解应该是查找文件，可以用diskgenius：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/1ac79dc0-4137-458a-b1e4-f9c287333d41.png">桌面上有个mimi.txt，发现出题人用Docker起了一个MySQL，直接去&#x2F;var&#x2F;lib&#x2F;docker目录下翻</p>
+<p>发现在<code>/var/lib/docker/overlay2/6ac971c2de3baa602bb4335d6899bbf1963140364ce248decc9557b2f49139f9/diff/root/.mysql_history</code>中就有flag：HZNUCTF{0H!_YOu_are_really_the_TeamGipsy_ctfer}</p>
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/4e32d7ce-031a-4e80-90a6-5d2b10178ba7.png"></p>
+<p>第二种也可以用取证大师，一样查找文件。</p>
+<p>非预期应该是用string命令直接搜出来flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings Ubuntu-s00*.vmdk | grep HZNUCTF</span><br></pre></td></tr></table></figure>
+
+<p>（这个要跑一会的）</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-14 130112.png" alt="屏幕截图 2025-04-14 130112" style="zoom:80%;">
+
+
+
+<h1 id="你能发现图中的秘密吗？"><a href="#你能发现图中的秘密吗？" class="headerlink" title="你能发现图中的秘密吗？"></a><strong>你能发现图中的秘密吗？</strong></h1><p>这道题挺好的，就是老是有问题</p>
+<p>先zsteg跑一下</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-13 173932.png" alt="屏幕截图 2025-04-13 173932" style="zoom:80%;">
+
+<p>得到解压密码后解压得到一个pdf，一个图片</p>
+<p>第一张pdf的左上角有第二部分的flag：</p>
+<p>flag2&#x3D;_attentive_and_conscientious}</p>
+<p>这个改之前的，改之后的是用PS的隐藏图层隐藏的</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="屏幕截图 2025-04-13 120632.png" alt="屏幕截图 2025-04-13 120632" style="zoom:80%;">
+
+<p>用010打开final_challenge2.png，发现有一块IDAT块不太正常</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://somokel.oss-cn-hangzhou.aliyuncs.com/img/6d5cd91f-edde-4018-9169-05b284a1d7f0.png" alt="6d5cd91f-edde-4018-9169-05b284a1d7f0"></p>
+<p>提取出来，补上PNG文件头尾，然后爆破宽高即可得到另一段flag </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://somokel.oss-cn-hangzhou.aliyuncs.com/img/256ea54c-f030-4f11-8014-7c32fd29e67c.png" alt="256ea54c-f030-4f11-8014-7c32fd29e67c"></p>
+<p>Tips：这里要注意把IDAT的前四个字节也一起复制过来，并且保持不变</p>
+<p>因为四字节代表的是数据长度，这里如果出错，图片的数据长度就错了，因此再爆破宽高也没用了</p>
+<p>两段flag合起来就是最后的flag：flag{you_are_so_attentive_and_conscientious}</p>
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/948d611c-6920-4fb4-8b49-17f806516925.png"></p>
+<h1 id="next-is-the-end"><a href="#next-is-the-end" class="headerlink" title="next is the end"></a><strong>next is the end</strong></h1><p>直接脚本就行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#!<span class="regexp">/usr/</span>bin/env python3</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">def <span class="title function_">traverse</span>(path):</span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">    递归遍历目录：</span></span><br><span class="line"><span class="string">      1. 如果当前目录中存在名为 &#x27;next_or_end&#x27; 的子目录，则进入该目录；</span></span><br><span class="line"><span class="string">      2. 否则：</span></span><br><span class="line"><span class="string">         - 如果目录中只有一个项目且该项目为文件，则返回该文件路径；</span></span><br><span class="line"><span class="string">         - 如果只有一个项目但是目录，则继续进入；</span></span><br><span class="line"><span class="string">         - 如果目录中有多个项目，则报错无法确定正确路径。</span></span><br><span class="line"><span class="string">    &quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">while</span> <span class="title class_">True</span>:</span><br><span class="line">        # 若当前路径不是目录，则到达最终目标（通常是文件）</span><br><span class="line">        <span class="keyword">if</span> not os.<span class="property">path</span>.<span class="title function_">isdir</span>(path):</span><br><span class="line">            <span class="keyword">return</span> path</span><br><span class="line"></span><br><span class="line">        items = os.<span class="title function_">listdir</span>(path)</span><br><span class="line">        # 如果当前目录中有 <span class="string">&#x27;next_or_end&#x27;</span> 文件夹，则进入该目录</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;next_or_end&quot;</span> <span class="keyword">in</span> <span class="attr">items</span>:</span><br><span class="line">            path = os.<span class="property">path</span>.<span class="title function_">join</span>(path, <span class="string">&quot;next_or_end&quot;</span>)</span><br><span class="line">        <span class="attr">else</span>:</span><br><span class="line">            # 当前目录没有 <span class="string">&#x27;next_or_end&#x27;</span></span><br><span class="line">            <span class="keyword">if</span> <span class="title function_">len</span>(items) == <span class="number">1</span>:</span><br><span class="line">                next_path = os.<span class="property">path</span>.<span class="title function_">join</span>(path, items[<span class="number">0</span>])</span><br><span class="line">                <span class="keyword">if</span> os.<span class="property">path</span>.<span class="title function_">isdir</span>(next_path):</span><br><span class="line">                    # 如果唯一的项目还是目录，则继续进入</span><br><span class="line">                    path = next_path</span><br><span class="line">                elif os.<span class="property">path</span>.<span class="title function_">isfile</span>(next_path):</span><br><span class="line">                    # 如果唯一的项目是文件，则返回</span><br><span class="line">                    <span class="keyword">return</span> next_path</span><br><span class="line">                <span class="attr">else</span>:</span><br><span class="line">                    <span class="title function_">print</span>(f<span class="string">&quot;遇到未知类型：&#123;next_path&#125;&quot;</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="title class_">None</span></span><br><span class="line">            <span class="attr">else</span>:</span><br><span class="line">                <span class="title function_">print</span>(f<span class="string">&quot;无法确定路径：目录 &#x27;&#123;path&#125;&#x27; 中存在多个项目：&#123;items&#125;&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="title class_">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    # 从命令行获取起始目录，若未传参数则默认为当前目录</span><br><span class="line">    start_path = sys.<span class="property">argv</span>[<span class="number">1</span>] <span class="keyword">if</span> <span class="title function_">len</span>(sys.<span class="property">argv</span>) &gt; <span class="number">1</span> <span class="keyword">else</span> <span class="string">&quot;.&quot;</span></span><br><span class="line">    result = <span class="title function_">traverse</span>(start_path)</span><br><span class="line">    <span class="keyword">if</span> <span class="attr">result</span>:</span><br><span class="line">        <span class="title function_">print</span>(f<span class="string">&quot;最终目标路径：&#123;result&#125;&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> os.<span class="property">path</span>.<span class="title function_">isfile</span>(result):</span><br><span class="line">            # 如果目标为文件，读取并打印文件内容</span><br><span class="line">            <span class="attr">try</span>:</span><br><span class="line">                <span class="keyword">with</span> <span class="title function_">open</span>(result, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> <span class="attr">f</span>:</span><br><span class="line">                    content = f.<span class="title function_">read</span>()</span><br><span class="line">                <span class="title function_">print</span>(<span class="string">&quot;文件内容如下：&quot;</span>)</span><br><span class="line">                <span class="title function_">print</span>(content)</span><br><span class="line">            except <span class="title class_">Exception</span> <span class="keyword">as</span> <span class="attr">e</span>:</span><br><span class="line">                <span class="title function_">print</span>(f<span class="string">&quot;读取文件时出错：&#123;e&#125;&quot;</span>)</span><br><span class="line">        <span class="attr">else</span>:</span><br><span class="line">            <span class="title function_">print</span>(<span class="string">&quot;最终目标不是一个普通文件。&quot;</span>)</span><br><span class="line">    <span class="attr">else</span>:</span><br><span class="line">        <span class="title function_">print</span>(<span class="string">&quot;未能找到最终目标。&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>看到flag</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/a0c5ea4e-7705-4e4a-8d64-5351c9c7ef5e.png" title=" =1697x701"></p>
+<h1 id="where-it-is-osint"><a href="#where-it-is-osint" class="headerlink" title="where it is(osint)"></a>where it is(osint)</h1><p>谷歌识图</p>
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/b7821666-222f-4a79-b959-dc9bd48ce7a0.png" title=" =1780x1183"></p>
+<p>点进去发现</p>
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/d05fc578-659e-44f4-8a8e-b6cd840a6508.png" title=" =1693x1019"></p>
+<p>站点就是这个：港墘站</p>
+<h1 id="你的运气是好是坏？"><a href="#你的运气是好是坏？" class="headerlink" title="你的运气是好是坏？"></a><strong>你的运气是好是坏？</strong></h1><p>笑死我了flag直接一试就试出来了：114514</p>
+<h1 id="这是啥o-o"><a href="#这是啥o-o" class="headerlink" title="这是啥o_o"></a><strong>这是啥o_o</strong></h1><p>下载得到一个无后缀的文件，文件头发现是gif，改成gif后拖进ps里看，发现最后几帧有散开的汉信码碎片。修复如下：</p>
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../CTF/2025-tgctf/attachments/39f90506-aef0-4283-a135-6317525f3e77.png" title=" =749x713"></p>
+<p>扫码得到：time is your fortune ,efficiency is your life</p>
+<p>猜测是帧间隔隐写，用puzzlesolver提出帧间隔放入python转ASCII码，得到flag</p>
+<blockquote>
+<p>a&#x3D; [‘840’, ‘710’, ‘670’, ‘840’, ‘700’, ‘1230’, ‘890’, ‘1110’, ‘1170’, ‘950’, ‘990’, ‘970’, ‘1170’, ‘1030’, ‘1040’, ‘1160’, ‘950’, ‘1170’, ‘1120’, ‘950’, ‘1190’, ‘1050’, ‘1160’, ‘1040’, ‘950’, ‘1160’, ‘1050’, ‘1090’, ‘1010’, ‘330’, ‘1250’]</p>
+<p>s &#x3D; ‘’</p>
+<p>for i in a:</p>
+<p> s+&#x3D;chr(int(i)&#x2F;&#x2F;10)</p>
+<p>print(s)</p>
+</blockquote>
+<p>TGCTF{You_caught_up_with_time!}</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://metaviii.github.io">MetaVi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://metaviii.github.io/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/">http://metaviii.github.io/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://metaviii.github.io" target="_blank">MetaVi</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/WP/">WP</a></div><div class="post-share"><div class="social-share" data-image="/img/2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>111真赏吗哥</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/" title="区块链Blockchain学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">区块链Blockchain学习</div></div><div class="info-2"><div class="info-item-1">怎么现在的misc区块链内容越来越多了，不得不学了 什么是区块链？区块链（英语：blockchain或block...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/" title="2024冬季春秋杯部分wp"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-02-06</div><div class="info-item-2">2024冬季春秋杯部分wp</div></div><div class="info-2"><div class="info-item-1">全部解析可以在春秋伽玛的公众号上看到 这里仅是本人写的部分wp 1.See anything in these pics?拿到一个zip和二维码 二维码拖进这个网站扫一下 QR Code Decoder | QR Code...</div></div></div></a><a class="pagination-related" href="/2024/12/2024%E6%B5%99%E6%B1%9F%E7%9C%81%E7%9C%81%E8%B5%9B%E5%A4%8D%E7%8E%B0/" title="2024浙江省省赛复现"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-02-06</div><div class="info-item-2">2024浙江省省赛复现</div></div><div class="info-2"><div class="info-item-1">1.2024浙江省赛复现1.real signin得到一张out.png，用zsteg跑一下发现：   得到 1dEFfc1dGq1pxMgMWnihrMx9mewNgdvIWMvctrc  和 1ABCDEFGHIJKLMNabcdefghijklmnopqrstuvwxyzOPQRSTUVWXYZ0123456789+/  猜测是换表的base64，解密得到flag：DASCTF{We1C0me_2_ZJCTF2024!} 2.机密文档得到一个加密的压缩包，发现加密方式是store，猜测为明文攻击    [!NOTE] 将一个名为flag.txt的文件打包成ZIP压缩包后，发现文件名称会出现在压缩包文件头中，且偏移固定为30 且默认情况下，flag.zip也会作为该压缩包的名称 已知的明文片段有： “flag.txt” 8个字节，偏移30 ZIP本身文件头：50 4B 03 04 ，4字节 满足12字节的要求  其中 -C 后面跟的是原本的zip，-c 后面跟的是里面需要解密出来的zip，-x 后面是已知的明文，30...</div></div></div></a><a class="pagination-related" href="/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/" title="18届软件创新攻防赛部分wp"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-02-06</div><div class="info-item-2">18届软件创新攻防赛部分wp</div></div><div class="info-2"><div class="info-item-1">1.钓鱼邮件拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：   发现有一个生日礼物.zip，点击下载 下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111   然后发现一个exe，双击运行。 然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe 因为会实时变化，记得要截图看会好看一点。   放大就能看到这个远程地址 222.218.218.218:55555   包上md5得到flag：df3101212c55ea8c417ad799cfc6b509 </div></div></div></a><a class="pagination-related" href="/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/" title="VNCTF2025misc复现"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-02-11</div><div class="info-item-2">VNCTF2025misc复现</div></div><div class="info-2"><div class="info-item-1">这个比赛的misc真是难，除了一道签到之外几乎全是区块链和ai，唯一一道的取证还是安卓取证，而且还模拟的真实取证过程。。 全部的wp可以在vnctf2025的群里有，或者官方公众号。 打的我道心破碎了要。。。 VN_Lang简单的misc签到题 打开exe发现是flag但是是vn自创文字 使用IDA打开exe，直接爆搜VNCTF就能发现flag了   flag：VNCTF{wXD4cznGnWqVVPRTF1Mzlf7zrPTfBRkKIq2Kgyq4Gohs2} 这个题好像每个人flag不一样 Echo Flowers这个真是毁我道心了，看了一天。。 拿到echo...</div></div></div></a><a class="pagination-related" href="/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/" title="newstar2024小明同学们复现"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-02-06</div><div class="info-item-2">newstar2024小明同学们复现</div></div><div class="info-2"><div class="info-item-1">主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。 1.热心助人的小明同学这个很简单，只要装好vol2，然后lsadump看密码就好 先看操作版本 1vol.py -f image.raw imageinfo    看到操作版本是 Win7SP1x86_23418 然后直接lsadump就好   密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码） 所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh} 2.擅长音游的小明同学拿到一个chal_fixed.E01文件，使用FTK挂载...</div></div></div></a><a class="pagination-related" href="/2024/11/Reverse-Record/" title="Reverse Record"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="fas fa-history fa-fw"></i> 2025-02-06</div><div class="info-item-2">Reverse Record</div></div><div class="info-2"><div class="info-item-1">反编译pyc反编译 .pyc 是 Python 编译后的字节码文件，通常是在运行 Python 脚本时由解释器自动生成，用于加速程序运行 想查看 .pyc 文件的源码，可以使用反编译工具 uncompyle6 将其还原为 .py 文件。  -使用 uncompyle6 -在线网站 https://tool.lu/pyc/ exe反编译使用IDA apk反编译使用jadx-gui-1.4.4-no-jre-win.exe NewStar-re复现学MISC果然还是要带点其他领域，那就学点RE吧！而RE的入门还是觉得NewStar好，不会了还有WP看（bushi 1.ez_debug当初不会写是因为这个代码风格我有点看不懂，而且很长加上不怎么会调试所以没写出来。  这里我们应该发现decrypted flag应该是输入的flag与加密之后再解密的flag比较注意上面的you函数，步入后看到几个变量，下断点，调试  能看得到v5的值在缓慢变化成flag，不断f8单步执行即得到flag 总结:看到提示后应该多步入函数看看，断点也可以下在函数里。F8单步执行可以缓慢查看变量的变化。 </div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">MetaVi</div><div class="author-info-description">Add a touch of fantasy?</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/MetaViii"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/MetaViii" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:metavixie@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="mailto:3289444724@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">喷火龙要怎么吹灭蜡烛...?</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%AD%BE%E5%88%B0%EF%BC%8C%E5%85%B3%E6%B3%A8%EF%BC%9A%E2%80%9D%E6%9D%AD%E5%B8%88%E5%A4%A7%E7%BD%91%E5%AE%89%E2%80%9C%E8%B0%A2%E8%B0%A2%E5%96%B5%F0%9F%90%B1"><span class="toc-number">1.</span> <span class="toc-text">简单签到，关注：”杭师大网安“谢谢喵🐱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ez-zip"><span class="toc-number">2.</span> <span class="toc-text">ez_zip</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TeamGipsy-ctfer"><span class="toc-number">3.</span> <span class="toc-text">TeamGipsy&amp;ctfer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%A0%E8%83%BD%E5%8F%91%E7%8E%B0%E5%9B%BE%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86%E5%90%97%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">你能发现图中的秘密吗？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#next-is-the-end"><span class="toc-number">5.</span> <span class="toc-text">next is the end</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#where-it-is-osint"><span class="toc-number">6.</span> <span class="toc-text">where it is(osint)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%A0%E7%9A%84%E8%BF%90%E6%B0%94%E6%98%AF%E5%A5%BD%E6%98%AF%E5%9D%8F%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">你的运气是好是坏？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E5%95%A5o-o"><span class="toc-number">8.</span> <span class="toc-text">这是啥o_o</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/" title="TGCTF2025misc全解">TGCTF2025misc全解</a><time datetime="2025-04-13T13:36:17.000Z" title="发表于 2025-04-13 21:36:17">2025-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/" title="区块链Blockchain学习">区块链Blockchain学习</a><time datetime="2025-02-09T04:39:04.000Z" title="发表于 2025-02-09 12:39:04">2025-02-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/" title="VNCTF2025misc复现">VNCTF2025misc复现</a><time datetime="2025-02-09T04:38:27.000Z" title="发表于 2025-02-09 12:38:27">2025-02-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/" title="关于ZIP伪加密">关于ZIP伪加密</a><time datetime="2025-02-02T15:55:26.000Z" title="发表于 2025-02-02 23:55:26">2025-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/Network-Traffic-Analysis/" title="Network Traffic Analysis">Network Traffic Analysis</a><time datetime="2025-02-01T09:12:37.000Z" title="发表于 2025-02-01 17:12:37">2025-02-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/7.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By MetaVi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-message"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'FN2zFI90XdC4k82xto3KJs6Q-gzGzoHsz',
+      appKey: 'w5L5zYfLyVrDfj6WWd9aaz1h',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = true
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = { startHidden: true }
+  
+    window.chatBtnFn = () => {
+      document.getElementById('chatra').classList.contains('chatra--expanded') ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => Chatra('hide'),
+      show: () => Chatra('show')
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = ''
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+      (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/lite/builds/browser.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div></body></html>
