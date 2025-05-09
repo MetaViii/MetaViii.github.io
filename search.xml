@@ -31,14 +31,82 @@
       </tags>
   </entry>
   <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[还没想好写啥
+    <title>2024冬季春秋杯部分wp</title>
+    <url>/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/</url>
+    <content><![CDATA[全部解析可以在春秋伽玛的公众号上看到
+这里仅是本人写的部分wp
+1.See anything in these pics?拿到一个zip和二维码
+二维码拖进这个网站扫一下 QR Code Decoder | QR Code Scanner
+得到5FIVE，解压zip，拿到一张图片
+因为提示我们不止一张图片，于是我们foremost一下
+又得到一个图片
+图片拖进随波逐流直接出了,原来是宽高改了
 
-https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0
+
+
+
+2.简单算术拿到ysxdg&#x2F;m@]mjkz@vl@zlf&gt;b
+提示我们想想异或
+拖进随波逐流，暴力解密xor，keylength选2以上的，然后筛选有flag的，直接出了
+
+
+
+
+3.简单镜像提取还是比较简单的
+拿到一个压缩包然后得到一个流量
+我话不多说直接foremost得到一个img，点不开
+然后我又foremost这个img就能拿到一个zip和一个xls
+点开这个xls就能看到flag了
+
+
+
+
+4.压力大，写个脚本吧点开这个压缩包就明白了，意思是有100个zip，password是旁边这个txt经过base64解码后的，需要我们写脚本爆破他。
+脚本
+import osimport zipfileimport base64def extract_nested_zips_with_base64_password(initial_zip_path):    &quot;&quot;&quot;    解压嵌套压缩包，密码存储在对应的 `password_xx.txt` 文件中，并经过 Base64 解码。    文件解压到当前目录。    参数：    - initial_zip_path (str): 初始压缩包的路径。    &quot;&quot;&quot;    current_zip_path = initial_zip_path    while True:        # 获取当前压缩包的编号        base_name = os.path.splitext(os.path.basename(current_zip_path))[0]        zip_number = base_name.split(&#x27;_&#x27;)[-1]  # 提取编号部分        password_file = f&quot;password_&#123;zip_number&#125;.txt&quot;  # 对应的密码文件名        # 检查密码文件是否存在        if not os.path.exists(password_file):            print(f&quot;未找到密码文件: &#123;password_file&#125;，无法继续解压 &#123;current_zip_path&#125;&quot;)            break        # 读取密码并进行 Base64 解码        try:            with open(password_file, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as pf:                encoded_password = pf.read().strip()                password = base64.b64decode(encoded_password).decode(&#x27;utf-8&#x27;)  # 解码 Base64 密码        except Exception as e:            print(f&quot;处理密码文件 &#123;password_file&#125; 时出错: &#123;e&#125;&quot;)            break        # 解压当前压缩包        try:            with zipfile.ZipFile(current_zip_path, &#x27;r&#x27;) as zip_ref:                files = zip_ref.namelist()                if not files:                    print(f&quot;&#123;current_zip_path&#125; 是空压缩包。&quot;)                    break                # 筛选出下一个压缩包，忽略非 `.zip` 文件（如密码文件）                next_zip_path = None                for file_name in files:                    zip_ref.extract(file_name, os.getcwd(), pwd=bytes(password, &#x27;utf-8&#x27;))                    print(f&quot;&#123;password&#125;&quot;)                    # 如果是 `.zip` 文件，记录路径以便继续解压                    if file_name.endswith(&#x27;.zip&#x27;):                        next_zip_path = os.path.join(os.getcwd(), file_name)        except RuntimeError as e:            print(f&quot;解压 &#123;current_zip_path&#125; 时密码错误或其他问题: &#123;e&#125;&quot;)            break        except zipfile.BadZipFile as e:            print(f&quot;&#123;current_zip_path&#125; 不是有效的压缩包: &#123;e&#125;&quot;)            break        # 如果没有下一个 `.zip` 文件，说明解压结束        if not next_zip_path:            print(f&quot;解压完成。最终文件存储在当前目录&quot;)            break        current_zip_path = next_zip_path  # 更新路径，继续解压下一个 `.zip` 文件# 参数设置initial_zip_path = &#x27;zip_99.zip&#x27;  # 初始压缩包名称# 执行函数extract_nested_zips_with_base64_password(initial_zip_path)
+
+然后把得到一个flag-hint.txt是PASSWORD+PASSWORD.png
+我们需要把所有密码连起来，去重，然后010得到一个png
+就能得到flag了
+5.音频的秘密得到的音频提示是deepsound
+我们使用deepsound2.2，发现需要密码（注意这里不能用deepsound2.0）
+密码提示是弱密码，经尝试是123
+然后得到一个flag.zip
+由于是store压缩方式，所以尝试明文攻击
+
+
+然后得到了flag.png，lsb提取一下即可
+
+
+
+
+6.Infinity题目给了一个png，可以foremost一下得到一个压缩包，点开发现还是一个压缩包，再点开还是一个压缩包，可以看出来是多层压缩包要写个脚本循环解压。
+脚本
+import osimport zipfileimport tarfileimport py7zr# 记录每层压缩包名字的列表compressed_files = []def extract_archive(archive_path):    global compressed_files    # 用于存储待解压的文件队列    to_extract = [archive_path]    # 用于记录已经解压过的文件    extracted = set()    while to_extract:        file_path = to_extract.pop(0)        if file_path in extracted:            continue        # 记录当前压缩包的名字        compressed_files.append(file_path)        extracted.add(file_path)        file_extension = os.path.splitext(file_path)[1].lower()        if file_extension == &#x27;.zip&#x27;:            # 解压zip文件            try:                with zipfile.ZipFile(file_path, &#x27;r&#x27;) as zip_ref:                    zip_ref.extractall(os.path.dirname(file_path))            except zipfile.BadZipFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 ZIP 文件或已损坏。&quot;)        elif file_extension == &#x27;.7z&#x27;:            # 解压7z文件            try:                with py7zr.SevenZipFile(file_path, mode=&#x27;r&#x27;) as z:                    z.extractall(os.path.dirname(file_path))            except py7zr.Bad7zFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 7z 文件或已损坏。&quot;)        elif file_extension in [&#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:            # 解压tar文件            try:                with tarfile.open(file_path, &#x27;r&#x27;) as tar_ref:                    tar_ref.extractall(os.path.dirname(file_path), filter=&#x27;data&#x27;)            except tarfile.ReadError:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 tar 文件或已损坏。&quot;)        else:            print(f&quot;不支持的文件格式: &#123;file_path&#125;&quot;)            continue        # 查找新生成的压缩包并添加到待解压队列        for root, dirs, files in os.walk(os.path.dirname(file_path)):            for file in files:                new_file_path = os.path.join(root, file)                new_extension = os.path.splitext(new_file_path)[1].lower()                if new_extension in [&#x27;.zip&#x27;, &#x27;.7z&#x27;, &#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:                    to_extract.append(new_file_path)if __name__ == &quot;__main__&quot;:    # 输入要解压的压缩包路径    archive_path = input(&quot;请输入压缩包的路径: &quot;)    if os.path.exists(archive_path):        extract_archive(archive_path)        print(&quot;每层压缩包的名字:&quot;)        for file in compressed_files:            print(file)    else:        print(&quot;输入的路径不存在，请检查后重新输入。&quot;)
+
+最后解压出来一个SeCr3t.txt
+内容是 Inf1nityIsS0CoOL
+然后将得到的文件名字由内而外（即倒过来）连起来，这里可以用cyberchef的reverse
+由于题目提示：BASE58-Ripple、SM4-ECB
+
+
+这里SM4的key就是之前的内容
+将保存下来的内容010一下得到png，就能得到这样一个png
+
+
+然后二维码扫一下就可以了，网站： QR Code Decoder | QR Code Scanner
+
+
+出了
 ]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
       <tags>
-        <tag>ACM</tag>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+        <tag>WP</tag>
       </tags>
   </entry>
   <entry>
@@ -398,6 +466,24 @@ from ultralytics import YOLOimport numpy as npfrom PIL import Imageimport timeim
       </tags>
   </entry>
   <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[还没想好写啥
+
+https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0
+]]></content>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Before-everthing</title>
+    <url>/2024/11/Before-everthing/</url>
+    <content><![CDATA[这里是MetaVi的Blog主要更新一些学习上的问题，简单的笔记和写题的记录…尽量使自己学有所得–
+——————————
+作者VX:x3289444724作者QQ:3289444724联系电话:①13968975069②18072320271]]></content>
+  </entry>
+  <entry>
     <title>Linux提权浅析</title>
     <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
     <content><![CDATA[passwd提权/etc/passwd和 /etc/shadow文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 passwd或 shadow文件的内容或权限配置有误，则可以被利用来进行系统提权。
@@ -655,92 +741,6 @@ cat ~/.bash_history
         <tag>CTF</tag>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2024冬季春秋杯部分wp</title>
-    <url>/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/</url>
-    <content><![CDATA[全部解析可以在春秋伽玛的公众号上看到
-这里仅是本人写的部分wp
-1.See anything in these pics?拿到一个zip和二维码
-二维码拖进这个网站扫一下 QR Code Decoder | QR Code Scanner
-得到5FIVE，解压zip，拿到一张图片
-因为提示我们不止一张图片，于是我们foremost一下
-又得到一个图片
-图片拖进随波逐流直接出了,原来是宽高改了
-
-
-
-
-2.简单算术拿到ysxdg&#x2F;m@]mjkz@vl@zlf&gt;b
-提示我们想想异或
-拖进随波逐流，暴力解密xor，keylength选2以上的，然后筛选有flag的，直接出了
-
-
-
-
-3.简单镜像提取还是比较简单的
-拿到一个压缩包然后得到一个流量
-我话不多说直接foremost得到一个img，点不开
-然后我又foremost这个img就能拿到一个zip和一个xls
-点开这个xls就能看到flag了
-
-
-
-
-4.压力大，写个脚本吧点开这个压缩包就明白了，意思是有100个zip，password是旁边这个txt经过base64解码后的，需要我们写脚本爆破他。
-脚本
-import osimport zipfileimport base64def extract_nested_zips_with_base64_password(initial_zip_path):    &quot;&quot;&quot;    解压嵌套压缩包，密码存储在对应的 `password_xx.txt` 文件中，并经过 Base64 解码。    文件解压到当前目录。    参数：    - initial_zip_path (str): 初始压缩包的路径。    &quot;&quot;&quot;    current_zip_path = initial_zip_path    while True:        # 获取当前压缩包的编号        base_name = os.path.splitext(os.path.basename(current_zip_path))[0]        zip_number = base_name.split(&#x27;_&#x27;)[-1]  # 提取编号部分        password_file = f&quot;password_&#123;zip_number&#125;.txt&quot;  # 对应的密码文件名        # 检查密码文件是否存在        if not os.path.exists(password_file):            print(f&quot;未找到密码文件: &#123;password_file&#125;，无法继续解压 &#123;current_zip_path&#125;&quot;)            break        # 读取密码并进行 Base64 解码        try:            with open(password_file, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as pf:                encoded_password = pf.read().strip()                password = base64.b64decode(encoded_password).decode(&#x27;utf-8&#x27;)  # 解码 Base64 密码        except Exception as e:            print(f&quot;处理密码文件 &#123;password_file&#125; 时出错: &#123;e&#125;&quot;)            break        # 解压当前压缩包        try:            with zipfile.ZipFile(current_zip_path, &#x27;r&#x27;) as zip_ref:                files = zip_ref.namelist()                if not files:                    print(f&quot;&#123;current_zip_path&#125; 是空压缩包。&quot;)                    break                # 筛选出下一个压缩包，忽略非 `.zip` 文件（如密码文件）                next_zip_path = None                for file_name in files:                    zip_ref.extract(file_name, os.getcwd(), pwd=bytes(password, &#x27;utf-8&#x27;))                    print(f&quot;&#123;password&#125;&quot;)                    # 如果是 `.zip` 文件，记录路径以便继续解压                    if file_name.endswith(&#x27;.zip&#x27;):                        next_zip_path = os.path.join(os.getcwd(), file_name)        except RuntimeError as e:            print(f&quot;解压 &#123;current_zip_path&#125; 时密码错误或其他问题: &#123;e&#125;&quot;)            break        except zipfile.BadZipFile as e:            print(f&quot;&#123;current_zip_path&#125; 不是有效的压缩包: &#123;e&#125;&quot;)            break        # 如果没有下一个 `.zip` 文件，说明解压结束        if not next_zip_path:            print(f&quot;解压完成。最终文件存储在当前目录&quot;)            break        current_zip_path = next_zip_path  # 更新路径，继续解压下一个 `.zip` 文件# 参数设置initial_zip_path = &#x27;zip_99.zip&#x27;  # 初始压缩包名称# 执行函数extract_nested_zips_with_base64_password(initial_zip_path)
-
-然后把得到一个flag-hint.txt是PASSWORD+PASSWORD.png
-我们需要把所有密码连起来，去重，然后010得到一个png
-就能得到flag了
-5.音频的秘密得到的音频提示是deepsound
-我们使用deepsound2.2，发现需要密码（注意这里不能用deepsound2.0）
-密码提示是弱密码，经尝试是123
-然后得到一个flag.zip
-由于是store压缩方式，所以尝试明文攻击
-
-
-然后得到了flag.png，lsb提取一下即可
-
-
-
-
-6.Infinity题目给了一个png，可以foremost一下得到一个压缩包，点开发现还是一个压缩包，再点开还是一个压缩包，可以看出来是多层压缩包要写个脚本循环解压。
-脚本
-import osimport zipfileimport tarfileimport py7zr# 记录每层压缩包名字的列表compressed_files = []def extract_archive(archive_path):    global compressed_files    # 用于存储待解压的文件队列    to_extract = [archive_path]    # 用于记录已经解压过的文件    extracted = set()    while to_extract:        file_path = to_extract.pop(0)        if file_path in extracted:            continue        # 记录当前压缩包的名字        compressed_files.append(file_path)        extracted.add(file_path)        file_extension = os.path.splitext(file_path)[1].lower()        if file_extension == &#x27;.zip&#x27;:            # 解压zip文件            try:                with zipfile.ZipFile(file_path, &#x27;r&#x27;) as zip_ref:                    zip_ref.extractall(os.path.dirname(file_path))            except zipfile.BadZipFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 ZIP 文件或已损坏。&quot;)        elif file_extension == &#x27;.7z&#x27;:            # 解压7z文件            try:                with py7zr.SevenZipFile(file_path, mode=&#x27;r&#x27;) as z:                    z.extractall(os.path.dirname(file_path))            except py7zr.Bad7zFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 7z 文件或已损坏。&quot;)        elif file_extension in [&#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:            # 解压tar文件            try:                with tarfile.open(file_path, &#x27;r&#x27;) as tar_ref:                    tar_ref.extractall(os.path.dirname(file_path), filter=&#x27;data&#x27;)            except tarfile.ReadError:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 tar 文件或已损坏。&quot;)        else:            print(f&quot;不支持的文件格式: &#123;file_path&#125;&quot;)            continue        # 查找新生成的压缩包并添加到待解压队列        for root, dirs, files in os.walk(os.path.dirname(file_path)):            for file in files:                new_file_path = os.path.join(root, file)                new_extension = os.path.splitext(new_file_path)[1].lower()                if new_extension in [&#x27;.zip&#x27;, &#x27;.7z&#x27;, &#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:                    to_extract.append(new_file_path)if __name__ == &quot;__main__&quot;:    # 输入要解压的压缩包路径    archive_path = input(&quot;请输入压缩包的路径: &quot;)    if os.path.exists(archive_path):        extract_archive(archive_path)        print(&quot;每层压缩包的名字:&quot;)        for file in compressed_files:            print(file)    else:        print(&quot;输入的路径不存在，请检查后重新输入。&quot;)
-
-最后解压出来一个SeCr3t.txt
-内容是 Inf1nityIsS0CoOL
-然后将得到的文件名字由内而外（即倒过来）连起来，这里可以用cyberchef的reverse
-由于题目提示：BASE58-Ripple、SM4-ECB
-
-
-这里SM4的key就是之前的内容
-将保存下来的内容010一下得到png，就能得到这样一个png
-
-
-然后二维码扫一下就可以了，网站： QR Code Decoder | QR Code Scanner
-
-
-出了
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-        <tag>CTF</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Before-everthing</title>
-    <url>/2024/11/Before-everthing/</url>
-    <content><![CDATA[这里是MetaVi的Blog主要更新一些学习上的问题，简单的笔记和写题的记录…尽量使自己学有所得–
-——————————
-作者VX:x3289444724作者QQ:3289444724联系电话:①13968975069②18072320271]]></content>
   </entry>
   <entry>
     <title>Network Traffic Analysis</title>
@@ -1827,6 +1827,101 @@ NewStar-re复现学MISC果然还是要带点其他领域，那就学点RE吧！�
       </tags>
   </entry>
   <entry>
+    <title>TGCTF2025misc全解</title>
+    <url>/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/</url>
+    <content><![CDATA[这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。
+其他方向的解可以看我们A1natas的公众号。
+关注A1natas喵，关注A1natas谢谢喵！
+简单签到，关注：”杭师大网安“谢谢喵🐱关注公众号得flag。
+ez_zip爆破得到密码是20250412。
+解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sha512一下，deflate明文攻击。
+不知道为什么我的bk检测不出来这个文件，于是我用了arc 
+
+
+然后又得到一个压缩包，是损坏的，要根据数据存储区修复了一下压缩包
+可以用Bandizip无密码快速压缩一个例子，然后对照着把压缩包修复一下就行
+dirEntry的flag.txt应该是少东西了，需要我们手动补上
+
+
+
+
+修复完成后打开即可得到flag：TGCTF{Warrior_You_have_defeated_the_giant_dragon!}
+
+
+
+
+TeamGipsy&amp;ctfer 预期解应该是查找文件，可以用diskgenius：
+
+
+桌面上有个mimi.txt，发现出题人用Docker起了一个MySQL，直接去&#x2F;var&#x2F;lib&#x2F;docker目录下翻
+发现在/var/lib/docker/overlay2/6ac971c2de3baa602bb4335d6899bbf1963140364ce248decc9557b2f49139f9/diff/root/.mysql_history中就有flag：HZNUCTF{0H!_YOu_are_really_the_TeamGipsy_ctfer}
+ 
+
+第二种也可以用取证大师，一样查找文件。
+非预期应该是用string命令直接搜出来flag
+strings Ubuntu-s00*.vmdk | grep HZNUCTF
+
+（这个要跑一会的）
+
+
+
+
+你能发现图中的秘密吗？这道题挺好的，就是老是有问题
+先zsteg跑一下
+
+
+得到解压密码后解压得到一个pdf，一个图片
+第一张pdf的左上角有第二部分的flag：
+flag2&#x3D;_attentive_and_conscientious}
+这个改之前的，改之后的是用PS的隐藏图层隐藏的
+
+
+用010打开final_challenge2.png，发现有一块IDAT块不太正常
+
+
+提取出来，补上PNG文件头尾，然后爆破宽高即可得到另一段flag 
+
+
+Tips：这里要注意把IDAT的前四个字节也一起复制过来，并且保持不变
+因为四字节代表的是数据长度，这里如果出错，图片的数据长度就错了，因此再爆破宽高也没用了
+两段flag合起来就是最后的flag：flag{you_are_so_attentive_and_conscientious}
+
+
+
+next is the end直接脚本就行
+#!/usr/bin/env python3import osimport sysdef traverse(path):    &quot;&quot;&quot;    递归遍历目录：      1. 如果当前目录中存在名为 &#x27;next_or_end&#x27; 的子目录，则进入该目录；      2. 否则：         - 如果目录中只有一个项目且该项目为文件，则返回该文件路径；         - 如果只有一个项目但是目录，则继续进入；         - 如果目录中有多个项目，则报错无法确定正确路径。    &quot;&quot;&quot;    while True:        # 若当前路径不是目录，则到达最终目标（通常是文件）        if not os.path.isdir(path):            return path        items = os.listdir(path)        # 如果当前目录中有 &#x27;next_or_end&#x27; 文件夹，则进入该目录        if &quot;next_or_end&quot; in items:            path = os.path.join(path, &quot;next_or_end&quot;)        else:            # 当前目录没有 &#x27;next_or_end&#x27;            if len(items) == 1:                next_path = os.path.join(path, items[0])                if os.path.isdir(next_path):                    # 如果唯一的项目还是目录，则继续进入                    path = next_path                elif os.path.isfile(next_path):                    # 如果唯一的项目是文件，则返回                    return next_path                else:                    print(f&quot;遇到未知类型：&#123;next_path&#125;&quot;)                    return None            else:                print(f&quot;无法确定路径：目录 &#x27;&#123;path&#125;&#x27; 中存在多个项目：&#123;items&#125;&quot;)                return Noneif __name__ == &#x27;__main__&#x27;:    # 从命令行获取起始目录，若未传参数则默认为当前目录    start_path = sys.argv[1] if len(sys.argv) &gt; 1 else &quot;.&quot;    result = traverse(start_path)    if result:        print(f&quot;最终目标路径：&#123;result&#125;&quot;)        if os.path.isfile(result):            # 如果目标为文件，读取并打印文件内容            try:                with open(result, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f:                    content = f.read()                print(&quot;文件内容如下：&quot;)                print(content)            except Exception as e:                print(f&quot;读取文件时出错：&#123;e&#125;&quot;)        else:            print(&quot;最终目标不是一个普通文件。&quot;)    else:        print(&quot;未能找到最终目标。&quot;)
+
+看到flag
+
+
+
+where it is(osint)谷歌识图
+ 
+
+点进去发现
+ 
+
+站点就是这个：港墘站
+你的运气是好是坏？笑死我了flag直接一试就试出来了：114514
+这是啥o_o下载得到一个无后缀的文件，文件头发现是gif，改成gif后拖进ps里看，发现最后几帧有散开的汉信码碎片。修复如下：
+ 
+
+扫码得到：time is your fortune ,efficiency is your life
+猜测是帧间隔隐写，用puzzlesolver提出帧间隔放入python转ASCII码，得到flag
+a= \[&#x27;840&#x27;, &#x27;710&#x27;, &#x27;670&#x27;, &#x27;840&#x27;, &#x27;700&#x27;, &#x27;1230&#x27;, &#x27;890&#x27;, &#x27;1110&#x27;, &#x27;1170&#x27;, &#x27;950&#x27;, &#x27;990&#x27;, &#x27;970&#x27;, &#x27;1170&#x27;, &#x27;1030&#x27;, &#x27;1040&#x27;, &#x27;1160&#x27;, &#x27;950&#x27;, &#x27;1170&#x27;, &#x27;1120&#x27;, &#x27;950&#x27;, &#x27;1190&#x27;, &#x27;1050&#x27;, &#x27;1160&#x27;, &#x27;1040&#x27;, &#x27;950&#x27;, &#x27;1160&#x27;, &#x27;1050&#x27;, &#x27;1090&#x27;, &#x27;1010&#x27;, &#x27;330&#x27;, &#x27;1250&#x27;\]s = &#x27;&#x27;for i in a:s+=chr(int(i)//10)print(s)
+
+TGCTF{You_caught_up_with_time!}
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VNCTF2025misc复现</title>
     <url>/2025/02/VNCTF2025misc%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[这个比赛的misc真是难，除了一道签到之外几乎全是区块链和ai，唯一一道的取证还是安卓取证，而且还模拟的真实取证过程。。
@@ -1941,98 +2036,132 @@ flag：VNCTF{W0w_Y0u_Ar3_G0od_4t_R4di0_S1gn4L}
       </tags>
   </entry>
   <entry>
-    <title>TGCTF2025misc全解</title>
-    <url>/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/</url>
-    <content><![CDATA[这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。
-其他方向的解可以看我们A1natas的公众号。
-关注A1natas喵，关注A1natas谢谢喵！
-简单签到，关注：”杭师大网安“谢谢喵🐱关注公众号得flag。
-ez_zip爆破得到密码是20250412。
-解压后得到一个压缩包和一个sh512.txt，把txt中的那句话sha512一下，deflate明文攻击。
-不知道为什么我的bk检测不出来这个文件，于是我用了arc 
+    <title>awd初体验</title>
+    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[前言哎，，再次感到misc果然还是要会点web或者re才行
+这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。
+以bugku的awd为例报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等
+ip白名单——队长加的队员ip
+账号密码——一会连ssh有用（以：分隔）
+token——提交flag时用
+虚拟ip——连ssh，注意端口是2222
+使用Tabby连接项目地址： https://tabby.sh/ 注意要下windows的（tabby基础讲解： 这里）
+打开后点开设置/配置与连接
 
 
-然后又得到一个压缩包，是损坏的，要根据数据存储区修复了一下压缩包
-可以用Bandizip无密码快速压缩一个例子，然后对照着把压缩包修复一下就行
-dirEntry的flag.txt应该是少东西了，需要我们手动补上
+点击新建/新配置，选择ssh连接
+看到一个空白页面，填写：
+名称—主机—端口—用户名—密码
+如下：
 
 
+然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了
 
 
-修复完成后打开即可得到flag：TGCTF{Warrior_You_have_defeated_the_giant_dragon!}
+等一会就连接成功了
+SFTP传输工具tabby是自带sftp工具的，连接成功后在右上角就能看到
+点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行
+如果想上传文件可以直接拖拽文件，也能点右上角的upload
+html相关下载——tar命令连接成功之后可以打包下载html里的东西了，在var/www/html里。
+但是html是无法直接下的，那怎么办呢？使用tar命令
+tar -czvf myfolder.tar.gz /var/www/html/*# 这个命令会打包html里的所有东西tar -czvf web.tar.gz ./*# 打包当前目录下所有东西到当前文件夹下
 
-
-
-
-TeamGipsy&amp;ctfer 预期解应该是查找文件，可以用diskgenius：
-
-
-桌面上有个mimi.txt，发现出题人用Docker起了一个MySQL，直接去&#x2F;var&#x2F;lib&#x2F;docker目录下翻
-发现在/var/lib/docker/overlay2/6ac971c2de3baa602bb4335d6899bbf1963140364ce248decc9557b2f49139f9/diff/root/.mysql_history中就有flag：HZNUCTF{0H!_YOu_are_really_the_TeamGipsy_ctfer}
- 
-
-第二种也可以用取证大师，一样查找文件。
-非预期应该是用string命令直接搜出来flag
-strings Ubuntu-s00*.vmdk | grep HZNUCTF
-
-（这个要跑一会的）
-
-
-
-
-你能发现图中的秘密吗？这道题挺好的，就是老是有问题
-先zsteg跑一下
-
-
-得到解压密码后解压得到一个pdf，一个图片
-第一张pdf的左上角有第二部分的flag：
-flag2&#x3D;_attentive_and_conscientious}
-这个改之前的，改之后的是用PS的隐藏图层隐藏的
-
-
-用010打开final_challenge2.png，发现有一块IDAT块不太正常
-
-
-提取出来，补上PNG文件头尾，然后爆破宽高即可得到另一段flag 
-
-
-Tips：这里要注意把IDAT的前四个字节也一起复制过来，并且保持不变
-因为四字节代表的是数据长度，这里如果出错，图片的数据长度就错了，因此再爆破宽高也没用了
-两段flag合起来就是最后的flag：flag{you_are_so_attentive_and_conscientious}
+打包完成的东西在home的一个文件夹里（这里是忘了具体在哪了。。）
+然后就能看到一个myfolder.tar.gz或者web.tar.gz，直接点击保存下来就好
+查找漏洞+修改+上传保存下来的html文件夹可以用D盾来扫描漏洞，然后找到对应漏洞，修改。
+这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上
+改完漏洞就能加固我们的防御了。
+沙箱跑木马我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下
+安恒云沙箱： 安恒云沙箱-下一代沙箱的领航者
+如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来
+apache日志分析
+常见日志文件位置
 
 
 
-next is the end直接脚本就行
-#!/usr/bin/env python3import osimport sysdef traverse(path):    &quot;&quot;&quot;    递归遍历目录：      1. 如果当前目录中存在名为 &#x27;next_or_end&#x27; 的子目录，则进入该目录；      2. 否则：         - 如果目录中只有一个项目且该项目为文件，则返回该文件路径；         - 如果只有一个项目但是目录，则继续进入；         - 如果目录中有多个项目，则报错无法确定正确路径。    &quot;&quot;&quot;    while True:        # 若当前路径不是目录，则到达最终目标（通常是文件）        if not os.path.isdir(path):            return path        items = os.listdir(path)        # 如果当前目录中有 &#x27;next_or_end&#x27; 文件夹，则进入该目录        if &quot;next_or_end&quot; in items:            path = os.path.join(path, &quot;next_or_end&quot;)        else:            # 当前目录没有 &#x27;next_or_end&#x27;            if len(items) == 1:                next_path = os.path.join(path, items[0])                if os.path.isdir(next_path):                    # 如果唯一的项目还是目录，则继续进入                    path = next_path                elif os.path.isfile(next_path):                    # 如果唯一的项目是文件，则返回                    return next_path                else:                    print(f&quot;遇到未知类型：&#123;next_path&#125;&quot;)                    return None            else:                print(f&quot;无法确定路径：目录 &#x27;&#123;path&#125;&#x27; 中存在多个项目：&#123;items&#125;&quot;)                return Noneif __name__ == &#x27;__main__&#x27;:    # 从命令行获取起始目录，若未传参数则默认为当前目录    start_path = sys.argv[1] if len(sys.argv) &gt; 1 else &quot;.&quot;    result = traverse(start_path)    if result:        print(f&quot;最终目标路径：&#123;result&#125;&quot;)        if os.path.isfile(result):            # 如果目标为文件，读取并打印文件内容            try:                with open(result, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f:                    content = f.read()                print(&quot;文件内容如下：&quot;)                print(content)            except Exception as e:                print(f&quot;读取文件时出错：&#123;e&#125;&quot;)        else:            print(&quot;最终目标不是一个普通文件。&quot;)    else:        print(&quot;未能找到最终目标。&quot;)
-
-看到flag
-
+Apache日志
+访问日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log.1（CentOS&#x2F;RHEL）。
+错误日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log.1（CentOS&#x2F;RHEL）。
 
 
-where it is(osint)谷歌识图
- 
+SSH日志
+身份验证日志 ：通常位于&#x2F;var&#x2F;log&#x2F;auth.log（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;secure（CentOS&#x2F;RHEL）。
 
-点进去发现
- 
 
-站点就是这个：港墘站
-你的运气是好是坏？笑死我了flag直接一试就试出来了：114514
-这是啥o_o下载得到一个无后缀的文件，文件头发现是gif，改成gif后拖进ps里看，发现最后几帧有散开的汉信码碎片。修复如下：
- 
+系统日志
+系统日志 ：通常位于&#x2F;var&#x2F;log&#x2F;syslog（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;messages（CentOS&#x2F;RHEL）。
 
-扫码得到：time is your fortune ,efficiency is your life
-猜测是帧间隔隐写，用puzzlesolver提出帧间隔放入python转ASCII码，得到flag
-a= \[&#x27;840&#x27;, &#x27;710&#x27;, &#x27;670&#x27;, &#x27;840&#x27;, &#x27;700&#x27;, &#x27;1230&#x27;, &#x27;890&#x27;, &#x27;1110&#x27;, &#x27;1170&#x27;, &#x27;950&#x27;, &#x27;990&#x27;, &#x27;970&#x27;, &#x27;1170&#x27;, &#x27;1030&#x27;, &#x27;1040&#x27;, &#x27;1160&#x27;, &#x27;950&#x27;, &#x27;1170&#x27;, &#x27;1120&#x27;, &#x27;950&#x27;, &#x27;1190&#x27;, &#x27;1050&#x27;, &#x27;1160&#x27;, &#x27;1040&#x27;, &#x27;950&#x27;, &#x27;1160&#x27;, &#x27;1050&#x27;, &#x27;1090&#x27;, &#x27;1010&#x27;, &#x27;330&#x27;, &#x27;1250&#x27;\]s = &#x27;&#x27;for i in a:s+=chr(int(i)//10)print(s)
 
-TGCTF{You_caught_up_with_time!}
+
+
+我们可以进入/var/log/apache2日志目录。
+可以dump下来分析，也可以直接在上面筛选
+需要一定的linux知识
+
+
+cut: 这是一个命令，用于从每一行文本中剪切出指定部分。
+-d-: 指定分隔符为 -
+-f 1: 指定要剪切的字段为第一个字段。
+access.log.1: 这是要处理的日志文件的文件名或路径。
+
+
+uniq -c: 这个命令会从输入中删除重复的行，并且计算每行重复出现的次数。
+-c: 会在输出中显示每行重复出现的次数。
+
+
+sort : 这个命令会对输入进行排序。
+-r: 表示反向排序，即降序排列。
+-n: 表示按照数值大小排序。
+
+
+head -20: 最后，这个命令会从排序后的结果中提取前 20 行。
+| : 管道命令符，表示前一项的输出结果作为后一项的输入
+
+
 ]]></content>
       <categories>
-        <category>CTF</category>
-        <category>WP</category>
+        <category>AWD</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
-        <tag>WP</tag>
+        <tag>awd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[前两天我一直困在为何博客上传不了图像而现在我似乎找到了解决方法首先你要先下了hexo-asset-image
+而且在config.yml里有个post_asset_folder:要为true
+要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面
+然后再typora里设置要选择优先相对路径（这个很重要
+保证相对路径的时候再插入图片
+插入图片后查看github对应的文件夹下面有没有相应的图片
+因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来
+然后再
+hexo g
+
+hexo s
+
+hexo d
+
+三连试试，每试完一遍可以直接去github上看看，如果没有这个图片的话试试这个
+hexo clean
+
+就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了
+
+类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？
+如果还传不上去的话可以缩放图片试试
+（猜想：说不定可以直接在github上add file，下次试试）
+ps：（这是不是图片加载慢的原因？）
+顺便记录一下我博客的其他问题的解决友链我靠我之前友链一直不能输中文，否则就会报错+显示不了
+现在才发现是vs的问题，，用记事本编辑就能正常上传+打开了。服了
+评论区我用的是Valine，要去LeanCloud注册账号才行，网上教程很多
+但是好像有泄露的风险？
+搜索我是去algolia注册账号才能搜索的
+结果发现只能所搜文章的标题，不能搜索文章里的内容（我要你有啥用？
+待解决
+]]></content>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -3209,7 +3338,7 @@ flag：flag{sp3tr0gr4m0ph0n3}
 追踪tcp流之后发现
 ![屏幕截图 2025-03-03 115626](.&#x2F;Misc-Record&#x2F;屏幕截图 2025-03-03 115626.png)
 这个就是发送者的邮箱了xsser@live.cn
-flag{&#x78;&#x73;&#115;&#101;&#x72;&#64;&#108;&#105;&#118;&#101;&#46;&#x63;&#x6e;}
+flag{&#x78;&#115;&#115;&#x65;&#x72;&#x40;&#108;&#x69;&#118;&#x65;&#x2e;&#x63;&#110;}
 131.蜘蛛侠呀一段流量。
 发现icmp后面每段都带有一段的data数据，猜测是将一个文件分散在了这里。
 可以使用tshark导出这些数据，然后去重，再用脚本
@@ -4240,135 +4369,6 @@ flag：SICTF{88a39373-e204-43b6-b321-33ac8972fde9}
       </tags>
   </entry>
   <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[前两天我一直困在为何博客上传不了图像而现在我似乎找到了解决方法首先你要先下了hexo-asset-image
-而且在config.yml里有个post_asset_folder:要为true
-要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面
-然后再typora里设置要选择优先相对路径（这个很重要
-保证相对路径的时候再插入图片
-插入图片后查看github对应的文件夹下面有没有相应的图片
-因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来
-然后再
-hexo g
-
-hexo s
-
-hexo d
-
-三连试试，每试完一遍可以直接去github上看看，如果没有这个图片的话试试这个
-hexo clean
-
-就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了
-
-类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？
-如果还传不上去的话可以缩放图片试试
-（猜想：说不定可以直接在github上add file，下次试试）
-ps：（这是不是图片加载慢的原因？）
-顺便记录一下我博客的其他问题的解决友链我靠我之前友链一直不能输中文，否则就会报错+显示不了
-现在才发现是vs的问题，，用记事本编辑就能正常上传+打开了。服了
-评论区我用的是Valine，要去LeanCloud注册账号才行，网上教程很多
-但是好像有泄露的风险？
-搜索我是去algolia注册账号才能搜索的
-结果发现只能所搜文章的标题，不能搜索文章里的内容（我要你有啥用？
-待解决
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>awd初体验</title>
-    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[前言哎，，再次感到misc果然还是要会点web或者re才行
-这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。
-以bugku的awd为例报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等
-ip白名单——队长加的队员ip
-账号密码——一会连ssh有用（以：分隔）
-token——提交flag时用
-虚拟ip——连ssh，注意端口是2222
-使用Tabby连接项目地址： https://tabby.sh/ 注意要下windows的（tabby基础讲解： 这里）
-打开后点开设置/配置与连接
-
-
-点击新建/新配置，选择ssh连接
-看到一个空白页面，填写：
-名称—主机—端口—用户名—密码
-如下：
-
-
-然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了
-
-
-等一会就连接成功了
-SFTP传输工具tabby是自带sftp工具的，连接成功后在右上角就能看到
-点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行
-如果想上传文件可以直接拖拽文件，也能点右上角的upload
-html相关下载——tar命令连接成功之后可以打包下载html里的东西了，在var/www/html里。
-但是html是无法直接下的，那怎么办呢？使用tar命令
-tar -czvf myfolder.tar.gz /var/www/html/*# 这个命令会打包html里的所有东西tar -czvf web.tar.gz ./*# 打包当前目录下所有东西到当前文件夹下
-
-打包完成的东西在home的一个文件夹里（这里是忘了具体在哪了。。）
-然后就能看到一个myfolder.tar.gz或者web.tar.gz，直接点击保存下来就好
-查找漏洞+修改+上传保存下来的html文件夹可以用D盾来扫描漏洞，然后找到对应漏洞，修改。
-这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上
-改完漏洞就能加固我们的防御了。
-沙箱跑木马我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下
-安恒云沙箱： 安恒云沙箱-下一代沙箱的领航者
-如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来
-apache日志分析
-常见日志文件位置
-
-
-
-Apache日志
-访问日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log.1（CentOS&#x2F;RHEL）。
-错误日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log.1（CentOS&#x2F;RHEL）。
-
-
-SSH日志
-身份验证日志 ：通常位于&#x2F;var&#x2F;log&#x2F;auth.log（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;secure（CentOS&#x2F;RHEL）。
-
-
-系统日志
-系统日志 ：通常位于&#x2F;var&#x2F;log&#x2F;syslog（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;messages（CentOS&#x2F;RHEL）。
-
-
-
-
-我们可以进入/var/log/apache2日志目录。
-可以dump下来分析，也可以直接在上面筛选
-需要一定的linux知识
-
-
-cut: 这是一个命令，用于从每一行文本中剪切出指定部分。
--d-: 指定分隔符为 -
--f 1: 指定要剪切的字段为第一个字段。
-access.log.1: 这是要处理的日志文件的文件名或路径。
-
-
-uniq -c: 这个命令会从输入中删除重复的行，并且计算每行重复出现的次数。
--c: 会在输出中显示每行重复出现的次数。
-
-
-sort : 这个命令会对输入进行排序。
--r: 表示反向排序，即降序排列。
--n: 表示按照数值大小排序。
-
-
-head -20: 最后，这个命令会从排序后的结果中提取前 20 行。
-| : 管道命令符，表示前一项的输出结果作为后一项的输入
-
-
-]]></content>
-      <categories>
-        <category>AWD</category>
-      </categories>
-      <tags>
-        <tag>awd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>newstar2024小明同学们复现</title>
     <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。
@@ -4494,6 +4494,45 @@ Virtual Machine Management
 ]]></content>
       <tags>
         <tag>wsl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>区块链Blockchain学习</title>
+    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[怎么现在的misc区块链内容越来越多了，不得不学了
+什么是区块链？区块链（英语：blockchain或block chain）是借由密码学与共识机制等技术建立与存储庞大交易资料链的点对点网络系统。
+从字面上看：区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。
+从计算机上看：区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。
+区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。
+有没一两句话能说明白区块链的？
+有的。
+麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。
+基本名词&amp;&amp;工具使用钱包顾名思义就是存储钱的钱包
+这里推荐使用MetaMask，chrome浏览器上的一个插件。
+
+
+应该也可以使用 imtoken ，手机上的钱包
+注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些助记词，用来在忘记密码（私钥）的时候找回密码或钱包。
+切换网络
+在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络
+
+
+这个主要看比赛的网路。
+如何获取以太币？主要有一些水龙头可以每日拿一点，网上可以搜到
+1.ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens
+2.Ethereum Sepolia Faucet
+助记词助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。
+但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个
+这里是所有2048个助记词（英文）： bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips
+如果从题目中拿到的一些助记词可以从这里缩小范围。
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>Blockchain</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Blockchain</tag>
       </tags>
   </entry>
   <entry>
@@ -4629,6 +4668,68 @@ flag：miniLCTF{c0ngr4tul4ti0n5_70u’v3_g0t_th3_s3cr3ts}
       <tags>
         <tag>CTF</tag>
         <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>哲学-维特根斯坦</title>
+    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
+    <content><![CDATA[维特根斯坦：天才与之责任0.写在前面这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。
+文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）
+。
+1.生平路德维希·维特根斯坦
+二十世纪最伟大的哲学家（没有之一）
+路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。
+在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。
+而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。
+维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。
+
+
+
+
+2.早期维特根斯坦——《逻辑哲学论》全书共分七个章节，章节之间或并列或递进。
+全书的主旨要义在于将能“说”的都说清楚
+图像理论： 语言与世界具有相同的逻辑形式接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”
+在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”
+逻辑同构性维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。
+
+说到这里， 我们可以再做一个小结：首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。
+其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。
+无法说出的逻辑形式那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出
+《逻辑哲学论》中不可说的神秘之物 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。
+ 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。
+ 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?
+”梯子“在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。
+在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”
+第七章全书第七章只有一句话：
+“对于不可说的东西我们必须保持沉默。”
+————————————————————————————————————————
+3.后期维特根斯坦——《哲学研究》维特根斯坦反维特根斯坦：
+•《哲学研究》
+反本质主义：不要追求走出柏拉图的洞穴，哲学不用追求本质，追求本质是一种“哲学病”！
+打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。
+为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。
+ 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。
+也就是说，我们不应该对一些概念下定义，自以为得到了本质。
+哲学冲动：设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?
+那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?
+维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。
+”完全的黑暗“奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的差异性，我们就会被带入“完全的黑暗”之中。
+“家族相似性”在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”
+维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。
+那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。
+讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。
+让一切如其所是：蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”
+就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。
+————————————————————————————————————————
+1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：
+“告诉他们我度过了极好的一生”
+]]></content>
+      <categories>
+        <category>philosophy</category>
+      </categories>
+      <tags>
+        <tag>philosophy</tag>
+        <tag>Wittgenstein</tag>
       </tags>
   </entry>
   <entry>
@@ -4770,107 +4871,6 @@ flag通用位置位详解pkware.cachefly.net&#x2F;webdocs&#x2F;casestudies&#x2F;
       </categories>
       <tags>
         <tag>CTF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链Blockchain学习</title>
-    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[怎么现在的misc区块链内容越来越多了，不得不学了
-什么是区块链？区块链（英语：blockchain或block chain）是借由密码学与共识机制等技术建立与存储庞大交易资料链的点对点网络系统。
-从字面上看：区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。
-从计算机上看：区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。
-区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。
-有没一两句话能说明白区块链的？
-有的。
-麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。
-基本名词&amp;&amp;工具使用钱包顾名思义就是存储钱的钱包
-这里推荐使用MetaMask，chrome浏览器上的一个插件。
-
-
-应该也可以使用 imtoken ，手机上的钱包
-注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些助记词，用来在忘记密码（私钥）的时候找回密码或钱包。
-切换网络
-在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络
-
-
-这个主要看比赛的网路。
-如何获取以太币？主要有一些水龙头可以每日拿一点，网上可以搜到
-1.ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens
-2.Ethereum Sepolia Faucet
-助记词助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。
-但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个
-这里是所有2048个助记词（英文）： bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips
-如果从题目中拿到的一些助记词可以从这里缩小范围。
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>Blockchain</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Blockchain</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>哲学-维特根斯坦</title>
-    <url>/2024/11/%E5%93%B2%E5%AD%A6-%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6/</url>
-    <content><![CDATA[维特根斯坦：天才与之责任0.写在前面这个本来是我高中时候做过的关于维特根斯坦的ppt，突然发现就想着把它发到博客上，于是乎就如此了。
-文章的大部分内容摘自《打开：周濂的一百堂西方哲学课》（这个是真好看，又通俗易懂）
-。
-1.生平路德维希·维特根斯坦
-二十世纪最伟大的哲学家（没有之一）
-路德维希·维特根斯坦（Ludwig Wittgenstein）是20世纪最重要的哲学家之一，被公认为分析哲学的重要代表。他于1889年出生于奥地利，后来移居英国。维特根斯坦的思想主要围绕着语言、逻辑和意义展开，他的两部重要著作是《逻辑哲学论》和《哲学探讨》。
-在《逻辑哲学论》中，他试图通过逻辑分析语言，揭示哲学问题的本质，并提出了“言语游戏”的概念，强调语言的使用与特定社会活动和上下文相关。
-而在《哲学探讨》中，他的思想有所转变，开始强调语言的多样性和复杂性，强调语言的使用是基于社会实践和交流的。
-维特根斯坦的思想对逻辑学、语言哲学、认知科学等领域都产生了深远影响，他被认为是20世纪哲学最重要的思想家之一，其作品至今仍受到广泛研究和讨论。
-
-
-
-
-2.早期维特根斯坦——《逻辑哲学论》全书共分七个章节，章节之间或并列或递进。
-全书的主旨要义在于将能“说”的都说清楚
-图像理论： 语言与世界具有相同的逻辑形式接下来我们介绍一下著名的“图像理论”， 这是理解《逻辑哲学论》的关键所在。“一战”期间， 维特根斯坦偶然读到一篇文章，报道了巴黎交通法院的判案过程， 在裁决汽车事故时， 法官经常用玩具模型来模拟现场发生的一切。读到这里，维特根斯坦灵光一现，意识到模型发挥的作用与命题是一样的， 都是在刻画和表现现实世界里的事实。也就是说， 语言和世界存在着对应关系。打个比方，当我们说“一辆轿车在左转时与迎面而来的卡车相撞”， 这句话与现场发生的车祸具备逻辑上的同构性，用维特根斯坦的原话说就是：“语言与世界具有通过图像映示关系相联系的平行结构。”
-在“4.014”节中， 维特根斯坦说：“唱片、音乐主题、乐谱和音波之间的关系正同语言与世界之间的内在描绘关系一样。它们都是按照一个共同的逻辑图样构造出来的。”
-逻辑同构性维特根斯坦认为，语言与世界之间同样存在着逻辑同构性——复合语句对应着复合事态， 原子语句对应着原子事实， 名称对应着简单对象。而复合语句、原子语句与名称彼此之间则是一个充分分析直到最终无法分析的关系。同样， 复合事态、原子事实和简单对象之间也是这样的关系。
-
-说到这里， 我们可以再做一个小结：首先， 乍看上去， 维特根斯坦是在主张某种符合论的观点，也就是语言反映事实， 就像镜子反映世界。但实际上他的观点要比符合论更神秘， 他认为语言和事实具有某种逻辑的同构性， 用维特根斯坦的话说就是具有相同的“逻辑形式”。
-其次， 维特根斯坦在这里体现出一种充分分析的态度。我刚才说了， 任何复合的语句都可以充分分析成最小单位也即名称，同样，任何复合的事态都可以充分分析成最小单位也即简单对象。
-无法说出的逻辑形式那么究竟什么叫作逻辑形式? 这又是一个非常难以理解的概念， 虽然就乐谱和琴声的例子而言， 我们可以体会到二者之间存在着某种共同的逻辑形式， 但是这种逻辑形式到底是什么， 似乎依旧无法给出进一步的说明。事实上， 维特根斯坦就是这样认为的，在他看来， 逻辑形式只能显现， 无法说出
-《逻辑哲学论》中不可说的神秘之物 在《逻辑哲学论》这本书中，存在着很多只能显现但不能说出的神秘之物。借助陈嘉映的总结，这些不可说的东西包括： 逻辑形式，哲学问题， 伦理学、美学等学科， 以及包括以上三类在内的所有神秘的东西。
- 为什么这些东西是不可说的? 不可说的东西就是不重要的吗?对此最简单的回答就是， 它们之所以不可说， 是因为它们不是实证科学， 它们谈论的是事实之外的东西。但是这绝不意味着不可说的东西是不重要的， 恰恰相反， 维特根斯坦曾经说过， 那些在《逻辑哲学论》中没有正面处理的内容， 比方说美、生活的意义、死亡，等等， 恰恰是最重要的。
- 为什么不可说的是最重要的? 引用战时笔记中的一句话：“伦理学不处理世界。正如逻辑一样， 伦理学必定是世界的一个条件。”所谓条件的意思是， 如果没有它， 世界将不成其为世界， 你说它重要不重要?
-”梯子“在这个意义上我们甚至可以说，《逻辑哲学论》并非一本关于逻辑的著作，而是一本关于罪及与之相关的伦理、美、生活的意义的著作。虽然维特根斯坦谈论最多的是逻辑， 但逻辑只是梯子， 真正重要的东西在楼上，一旦登上了楼， 就可以撤掉梯子了。
-在“6.52”这一节中， 维特根斯坦说：“我们觉得， 即使一切可能的科学问题都已得到解答， 人生问题也还完全未被触及。”
-第七章全书第七章只有一句话：
-“对于不可说的东西我们必须保持沉默。”
-————————————————————————————————————————
-3.后期维特根斯坦——《哲学研究》维特根斯坦反维特根斯坦：
-•《哲学研究》
-反本质主义：不要追求走出柏拉图的洞穴，哲学不用追求本质，追求本质是一种“哲学病”！
-打个比方，当有人问我们“什么是金星”的时候， 我们会非常自信地把手指向天际， 告诉他们：“喏， 就是那颗最亮的星星。”可是当有人问“什么是时间”的时候， 我们试图去寻找像金星一样的时间实体， 却发现自己茫然失措， 找不着北。
-为什么会出现这样的困惑? 因为我们被这两个表达式表面上的一致性给迷惑了， 以为“什么是金星”和“什么是时间”问的是同一类型的问题， 所以我们也就很自然地像寻找金星那样去寻找作为实体的时间。其实， 表面上一致的问题并不一定是同一类型的问题。
- 类似的诱惑无处不在， 不管是哲学家还是普通人都难以幸免。仍旧举上一讲的例子， 当说到工具二字的时候， 我们会情不自禁地想在各种工具之间寻找“共同之处”，与此类似的是， 当我们把语言看成是各种不同类型的语言游戏时， 又会忍不住去想：什么是游戏之为游戏的“共同之处”? 我们似乎总是倾向于要去总结一些什么，仿佛这么做才显得很哲学。
-也就是说，我们不应该对一些概念下定义，自以为得到了本质。
-哲学冲动：设想有人说:“所有的工具都是用来改变某种东西的，例如，锤子改变钉子的位置，锯子改变板子的形状，等等。”–尺子改变的是什么?胶水瓶和钉子改变的是什么?“改变我们对某样东西的了解，改变胶的温度和箱子的稳固程度。”–表达式是弄得一致了，但我们得到了什么呢?
-那些有着哲学冲动的人就试图用“改变”这个概念来定义工具的本质，可是这只是一种幻觉，它的确把表达式弄得一致了，因为所有的工具好像在改变什么，但是维特根斯坦反问，这真的有助于加深我们对工具的理解吗?
-维特根斯坦说，我们要放弃一种幻觉，以为我们可以抓住语言的无可与之相比的本质，“其实，只要‘语言’、‘经验’、‘世界’这些词有用处，它们的用处一定像‘桌子’、‘灯’、‘门’这些词一样卑微”。
-”完全的黑暗“奥古斯丁有句名言:“那么，什么是时间呢?如果没有谁问我，我倒还知道它是什么;可是，当我被问及它是什么，并试着解释时，我却糊涂了。”对此，维特根斯坦评论说:“没有谁问我们的时候我们还知道，可是要给它们一个解释时又不知道的东西，正是我们需要提醒自己注意的东西。”因为这些东西诱使我们以科学的方式提出问题并回答问题，“什么是时间”这个问题与“什么是金星”，或者“氢的比重是多少”只具有表面的相似性，如果我们看不到它们的差异性，我们就会被带入“完全的黑暗”之中。
-“家族相似性”在《哲学研究》第66节中，维特根斯坦问道:“棋类游戏，牌类游戏，球类游戏，角力游戏，它们的共同之处是什么?”然后，他立刻自我反驳道:“一不要说:它们一定有某种共同之处，否则它们不会都叫做游戏。’”
-维特根斯坦给出的建议是“不要想，而要看”，看到它们之间的“相似之处”和“亲缘关系”，而不是想象中的“共同之处”。
-那么游戏之间到底是什么关系呢？维特根斯坦说:“我想不出比‘家族相似’更好的说法。
-讨论到这里,我们可以说,各种“游戏”构成了一个家族,各种“工具”构成了另一个家族，我们之所以把这类活动称为游戏，把那类对象称为工具，不是因为在它们的背后存在着所谓的本质(想想亚里士多德)，也不是因为我们可以对它们进行普遍定义(想想苏格拉底)，而是因为它们之间存在着“家族相似性”。
-让一切如其所是：蒙克说“人们常常引用维特根斯坦谈哲学的话——哲学‘让一切如其所是’。但人们常常看不到，在力求什么也不改变，只改变我们看待事物的方式时，维特根斯坦试图改变一切。”
-就这样，维特根斯坦做到了什么也没有改变，可一切又都改变了。
-————————————————————————————————————————
-1951年4月28日，维特根斯坦去世，留给这个世界的最后一句话是：
-“告诉他们我度过了极好的一生”
-]]></content>
-      <categories>
-        <category>philosophy</category>
-      </categories>
-      <tags>
-        <tag>philosophy</tag>
-        <tag>Wittgenstein</tag>
       </tags>
   </entry>
 </search>
